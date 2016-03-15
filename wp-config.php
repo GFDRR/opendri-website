@@ -70,6 +70,10 @@ else:
       define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);
       define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST']);
     }
+
+    define('WP_HOME', 'http://dev-gfdrr-opendri.pantheonsite.io/');
+    define('WP_SITEURL', 'http://dev-gfdrr-opendri.pantheonsite.io/');
+
     // Don't show deprecations; useful under PHP 5.5
     error_reporting(E_ALL ^ E_DEPRECATED);
     // Force the use of a safe temp directory when in a container
