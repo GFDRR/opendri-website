@@ -1,0 +1,1004 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sp",
+				"space-between"
+			],
+			[
+				"light",
+				"lighten"
+			],
+			[
+				"sa",
+				"sans-serif"
+			],
+			[
+				"news",
+				"news_i"
+			],
+			[
+				"displ",
+				"display_ny"
+			],
+			[
+				"upda",
+				"update_BRAIND_holders"
+			],
+			[
+				"inde",
+				"index_of"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/berkeley/prj/openDRI/wp-content/themes/odri/index.php",
+			"settings":
+			{
+				"buffer_size": 7217,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/berkeley/prj/openDRI/wp-content/themes/odri/header.php",
+			"settings":
+			{
+				"buffer_size": 3118,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/berkeley/prj/openDRI/wp-includes/functions.php",
+			"settings":
+			{
+				"buffer_size": 153484,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/berkeley/prj/openDRI/wp-content/themes/odri/footer.php",
+			"settings":
+			{
+				"buffer_size": 2719,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/berkeley/prj/openDRI/wp-content/themes/odri/page.php",
+			"settings":
+			{
+				"buffer_size": 4155,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/berkeley/prj/openDRI/wp-content/themes/odri/single.php",
+			"settings":
+			{
+				"buffer_size": 4711,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/berkeley/prj/openDRI/wp-includes/general-template.php",
+			"settings":
+			{
+				"buffer_size": 109426,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/berkeley/prj/openDRI/wp-content/themes/odri/archive.php",
+			"settings":
+			{
+				"buffer_size": 3337,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/berkeley/prj/openDRI/wp-content/themes/odri/search.php",
+			"settings":
+			{
+				"buffer_size": 2601,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scss/breakpoints/_base.scss",
+			"settings":
+			{
+				"buffer_size": 25998,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scss/editor-style.scss",
+			"settings":
+			{
+				"buffer_size": 3846,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scss/partials/_variables.scss",
+			"settings":
+			{
+				"buffer_size": 1194,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/berkeley/prj/openDRI/wp-content/themes/odri/post-formats/format.php",
+			"settings":
+			{
+				"buffer_size": 3576,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 67.0,
+		"selected_items":
+		[
+			[
+				"blame",
+				"Git: Blame"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instla",
+				"Package Control: Install Local Dependency"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"pacins",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/berkeley/prj/openDRI/wp-includes/general-template.php",
+		"/Users/berkeley/prj/openDRI/wp-content/themes/odri/search.php",
+		"/Users/berkeley/prj/openDRI/wp-admin/css/colors/_variables.scss",
+		"/Users/berkeley/prj/openDRI/wp-content/themes/odri/library/scss/modules/_forms.scss",
+		"/Users/berkeley/prj/openDRI/wp-content/themes/odri/library/scss/partials/_variables.scss",
+		"/Users/berkeley/prj/openDRI/wp-content/themes/odri/library/scss/partials/_typography.scss",
+		"/Users/berkeley/prj/openDRI/wp-content/themes/odri/library/images/search.svg",
+		"/Users/berkeley/prj/openDRI/wp-content/themes/odri/readme.md",
+		"/Users/berkeley/prj/openDRI/README.md",
+		"/Users/berkeley/prj/openDRI/wp-includes/post-thumbnail-template.php",
+		"/Users/berkeley/prj/openDRI/wp-includes/wp-db.php",
+		"/Users/berkeley/prj/gfw-climate/app/views/map/embed.html.slim",
+		"/Users/berkeley/prj/gfw-climate/app/assets/images/logo-new.svg",
+		"/Users/berkeley/prj/gfw-climate/app/assets/javascripts/countries/views/show/reports/NationalView.js",
+		"/Users/berkeley/prj/gfw-climate/.env",
+		"/Users/berkeley/prj/gfw-climate/app/assets/javascripts/abstract/layer/ImageMaptypeLayerClass.js",
+		"/Users/berkeley/prj/gfw-climate/app/assets/javascripts/abstract/layer/ImageLayerClass.js",
+		"/Users/berkeley/prj/gfw-climate/app/assets/javascripts/map/helpers/layersHelper.js",
+		"/Users/berkeley/prj/gfw-climate/app/assets/javascripts/map/views/layers/CarbonLayer.js",
+		"/Users/berkeley/prj/gfw-climate/app/assets/javascripts/map/presenters/layers/UMDLossLayerPresenter.js",
+		"/Users/berkeley/prj/gfw-climate/app/assets/javascripts/map/views/layers/BiomassLossLayer.js",
+		"/Users/berkeley/prj/gfw-climate/Gemfile",
+		"/Users/berkeley/prj/gfw-climate/app/assets/javascripts/map/views/layers/Forest2000Layer.js",
+		"/Users/berkeley/prj/gfw-climate/app/assets/javascripts/map/models/LayerSpecModel.js",
+		"/Users/berkeley/prj/gfw-climate/app/assets/javascripts/map/services/LayerSpecService.js",
+		"/Users/berkeley/prj/gfw-climate/app/assets/javascripts/map/services/PlaceService.js",
+		"/Users/berkeley/prj/gfw-climate/app/assets/javascripts/services/PlaceService.js",
+		"/Users/berkeley/prj/gfw-climate/app/assets/javascripts/map/templates/layersNav.handlebars",
+		"/Users/berkeley/prj/gfw-climate/public/pantropicalTESTING.csv"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/berkeley/prj/openDRI/wp-content/themes/odri",
+			"*.php",
+			"*.scss",
+			"",
+			"*.scss",
+			"",
+			"*.scss",
+			"",
+			"*.scss",
+			"",
+			"*.scss",
+			"",
+			"*.scss",
+			"",
+			"*.js",
+			"*.scss"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ç",
+			"/about",
+			"resources",
+			"have_pos",
+			"results",
+			"4001",
+			"background-si",
+			"scale",
+			"/projec",
+			"libra",
+			"map",
+			"echo $recent[\"post_title\"];",
+			"get_the_archive_title",
+			"the_archive_title",
+			"Category",
+			"$cat_na",
+			"map",
+			"cartodb",
+			"url",
+			"what",
+			"fake",
+			"transition",
+			"#",
+			"/news",
+			"filed under",
+			".entry-content",
+			"recent",
+			".post",
+			"--md",
+			"-shado",
+			"-shadoe",
+			".hentry",
+			"m-all",
+			"single",
+			"image",
+			"home",
+			"&{",
+			".no-home",
+			"header",
+			"#map",
+			"background: inherit;",
+			"&:after",
+			"background: inherit;",
+			"&:hover",
+			"hover",
+			".hentry",
+			".entry",
+			".resour",
+			".card",
+			".third",
+			"d8d8",
+			"s_input",
+			"input",
+			"inpu",
+			"#f",
+			"#i",
+			"for ",
+			"for",
+			"hr",
+			".hr",
+			"imag",
+			"librar",
+			"row-con",
+			"$lato",
+			"Regular",
+			"$lato",
+			"			    	height: 70px;\n				    background-size: 50px;\n				    width: 70px;\n				    border-radius: 100%;\n				    background-repeat: no-repeat;\n				    background-color: white;\n				    border: 0;\n				    background-position: 50%, 50%;",
+			"#e8e8e8",
+			"hover",
+			".header",
+			"inputç",
+			"/images",
+			"<a",
+			"span",
+			"red",
+			"library",
+			"red",
+			"red-c",
+			"light",
+			"<img",
+			"{\n",
+			".hr",
+			"spread",
+			"spread-between",
+			"323944",
+			"entry-c",
+			"by",
+			".img",
+			"header",
+			"image",
+			".index-row",
+			"Posted",
+			"footer",
+			"login-logo",
+			"the_post_thumbnail",
+			"thumb",
+			"add_theme_support( 'post-thumbnails' );",
+			"article-header",
+			"article-",
+			"article",
+			"$bones-pink",
+			"blue",
+			"$blue",
+			"1477c9",
+			"#f01d4f",
+			"'%",
+			"filed under",
+			"max-width: 315px;",
+			"globalforests",
+			"news",
+			"cf index",
+			"/main",
+			"main ",
+			"main",
+			".cf",
+			"m-all cf",
+			"#content",
+			"t-2of3 d-5of7 ",
+			"content",
+			"#logo",
+			"#year-picker-label",
+			"      \n",
+			"_play_pause",
+			"$years",
+			"element",
+			"this.$years",
+			"_this",
+			"setTimeout"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/berkeley/prj/openDRI/wp-content/themes/odri/index.php",
+					"settings":
+					{
+						"buffer_size": 7217,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								481,
+								481
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/berkeley/prj/openDRI/wp-content/themes/odri/header.php",
+					"settings":
+					{
+						"buffer_size": 3118,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2805,
+								2805
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 76.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/berkeley/prj/openDRI/wp-includes/functions.php",
+					"settings":
+					{
+						"buffer_size": 153484,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								106,
+								106
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/berkeley/prj/openDRI/wp-content/themes/odri/footer.php",
+					"settings":
+					{
+						"buffer_size": 2719,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								771,
+								771
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/berkeley/prj/openDRI/wp-content/themes/odri/page.php",
+					"settings":
+					{
+						"buffer_size": 4155,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3384,
+								3384
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Users/berkeley/prj/openDRI/wp-content/themes/odri/single.php",
+					"settings":
+					{
+						"buffer_size": 4711,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								487,
+								487
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Users/berkeley/prj/openDRI/wp-includes/general-template.php",
+					"settings":
+					{
+						"buffer_size": 109426,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								36521,
+								36521
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 20234.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/Users/berkeley/prj/openDRI/wp-content/themes/odri/archive.php",
+					"settings":
+					{
+						"buffer_size": 3337,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								419,
+								451
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 8,
+					"file": "/Users/berkeley/prj/openDRI/wp-content/themes/odri/search.php",
+					"settings":
+					{
+						"buffer_size": 2601,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2534,
+								2534
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 421.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "scss/breakpoints/_base.scss",
+					"settings":
+					{
+						"buffer_size": 25998,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18894,
+								18894
+							],
+							[
+								18923,
+								18923
+							],
+							[
+								18951,
+								18951
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 13778.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "scss/editor-style.scss",
+					"settings":
+					{
+						"buffer_size": 3846,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								885,
+								885
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "scss/partials/_variables.scss",
+					"settings":
+					{
+						"buffer_size": 1194,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								743,
+								743
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/Users/berkeley/prj/openDRI/wp-content/themes/odri/post-formats/format.php",
+					"settings":
+					{
+						"buffer_size": 3576,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3202,
+								3202
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 406.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/berkeley/prj/openDRI/wp-content/themes/odri/footer.php",
+					"settings":
+					{
+						"buffer_size": 2719,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1565,
+								1565
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 301.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.537008689011,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"page",
+				"wp-content/themes/odri/page.php"
+			],
+			[
+				"sear",
+				"wp-content/themes/odri/search.php"
+			],
+			[
+				"footer",
+				"wp-content/themes/odri/footer.php"
+			],
+			[
+				"archive",
+				"wp-content/themes/odri/archive.php"
+			],
+			[
+				"format.php",
+				"wp-content/themes/odri/post-formats/format.php"
+			],
+			[
+				"variab",
+				"wp-content/themes/odri/library/scss/partials/_variables.scss"
+			],
+			[
+				"varia",
+				"wp-admin/css/colors/_variables.scss"
+			],
+			[
+				"readme",
+				"README.md"
+			],
+			[
+				"readm",
+				"wp-content/themes/odri/readme.md"
+			],
+			[
+				"functio",
+				"wp-includes/functions.php"
+			],
+			[
+				"wp-db",
+				"wp-includes/wp-db.php"
+			],
+			[
+				"odriheader",
+				"wp-content/themes/odri/header.php"
+			],
+			[
+				"odriinde",
+				"wp-content/themes/odri/index.php"
+			],
+			[
+				"embed",
+				"app/views/map/embed.html.slim"
+			],
+			[
+				"logo-new",
+				"app/assets/images/logo-new.svg"
+			],
+			[
+				"pantr",
+				"app/views/countries/pantropical.html.slim"
+			],
+			[
+				"pantropi",
+				"app/assets/javascripts/countries/views/CountryPantropicalView.js"
+			],
+			[
+				"nationalvie",
+				"app/assets/javascripts/countries/views/show/reports/NationalView.js"
+			],
+			[
+				".env",
+				".env"
+			],
+			[
+				"image",
+				"app/assets/javascripts/abstract/layer/ImageLayerClass.js"
+			],
+			[
+				"imagemaptypelayerclass",
+				"app/assets/javascripts/abstract/layer/ImageMaptypeLayerClass.js"
+			],
+			[
+				"soilorganiccarbondlayer",
+				"app/assets/javascripts/map/views/layers/SoilOrganicCarbonDLayer.js"
+			],
+			[
+				"carbon",
+				"app/assets/javascripts/map/views/layers/CarbonStocksLayer.js"
+			],
+			[
+				"umdlosslayerpresenter",
+				"app/assets/javascripts/map/presenters/layers/UMDLossLayerPresenter.js"
+			],
+			[
+				"biomassloss",
+				"app/assets/javascripts/map/views/layers/BiomassLossLayer.js"
+			],
+			[
+				"layershe",
+				"app/assets/javascripts/map/helpers/layersHelper.js"
+			],
+			[
+				"layesn",
+				"app/assets/javascripts/map/templates/layersNav.handlebars"
+			],
+			[
+				"biomass",
+				"app/assets/javascripts/map/views/layers/BiomassLossLayer.js"
+			],
+			[
+				"produ",
+				"config/environments/production.rb"
+			],
+			[
+				"place",
+				"app/assets/javascripts/map/services/PlaceService.js"
+			],
+			[
+				"placeser",
+				"app/assets/javascripts/services/PlaceService.js"
+			],
+			[
+				"layersna",
+				"app/assets/javascripts/map/templates/layersNav.handlebars"
+			],
+			[
+				"carbonst",
+				"app/assets/javascripts/map/views/layers/CarbonStocksLayer.js"
+			],
+			[
+				"pantro",
+				"public/pantropicalTESTING.csv"
+			],
+			[
+				"pan",
+				"public/pantropicalTESTING.csv"
+			],
+			[
+				"vis.js",
+				"app/assets/javascripts/countries/views/pantropical/vis.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 371.0,
+	"status_bar_visible": true
+}
