@@ -165,7 +165,7 @@
 											</footer>
 										</article>
 										<?php } //end if ?>
-								<?php}	// end loop
+								<?php }	// end loop
 							} // end else ?>
 
 							</div>
