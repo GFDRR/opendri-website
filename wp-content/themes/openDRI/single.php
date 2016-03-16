@@ -120,7 +120,7 @@
 												</p>
 											</footer>
 										</article>
-								<?php}	// end loop ?>
+								<?php }	// end loop ?>
 
 							</div>
 						</div>
@@ -202,7 +202,7 @@
 			LAT_VIS   = '<?php echo $geodata__lat ?>';
 			LONG_VIS  = '<?php echo $geodata__long ?>';
 			POST_ID   = '<?php echo $thispostid ?>';
-			if ('<?php echo $CAT_NAME ?>' === 'projects' || '<?php echo get_post_type( get_the_ID() )?>' === 'project') {
+			if ('<?php echo $CAT_NAME ?>' === 'projects' || '<?php echo get_post_type( get_the_ID() ) ?>' === 'project') {
 				document.getElementById('pic-banner').style.display = 'none';
 				document.getElementById('map').style.display 		= 'block';
 				<?php if ($hasimage) { ?>
