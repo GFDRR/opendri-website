@@ -6,7 +6,7 @@
 								An initiative of <a href="https://www.gfdrr.org/" title="The Global Facility for Disaster Reduction and Recovery website" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/gfdrr-logo.png" alt="The Global Facility for Disaster Reduction and Recovery logo"></a>
 							</div>
 							<div class="-ft-newsletter">
-								<span>Sign up for our newsletter:</span> 
+								<span>Sign up for our newsletter:</span>
 								<form action="//vizzuality.us10.list-manage.com/subscribe/post?u=5450ec66874ec1182c96d7ec7&amp;id=70766ac561" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 									<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="your.email@here">
 									<input type="text" name="b_5450ec66874ec1182c96d7ec7_70766ac561" tabindex="-1" value="" style="display:none">
@@ -14,7 +14,7 @@
 									<div id="mce-responses" class="clear">
 										<div class="response" id="mce-error-response" style="display:none"></div>
 										<div class="response" id="mce-success-response" style="display:none"></div>
-									</div> 
+									</div>
 								</form>
 							</div>
 							<!-- Begin MailChimp Signup Form -->
@@ -41,7 +41,7 @@
 				<div id="inner-footer" class="wrap cf">
 					<div class="-ft-content">
 						<div class="-ft-newsletter">
-							<span>Sign up for our newsletter:</span> 
+							<span>Sign up for our newsletter:</span>
 							<form action="//vizzuality.us10.list-manage.com/subscribe/post?u=5450ec66874ec1182c96d7ec7&amp;id=70766ac561" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 								<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="your.email@here">
 								<input type="text" name="b_5450ec66874ec1182c96d7ec7_70766ac561" tabindex="-1" value="" style="display:none">
@@ -49,7 +49,7 @@
 								<div id="mce-responses" class="clear">
 									<div class="response" id="mce-error-response" style="display:none"></div>
 									<div class="response" id="mce-success-response" style="display:none"></div>
-								</div> 
+								</div>
 							</form>
 						</div>
 						<nav>
@@ -102,7 +102,7 @@
 			var params = new Array(2);
 			params[0] = $('#pick-region').find('li.selected').data('option') || '';
 			params[1] = $('#blue-bar-pick-pillar').find('.option-pillar.current').data('option') || '';
-			
+
 			var newlocation = location.pathname + '?mapregion='+ params[0] + '&mappilar=' + params[1];
 			history.pushState('', window.document.title, newlocation);
 		}
@@ -118,7 +118,7 @@
 		         <!-- content.data contains the field info -->
 		         <p>{{content.data.description}}</p>
 		         <p class="meta">{{content.data.country_name}} | {{content.data.pillar}}</p>
-		     	<span class="popup-link-project"><a href="<? echo home_url(); ?>/project/{{content.data.url}}">VIEW PROJECT</a></span>
+		     	<span class="popup-link-project"><a href="<?php echo home_url(); ?>/project/{{content.data.url}}">VIEW PROJECT</a></span>
 		       </div>
 		     </div>
 		     <div class="cartodb-popup-tip-container">
@@ -127,7 +127,7 @@
 		</script>
 		<script>
 			var createLabelIcon = function(labelClass,labelText){
-			  return L.divIcon({ 
+			  return L.divIcon({
 			    className: labelClass,
 			    html: labelText
 			  })
@@ -154,11 +154,11 @@
 						noWrap: true,
 						center : [LAT_VIS,LONG_VIS],
 						zoom: 5,
-						zoomControl: false, 
+						zoomControl: false,
 			        	scrollWheelZoom: false,
 					})
 				} else {
-					map = new L.Map('map', { 
+					map = new L.Map('map', {
 					continuousWorld: false,
 					noWrap: true,
 			        center: [30,15],
@@ -177,54 +177,54 @@
 				}
 				var marker1,marker2,marker3,marker4,marker5,marker6,marker7 = null;
 				var addMarkers = function() {
-					<? 
+					<?php
 						$postsInall = new WP_Query( array( 'post_type' => 'project', 'category_name' => 'non-wb-countries' ) );
 						$postsInall = $postsInall->post_count;
 					?>
-					var postsInall = '<? echo $postsInall ?>';
+					var postsInall = '<?php echo $postsInall ?>';
 					marker1 = L.marker(new L.LatLng(0, 0), {icon:createLabelIcon(((postsInall.length > 1) ? "amount-of-posts-2" : "amount-of-posts"),postsInall)}).addTo(map);
 
-					<? 
+					<?php
 						$postsInAfrica = new WP_Query( array( 'post_type' => 'project', 'category_name' => 'africa' ) );
 						$postsInAfrica = $postsInAfrica->post_count;
 					?>
-					var postsInAfrica = '<? echo $postsInAfrica ?>';
+					var postsInAfrica = '<?php echo $postsInAfrica ?>';
 					marker2 = L.marker(new L.LatLng(7, 21), {icon:createLabelIcon((postsInAfrica.length > 1) ? "amount-of-posts-2" : "amount-of-posts",postsInAfrica)}).addTo(map);
 
-					<? 
+					<?php
 						$postsIneastasia = new WP_Query( array( 'post_type' => 'project', 'category_name' => 'east-asia-pacific' ) );
 						$postsIneastasia = $postsIneastasia->post_count;
 					?>
-					var postsIneastasia = '<? echo $postsIneastasia ?>';
+					var postsIneastasia = '<?php echo $postsIneastasia ?>';
 					marker3 = L.marker(new L.LatLng(35, 103), {icon:createLabelIcon((postsIneastasia.length > 1) ? "amount-of-posts-2" : "amount-of-posts",postsIneastasia)}).addTo(map);
 
-					<? 
+					<?php
 						$postsInEurope = new WP_Query( array( 'post_type' => 'project', 'category_name' => 'europe-and-central-asia' ) );
 						$postsInEurope = $postsInEurope->post_count;
 					?>
-					var postsInEurope = '<? echo $postsInEurope ?>';
+					var postsInEurope = '<?php echo $postsInEurope ?>';
 					marker4 = L.marker(new L.LatLng(55, 25), {icon:createLabelIcon((postsInEurope.length > 1) ? "amount-of-posts-2" : "amount-of-posts",postsInEurope)}).addTo(map);
 
-					<? 
+					<?php
 						$postsInlatam = new WP_Query( array( 'post_type' => 'project', 'category_name' => 'latin-america-and-caribbean' ) );
 						$postsInlatam = $postsInlatam->post_count;
 					?>
-					var postsInlatam = '<? echo $postsInlatam ?>';			
+					var postsInlatam = '<?php echo $postsInlatam ?>';
 					marker5 = L.marker(new L.LatLng(13, -59), {icon:createLabelIcon((postsInlatam.length > 1) ? "amount-of-posts-2" : "amount-of-posts",postsInlatam)}).addTo(map);
 
-					<? 
+					<?php
 						$postsInmiddleeast = new WP_Query( array( 'post_type' => 'project', 'category_name' => 'middle-east-and-north-africa' ) );
 						$postsInmiddleeast = $postsInmiddleeast->post_count;
 					?>
-					var postsInmiddleeast = '<? echo $postsInmiddleeast ?>';
+					var postsInmiddleeast = '<?php echo $postsInmiddleeast ?>';
 					marker6 = L.marker(new L.LatLng(29, 41), {icon:createLabelIcon((postsInmiddleeast.length > 1) ? "amount-of-posts-2" : "amount-of-posts",postsInmiddleeast)}).addTo(map);
 
-					<? 
+					<?php
 						$postsInsouthasia = new WP_Query( array( 'post_type' => 'project', 'category_name' => 'south-asia' ) );
 						$postsInsouthasia = $postsInsouthasia->post_count;
 					?>
-					var postsInsouthasia = '<? echo $postsInsouthasia ?>';			
-					marker7 = L.marker(new L.LatLng(27, 72), {icon:createLabelIcon((postsInsouthasia.length > 1) ? "amount-of-posts-2" : "amount-of-posts","<? echo $postsInsouthasia; ?>")}).addTo(map);
+					var postsInsouthasia = '<?php echo $postsInsouthasia ?>';
+					marker7 = L.marker(new L.LatLng(27, 72), {icon:createLabelIcon((postsInsouthasia.length > 1) ? "amount-of-posts-2" : "amount-of-posts","<?php echo $postsInsouthasia; ?>")}).addTo(map);
 				}
 				var basemap = 'https://a.tiles.mapbox.com/v4/opendri.0ouhqxkv/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoib3BlbmRyaSIsImEiOiJjaWpvZjcwbTYwMHVldG9tNXlhajMwb2dyIn0.fWimK0QhrBpQVX5Zu2bWNg';
 				if (window.matchMedia("(-webkit-device-pixel-ratio: 2)").matches) {
@@ -346,7 +346,7 @@
 				  	$('#current-total-post-count').text($target.length);
 				  	if (currentPillar.length > 0)
 				    	sublayers[0].setSQL("SELECT * FROM wp_projects WHERE region = 'africa' AND pillar LIKE '%" + currentPillar + "%'"+ visible);
-				    else 
+				    else
 					    sublayers[0].setSQL( "SELECT * FROM wp_projects WHERE region = 'africa'" + visible);
 				    currentRegion = "africa";
 				    sublayers[0].setCartoCSS("#wp_projects{  marker-fill-opacity: 1;  marker-line-color: #FFF;  marker-line-width: 2;  marker-line-opacity: 1;  marker-placement: point;  marker-type: ellipse;  marker-width: 10;  marker-fill: #FFFFFF;  marker-allow-overlap: true;}");
@@ -428,10 +428,10 @@
 				  	var $target = $filterPosts.parent().find(filterPillar+'.type-project.category-east-asia-pacific');
 				  	filterRegion = '.category-east-asia-pacific';
 				  	$target.show();
-				  	$('#current-total-post-count').text($target.length);			  	
+				  	$('#current-total-post-count').text($target.length);
 				  	if (currentPillar.length > 0)
 				    	sublayers[0].setSQL("SELECT * FROM wp_projects WHERE region = 'eastasia' AND pillar LIKE '%" + currentPillar + "%'"+ visible);
-				    else 
+				    else
 					    sublayers[0].setSQL( "SELECT * FROM wp_projects WHERE region = 'eastasia'" + visible);
 				    currentRegion = "eastasia";
 				    sublayers[0].setCartoCSS("#wp_projects{  marker-fill-opacity: 1;  marker-line-color: #FFF;  marker-line-width: 2;  marker-line-opacity: 1;  marker-placement: point;  marker-type: ellipse;  marker-width: 10;  marker-fill: #FFFFFF;  marker-allow-overlap: true;}");
@@ -493,7 +493,7 @@
 				  	$('#current-total-post-count').text($target.length);
 				  	if (currentPillar.length > 0)
 				    	sublayers[0].setSQL("SELECT * FROM wp_projects WHERE region = 'europe' AND pillar LIKE '%" + currentPillar + "%'"+ visible);
-				    else 
+				    else
 					    sublayers[0].setSQL( "SELECT * FROM wp_projects WHERE region = 'europe'" + visible);
 				    currentRegion = "europe";
 				    sublayers[0].setCartoCSS("#wp_projects{  marker-fill-opacity: 1;  marker-line-color: #FFF;  marker-line-width: 2;  marker-line-opacity: 1;  marker-placement: point;  marker-type: ellipse;  marker-width: 10;  marker-fill: #FFFFFF;  marker-allow-overlap: true;}");
@@ -553,7 +553,7 @@
 				  	$('#current-total-post-count').text($target.length);
 				  	if (currentPillar.length > 0)
 				    	sublayers[0].setSQL("SELECT * FROM wp_projects WHERE region = 'latam' AND pillar LIKE '%" + currentPillar + "%'"+ visible);
-				    else 
+				    else
 					    sublayers[0].setSQL( "SELECT * FROM wp_projects WHERE region = 'latam'" + visible);
 				    currentRegion = "latam";
 				    sublayers[0].setCartoCSS("#wp_projects{  marker-fill-opacity: 1;  marker-line-color: #FFF;  marker-line-width: 2;  marker-line-opacity: 1;  marker-placement: point;  marker-type: ellipse;  marker-width: 10;  marker-fill: #FFFFFF;  marker-allow-overlap: true;}");
@@ -612,10 +612,10 @@
 				  	var $target = $filterPosts.parent().find(filterPillar+'.type-project.category-middle-east-and-north-africa');
 				  	filterRegion = '.category-middle-east-and-north-africa';
 				  	$target.show();
-				  	$('#current-total-post-count').text($target.length);			  	
+				  	$('#current-total-post-count').text($target.length);
 				  	if (currentPillar.length > 0)
 				    	sublayers[0].setSQL("SELECT * FROM wp_projects WHERE region = 'middleeast' AND pillar LIKE '%" + currentPillar + "%'"+ visible);
-				    else 
+				    else
 					    sublayers[0].setSQL( "SELECT * FROM wp_projects WHERE region = 'middleeast'" + visible);
 				    currentRegion = "middleeast";
 				    sublayers[0].setCartoCSS("#wp_projects{  marker-fill-opacity: 1;  marker-line-color: #FFF;  marker-line-width: 2;  marker-line-opacity: 1;  marker-placement: point;  marker-type: ellipse;  marker-width: 10;  marker-fill: #FFFFFF;  marker-allow-overlap: true;}");
@@ -656,11 +656,11 @@
 								      line-opacity: 0.4;\
 								    }");
 				    return true;
-				  },			
+				  },
 				  nonwp: function(){
 				  	if (currentPillar.length > 0)
 				    	sublayers[0].setSQL("SELECT * FROM wp_projects WHERE region = 'nonwp' AND pillar LIKE '%" + currentPillar + "%'"+ visible);
-				    else 
+				    else
 					    sublayers[0].setSQL( "SELECT * FROM wp_projects WHERE region = 'nonwp'" + visible);
 				    currentRegion = "nonwp";
 				    sublayers[0].setCartoCSS("#wp_projects{  marker-fill-opacity: 1;  marker-line-color: #FFF;  marker-line-width: 2;  marker-line-opacity: 1;  marker-placement: point;  marker-type: ellipse;  marker-width: 10;  marker-fill: #FFFFFF;  marker-allow-overlap: true;}");
@@ -674,16 +674,16 @@
 								    }\
 								    ");
 				    return true;
-				  },	
+				  },
 				  southasia: function(){
 				  	$filterPosts.hide();
 				  	var $target = $filterPosts.parent().find(filterPillar+'.type-project.category-south-asia');
 				  	filterRegion = '.category-south-asia';
 				  	$target.show();
-				  	$('#current-total-post-count').text($target.length); 	
+				  	$('#current-total-post-count').text($target.length);
 				  	if (currentPillar.length > 0)
 				    	sublayers[0].setSQL("SELECT * FROM wp_projects WHERE region = 'southasia' AND pillar LIKE '%" + currentPillar + "%'"+ visible);
-				    else 
+				    else
 					    sublayers[0].setSQL( "SELECT * FROM wp_projects WHERE region = 'southasia'" + visible);
 				    currentRegion = "southasia";
 				    sublayers[0].setCartoCSS("#wp_projects{  marker-fill-opacity: 1;  marker-line-color: #FFF;  marker-line-width: 2;  marker-line-opacity: 1;  marker-placement: point;  marker-type: ellipse;  marker-width: 10;  marker-fill: #FFFFFF;  marker-allow-overlap: true;}");
@@ -715,19 +715,19 @@
 				  open: function(){
 				  	if (currentCountry.length > 0) {
 						var $target = $filterPosts.parent().find(filterRegion+'.type-project.category-open-data-platforms:visible');
-				  	} else {			  		
+				  	} else {
 					  	$filterPosts.hide();
 					  	var $target = $filterPosts.parent().find(filterRegion+'.type-project.category-open-data-platforms');
 				  	}
 				  	filterPillar = '.category-open-data-platforms';
 				  	$target.show();
-				  	$('#current-total-post-count').text($target.length); 			  	
+				  	$('#current-total-post-count').text($target.length);
 				  	if (currentRegion.length > 0)
 				    	sublayers[0].setSQL("SELECT * FROM wp_projects WHERE pillar like '%open data platforms%' AND region = '" + currentRegion + "' "+ visible);
 				    if (currentCountry.length > 0){
 				    	sublayers[0].setSQL("SELECT * FROM wp_projects WHERE pillar like '%open data platforms%' AND LOWER(country_name) like %" + currentCountry.toLowerCase() + "% "+ visible);
 				    }
-				    else 
+				    else
 				    	sublayers[0].setSQL( "SELECT * FROM wp_projects WHERE pillar like '%open data platforms%'" + visible);
 				    currentPillar = "open data platforms";
 				    sublayers[0].setCartoCSS("#wp_projects{  marker-fill-opacity: 1;  marker-line-color: #FFF;  marker-line-width: 2;  marker-line-opacity: 1;  marker-placement: point;  marker-type: ellipse;  marker-width: 10;  marker-fill: #FFFFFF;  marker-allow-overlap: true;}");
@@ -736,7 +736,7 @@
 				  community: function(){
 				  	if (currentCountry.length > 0) {
 						var $target = $filterPosts.parent().find(filterRegion+'.type-project.category-community-mapping:visible');
-				  	} else {			  		
+				  	} else {
 					  	$filterPosts.hide();
 					  	var $target = $filterPosts.parent().find(filterRegion+'.type-project.category-community-mapping');
 				  	}
@@ -748,16 +748,16 @@
 				   	if (currentCountry.length > 0){
 				    	sublayers[0].setSQL("SELECT * FROM wp_projects WHERE pillar like '%community mapping%' AND LOWER(country_name) like %" + currentCountry.toLowerCase() + "% "+ visible);
 				    }
-				    else 
+				    else
 				    	sublayers[0].setSQL( "SELECT * FROM wp_projects WHERE pillar like '%community mapping%'" + visible);
 				    currentPillar = "community mapping";
 				    sublayers[0].setCartoCSS("#wp_projects{  marker-fill-opacity: 1;  marker-line-color: #FFF;  marker-line-width: 2;  marker-line-opacity: 1;  marker-placement: point;  marker-type: ellipse;  marker-width: 10;  marker-fill: #FFFFFF;  marker-allow-overlap: true;}");
 				    return true;
-				  },		
+				  },
 				  risk: function(){
 				  	if (currentCountry.length > 0) {
 						var $target = $filterPosts.parent().find(filterRegion+'.type-project.category-risk-visualization:visible');
-				  	} else {			  		
+				  	} else {
 					  	$filterPosts.hide();
 					  	var $target = $filterPosts.parent().find(filterRegion+'.type-project.category-risk-visualization');
 				  	}
@@ -769,7 +769,7 @@
 					if (currentCountry.length > 0){
 				    	sublayers[0].setSQL("SELECT * FROM wp_projects WHERE pillar like '%risk visualization%' AND LOWER(country_name) like %" + currentCountry.toLowerCase() + "% "+ visible);
 				    }
-				    else 
+				    else
 				    	sublayers[0].setSQL( "SELECT * FROM wp_projects WHERE pillar like '%risk visualization%'" + visible);
 				    currentPillar = "risk visualization";
 				    sublayers[0].setCartoCSS("#wp_projects{  marker-fill-opacity: 1;  marker-line-color: #FFF;  marker-line-width: 2;  marker-line-opacity: 1;  marker-placement: point;  marker-type: ellipse;  marker-width: 10;  marker-fill: #FFFFFF;  marker-allow-overlap: true;}");
@@ -838,7 +838,7 @@
 				    	map.setView(latlong,zoom);
 				    }
 				});
-				var removeMarkers = function() {				
+				var removeMarkers = function() {
 					map.removeLayer(marker1);
 					map.removeLayer(marker2);
 					map.removeLayer(marker3);
@@ -862,7 +862,7 @@
 					} else {
 						$(e.target).closest('span').addClass('current');
 						$(this).siblings().removeClass('current');
-						if ($(this).hasClass('option-pillar')) {					
+						if ($(this).hasClass('option-pillar')) {
 							var option = $(this).data('option');
 						} else {
 							$(this).text('select:');
@@ -973,7 +973,7 @@
 				$s_input   = $('.search-input'),
 				$i_input   = $s_input.find('.search-open-dri'),
 				$im_input  = $s_input.find('img');
-			
+
 			$s_input.on('click', function(e) {
 			    e.preventDefault();
 			    e.stopPropagation();
@@ -1012,7 +1012,7 @@
 			})
 
 			var $bar = $('#blue-bar');
-			if ($bar.hasClass('about')) {			
+			if ($bar.hasClass('about')) {
 				var top_principles = $("#principles").offset().top || null,
 					top_contact	   = $('#contact').offset().top,
 					top_more	   = $('#more-content').offset().top,

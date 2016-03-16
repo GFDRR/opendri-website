@@ -4,7 +4,7 @@
 			<h2>what is open data for resilience initiative?</h2>
 			<h3>OpenDRI shares, collects, and uses data, applying the concepts of the open data movement to reduce vulnerability to natural hazards and to climate change across the globe. Explore our project map to see where we’ve been working towards making an impact.</h3>
 			<nav>
-				<?
+				<?php
 				$titles   = ['Sharing Data','Collecting Data','Using Data'];
 				$params   = ['open','community','risk'];
 				for ($i = 0; $i < count($titles); $i++) {
@@ -46,7 +46,7 @@
 							<h1 class="h2 entry-title"><a href="<?php echo $recent["guid"]; ?>" rel="bookmark" title="<?php echo $recent["post_title"]; ?>"><?php echo $recent["post_title"]; ?></a></h1>
 						</header>
 						<section class="entry-content cf related">
-								<?php 
+								<?php
 									$content = apply_filters( 'the_content', $recent["post_content"] );
 								    $content = str_replace( ']]>', ']]&gt;', $content );
 								    echo wp_strip_all_tags($content);
@@ -61,7 +61,7 @@
 							</p>
 						</footer>
 					</article>
-					<? } ?>
+					<?php } ?>
 				</div>
 				<div class="card-third twitter-timeline-container">
 			        <div class="twitter mod-tweets">
@@ -93,7 +93,7 @@
 							<h1 class="h2 entry-title"><a href="<?php echo $recent["guid"]; ?>" rel="bookmark" title="<?php echo $recent["post_title"]; ?>"><?php echo $recent["post_title"]; ?></a></h1>
 						</header>
 						<section class="entry-content cf related">
-								<?php 
+								<?php
 									$content = apply_filters( 'the_content', $recent["post_content"] );
 								    $content = str_replace( ']]>', ']]&gt;', $content );
 								    echo wp_strip_all_tags($content);
@@ -103,9 +103,9 @@
 							<p class="byline entry-meta vcard">
 								<span>
 								<?php
-								foreach((get_the_category()) as $category) { 
-								    echo '<a href="'.esc_url( get_category_link( $category->term_id ) ).'">'.$category->cat_name . '</a> '; 
-								} 
+								foreach((get_the_category()) as $category) {
+								    echo '<a href="'.esc_url( get_category_link( $category->term_id ) ).'">'.$category->cat_name . '</a> ';
+								}
 								?>
 								</span>
 	                            <?php printf( __( '', 'bonestheme' ).' %1$s',
@@ -115,7 +115,7 @@
 							</p>
 						</footer>
 					</article>
-					<? } ?>
+					<?php } ?>
 				</div>
 			</div>
 			<div id="resources" class="m-all index-row" role="resources" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
@@ -127,7 +127,7 @@
 					</div>
 				</div>
 				<div class="row-container">
-				<?
+				<?php
 					$args = array( 'numberposts' => '1', 'category' => 16, 'order' => 'DESC', 'post_type' => 'resource', 'post_status' => 'publish' );
 					$featured_col = wp_get_recent_posts( $args );
 					$image1 = '';
@@ -143,12 +143,12 @@
 							</section>
 						</article>
 					</a>
-				<? } ?>
+				<?php } ?>
 				</div>
 			</div>
 			<div class="m-all cf index-row last-resources" role="resources" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 				<div class="row-container">
-				<?
+				<?php
 					$args = array( 'numberposts' => '1', 'category' => 16,  'order' => 'DESC', 'offset' => '1', 'post_type' => 'resource','post_status' => 'publish' );
 					$featured_col = wp_get_recent_posts( $args );
 					foreach( $featured_col as $featured ) {
@@ -162,9 +162,9 @@
 							</section>
 						</article>
 					</a>
-				<? } ?>
+				<?php } ?>
 					<ul class="resource-list home">
-						<?
+						<?php
 						$args = array( 'numberposts' => '4', 'category' => 16, 'order' => 'DESC', 'post_type' => 'resource','post_status' => 'publish' );
 						$featured_col = wp_get_recent_posts( $args );
 						foreach( $featured_col as $featured ) {
@@ -172,16 +172,16 @@
 						<li>
 							<a href="<?php echo $featured["guid"]; ?>">
 								<p><span class="title"><?php echo $featured["post_title"]; ?></span><span class="format"></span></p>
-								<p><span class="name"></span><span class="size"><? echo date('d M', strtotime($featured['post_date'])) ?></span>
+								<p><span class="name"></span><span class="size"><?php echo date('d M', strtotime($featured['post_date'])) ?></span>
 								</p>
 							</a>
 						</li>
-					<? } // end foreach ?>
+					<?php } // end foreach ?>
 					</ul>
 				</div>
 			</div>
 			<script type="text/javascript">
-			document.getElementsByTagName('head')[0].innerHTML += '<style>#firstFeatured:after{background-image:url(<? echo $image1 ?>) !important;}#secondFeatured:after{background-image:url(<? echo $image2 ?>) !important;}</style>';
+			document.getElementsByTagName('head')[0].innerHTML += '<style>#firstFeatured:after{background-image:url(<?php echo $image1 ?>) !important;}#secondFeatured:after{background-image:url(<?php echo $image2 ?>) !important;}</style>';
 			</script>
 			<?php /* get_sidebar(); */ ?>
 		</div>
