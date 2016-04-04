@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-	<?php
+	<?php 
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 		$hasimage = false;
 		if ($image[0]) $hasimage = true;
@@ -19,7 +19,7 @@
 
 					<main id="main" class="m-all -md-post" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-						<?php
+						<?
 							$cats 		= get_the_category();
 							$CAT_NAME   = $cats[0]->name;
 							$thispostid = get_the_ID();
@@ -70,7 +70,7 @@
 
 						<?php endif; ?>
 
-						<?php
+						<?php 
 							if (get_post_type( get_the_ID() ) == 'project') {
 								$meta = get_post_meta(get_the_ID(), 'news', true);
 								if ($meta) {
@@ -98,7 +98,7 @@
 												<h1 class="h2 entry-title"><a href="<?php echo $related->guid; ?>" rel="bookmark" title="<?php echo $related->post_title; ?>"><?php echo $related->post_title; ?></a></h1>
 											</header>
 											<section class="entry-content cf related">
-													<?php
+													<?php 
 														$content = apply_filters( 'the_content', $related->post_content );
 													    $content = str_replace( ']]>', ']]&gt;', $content );
 													    echo wp_strip_all_tags($content);
@@ -108,9 +108,9 @@
 												<p class="byline entry-meta vcard">
 													<span>
 													<?php
-													foreach((get_the_category()) as $category) {
-													    echo '<a href="'.esc_url( get_category_link( $category->term_id ) ).'">'.$category->cat_name . '</a> ';
-													}
+													foreach((get_the_category()) as $category) { 
+													    echo '<a href="'.esc_url( get_category_link( $category->term_id ) ).'">'.$category->cat_name . '</a> '; 
+													} 
 													?>
 													</span>
 						                            <?php printf( __( '', 'bonestheme' ).' %1$s',
@@ -128,13 +128,21 @@
 						<?php
 							} else {
 								if (get_the_ID() == '481') return;
+								$isresource = false;
+								if (get_post_type( get_the_ID() ) == 'resource') {
+									$isresource = true;
+								} 
 						?>
 						<div id="more-content" class="index-row wrap more-content">
-							<h3>Recent news</h3>
+							<h3><?php echo ($isresource) ? 'Recent resources' : 'Recent news'; ?></h3>
 
 							<div class="row-container">
 								<?php
-									$args = array( 'numberposts' => '3', 'category' => $CAT_NAME, 'post_status' => 'publish' );
+									if ($isresource)
+										$args = array( 'numberposts' => '3', 'order' => 'DESC', 'post_type' => 'resource','post_status' => 'publish' );
+									else
+										$args = array( 'numberposts' => '3', 'category' => $CAT_NAME, 'post_status' => 'publish' );
+									$featured_col = wp_get_recent_posts( $args );
 									$recent_posts = wp_get_recent_posts( $args );
 									foreach( $recent_posts as $recent ){  // start loop
 										if ($thispostid != $recent["ID"]) {
@@ -149,7 +157,7 @@
 												<h1 class="h2 entry-title"><a href="<?php echo $recent["guid"]; ?>" rel="bookmark" title="<?php echo $recent["post_title"]; ?>"><?php echo $recent["post_title"]; ?></a></h1>
 											</header>
 											<section class="entry-content cf related">
-													<?php
+													<?php 
 														$content = apply_filters( 'the_content', $recent["post_content"] );
 													    $content = str_replace( ']]>', ']]&gt;', $content );
 													    echo wp_strip_all_tags($content);
@@ -165,14 +173,14 @@
 											</footer>
 										</article>
 										<?php } //end if ?>
-								<?php }	// end loop
+								<?}	// end loop
 							} // end else ?>
 
 							</div>
 						</div>
 					</main>
 
-
+					
 
 				</div>
 
@@ -202,13 +210,13 @@
 			LAT_VIS   = '<?php echo $geodata__lat ?>';
 			LONG_VIS  = '<?php echo $geodata__long ?>';
 			POST_ID   = '<?php echo $thispostid ?>';
-			if ('<?php echo $CAT_NAME ?>' === 'projects' || '<?php echo get_post_type( get_the_ID() ) ?>' === 'project') {
+			if ('<?php echo $CAT_NAME ?>' === 'projects' || '<?php echo get_post_type( get_the_ID() )?>' === 'project') {
 				document.getElementById('pic-banner').style.display = 'none';
 				document.getElementById('map').style.display 		= 'block';
 				<?php if ($hasimage) { ?>
 					document.getElementById('map').style.display 		= 'none';
 					document.getElementById('pic-banner').style.display = 'block';
 				<?php } ?>
-			}
+			}	
 		</script>
 <?php get_footer(); ?>

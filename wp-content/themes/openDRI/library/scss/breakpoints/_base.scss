@@ -24,6 +24,9 @@ body {
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
   	outline: none;
+  	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	hyphens: none;
 }
 
 /********************
@@ -97,7 +100,9 @@ LINK STYLES
 
 a, a:visited {
 	color: $link-color;
-
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	hyphens: none;
 	/* on hover */
 	// &:hover, &:focus {
 	// 	color: $link-hover;
@@ -127,6 +132,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	font-family: $bariol;
 	text-rendering: optimizelegibility;
 	font-weight: normal;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	hyphens: none;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -386,7 +394,7 @@ and more scalable.
 POSTS & CONTENT STYLES
 *********************/
 #map-fake {
-	height: 656px;
+	height: 740px;
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
 	display: -ms-flexbox;      /* TWEENER - IE 10 */
 	display: -webkit-flex;     /* NEW - Chrome */
@@ -442,6 +450,11 @@ POSTS & CONTENT STYLES
 		    a {
 		    	width: 110px;
 		    	text-decoration: none;
+		    	padding: 10px;
+    			box-sizing: content-box;
+    			&:hover {
+    				background-color: #0e5fa2;
+    			}
 		    }
 		    span {
 		    	width: 110px;
@@ -493,6 +506,13 @@ POSTS & CONTENT STYLES
     a {
     	text-decoration: none;
     	color: inherit;
+    	width: 100%;
+	    height: 100%;
+	    line-height: 48px;
+	    text-align: center;
+	    &:hover {
+	    	background-color: #e6f1fa;
+	    }
     }
 }
 #explore-more {
@@ -729,6 +749,10 @@ POSTS & CONTENT STYLES
 	    			font-size: 13px;
 	    			color: rgba(#555555, 0.5);
 	    			text-transform: uppercase;
+	    			a {
+	    				color: #1477c9;
+	    				text-decoration: none;
+	    			}
 	    		}
 		    }
 	    }
@@ -1089,6 +1113,9 @@ POSTS & CONTENT STYLES
 	p {
 	    overflow: hidden;
 	    font-feature-settings: "liga" 0;
+	    -webkit-hyphens: none;
+		-moz-hyphens: none;
+		hyphens: none;
 	    &.wp-caption-text {
 	    	margin: 0 !important;
 		    font-style: italic !important;
@@ -1482,7 +1509,7 @@ margin: 0;
 		height: 100%;
 		display: block;
 	}
-	#about.index-row h3 {    margin: 50px 0 0;}
+	#about.index-row h3 {    margin: 30px 0 0;}
 	.page .about-content .card-third,
 	#about.index-row,
 	#principles.index-row
@@ -1491,6 +1518,11 @@ margin: 0;
 	#principles h3,
 	.-m-disclaimer h3 {
 		color: #1477c9;
+	}
+	hr {
+		visibility: hidden;
+	    position: relative;
+	    top: -40px;
 	}
 	.p-info {
 		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
@@ -1501,6 +1533,9 @@ margin: 0;
 		justify-content: center;
 		position: relative;
 		margin: 0 0 45px;
+		a {
+			color: #1477c9;
+		}
 		&.double {
 			justify-content: flex-start;
 			p {
@@ -1596,7 +1631,7 @@ margin: 0;
 .post-type-archive-resource #main,
 .search #main,
 .tag #main {
-	margin: 90px 0 0 0 ;
+	margin: 70px 0 0 0 ;
 	>h1,
 	>p {
 		max-width: 45%;

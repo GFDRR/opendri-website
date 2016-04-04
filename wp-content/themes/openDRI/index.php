@@ -4,11 +4,11 @@
 			<h2>what is open data for resilience initiative?</h2>
 			<h3>OpenDRI shares, collects, and uses data, applying the concepts of the open data movement to reduce vulnerability to natural hazards and to climate change across the globe. Explore our project map to see where we’ve been working towards making an impact.</h3>
 			<nav>
-				<?php
+				<?
 				$titles   = ['Sharing Data','Collecting Data','Using Data'];
-				$params   = ['open','community','risk'];
+				$params   = ['sharing-data','collecting-data','using-data'];
 				for ($i = 0; $i < count($titles); $i++) {
-					echo '<a href="'.home_url().'/project/?mapregion=&mappilar='.$params[$i].'"><span data-opt="opt'.($i+1).'">';
+					echo '<a href="'.home_url().'/about/#'.$params[$i].'-anchor"><span data-opt="opt'.($i+1).'">';
 						echo '<i class="img-pile-'.($i+1).'"></i>';
 						echo $titles[$i];
 					echo '</span></a>';
@@ -46,7 +46,7 @@
 							<h1 class="h2 entry-title"><a href="<?php echo $recent["guid"]; ?>" rel="bookmark" title="<?php echo $recent["post_title"]; ?>"><?php echo $recent["post_title"]; ?></a></h1>
 						</header>
 						<section class="entry-content cf related">
-								<?php
+								<?php 
 									$content = apply_filters( 'the_content', $recent["post_content"] );
 								    $content = str_replace( ']]>', ']]&gt;', $content );
 								    echo wp_strip_all_tags($content);
@@ -93,7 +93,7 @@
 							<h1 class="h2 entry-title"><a href="<?php echo $recent["guid"]; ?>" rel="bookmark" title="<?php echo $recent["post_title"]; ?>"><?php echo $recent["post_title"]; ?></a></h1>
 						</header>
 						<section class="entry-content cf related">
-								<?php
+								<?php 
 									$content = apply_filters( 'the_content', $recent["post_content"] );
 								    $content = str_replace( ']]>', ']]&gt;', $content );
 								    echo wp_strip_all_tags($content);
@@ -103,15 +103,17 @@
 							<p class="byline entry-meta vcard">
 								<span>
 								<?php
-								foreach((get_the_category()) as $category) {
-								    echo '<a href="'.esc_url( get_category_link( $category->term_id ) ).'">'.$category->cat_name . '</a> ';
-								}
+								foreach(wp_get_post_categories($recent["ID"]) as $category) { 
+									$category = get_category( $category );
+								    if ($category->cat_ID == 6 || 
+										$category->cat_ID == 7 ||
+										$category->cat_ID == 8) {
+								    	echo '<a href="'.esc_url( get_category_link( $category->term_id ) ).'">'.$category->cat_name . '</a> '; 
+									}
+								} 
 								?>
 								</span>
-	                            <?php printf( __( '', 'bonestheme' ).' %1$s',
-	   								/* the time the post was published */
-	   								'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time('d M') . '</time>'
-								); ?>
+	                            
 							</p>
 						</footer>
 					</article>
@@ -127,7 +129,7 @@
 					</div>
 				</div>
 				<div class="row-container">
-				<?php
+				<?
 					$args = array( 'numberposts' => '1', 'category' => 16, 'order' => 'DESC', 'post_type' => 'resource', 'post_status' => 'publish' );
 					$featured_col = wp_get_recent_posts( $args );
 					$image1 = '';
@@ -148,7 +150,7 @@
 			</div>
 			<div class="m-all cf index-row last-resources" role="resources" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 				<div class="row-container">
-				<?php
+				<?
 					$args = array( 'numberposts' => '1', 'category' => 16,  'order' => 'DESC', 'offset' => '1', 'post_type' => 'resource','post_status' => 'publish' );
 					$featured_col = wp_get_recent_posts( $args );
 					foreach( $featured_col as $featured ) {
@@ -164,7 +166,7 @@
 					</a>
 				<?php } ?>
 					<ul class="resource-list home">
-						<?php
+						<?
 						$args = array( 'numberposts' => '4', 'category' => 16, 'order' => 'DESC', 'post_type' => 'resource','post_status' => 'publish' );
 						$featured_col = wp_get_recent_posts( $args );
 						foreach( $featured_col as $featured ) {

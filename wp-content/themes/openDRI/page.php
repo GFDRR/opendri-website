@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php
+<?
 if ( is_page( 'resources' ) ) {
 ?>
 			<div id="content">
@@ -63,7 +63,7 @@ elseif ( is_page( 'about' ) ) {
 									endwhile; endif; ?></div>
 
 			</div>
-<?php } // end about
+<?php } // end about 
 	// default
 	else {
 		?>

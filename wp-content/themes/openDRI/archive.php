@@ -86,10 +86,10 @@ if(is_post_type_archive() && $post_type=='project') {
 				</ul>
 			  </div>'; //end menu mobile filter projects	$hascornermap = false;
 	echo '<div id="map" class="cdbmap"></div>';
-} elseif (is_category() &&
-	($title === 'news' 							||
-	 $title === 'Open Data Platforms' 			||
-	 $title === 'Risk Visualization' 			||
+} elseif (is_category() && 
+	($title === 'news' 							|| 
+	 $title === 'Open Data Platforms' 			|| 
+	 $title === 'Risk Visualization' 			|| 
 	 $title === 'Community Mapping'   			||
 	 $title === 'Africa' 			  			||
 	 $title === 'East Asia Pacific'   			||
@@ -141,7 +141,7 @@ if(is_post_type_archive() && $post_type=='project') {
 					<li class="pickable" data-option="southasia"><a href="'.home_url().'/category/regions/south-asia/">south asia</a></li>
 				</ul>
 			  </div>'; //end menu mobile filter projects	$hascornermap = false;
-
+	
 	$hascornermap = true;
 } elseif (is_post_type_archive() && $post_type=='resource'){
 	$title = 'Resources';
@@ -154,7 +154,7 @@ if(is_post_type_archive() && $post_type=='project') {
 						<?php echo ($hascornermap) ? '<span class="corner-map"></span>' : ''; ?>
 				<div id="inner-content" class="wrap">
 						<main id="main" class="" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-							<?php
+							<?php 
 							if ($post_type!='project') { ?>
 							<?php
 							echo '<h1 class="page-title">'.$title.'</h1>';
@@ -173,7 +173,7 @@ if(is_post_type_archive() && $post_type=='project') {
 								<?php } // if projects ?>
 									<?php if (is_post_type_archive() && $post_type=='resource') : ?>
 									<ul class="resource-list">
-									<?php endif; ?>
+									<?php endif; ?> 
 								<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 							 	 <?php $cats = array();
 									foreach(wp_get_post_categories($post->ID) as $c)
@@ -189,12 +189,13 @@ if(is_post_type_archive() && $post_type=='project') {
 									</div>
 									<div>
 										<span class="size"><?php the_date() ?></span>
+										<span class="size"><?php the_terms( $post->ID, 'tag', '', ' / ' ); ?></span>
 									</div>
 								</li>
 								<?php else: ?>
 									<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf '); ?> role="article">
-										<?php
-										$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+										<?php 
+										$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); 
 										$placeholder = '/library/images/red-cross.jpg';
 										if ($post->post_type == 'resource') {
 											$placeholder = '/library/images/resource-placeholder_1024.jpg';
@@ -212,7 +213,7 @@ if(is_post_type_archive() && $post_type=='project') {
 										<footer class="article-footer cf">
 											<?php if ($istag) { ?>
 											<p class="byline entry-meta vcard">
-												<?php
+												<?
 													if 	($post->post_type=='post'){		   $articletype = 'news'; $linktype='/category/news';}
 													elseif ($post->post_type=='project'){  $articletype = 'project'; $linktype='/project';}
 													elseif ($post->post_type=='resource'){ $articletype = 'resource'; $linktype='/resource';}
@@ -223,21 +224,23 @@ if(is_post_type_archive() && $post_type=='project') {
 											<p class="byline entry-meta vcard">
 												<span>
 													<?php
-													foreach((get_the_category()) as $category) {
-														if ($category->cat_ID == 6 ||
+													foreach((get_the_category()) as $category) { 
+														if ($category->cat_ID == 6 || 
 															$category->cat_ID == 7 ||
 															$category->cat_ID == 8) {
-													    	echo '<a href="'.esc_url( get_category_link( $category->term_id ) ).'">'.$category->cat_name . '</a> ';
+													    	echo '<a href="'.esc_url( get_category_link( $category->term_id ) ).'">'.$category->cat_name . '</a> '; 
 														}
-													}
+													} 
 													?>
 												</span>
+												<?php if($post_type!='project') { ?>
 					                            <?php printf( __( '', 'bonestheme' ).' %1$s',
 					   								/* the time the post was published */
 					   								'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time('d M') . '</time>'
 												); ?>
+												<?php } ?>
 											</p>
-											<?php } //enf is tag?>
+											<?php } //end if tag?>
 										</footer>
 									</article>
 								<?php endif; ?>
@@ -246,7 +249,7 @@ if(is_post_type_archive() && $post_type=='project') {
 								<?php if (is_post_type_archive() && $post_type=='resource') : ?>
 									</ul>
 									<div class="m-all index-row last-resources">
-									<?php
+									<?
 										$args = array( 'numberposts' => '1', 'category' => 16, 'order' => 'DESC', 'post_type' => 'resource', 'post_status' => 'publish' );
 										$featured_col = wp_get_recent_posts( $args );
 										$image1 = '';
@@ -262,7 +265,7 @@ if(is_post_type_archive() && $post_type=='project') {
 												</section>
 											</article>
 										</a>
-									<?php }
+									<?php } 
 										$args = array( 'numberposts' => '1', 'category' => 16,  'order' => 'DESC', 'offset' => '1', 'post_type' => 'resource', 'post_status' => 'publish' );
 										$featured_col = wp_get_recent_posts( $args );
 										foreach( $featured_col as $featured ) {

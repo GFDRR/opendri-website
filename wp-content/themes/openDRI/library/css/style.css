@@ -1262,7 +1262,10 @@ body {
   background-color: #F0F0F0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  outline: none; }
+  outline: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none; }
 
 /********************
 WORDPRESS BODY CLASSES
@@ -1329,6 +1332,9 @@ LINK STYLES
 *********************/
 a, a:visited {
   color: #fff;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
@@ -1347,6 +1353,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   font-family: "Bariol", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-rendering: optimizelegibility;
   font-weight: normal;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
   /*
   if you're going to use webfonts, be sure to check your weights
   http://css-tricks.com/watch-your-font-weight/
@@ -1535,7 +1544,7 @@ and more scalable.
 POSTS & CONTENT STYLES
 *********************/
 #map-fake {
-  height: 656px;
+  height: 740px;
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
   display: -ms-flexbox;
@@ -1596,7 +1605,11 @@ POSTS & CONTENT STYLES
       width: 100%; }
       #map-fake .what-list > nav a {
         width: 110px;
-        text-decoration: none; }
+        text-decoration: none;
+        padding: 10px;
+        box-sizing: content-box; }
+        #map-fake .what-list > nav a:hover {
+          background-color: #0e5fa2; }
       #map-fake .what-list > nav span {
         width: 110px;
         text-transform: uppercase;
@@ -1647,7 +1660,13 @@ POSTS & CONTENT STYLES
   font-family: "Bariol", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .what-explore a {
     text-decoration: none;
-    color: inherit; }
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    line-height: 48px;
+    text-align: center; }
+    .what-explore a:hover {
+      background-color: #e6f1fa; }
 
 #explore-more {
   height: 360px;
@@ -1881,6 +1900,10 @@ POSTS & CONTENT STYLES
           font-size: 13px;
           color: rgba(85, 85, 85, 0.5);
           text-transform: uppercase; }
+          .index-row .resource-list li div .name a,
+          .index-row .resource-list li div .size a {
+            color: #1477c9;
+            text-decoration: none; }
     .index-row .resource-list.home li {
       margin: 0 -20px;
       padding: 5px 20px;
@@ -2203,7 +2226,10 @@ POSTS & CONTENT STYLES
   */ }
   .entry-content p {
     overflow: hidden;
-    font-feature-settings: "liga" 0; }
+    font-feature-settings: "liga" 0;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    hyphens: none; }
     .entry-content p.wp-caption-text {
       margin: 0 !important;
       font-style: italic !important;
@@ -2555,7 +2581,7 @@ POSTS & CONTENT STYLES
   display: block; }
 .archive #about.index-row h3,
 .page #about.index-row h3 {
-  margin: 50px 0 0; }
+  margin: 30px 0 0; }
 .archive .page .about-content .card-third,
 .archive #about.index-row,
 .archive #principles.index-row
@@ -2573,6 +2599,11 @@ POSTS & CONTENT STYLES
 .page #principles h3,
 .page .-m-disclaimer h3 {
   color: #1477c9; }
+.archive hr,
+.page hr {
+  visibility: hidden;
+  position: relative;
+  top: -40px; }
 .archive .p-info,
 .page .p-info {
   display: -webkit-box;
@@ -2586,6 +2617,9 @@ POSTS & CONTENT STYLES
   justify-content: center;
   position: relative;
   margin: 0 0 45px; }
+  .archive .p-info a,
+  .page .p-info a {
+    color: #1477c9; }
   .archive .p-info.double,
   .page .p-info.double {
     justify-content: flex-start; }
@@ -2680,7 +2714,7 @@ POSTS & CONTENT STYLES
 .post-type-archive-resource #main,
 .search #main,
 .tag #main {
-  margin: 90px 0 0 0; }
+  margin: 70px 0 0 0; }
   .category-open-data-platforms #main > h1,
   .category-open-data-platforms #main > p,
   .category-community-mapping #main > h1,
