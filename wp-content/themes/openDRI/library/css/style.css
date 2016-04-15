@@ -1588,11 +1588,13 @@ POSTS & CONTENT STYLES
     #map-fake .what-list h2 {
       font-size: 49px;
       line-height: 40px;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      width: 100%; }
     #map-fake .what-list h3 {
       font-size: 22px;
       line-height: 25px;
-      letter-spacing: 0.6px; }
+      letter-spacing: 0.6px;
+      width: 100%; }
     #map-fake .what-list > nav {
       display: -webkit-box;
       /* OLD - iOS 6-, Safari 3.1-6 */
@@ -1898,12 +1900,16 @@ POSTS & CONTENT STYLES
         .index-row .resource-list li div .name,
         .index-row .resource-list li div .size {
           font-size: 13px;
-          color: rgba(85, 85, 85, 0.5);
+          color: #555;
           text-transform: uppercase; }
+          .index-row .resource-list li div .name:first-child,
+          .index-row .resource-list li div .size:first-child {
+            min-width: 40%; }
           .index-row .resource-list li div .name a,
           .index-row .resource-list li div .size a {
-            color: #1477c9;
-            text-decoration: none; }
+            color: rgba(85, 85, 85, 0.5);
+            text-decoration: none;
+            font-size: 11px; }
     .index-row .resource-list.home li {
       margin: 0 -20px;
       padding: 5px 20px;
@@ -2684,6 +2690,66 @@ POSTS & CONTENT STYLES
   .page .index-row .resource-cont {
     width: 485px;
     height: 270px; }
+.archive .pillars-list-about,
+.page .pillars-list-about {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap; }
+  .archive .pillars-list-about .p-info,
+  .page .pillars-list-about .p-info {
+    display: inline; }
+    .archive .pillars-list-about .p-info > i,
+    .page .pillars-list-about .p-info > i {
+      height: 110px;
+      background-size: 50px;
+      width: 110px;
+      border-radius: 100%;
+      background-repeat: no-repeat;
+      border: 2px solid #1477c9;
+      background-position: 50%, 50%;
+      display: block;
+      margin: 0px auto 20px; }
+      .archive .pillars-list-about .p-info > i.img-pile-1,
+      .page .pillars-list-about .p-info > i.img-pile-1 {
+        background-image: url("../images/pile-1.png"); }
+      .archive .pillars-list-about .p-info > i.img-pile-2,
+      .page .pillars-list-about .p-info > i.img-pile-2 {
+        background-image: url("../images/pile-2.png"); }
+      .archive .pillars-list-about .p-info > i.img-pile-3,
+      .page .pillars-list-about .p-info > i.img-pile-3 {
+        background-image: url("../images/pile-3.png"); }
+      .archive .pillars-list-about .p-info > i.img-pile-4,
+      .page .pillars-list-about .p-info > i.img-pile-4 {
+        background-image: url("../images/pile-4.png"); }
+    .archive .pillars-list-about .p-info h4,
+    .page .pillars-list-about .p-info h4 {
+      position: relative;
+      margin: 0 0 10px;
+      text-align: center; }
+    .archive .pillars-list-about .p-info .explore-projects,
+    .page .pillars-list-about .p-info .explore-projects {
+      height: 50px;
+      display: block;
+      width: 175px;
+      line-height: 50px;
+      text-decoration: none;
+      background-color: #db0033;
+      color: #fff;
+      font-size: 15px;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 0.5px;
+      margin: 20px 0;
+      font-family: "Bariol", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.1); }
 
 .page .index-row.contents-img {
   background-image: url("../images/about-header_1024.jpg");
@@ -3783,10 +3849,6 @@ div.cartodb-popup .cartodb-popup-close-button {
   .blue-bar-top .wrapper.filters span.title {
     display: none; }
 
-  .archive .p-info h4, .page .p-info h4 {
-    width: 255px;
-    font-size: 14px; }
-
   div#principles.m-all.cf.index-row.about-content, div#principles.m-all.index-row.about-content.comment-respond {
     height: 700px; }
 
@@ -4093,10 +4155,6 @@ div.cartodb-popup .cartodb-popup-close-button {
     top: inherit;
     width: inherit;
     opacity: inherit; }
-
-  .archive .p-info h4, .page .p-info h4 {
-    width: 100%;
-    top: -25px; }
 
   .index-row .row-container, .page .index-row .row-container {
     -webkit-flex-direction: column;
@@ -4501,6 +4559,9 @@ div.cartodb-popup .cartodb-popup-close-button {
     display: none; }
 
   .search #main .row-container article, .tag #main .row-container article {
+    width: 100%; }
+
+  .page .pillars-list-about h4, .page .pillars-list-about p {
     width: 100%; } }
 /*********************
 LARGER MOBILE DEVICES

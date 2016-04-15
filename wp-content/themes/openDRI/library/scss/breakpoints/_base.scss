@@ -434,11 +434,13 @@ POSTS & CONTENT STYLES
 	    	font-size: 49px;
 	    	line-height: 40px;
 	    	text-transform: uppercase;
+	    	width: 100%;
 	    }
 	    h3 {
 	    	font-size: 22px;
 	    	line-height: 25px;
 	    	letter-spacing: 0.6px;
+	    	width: 100%;
 	    }
 	    > nav {
 		    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
@@ -747,11 +749,15 @@ POSTS & CONTENT STYLES
 	    		.name,
 	    		.size {
 	    			font-size: 13px;
-	    			color: rgba(#555555, 0.5);
+	    			color: #555;
 	    			text-transform: uppercase;
+	    			&:first-child {
+	    				min-width: 40%;
+	    			}
 	    			a {
-	    				color: #1477c9;
+						color: rgba(85,85,85,0.5);
 	    				text-decoration: none;
+	    				font-size: 11px;
 	    			}
 	    		}
 		    }
@@ -1599,6 +1605,57 @@ margin: 0;
 		.resource-cont {
 			width: 485px;
 			height: 270px;
+		}
+	}
+	.pillars-list-about {
+		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+		display: -ms-flexbox;      /* TWEENER - IE 10 */
+		display: -webkit-flex;     /* NEW - Chrome */
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		flex-wrap: wrap;
+		.p-info {
+			display: inline;
+			> i {
+					height: 110px;
+				    background-size: 50px;
+				    width: 110px;
+				    border-radius: 100%;
+				    background-repeat: no-repeat;
+				    border: 2px solid #1477c9;
+				    background-position: 50%, 50%;
+				    display: block;
+				    margin: 0px auto 20px;
+				    $class-slug: img-pile !default;
+					@for $i from 1 through 4 {
+					  &.#{$class-slug}-#{$i} {
+					    background-image: url("../images/pile-"+ $i +".png")
+					  }
+					}
+			    }
+			h4 {
+				position: relative;
+				margin: 0 0 10px;
+				text-align: center;
+			}
+			.explore-projects {
+				height: 50px;
+			    display: block;
+			    width: 175px;
+			    line-height: 50px;
+			    text-decoration: none;
+			    background-color: #db0033;
+			    color: #fff;
+			    font-size: 15px;
+			    text-transform: uppercase;
+			    text-align: center;
+			    letter-spacing: 0.5px;
+			    margin: 20px 0;
+			    font-family: $bariol;
+			    font-weight: bold;
+			    box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.1);
+			}
 		}
 	}
 }
@@ -2708,7 +2765,6 @@ div.cartodb-popup .cartodb-popup-close-button {
   .page .about-content .card-third ol li {width: 100%;}
   .page .about-content .card-third p { -webkit-columns: 1; columns: 1;}
   .blue-bar-top .wrapper.filters span.title {display: none;}
-  .archive .p-info h4, .page .p-info h4 {width: 255px; font-size: 14px;}
   div#principles.m-all.cf.index-row.about-content { height: 700px; }
   div#principles.m-all.cf.index-row.about-content ol { display: block;}
   .blue-bar-top .wrapper span.current {color: #1477c9;}
@@ -2785,7 +2841,6 @@ div.cartodb-popup .cartodb-popup-close-button {
 	.blue-bar-top .wrapper .region-filter li::first-child {padding: 0;}
 	.blue-bar-top .wrapper .region-filter input { position: relative; top: -10px;}
 	.blue-bar-top.fixed {  position: inherit; top: inherit;  width: inherit; opacity: inherit;}
-	.archive .p-info h4, .page .p-info h4 { width: 100%; top: -25px;}
 	.index-row .row-container, .page .index-row .row-container {-webkit-flex-direction: column; flex-direction: column; align-items: center; width: 100%;}
 	.archive .blue-bar-top {display: none;}
 	.archive .blue-bar-top-m {display: block;}
@@ -2933,4 +2988,5 @@ div.cartodb-popup .cartodb-popup-close-button {
 	.search #main > h1, .tag #main > h1 {margin: 0	0 20px;}
 	.search  #main > p, .tag #main > p {display: none;}
 	.search #main .row-container article, .tag #main .row-container article{ width: 100%;}
+	.page .pillars-list-about h4, .page .pillars-list-about p { width: 100%;}
 }

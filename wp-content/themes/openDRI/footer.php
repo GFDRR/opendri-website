@@ -7,9 +7,9 @@
 							</div>
 							<div class="-ft-newsletter">
 								<span>Sign up for our newsletter:</span> 
-								<form action="//vizzuality.us10.list-manage.com/subscribe/post?u=5450ec66874ec1182c96d7ec7&amp;id=70766ac561" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+								<form action="//opendri.us13.list-manage.com/subscribe/post?u=2931499143c058886c415c5b9&amp;id=ca4856ec1b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 									<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="your.email@here">
-									<input type="text" name="b_5450ec66874ec1182c96d7ec7_70766ac561" tabindex="-1" value="" style="display:none">
+									<input type="text" name="b_2931499143c058886c415c5b9_ca4856ec1b" tabindex="-1" value="" style="display:none">
 									<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
 									<div id="mce-responses" class="clear">
 										<div class="response" id="mce-error-response" style="display:none"></div>
@@ -1057,7 +1057,7 @@
 			});
 		</script>
 		<script type="text/javascript">
-		if ($(window).width() > 1024) {
+		if ($(window).width() > 1024 && !$('body').hasClass('post-type-archive-resource')) {
 			if (!$('body').hasClass('single') && location.pathname.includes('/project') && ($('article').length + 1 ) % 3 == 2) {
 				$('#content article').last().after('<article class="index-row article project" style="visibility:hidden"> </article>');
 			}else if ($('body').hasClass('single') && ($('#more-content article').length) % 2 == 0) {
