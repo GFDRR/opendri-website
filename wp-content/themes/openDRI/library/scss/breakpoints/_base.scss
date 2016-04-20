@@ -210,11 +210,13 @@ HEADER STYLES
 			cursor: pointer;
 			height: 24px;
 			&.current {
-			    box-shadow: 0px -5px 0 #0475cc;
-			    height: 30px;
-			    line-height: 70px;
-			    top: -19px;
-			    position: relative;
+			    box-shadow: 0px 3px 0 #0475cc;
+			    top: 1px;
+			    color: #0475cc;
+			    padding-bottom: 26px;
+			    a:hover {
+			    	color: #0475cc;
+			    }
 			}
 		}
 		a {
@@ -618,6 +620,7 @@ POSTS & CONTENT STYLES
 	    justify-content: space-between;
 	    align-items: stretch;
 	    width: 100%;
+	    p {display: none;}
 	    .row-container {
 	    	width: 100%;
 	    	justify-content: space-between;
@@ -887,6 +890,34 @@ POSTS & CONTENT STYLES
 	position: relative;
 	overflow-x: hidden;
 }
+.resources-page-list {
+	.index-row .card-third {margin: 0;}
+	.index-row.last-resources {margin: 0 0 60px 0 !important;}
+	.resource-list-new {
+		display: inline;
+		li {
+			border-bottom: solid 1px rgba(151, 151, 151, 0.2);
+			height: 70px;
+			width: 49.8%;
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+			.date {
+				font-family: Helvetica;
+				font-size: 11px;
+				letter-spacing: 1px;
+				color: rgba(#555555,0.5);
+			}
+			.title {
+				font-family: $bariol;
+				font-weight: bold;
+				font-size: 15px;
+				letter-spacing: 0.5px;
+				color: #1477c9;
+			}
+		}
+	}
+}
 .home #resources {margin: 85px 0 0;}
 .home .index-row.last-resources {margin: 0 0 60px !important}
 .hentry {
@@ -992,6 +1023,29 @@ POSTS & CONTENT STYLES
 			width: 81.4%;
 			display: inline-block;
 		}
+		nav {
+			display: block;
+		    width: 100%;
+		    height: 30px;
+		    margin: 0px 0 40px;
+    		border-bottom: 3px solid rgba(38,62,87,0.1);
+    		padding: 0 0 30px;
+		    a {
+		    	font-size: 15px;
+				letter-spacing: 0.5px;
+				color: #1477c9;
+		    	font-family: $bariol;
+		    	text-transform: uppercase;
+		    	text-decoration: none;
+		    	font-weight: bold;
+		    	img {
+		    		transform: rotate(90deg);
+		    		position: relative;
+				    top: -2px;
+				    margin: 0 4px 0 0;
+		    	}
+		    }
+		}
 		h1 {
 			color: #1477c9;
 			font-size: 48px;
@@ -1023,6 +1077,48 @@ POSTS & CONTENT STYLES
 			    a {
 			    	color: #1477c9;
 			    }
+			}
+			.project-box {
+				margin: 0px 0 35px;
+    			border-bottom: 3px solid rgba(38, 62, 87, 0.1);
+				p {
+					font-family: $bariol;
+					font-size: 26px;
+					line-height: 33px;
+					color: #555555;
+				}617
+				.project-figures {
+					display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+					display: -ms-flexbox;      /* TWEENER - IE 10 */
+					display: -webkit-flex;     /* NEW - Chrome */
+					display: flex;
+					margin: 35px 0px;
+				    justify-content: space-between;
+				    .figure-title {
+				    	width: 86px;
+				    	display: block;
+						height: 34px;
+						font-family: $bariol;
+						font-weight: bold;
+						font-size: 15px;
+						letter-spacing: 0.5px;
+						line-height: normal;
+						margin: 0;
+						color: #1477c9;
+				    }
+				    .figure-data {
+				    	font-size: 30px;
+						font-family: $bariol;
+  						color: #555555;
+  						.unit {
+  							display: block;
+  							font-size: 15px;
+							letter-spacing: 0.5px;
+							font-family: $bariol;
+							font-weight: bold;
+  						}
+				    }
+				}
 			}
 		}
 		footer {
@@ -1476,7 +1572,6 @@ margin: 0;
 			img {
 				height: 213px;
 			    width: 180px;
-			    background: lightgrey;
 			}
 			.-m-info {
 				display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
@@ -2810,10 +2905,10 @@ div.cartodb-popup .cartodb-popup-close-button {
 	.no-home .header .hr {display: block;}
 	.header nav img {top: -13px;}
 	.no-home .header nav { top: 10px; }
-	.header nav span {font-size: 11px; line-height: 20px;}
+	.header nav span {font-size: 11px; line-height: 20px; height: 20px;}
+	.header nav span.current {padding-bottom: 0;}
 	.header nav span.float-center {position: relative;top: -5px;width: 100%;}
 	.header nav a:hover:before {content: none;}
-	.header nav span.current {height: 12px;line-height: 26px; top: -9px;}
 	.home #map-fake .what-list {width: 100%;padding: 20px;}
 	.home .what-explore {display: none;}
 	.blue-bar-top.about {align-items: center; height: 180px; margin: 0 0 -90px;}

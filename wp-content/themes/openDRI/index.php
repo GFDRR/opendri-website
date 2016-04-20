@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 	<div id="map-fake">
 		<div class="what-list">
-			<h2>what is open data for resilience initiative?</h2>
 			<h3>OpenDRI shares, collects, and uses data, applying the concepts of the open data movement to reduce vulnerability to natural hazards and to climate change across the globe. Explore our project map to see where we’ve been working towards making an impact.</h3>
 			<nav>
 				<?php
@@ -28,7 +27,6 @@
 				<div class="row-container">
 					<div class="card-third first-text">
 						<h3>news</h3>
-						<p>As the global need for Open Data and the knowledge base around it grow, it is important to keep informed so that communities can leverage this momentum and be better served. In this section of our online platform, find news highlighting action around the movement, notes on relevant software releases, as well as project updates from our teams in the field.</p>
 						<a href="<?php echo home_url(); ?>/category/news"><span>view all news</span></a>
 					</div>
 					<?php
@@ -37,8 +35,8 @@
 						foreach( $recent_posts as $recent ){  // start loop
 					?>
 					<article id="post-<?php echo $recent["ID"]; ?>" <?php post_class( 'cf' ); ?> role="article">
-						<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $recent["ID"] ), 'single-post-thumbnail' );
-							$image = ($image[0]) ? $image[0] : get_template_directory_uri().'/library/images/red-cross.jpg';
+						<?php $image = get_post_meta($recent["ID"], 'thumbnailPic', true);
+							$image = ($image[0]) ? $image : get_template_directory_uri().'/library/images/red-cross.jpg';
 						?>
             			<a href="<?php echo $recent["guid"]; ?>" rel="bookmark" title="<?php echo $recent["post_title"]; ?>"><span class="img" style="background-image:url(<?php echo $image; ?>)"></span></a>
 
@@ -75,7 +73,6 @@
 				<div class="row-container">
 					<div class="card-third first-text">
 						<h3>projects</h3>
-						<p>OpenDRI projects apply the concepts of the global open data movement to the challenges of reducing vulnerability to natural hazards and the impacts of climate change. Here, projects can be browsed by country and region highlighting the context specific risk reduction goals of each initiative.</p>
 						<a href="<?php echo home_url(); ?>/project"><span>view all projects</span></a>
 					</div>
 					<?php
@@ -84,8 +81,8 @@
 						foreach( $recent_posts as $recent ){  // start loop
 					?>
 					<article id="post-<?php echo $recent["ID"]; ?>" <?php post_class( 'cf' ); ?> role="article">
-						<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $recent["ID"] ), 'single-post-thumbnail' );
-							$image = ($image[0]) ? $image[0] : get_template_directory_uri().'/library/images/red-cross.jpg';
+						<?php $image = get_post_meta($recent["ID"], 'thumbnailPic', true);
+							$image = ($image[0]) ? $image : get_template_directory_uri().'/library/images/red-cross.jpg';
 						?>
             			<a href="<?php echo $recent["guid"]; ?>" rel="bookmark" title="<?php echo $recent["post_title"]; ?>"><span class="img" style="background-image:url(<?php echo $image; ?>)"></span></a>
 
@@ -135,8 +132,8 @@
 					$image1 = '';
 					$image2 = '';
 					foreach( $featured_col as $featured ) {
-						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $featured["ID"] ), 'single-post-thumbnail' );
-						$image1 = $image[0];
+						$image = get_post_meta($recent["ID"], 'thumbnailPic', true);
+						$image1 = $image;
 				?>
 					<a href="<?php echo $featured["guid"]; ?>">
 						<article class="resource-cont"  id="firstFeatured">
@@ -154,8 +151,8 @@
 					$args = array( 'numberposts' => '1', 'category' => 16,  'order' => 'DESC', 'offset' => '1', 'post_type' => 'resource','post_status' => 'publish' );
 					$featured_col = wp_get_recent_posts( $args );
 					foreach( $featured_col as $featured ) {
-						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $featured["ID"] ), 'single-post-thumbnail' );
-						$image2 = $image[0];
+						$image = get_post_meta($recent["ID"], 'thumbnailPic', true);
+						$image2 = $image;
 				 ?>
 					<a href="<?php echo $featured["guid"]; ?>" >
 						<article class="resource-cont --scnd-img"  id="secondFeatured">

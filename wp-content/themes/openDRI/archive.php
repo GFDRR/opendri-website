@@ -13,7 +13,7 @@ global $post_type;
 
 if(is_post_type_archive() && $post_type=='project') {
 	$title = 'Projects';
-	$description = 'OpenDRI projects apply the concepts of the global open data movement to the challenges of reducing vulnerability to natural hazards and the impacts of climate change. Here, projects can be browsed by country and region highlighting the context specific risk reduction goals of each initiative.';
+	$description = '';
 	$postsInAfrica = get_term_by('slug','africa','category');
 	$postsInAfrica = $postsInAfrica->count;
 	$postsIneastasia = get_term_by('slug','east-asia-pacific','category');
@@ -56,7 +56,6 @@ if(is_post_type_archive() && $post_type=='project') {
 								<li class="pickable" data-option="europe" data-lat="64.32" data-lng="99.84" data-zoom="3">europe and central asia</li>
 								<li class="pickable" data-option="latam" data-lat="-10.314" data-lng="-68.027" data-zoom="3">latin america and caribbean</li>
 								<li class="pickable" data-option="middleeast" data-lat="30.75" data-lng="28.03" data-zoom="4">middle east and north africa</li>
-								<li class="pickable" data-option="nonwp" data-lat="0" data-lng="0" data-zoom="2">non wb countries</li>
 								<li class="pickable" data-option="southasia" data-lat="23.40" data-lng="77.08" data-zoom="4">south asia</li>
 								<li class="pickable clear-map" data-option="reload" data-lat="27" data-lng="72">Clear map</li>
 							</ul>
@@ -80,7 +79,6 @@ if(is_post_type_archive() && $post_type=='project') {
 					<li class="pickable" data-option="europe" data-lat="64.32" data-lng="99.84" data-zoom="3">europe and central asia</li>
 					<li class="pickable" data-option="latam" data-lat="-10.314" data-lng="-68.027" data-zoom="3">latin america and caribbean</li>
 					<li class="pickable" data-option="middleeast" data-lat="30.75" data-lng="28.03" data-zoom="4">middle east and north africa</li>
-					<li class="pickable" data-option="nonwp" data-lat="0" data-lng="0" data-zoom="2">non wb countries</li>
 					<li class="pickable" data-option="southasia" data-lat="23.40" data-lng="77.08" data-zoom="4">south asia</li>
 					<li class="pickable clear-map" data-option="reload" data-lat="27" data-lng="72" id="reset-map">Clear map</li>
 				</ul>
@@ -99,7 +97,7 @@ if(is_post_type_archive() && $post_type=='project') {
 	 $title === 'Non WB Countries' 				||
 	 $title === 'South Asia')) {
 	$display_navi = true;
-	$description = 'As the global need for Open Data and the knowledge base around it grow, it is important to keep informed so that communities can leverage this momentum and be better served. In this section of our online platform, find news highlighting action around the movement, notes on relevant software releases, as well as project updates from our teams in the field.';
+	$description = '';
 
 	echo '	<div class="blue-bar-top" id="blue-bar">
 				<div class="wrap wrapper filters">
@@ -117,7 +115,6 @@ if(is_post_type_archive() && $post_type=='project') {
 								<li class="pickable" data-option="europe"><a href="'.home_url().'/category/regions/europe-and-central-asia/">europe and central asia</a></li>
 								<li class="pickable" data-option="latam"><a href="'.home_url().'/category/regions/latin-america-and-caribbean/">latin america and caribbean</a></li>
 								<li class="pickable" data-option="middleeast"><a href="'.home_url().'/category/regions/middle-east-and-north-africa/">middle east and north africa</a></li>
-								<li class="pickable" data-option="nonwp"><a href="'.home_url().'/category/regions/non-wb-countries/">non wb countries</a></li>
 								<li class="pickable" data-option="southasia"><a href="'.home_url().'/category/regions/south-asia/">south asia</a></li>
 							</ul>
 						</div>
@@ -137,7 +134,6 @@ if(is_post_type_archive() && $post_type=='project') {
 					<li class="pickable" data-option="europe"><a href="'.home_url().'/category/regions/europe-and-central-asia/">europe and central asia</a></li>
 					<li class="pickable" data-option="latam"><a href="'.home_url().'/category/regions/latin-america-and-caribbean/">latin america and caribbean</a></li>
 					<li class="pickable" data-option="middleeast"><a href="'.home_url().'/category/regions/middle-east-and-north-africa/">middle east and north africa</a></li>
-					<li class="pickable" data-option="nonwp"><a href="'.home_url().'/category/regions/non-wb-countries/">non wb countries</a></li>
 					<li class="pickable" data-option="southasia"><a href="'.home_url().'/category/regions/south-asia/">south asia</a></li>
 				</ul>
 			  </div>'; //end menu mobile filter projects	$hascornermap = false;
@@ -179,8 +175,8 @@ if(is_post_type_archive() && $post_type=='project') {
 										$image1 = '';
 										$image2 = '';
 										foreach( $featured_col as $featured ) {
-											$image = wp_get_attachment_image_src( get_post_thumbnail_id( $featured["ID"] ), 'single-post-thumbnail' );
-											$image1 = ($image[0]) ? $image[0] : get_template_directory_uri().'/library/images/resource-placeholder_1024.jpg';
+											$image = get_post_meta($featured["ID"], 'thumbnailPic', true);
+											$image1 = ($image[0]) ? $image : get_template_directory_uri().'/library/images/resource-placeholder_1024.jpg';
 									?>
 										<a href="<?php echo $featured["guid"]; ?>" >
 											<article class="resource-cont"  id="firstFeatured">
@@ -193,8 +189,8 @@ if(is_post_type_archive() && $post_type=='project') {
 										$args = array( 'numberposts' => '1', 'category' => 16,  'order' => 'DESC', 'offset' => '1', 'post_type' => 'resource', 'post_status' => 'publish' );
 										$featured_col = wp_get_recent_posts( $args );
 										foreach( $featured_col as $featured ) {
-											$image = wp_get_attachment_image_src( get_post_thumbnail_id( $featured["ID"] ), 'single-post-thumbnail' );
-											$image2 = ($image[0]) ? $image[0] : get_template_directory_uri().'/library/images/resource-placeholder_1024.jpg';
+											$image = get_post_meta($featured["ID"], 'thumbnailPic', true);
+											$image2 = ($image[0]) ? $image : get_template_directory_uri().'/library/images/resource-placeholder_1024.jpg';
 									 ?>
 										<a href="<?php echo $featured["guid"]; ?>"  >
 											<article class="resource-cont --scnd-img"  id="secondFeatured">
@@ -228,12 +224,12 @@ if(is_post_type_archive() && $post_type=='project') {
 								<?php else: ?>
 									<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf '); ?> role="article">
 										<?php 
-										$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); 
+										$image = get_post_meta($post->ID, 'thumbnailPic', true);
 										$placeholder = '/library/images/red-cross.jpg';
 										if ($post->post_type == 'resource') {
 											$placeholder = '/library/images/resource-placeholder_1024.jpg';
 										}
-										$image = ($image[0]) ? $image[0] : get_template_directory_uri().$placeholder;
+										$image = ($image[0]) ? $image : get_template_directory_uri().$placeholder;
 										?>
 		            					<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><span class="img" style="background-image:url(<?php echo $image; ?>)"></span></a>
 
@@ -285,8 +281,8 @@ if(is_post_type_archive() && $post_type=='project') {
 									<?php
 										$image3= '';
 										$image4= '';
-											$image = wp_get_attachment_image_src( get_post_thumbnail_id( 434 ), 'single-post-thumbnail' );
-											$image3 = ($image[0]) ? $image[0] : get_template_directory_uri().'/library/images/resource-placeholder_1024.jpg';
+											get_post_meta(434, 'thumbnailPic', true);
+											$image3 = ($image[0]) ? $image : get_template_directory_uri().'/library/images/resource-placeholder_1024.jpg';
 									?>
 										<a href="<?php echo esc_url( get_permalink(434) ); ?>" >
 											<article class="resource-cont"  id="thirdFeatured">
@@ -296,8 +292,8 @@ if(is_post_type_archive() && $post_type=='project') {
 											</article>
 										</a>
 									<?php  
-											$image = wp_get_attachment_image_src( get_post_thumbnail_id( 449 ), 'single-post-thumbnail' );
-											$image4 = ($image[0]) ? $image[0] : get_template_directory_uri().'/library/images/resource-placeholder_1024.jpg';
+											$image = get_post_meta(449, 'thumbnailPic', true);
+											$image4 = ($image[0]) ? $image : get_template_directory_uri().'/library/images/resource-placeholder_1024.jpg';
 									 ?>
 										<a href="<?php echo esc_url( get_permalink(449) ); ?>"  >
 											<article class="resource-cont --scnd-img"  id="fourthFeatured">
