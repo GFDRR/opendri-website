@@ -23,7 +23,7 @@
 						</div>
 						<nav>
 							<a href="<?php echo home_url(); ?>/project" class="-i-link">projects</a>
-							<a href="<?php echo home_url(); ?>/resource" class="-i-link">resources</a>
+							<a href="<?php echo home_url(); ?>/resources" class="-i-link">resources</a>
 							<a href="<?php echo home_url(); ?>/about" class="-i-link">about</a>
 							<a href="<?php echo home_url(); ?>/category/news" class="-i-link">news</a>
 						</nav>
@@ -54,7 +54,7 @@
 						</div>
 						<nav>
 							<a href="<?php echo home_url(); ?>/project" class="-i-link">projects</a>
-							<a href="<?php echo home_url(); ?>/resource" class="-i-link">resources</a>
+							<a href="<?php echo home_url(); ?>/resources" class="-i-link">resources</a>
 							<a href="<?php echo home_url(); ?>/about" class="-i-link">about</a>
 							<a href="<?php echo home_url(); ?>/category/news" class="-i-link">news</a>
 						</nav>
@@ -1012,12 +1012,18 @@
 			})
 
 			var $bar = $('#blue-bar');
-			if ($bar.hasClass('about')) {			
+			if ($bar.hasClass('about')) {
 				var top_principles = $("#principles").offset().top || null,
 					top_contact	   = $('#contact').offset().top,
 					top_more	   = $('#more-content').offset().top,
 					top_partners   = $('#partners').offset().top,
 					top_members	   = $('#members').offset().top;
+			} else if ($bar.hasClass('resources')) {
+				var top_principles = $("#notes").offset().top || null,
+					top_contact	   = $('#publications').offset().top,
+					top_more	   = $('#newsletters').offset().top,
+					top_partners   = $('#tools').offset().top,
+					top_members	   = $('#other').offset().top;
 			}
 			$(document).scroll(function() {
 				var scroll = $(this).scrollTop();
@@ -1085,6 +1091,12 @@
 		if (location.pathname.includes('+/regions')) {
 			$('.container-region-filter').find('span').addClass('current').text(location.pathname.split("/")[location.pathname.split("/").length -2].replace(/-/g,' '));
 			$('h1.page-title').text($('h1.page-title').text( ) + ' and ' + $('#blue-bar-pick-pillar').find('.option-pillar.current').text().replace(/^(.)|\s(.)/g, function($1){ return $1.toUpperCase( ); }))
+		}
+		if (!!LAT_VIS && !!LONG_VIS) {
+			document.getElementById('map').addEventListener('click', function(ev){
+				ev.preventDefault();
+				ev.stopPropagation();
+			});
 		}
 		</script>
 	</body>

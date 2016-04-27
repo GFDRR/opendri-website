@@ -901,9 +901,14 @@ POSTS & CONTENT STYLES
 	color: #1477c9;
 	margin: 115px 0 0;
 }
+.resources-anchor {
+	visibility: hidden;
+    left: 0;
+    position: absolute;
+}
 .page .resources-page-list .index-row {margin: 0;}
 .resources-page-list {
-	#resources.index-row { margin: 0 0 40px;}
+	#resources.index-row { margin: 80px 0 40px;}
 	.index-row .card-third {margin: 0;}
 	.index-row.last-resources {margin: 0 !important;}
 	.resource-list-new {
@@ -919,13 +924,34 @@ POSTS & CONTENT STYLES
 			&:last-child {
 				border-bottom: 0;
 			}
-			div {
+			> div {
 				display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
 		  		display: -ms-flexbox;      /* TWEENER - IE 10 */
 		  		display: -webkit-flex;     /* NEW - Chrome */
 				display: flex;
 			    flex-direction: column;
 			    width: 485px;
+			    &.thumbnail {
+			    	flex-direction: row;
+			    	margin: 20px 0;
+			    	> a {
+			    		position: relative;
+					    display: inline-block;
+					    width: 60px;
+					    align-self: center;
+					    img {
+					    	box-shadow: 0px 0px 5px #c0c0c0;
+					    }
+			    	}
+			    	.text-thumbnail {
+						display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+				  		display: -ms-flexbox;      /* TWEENER - IE 10 */
+				  		display: -webkit-flex;     /* NEW - Chrome */
+						display: flex;
+					    flex-direction: column;	
+					    margin: 0 0 0 20px;
+			    	}
+			    }
 			}
 			.date {
 				font-family: Helvetica;
@@ -1560,6 +1586,83 @@ margin: 0;
 			}
 		}
 	}
+	.newsletter {
+		.subscribe {
+			width: 100%;
+		    height: 230px;
+		    background: white;
+		    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+		    position: relative;
+		    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+			display: -ms-flexbox;      /* TWEENER - IE 10 */
+			display: -webkit-flex;     /* NEW - Chrome */
+	    	display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    h4 {
+			  height: 45px;
+			  font-family: $bariol;
+			  font-size: 49px;
+			  line-height: 0.8;
+			  color: #555555;
+			  font-weight: normal;
+			  margin: 35px 0;
+		    }
+		    form {
+			    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+				display: -ms-flexbox;      /* TWEENER - IE 10 */
+				display: -webkit-flex;     /* NEW - Chrome */
+		    	display: flex;
+			    flex-direction: column;	
+			    width: 100%;
+    			align-items: center; 
+			    position: relative; 
+			    input[type=email] {
+					margin: 0;
+				    width: 40%;
+				    height: 40px;
+				    line-height: 40px;
+				    position: relative;
+				    background: transparent;
+				    border: solid 1px #e5e5e5;
+				    text-align: center;
+				    border-radius: 0;
+				    padding: 20px 30px;
+				    font-family: $bariol;
+				    font-size: 22px;
+				    letter-spacing: 0.6px;
+				    color: #555555;
+			    }
+			    .response {
+			    	position: relative;
+				    display: block;
+				    top: -66px;
+				    background: #F0F0F0;
+			    }
+			    #mc-embedded-subscribe {
+			    	padding: 0;
+				    background: #1477c9;
+				    position: absolute;
+				    bottom: -65%;
+				    height: 50px;
+				    width: 140px;
+				    z-index: 1;
+				    text-transform: uppercase;
+				    color: white;
+				    transition: background 0.3s ease;
+	    			box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.4);
+	    			border: none;
+	    			margin: 0;
+				    font-family: $bariol;
+				    font-weight: bold;
+	    			left: calc(50% - 70px);
+	    			&:hover {
+	    				background: #2791e9;
+	    			}
+			    }
+		    }
+		}
+	}
 	#more-content .entry-content .alignleft,
 	#more-content .entry-content img.alignleft {
 		float: none;
@@ -1632,7 +1735,8 @@ margin: 0;
 	}
 	#more-content,
 	#members,
-	#partners {
+	#partners,
+	#newsletter {
 		h3 {
 			color: #1477c9;
     		width: 100%;
@@ -1687,7 +1791,8 @@ margin: 0;
 		}
 	}
 	#principles .card-third,
-	#about 		.card-third {
+	#about 		.card-third,
+	#newsletter .card-third {
 		width: 100%;
 		height: 100%;
 		display: block;
@@ -1695,7 +1800,8 @@ margin: 0;
 	#about.index-row h3 {    margin: 30px 0 0;}
 	.page .about-content .card-third,
 	#about.index-row,
-	#principles.index-row
+	#principles.index-row,
+	#newsletter.index-row,
 	#contact.index-row
 	#more-content.index-row {margin: 0; display: block;}
 	#principles h3,
@@ -2909,7 +3015,7 @@ div.cartodb-popup .cartodb-popup-close-button {
 .home .index-row .row-container {justify-content: space-between;}
 .archive #contact .contact-form textarea, .page #contact .contact-form textarea {width: 50%;}
 .home .index-row .resource-list {max-height: 345px;}
-.page #principles, .page #contact, .page #more-content, .page #partners, .page #members {margin: 0; padding: 30px 0;}
+.page #principles, .page #contact, .page #more-content, .page #partners, .page #members, .page #newsletter {margin: 0; padding: 30px 0;}
 @media (min-width: 1024px) {
 	.home .index-row#news .row-container {padding-right: 45px;}
 	.home .index-row .card-third .twitter {height: 100%;}
@@ -2983,7 +3089,7 @@ div.cartodb-popup .cartodb-popup-close-button {
   .resources-page-list .index-row.last-resources .resource-cont {width: 100%;max-width: 100%; margin: 30px 0;}
 }
 @media (max-width: 768px) {
-	.archive #about.index-row, .archive #principles.index-row, .archive #contact.index-row, .archive #more-content.index-row, .page #about.index-row, .page #principles.index-row, .page #contact.index-row, .page #more-content.index-row {margin: 0; padding: 0;}
+	.archive #about.index-row, .archive #principles.index-row, .archive #contact.index-row, .archive #more-content.index-row, .page #about.index-row, .page #principles.index-row, .page #contact.index-row, .page #more-content.index-row, .page #newsletter {margin: 0; padding: 0;}
 	.page #contact .-m-form {width: 100%; display: table;}
 	#logo img {display: none;}
 	#logo a{ content: ''; background-image: url(http://opendri.simbiotica.es/wp-content/themes/openDRI/logo-extended.svg); width: 305px; background-repeat: no-repeat; height: 55px; visibility: visible; display: block; position: relative;top: -5px;}
