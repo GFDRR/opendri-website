@@ -9,6 +9,20 @@
  */
 
 /**
+ * Require HTTPS and no-www.
+ */
+if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
+  $_SERVER['PANTHEON_ENVIRONMENT'] === 'live') {
+  if ($_SERVER['HTTP_HOST'] != 'opendri.org' ||
+      !isset($_SERVER['HTTP_X_SSL']) ||
+      $_SERVER['HTTP_X_SSL'] != 'ON' ) {
+    header('HTTP/1.0 301 Moved Permanently');
+    header('Location: https://opendri.org'. $_SERVER['REQUEST_URI']);
+    exit();
+  }
+}
+
+/**
  * Local configuration information.
  *
  * If you are working in a local/desktop development environment and want to
@@ -63,11 +77,13 @@ else:
     define('SECURE_AUTH_SALT', $_ENV['SECURE_AUTH_SALT']);
     define('LOGGED_IN_SALT',   $_ENV['LOGGED_IN_SALT']);
     define('NONCE_SALT',       $_ENV['NONCE_SALT']);
+    define('FORCE_SSL_LOGIN',  TRUE);
+    define('FORCE_SSL_ADMIN',  TRUE);
     /**#@-*/
 
     /** A couple extra tweaks to help things run well on Pantheon. **/
     if (isset($_SERVER['HTTP_HOST'])) {
-        // HTTP is still the default scheme for now. 
+        // HTTP is still the default scheme for now.
         $scheme = 'http';
         // If we have detected that the end use is HTTPS, make sure we pass that
         // through here, so <img> tags and the like don't generate mixed-mode
@@ -78,9 +94,6 @@ else:
         define('WP_HOME', $scheme . '://' . $_SERVER['HTTP_HOST']);
         define('WP_SITEURL', $scheme . '://' . $_SERVER['HTTP_HOST']);
     }
-
-    define('WP_HOME', 'http://dev-gfdrr-opendri.pantheonsite.io/');
-    define('WP_SITEURL', 'http://dev-gfdrr-opendri.pantheonsite.io/');
 
     // Don't show deprecations; useful under PHP 5.5
     error_reporting(E_ALL ^ E_DEPRECATED);
