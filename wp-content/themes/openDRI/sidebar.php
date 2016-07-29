@@ -3,7 +3,7 @@
 		// $meta = get_post_meta(get_the_ID(), 'resource', true);
 		$news = get_post_meta(get_the_ID(), 'news', true);
 		if ((get_post_type() == 'project' || get_post_type() == 'news') && strlen($news)) {
-	?>		
+	?>
 		<div id="sidebar1" class="sidebar m-all t-1of3 d-2of7 last-col cf" role="complementary">
 			<?php if (strlen($news) > 0) {
 			?>
@@ -16,7 +16,6 @@
 						if ($newsCounter > 3) break;
 						$newsCounter++;
 						$current_post = url_to_postid( $line );
-						var_dump($current_post);
 						$resource 	  = get_post($current_post);
 						$image = get_post_meta($current_post, 'thumbnailPic', true);
 						$fallbackimg = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ));
