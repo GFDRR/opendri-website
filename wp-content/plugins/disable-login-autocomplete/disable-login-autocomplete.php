@@ -31,3 +31,9 @@ function wp_ois_custom_nocache_headers($headers) {
   $headers['Cache-Control'] = 'no-cache, no-store';
   return $headers;
 }
+
+add_action('init', 'custom_rewrite_basic');
+function custom_rewrite_basic() {
+  add_rewrite_rule('community-mapping-guide', 'http://gfdrr.github.io/community-mapping/', 'top');
+  add_rewrite_rule('resourcese', 'http://gfdrr.github.io/resource/', 'top');
+}
