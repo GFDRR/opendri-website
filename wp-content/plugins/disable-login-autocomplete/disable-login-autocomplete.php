@@ -39,7 +39,7 @@ function wp_ois_custom_rewrite_basic() {
 }
 
 function wp_ois_custom_plugin_activate() {
-  products_plugin_rules();
+  wp_ois_custom_rewrite_basic();
   flush_rewrite_rules();
  }
 
