@@ -138,8 +138,9 @@ class GMW_Admin {
 	
 		//hook your add-on's menu item
 		$menu_items = apply_filters('gmw_admin_menu_items', $menu_items );
-	
+
 		foreach ( $menu_items as $item ) {
+		
 			add_submenu_page('gmw-add-ons', $item['page_title'], $item['menu_title'], $item['capability'], $item['menu_slug'], $item['callback_function']);
 		}	
 	}
@@ -341,9 +342,11 @@ class GMW_Admin {
 					$item_id = ( !empty( $addon['item_id'] ) ) ? $addon['item_id'] : null;
 					new GMW_License( $addon['file'], $addon['item'], $addon['name'], $addon['version'], $author, $api_url, $item_id );
 				}
-			}		
+			}	
+
+			
 		}
-		
+
 		//update addons data into database
 		update_option( 'gmw_addons', 	  $new_addons_status );
 		update_option( 'gmw_addons_data', $addons_data 		 );		
@@ -460,6 +463,11 @@ class GMW_Admin {
                             <option value="">  <?php _e("Select a Form", "GMW"); ?>  </option>
                             <?php
                                 $forms = get_option('gmw_forms');
+
+                                if ( empty( $forms ) || ! is_array( $forms ) ) {
+									$forms = array();
+								}
+				
                                 foreach( $forms as $form ) {
                                 	$form['name'] = ( !empty( $form['name'] ) ) ? $form['name'] : 'form_id_'.$form['ID'];
                                     ?>

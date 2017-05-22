@@ -518,7 +518,7 @@ function gmw_get_location_address( $info, $gmw ) {
 	$address = apply_filters( "gmw_location_address", $address, $info, $gmw );
 	$address = apply_filters( "gmw_location_address_{$gmw['ID']}", $address, $info, $gmw );
 	
-	return esc_attr( $address ); 
+	return stripslashes( esc_attr( $address ) ); 
 }
 
 	function gmw_location_address( $info, $gmw ) {
@@ -1120,7 +1120,7 @@ function gmw_per_page( $gmw, $totalCount, $pagName ) {
         echo '</select>';
 
         $url_px = esc_attr( $gmw['url_px'] );
-        $action = ( !empty( $_GET['action'] ) || $_GET['action'] != $url_px.'post'  ) ? 1 : 0;
+        $action = ( empty( $_GET['action'] ) || $_GET['action'] != $url_px.'post' ) ? 0 : 1;
         $currentPerPage = ( ! empty( $_GET[$gmw['url_px'].'per_page'] ) ) ? $_GET[$gmw['url_px'].'per_page'] : reset( $perPage );
 
         echo '<input type="hidden" id="gmw-per-page-hidden" data-formid="'.$gmw['ID'].'" data-perpage="'.$currentPerPage.'" data-totalcount="'.$totalCount.'" data-pagename="'.$pagName.'" data-paged="'.$paged.'" data-gmwpost="'.$action.'" data-urlpx="'.$url_px.'">';

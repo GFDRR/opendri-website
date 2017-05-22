@@ -53,7 +53,7 @@ class GMW_PT_Search_Query extends GMW {
         			array( $this->form['units_array']['radius'], $this->form['your_lat'], $this->form['your_lng'], $this->form['your_lat'] ) );
         	
         	$clauses['where'] .= " AND ( gmwlocations.lat != 0.000000 && gmwlocations.long != 0.000000 ) ";
-        	$clauses['having'] = $wpdb->prepare( "HAVING distance <= %d OR distance IS NULL", $this->form['radius'] );
+        	$clauses['having'] = $wpdb->prepare( "HAVING distance <= %s OR distance IS NULL", $this->form['radius'] );
         	
         	if ( !$this->form['advanced_query'] || ( $this->form['advanced_query'] && $this->form['query_args']['orderby'] == 'distance' ) ) {
         		$clauses['orderby'] = 'distance';
@@ -219,17 +219,17 @@ class GMW_PT_Search_Query extends GMW {
     	        		'ignore_sticky_posts' => 1,
     	        		'orderby'			  => 'distance'
     	        ), $this->form );
-    	
+    	       
     	        //Modify the form before the search query
     	        $this->form = apply_filters( 'gmw_pt_form_before_posts_query', $this->form, $this->settings );
     	        $this->form = apply_filters( "gmw_pt_form_before_posts_query_{$this->form['ID']}", $this->form, $this->settings );
     	
     	        //add filters to wp_query to do radius calculation and get locations detail into results
     	        add_filter( 'posts_clauses', array( $this, 'query_clauses' ) );
-    	
+    	   
     	        /* posts query */
     	        $gmw_query = new WP_Query( $this->form['query_args'] );
-    
+
                 //set new query in transient - for future caching        
                 //set_transient( $query_args_hash, $gmw_query, DAY_IN_SECONDS * 30 );
     	

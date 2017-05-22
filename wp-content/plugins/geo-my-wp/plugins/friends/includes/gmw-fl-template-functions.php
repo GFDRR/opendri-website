@@ -83,12 +83,57 @@ function gmw_fl_xprofile_fields( $gmw, $class ) {
 				foreach ( $children as $child ) {
 					$option   = trim( $child->name );
 					$selected = ( $option == $value ) ? "selected='selected'" : "";
-					echo '<option '.$selected.' value="'.$option.'" />'.$option.'</label>';
+					echo '<option '.$selected.' value="'.$option.'" />'.$option.'</option>';
 				}
 				 
 				echo '</select>';
 			break;
+
+			// field belong to Buddypress Xprofile Custom Fields Type plugin
+			case 'select_custom_post_type':
+
+			$options = $fdata->get_children();
+
+			// get the post type need to filter
+			$post_type_selected = $options[0]->name;
+            
+            if ( $options ) {
+
+                $post_type_selected = $options[0]->name;
+
+                // Get posts of custom post type selected.
+                $posts = new WP_Query( array(
+                    'posts_per_page'    => -1,
+                    'post_type'         => $post_type_selected,
+                    'orderby'           => 'title',
+                    'order'             => 'ASC'
+                ) );
+
+                echo '<label for="'.$fid.'">'.$label.'</label>';
+				echo '<select name="'.$fname.'" id="'.$fid.'" class="'.$fclass.'">';
+
+				$option_all = apply_filters( 'gmw_fl_xprofile_form_dropdown_option_all', __( ' -- All -- ', 'GMW' ), $field_id, $fdata );
+
+				if ( ! empty( $option_all ) ) {
+					echo '<option value="">'.$option_all.'</option>';
+				}
+
+				if ( $posts ) {
+
+					foreach ( $posts->posts as $post ) {
+						
+						$selected = ( $post->ID == $value ) ? "selected='selected'" : "";
+						echo '<option '.$selected.' value="'.$post->ID.'" />'.$post->post_title.'</option>';
+                    }
+				}
+				 
+				echo '</select>';
+            }
+            break;
+
 			case 'multiselectbox':
+			case 'multiselect_custom_post_type':
+			case 'multiselect_custom_taxonomy':
 
 				echo '<label for="'.$fid.'">'.$label.'</label>';
 				echo '<select name="'.$fname.'[]" id="'.$fid.'" class="'.$fclass.'" multiple="multiple">';
@@ -135,6 +180,52 @@ function gmw_fl_xprofile_fields( $gmw, $class ) {
 				echo '</div>';
 
 			break;
+
+			/**
+             * Make multiselect_custom_taxonomy field type compatible with
+             * GEO my WP.
+             *
+             * @author Miguel López <miguel@donmik.com>
+             *
+             */
+            case 'multiselect_custom_taxonomy':
+
+            $name_of_allow_new_tags = 'allow_new_tags';
+            if ( class_exists("Bxcft_Field_Type_MultiSelectCustomTaxonomy" ) ) {
+                $name_of_allow_new_tags = Bxcft_Field_Type_MultiSelectCustomTaxonomy::ALLOW_NEW_TAGS;
+            }
+
+            $options = $fdata->get_children();
+
+            $taxonomy_selected = false;
+            foreach ( $options as $option ) {
+                if ( $name_of_allow_new_tags !== $option->name
+                    && taxonomy_exists( $option->name ) ) {
+                    $taxonomy_selected = $option->name;
+                    break;
+                }
+            }
+
+            if ( $taxonomy_selected ) {
+                $terms = get_terms( $taxonomy_selected, array(
+                    'hide_empty' => false
+                ) );
+                if ( $terms ) {
+                    echo '<label for="' . $fid . '">' . $label . '</label>';
+                    echo '<select name="' . $fname . '[]" id="' . $fid.'" class="' . $fclass . '" multiple="multiple">';
+
+                    foreach ( $terms as $term ) {
+                        $selected = ( !empty( $value ) && in_array( $term->term_id, $value ) )
+                            ? "selected='selected'" : "";
+                        printf( '<option value="%s"%s>%s</option>',
+                            $term->term_id, $selected, $term->name
+                        );
+                    }
+
+                    echo "</select>";
+                }
+            }
+            break;
 		} // switch
 
 		echo '</div>';
@@ -224,12 +315,14 @@ function gmw_fl_query_xprofile_fields( $gmw, $formValues ) {
 
 				case 'selectbox':
 				case 'radio':
+				case 'select_custom_post_type':
 					$value = str_replace ( '&', '&amp;', $value );
 					$sql  .= $wpdb->prepare ( "AND value = %s", $value );
 				break;
 						
 				case 'multiselectbox':
 				case 'checkbox':
+				case 'multiselect_custom_taxonomy':
 
 					$values = $value;
 					$like   = array ();

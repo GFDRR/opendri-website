@@ -1,11 +1,11 @@
 === GEO my Wordpress ===
 Contributors: ninjew
-Donate link: http://geomywp.com/
+Donate link: www.paypal.me/fitoussi
 Tags: Geo-location, Geolocation, proximity search, zipcode search, radius search, store locator, Geolocate posts, address search, search distance, google v3 , Google maps, get directions, search locations, Geolocate, GEO, members locator, Geolocate memebrs, mapping, mapping software, latitude, longitude, locations finder, map creator.
-Requires at least: 4.0
-Tested up to: 4.3.1
-Buddypress: 2.1.1
-Stable tag: 2.6.4
+Requires at least: 4.5
+Tested up to: 4.7.2
+Buddypress: 2.7
+Stable tag: 2.7
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -50,11 +50,11 @@ Together with other great features like auto locating user's current location, d
 * Meta boxes for opening days & hours.
 * Make address fields mandatory to make sure that users enter an address when creating a new post.
 * 5 different way to enter address and lat/long:
-	* Autolocate the current location.
-	* Autocomplete input fields that get results from google.
-	* Drag and drop marker on the map to choose the location.
-	* Enter address manually and return lat/long
-	* Enter lat/long manually and return the address
+* Autolocate the current location.
+* Autocomplete input fields that get results from google.
+* Drag and drop marker on the map to choose the location.
+* Enter address manually and return lat/long
+* Enter lat/long manually and return the address
 
 = Buddypress =
 
@@ -129,6 +129,48 @@ For screenshots please visit [GEO my WP](http://www.geomywp.com)
 == Other Notes ==
 
 == Changelog ==
+
+= 2.7 =
+
+* Fix: issue with slashes when saving addresses that has double quotation marks.
+* Fix: Member search query fails with BuddyPress 2.8 and higher.
+* Fix: stripslashes in address field.
+* Fix: issues with license key activation.
+* Fix: Item ID does not pass to the license activation causes activation to fail.
+* Fix: Include full address value in item object to prevent showing N/A instead of the address in some cases.
+* Update: license updater system. Improves automatic updates and license keys activation. 
+* Update: sanitize address fields.
+* Tweak: added support for multiselect_custom_taxonomy field of the plugin Buddypress Xprofile Custom Fields Type ( special thanks to Miguel López <miguel@donmik.com> the author of Buddypress Xprofile Custom Fields Type plugin ).
+* New: Members Locator's search form and search results template files for Kleo theme.
+
+= 2.6.6.3 =
+
+* Fix: single location map error.
+* Remove PHP warnings.
+
+= 2.6.6.2 =
+
+* Security patch.
+
+= 2.6.6.1 =
+
+* Remove debugging text
+
+= 2.6.6 =
+
+* Fix: Per page feature not working on page load results.
+* Fix: issue with marker clusters not zooming in all the way when multiple markers are on the same exact location.
+* Fix: spread markers that are on the same exact location. This should overcome the issue where multiple markers that are on the same exact location are not showing properly by slightly moving them from their original location.
+* Filters: new filters allow to modify the activity update arguments and text.
+* Tweak: added support for Buddypress Xprofile Custom Fields Type plugin. At the moment this only supports the "select_custom_post_type" field as a beta test. The support for other fields might be added in future version.
+
+= 2.6.5 =
+
+* Fix: marker clusters images.
+* Fix: Issue with
+* Fix: Single Location get directions link.
+* Fix: Markers Cluster Images link
+* Update Markers Cluster library
 
 = 2.6.4 =
 

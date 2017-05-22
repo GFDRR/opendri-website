@@ -3,12 +3,12 @@
 Plugin Name: GEO my WP
 Plugin URI: http://www.geomywp.com
 Description: Assign geolocation to post types and BuddyPress members. Create an advance proximity search forms to search for locations based on address, radius, units and more.
-Version: 2.6.4
+Version: 2.7
 Author: Eyal Fitoussi
 Author URI: http://www.geomywp.com
-Requires at least: 4.0
-Tested up to: 4.3
-Buddypress: 2.1.1 and up
+Requires at least: 4.2
+Tested up to: 4.7.2
+Buddypress: 2.7 and up
 Text Domain: GMW
 Domain Path: /languages/
 License: GNU General Public License v3.0
@@ -16,8 +16,9 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 // Exit if accessed directly
-if ( !defined( 'ABSPATH' ) )
+if ( !defined( 'ABSPATH' ) ) {
 	exit;
+}
 
 /**
  * GEO my WP class.
@@ -92,7 +93,7 @@ class GEO_my_WP {
 			define( 'GMW_REMOTE_SITE_URL', 'https://geomywp.com' );
 		}
 		
-		define( 'GMW_VERSION', '2.6.4' );
+		define( 'GMW_VERSION', '2.7' );
 		define( 'GMW_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 		define( 'GMW_URL', untrailingslashit( plugins_url( basename( plugin_dir_path( __FILE__ ) ), basename( __FILE__ ) ) ) );
 		define( 'GMW_IMAGES', GMW_URL . '/assets/images' );
@@ -353,7 +354,7 @@ class GEO_my_WP {
 				wp_register_script( 'gmw-marker-clusterer', GMW_URL . '/assets/js/marker-clusterer.min.js', array( 'jquery' ), GMW_VERSION, true );
 			}
 			
-			$cluster_image = apply_filters( 'gmw_clusters_folder' , $protocol.'://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclustererplus/images/m' );
+			$cluster_image = apply_filters( 'gmw_clusters_folder' , 'https://raw.githubusercontent.com/googlemaps/js-marker-clusterer/gh-pages/images/m' );
 			wp_localize_script( 'gmw-marker-clusterer', 'clusterImage', $cluster_image );
 			
 			//Marker spiderfire library - only register, to be used with premium features
@@ -486,7 +487,7 @@ class GEO_my_WP {
 			$gmwAutocompleteElements = array();
 		} 
 
-		if ( !empty( $ac_fields ) ) {
+		if ( ! empty( $ac_fields ) && is_array( $ac_fields ) ) {
 			$gmwAutocompleteElements = array_merge( $gmwAutocompleteElements, $ac_fields );
 		}
 		return;
