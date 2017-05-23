@@ -4844,7 +4844,7 @@ div.cartodb-popup .cartodb-popup-close-button {
 
   #logo a {
     content: '';
-    background-image: url(http://opendri.simbiotica.es/wp-content/themes/openDRI/logo-extended.svg);
+    background-image: url(/wp-content/themes/openDRI/logo-extended.svg);
     width: 305px;
     background-repeat: no-repeat;
     height: 55px;
