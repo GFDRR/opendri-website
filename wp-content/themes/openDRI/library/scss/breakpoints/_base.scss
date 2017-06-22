@@ -2543,6 +2543,13 @@ POSTS & CONTENT STYLES
     }
 }
 
+.category-news {
+    ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+}
+
 .post-type-archive-resource #main > p {
     margin: 0;
 }

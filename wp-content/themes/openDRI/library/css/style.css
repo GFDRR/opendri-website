@@ -4623,24 +4623,30 @@ POSTS & CONTENT STYLES
   margin: 0px 2%;
 }
 
-/* line 2546, ../scss/breakpoints/_base.scss */
+/* line 2547, ../scss/breakpoints/_base.scss */
+.category-news ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+/* line 2553, ../scss/breakpoints/_base.scss */
 .post-type-archive-resource #main > p {
   margin: 0;
 }
 
-/* line 2551, ../scss/breakpoints/_base.scss */
+/* line 2558, ../scss/breakpoints/_base.scss */
 .search #main > h1,
 .search #main > p, .tag #main > h1,
 .tag #main > p {
   max-width: 100%;
 }
 
-/* line 2557, ../scss/breakpoints/_base.scss */
+/* line 2564, ../scss/breakpoints/_base.scss */
 #list-content {
   margin: 0;
 }
 
-/* line 2561, ../scss/breakpoints/_base.scss */
+/* line 2568, ../scss/breakpoints/_base.scss */
 .-md-post {
   position: relative;
 }
@@ -4648,17 +4654,17 @@ POSTS & CONTENT STYLES
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
-/* line 2569, ../scss/breakpoints/_base.scss */
+/* line 2576, ../scss/breakpoints/_base.scss */
 .pagination,
 .wp-prev-next {
   margin: 1.5em 0;
 }
 
-/* line 2574, ../scss/breakpoints/_base.scss */
+/* line 2581, ../scss/breakpoints/_base.scss */
 .pagination {
   text-align: center;
 }
-/* line 2577, ../scss/breakpoints/_base.scss */
+/* line 2584, ../scss/breakpoints/_base.scss */
 .pagination ul {
   display: inline-block;
   background-color: #fff;
@@ -4667,7 +4673,7 @@ PAGE NAVI STYLES
   clear: both;
   border-radius: 3px;
 }
-/* line 2586, ../scss/breakpoints/_base.scss */
+/* line 2593, ../scss/breakpoints/_base.scss */
 .pagination li {
   padding: 0;
   margin: 0;
@@ -4676,7 +4682,7 @@ PAGE NAVI STYLES
   overflow: hidden;
   border-right: 1px solid #F0F0F0;
 }
-/* line 2595, ../scss/breakpoints/_base.scss */
+/* line 2602, ../scss/breakpoints/_base.scss */
 .pagination a, .pagination span {
   margin: 0;
   text-decoration: none;
@@ -4689,16 +4695,16 @@ PAGE NAVI STYLES
   display: block;
   color: #1477c9;
 }
-/* line 2607, ../scss/breakpoints/_base.scss */
+/* line 2614, ../scss/breakpoints/_base.scss */
 .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus {
   background-color: #fff;
 }
-/* line 2612, ../scss/breakpoints/_base.scss */
+/* line 2619, ../scss/breakpoints/_base.scss */
 .pagination .current {
   cursor: default;
   color: #555555;
 }
-/* line 2616, ../scss/breakpoints/_base.scss */
+/* line 2623, ../scss/breakpoints/_base.scss */
 .pagination .current:hover, .pagination .current:focus {
   background-color: #fff;
   color: #555555;
@@ -4706,11 +4712,11 @@ PAGE NAVI STYLES
 
 /* end .bones_page_navi */
 /* fallback previous & next links */
-/* line 2632, ../scss/breakpoints/_base.scss */
+/* line 2639, ../scss/breakpoints/_base.scss */
 .wp-prev-next .prev-link {
   float: left;
 }
-/* line 2636, ../scss/breakpoints/_base.scss */
+/* line 2643, ../scss/breakpoints/_base.scss */
 .wp-prev-next .next-link {
   float: right;
 }
@@ -4720,7 +4726,7 @@ PAGE NAVI STYLES
 COMMENT STYLES
 ******************************************************************/
 /* h3 comment title */
-/* line 2649, ../scss/breakpoints/_base.scss */
+/* line 2656, ../scss/breakpoints/_base.scss */
 #comments-title {
   padding: 0.75em;
   margin: 0;
@@ -4728,13 +4734,13 @@ COMMENT STYLES
   /* number of comments span */
 }
 
-/* line 2670, ../scss/breakpoints/_base.scss */
+/* line 2677, ../scss/breakpoints/_base.scss */
 .commentlist {
   margin: 0;
   list-style-type: none;
 }
 
-/* line 2675, ../scss/breakpoints/_base.scss */
+/* line 2682, ../scss/breakpoints/_base.scss */
 .comment {
   position: relative;
   clear: both;
@@ -4746,78 +4752,78 @@ COMMENT STYLES
   /* end children */
   /* general comment classes */
 }
-/* line 2682, ../scss/breakpoints/_base.scss */
+/* line 2689, ../scss/breakpoints/_base.scss */
 .comment .comment-author {
   padding: 7px;
   border: 0;
 }
-/* line 2688, ../scss/breakpoints/_base.scss */
+/* line 2695, ../scss/breakpoints/_base.scss */
 .comment .vcard {
   margin-left: 50px;
 }
-/* line 2691, ../scss/breakpoints/_base.scss */
+/* line 2698, ../scss/breakpoints/_base.scss */
 .comment .vcard cite.fn {
   font-weight: 700;
   font-style: normal;
 }
-/* line 2700, ../scss/breakpoints/_base.scss */
+/* line 2707, ../scss/breakpoints/_base.scss */
 .comment .vcard time {
   display: block;
   font-size: 0.9em;
   font-style: italic;
 }
-/* line 2705, ../scss/breakpoints/_base.scss */
+/* line 2712, ../scss/breakpoints/_base.scss */
 .comment .vcard time a {
   color: #9fa6b4;
   text-decoration: none;
 }
-/* line 2709, ../scss/breakpoints/_base.scss */
+/* line 2716, ../scss/breakpoints/_base.scss */
 .comment .vcard time a:hover {
   text-decoration: underline;
 }
-/* line 2720, ../scss/breakpoints/_base.scss */
+/* line 2727, ../scss/breakpoints/_base.scss */
 .comment .vcard .avatar {
   position: absolute;
   left: 16px;
   border-radius: 50%;
 }
-/* line 2729, ../scss/breakpoints/_base.scss */
+/* line 2736, ../scss/breakpoints/_base.scss */
 .comment:last-child {
   margin-bottom: 0;
 }
-/* line 2733, ../scss/breakpoints/_base.scss */
+/* line 2740, ../scss/breakpoints/_base.scss */
 .comment .children {
   margin: 0;
   /* variations */
   /* change number for different depth */
 }
-/* line 2761, ../scss/breakpoints/_base.scss */
+/* line 2768, ../scss/breakpoints/_base.scss */
 .comment[class*=depth-] {
   margin-top: 1.1em;
 }
-/* line 2765, ../scss/breakpoints/_base.scss */
+/* line 2772, ../scss/breakpoints/_base.scss */
 .comment.depth-1 {
   margin-left: 0;
   margin-top: 0;
 }
-/* line 2770, ../scss/breakpoints/_base.scss */
+/* line 2777, ../scss/breakpoints/_base.scss */
 .comment:not(.depth-1) {
   margin-top: 0;
   margin-left: 7px;
   padding: 7px;
 }
-/* line 2788, ../scss/breakpoints/_base.scss */
+/* line 2795, ../scss/breakpoints/_base.scss */
 .comment.odd {
   background-color: #fff;
 }
-/* line 2791, ../scss/breakpoints/_base.scss */
+/* line 2798, ../scss/breakpoints/_base.scss */
 .comment.even {
   background: #f8f9fa;
 }
 
 /* comment meta */
 /* comment content */
-/* line 2834, ../scss/breakpoints/_base.scss */
+/* line 2841, ../scss/breakpoints/_base.scss */
 .comment_content p {
   margin: 0.7335em 0 1.5em;
   font-size: 1em;
@@ -4826,7 +4832,7 @@ COMMENT STYLES
 
 /* end .commentlist .comment_content */
 /* comment reply link */
-/* line 2845, ../scss/breakpoints/_base.scss */
+/* line 2852, ../scss/breakpoints/_base.scss */
 .comment-reply-link {
   font-size: 0.9em;
   float: right;
@@ -4834,7 +4840,7 @@ COMMENT STYLES
 
 /* end .commentlist .comment-reply-link */
 /* edit comment link */
-/* line 2859, ../scss/breakpoints/_base.scss */
+/* line 2866, ../scss/breakpoints/_base.scss */
 .comment-edit-link {
   font-style: italic;
   margin: 0 7px;
@@ -4845,34 +4851,34 @@ COMMENT STYLES
 /******************************************************************
 COMMENT FORM STYLES
 ******************************************************************/
-/* line 2870, ../scss/breakpoints/_base.scss */
+/* line 2877, ../scss/breakpoints/_base.scss */
 .comment-respond {
   padding: 1.5em;
   border-top: 1px solid #f8f9fa;
 }
 
-/* line 2876, ../scss/breakpoints/_base.scss */
+/* line 2883, ../scss/breakpoints/_base.scss */
 #reply-title {
   margin: 0;
 }
 
-/* line 2880, ../scss/breakpoints/_base.scss */
+/* line 2887, ../scss/breakpoints/_base.scss */
 .logged-in-as {
   color: #9fa6b4;
   font-style: italic;
   margin: 0;
 }
-/* line 2885, ../scss/breakpoints/_base.scss */
+/* line 2892, ../scss/breakpoints/_base.scss */
 .logged-in-as a {
   color: #555555;
 }
 
-/* line 2890, ../scss/breakpoints/_base.scss */
+/* line 2897, ../scss/breakpoints/_base.scss */
 .comment-form-comment {
   margin: 1.5em 0 0.75em;
 }
 
-/* line 2894, ../scss/breakpoints/_base.scss */
+/* line 2901, ../scss/breakpoints/_base.scss */
 .form-allowed-tags {
   padding: 1.5em;
   background-color: #f8f9fa;
@@ -4880,14 +4886,14 @@ COMMENT FORM STYLES
 }
 
 /* comment submit button */
-/* line 2901, ../scss/breakpoints/_base.scss */
+/* line 2908, ../scss/breakpoints/_base.scss */
 #submit {
   float: right;
   font-size: 1em;
 }
 
 /* comment form title */
-/* line 2908, ../scss/breakpoints/_base.scss */
+/* line 2915, ../scss/breakpoints/_base.scss */
 #comment-form-title {
   margin: 0 0 1.1em;
 }
@@ -4895,13 +4901,13 @@ COMMENT FORM STYLES
 /* cancel comment reply link */
 /* logged in comments */
 /* allowed tags */
-/* line 2923, ../scss/breakpoints/_base.scss */
+/* line 2930, ../scss/breakpoints/_base.scss */
 #allowed_tags {
   margin: 1.5em 10px 0.7335em 0;
 }
 
 /* no comments */
-/* line 2928, ../scss/breakpoints/_base.scss */
+/* line 2935, ../scss/breakpoints/_base.scss */
 .nocomments {
   margin: 0 20px 1.1em;
 }
@@ -4909,7 +4915,7 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 2936, ../scss/breakpoints/_base.scss */
+/* line 2943, ../scss/breakpoints/_base.scss */
 .sidebar {
   display: inline-block;
   float: right;
@@ -4917,7 +4923,7 @@ SIDEBARS & ASIDES
   width: auto;
   padding: 0 0 0 45px;
 }
-/* line 2942, ../scss/breakpoints/_base.scss */
+/* line 2949, ../scss/breakpoints/_base.scss */
 .sidebar h4 {
   font-family: "Bariol", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
@@ -4926,26 +4932,26 @@ SIDEBARS & ASIDES
   text-transform: uppercase;
   margin: 60px 0 15px;
 }
-/* line 2949, ../scss/breakpoints/_base.scss */
+/* line 2956, ../scss/breakpoints/_base.scss */
 .sidebar h4 a {
   color: currentColor;
 }
-/* line 2953, ../scss/breakpoints/_base.scss */
+/* line 2960, ../scss/breakpoints/_base.scss */
 .sidebar i {
   font-style: normal !important;
 }
-/* line 2956, ../scss/breakpoints/_base.scss */
+/* line 2963, ../scss/breakpoints/_base.scss */
 .sidebar li {
   width: 148px;
   background-color: #1477c9;
   margin: 0 0 20px;
 }
-/* line 2960, ../scss/breakpoints/_base.scss */
+/* line 2967, ../scss/breakpoints/_base.scss */
 .sidebar li p {
   margin: 0;
   padding: 6px;
 }
-/* line 2964, ../scss/breakpoints/_base.scss */
+/* line 2971, ../scss/breakpoints/_base.scss */
 .sidebar li span {
   height: 80px;
   width: 148px;
@@ -4954,7 +4960,7 @@ SIDEBARS & ASIDES
   background-size: cover;
   background-position: 50% 50%;
 }
-/* line 2973, ../scss/breakpoints/_base.scss */
+/* line 2980, ../scss/breakpoints/_base.scss */
 .sidebar a {
   font-family: "Bariol", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #fff;
@@ -4966,7 +4972,7 @@ SIDEBARS & ASIDES
   letter-spacing: 0.5px;
   line-height: 17px;
 }
-/* line 2984, ../scss/breakpoints/_base.scss */
+/* line 2991, ../scss/breakpoints/_base.scss */
 .sidebar .seemorenews {
   width: 148px;
   background-color: #1477c9;
@@ -4974,17 +4980,17 @@ SIDEBARS & ASIDES
   line-height: 40px;
   display: block;
 }
-/* line 2990, ../scss/breakpoints/_base.scss */
+/* line 2997, ../scss/breakpoints/_base.scss */
 .sidebar .seemorenews a {
   line-height: 40px;
 }
 
-/* line 3003, ../scss/breakpoints/_base.scss */
+/* line 3010, ../scss/breakpoints/_base.scss */
 .widget ul li {
   /* deep nesting */
 }
 
-/* line 3024, ../scss/breakpoints/_base.scss */
+/* line 3031, ../scss/breakpoints/_base.scss */
 .no-widgets {
   background-color: #fff;
   padding: 1.5em;
@@ -4997,7 +5003,7 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-/* line 3037, ../scss/breakpoints/_base.scss */
+/* line 3044, ../scss/breakpoints/_base.scss */
 .footer {
   clear: both;
   background-color: #1b1b1b;
@@ -5013,7 +5019,7 @@ FOOTER STYLES
   flex-direction: column;
   align-items: space-between;
 }
-/* line 3049, ../scss/breakpoints/_base.scss */
+/* line 3056, ../scss/breakpoints/_base.scss */
 .footer .-ft-content {
   width: 100%;
   display: -webkit-box;
@@ -5026,7 +5032,7 @@ FOOTER STYLES
   justify-content: space-between;
   margin: 2.5rem 0;
 }
-/* line 3057, ../scss/breakpoints/_base.scss */
+/* line 3064, ../scss/breakpoints/_base.scss */
 .footer .-ft-content .-ft-coorporate,
 .footer .-ft-content nav {
   display: -webkit-box;
@@ -5039,7 +5045,7 @@ FOOTER STYLES
   flex-direction: column;
   justify-content: space-around;
 }
-/* line 3065, ../scss/breakpoints/_base.scss */
+/* line 3072, ../scss/breakpoints/_base.scss */
 .footer .-ft-content .-ft-coorporate .-i-link,
 .footer .-ft-content nav .-i-link {
   margin: 0.4rem 0;
@@ -5049,18 +5055,18 @@ FOOTER STYLES
   color: #787878;
   transition: color 0.3s ease;
 }
-/* line 3072, ../scss/breakpoints/_base.scss */
+/* line 3079, ../scss/breakpoints/_base.scss */
 .footer .-ft-content .-ft-coorporate .-i-link:hover,
 .footer .-ft-content nav .-i-link:hover {
   color: #f8f8f8;
 }
-/* line 3077, ../scss/breakpoints/_base.scss */
+/* line 3084, ../scss/breakpoints/_base.scss */
 .footer .-ft-content img {
   vertical-align: middle;
   position: relative;
   left: 8px;
 }
-/* line 3082, ../scss/breakpoints/_base.scss */
+/* line 3089, ../scss/breakpoints/_base.scss */
 .footer .-ft-content .-ft-newsletter {
   font-size: 13px;
   display: -webkit-box;
@@ -5074,7 +5080,7 @@ FOOTER STYLES
   justify-content: center;
   flex-direction: column;
 }
-/* line 3092, ../scss/breakpoints/_base.scss */
+/* line 3099, ../scss/breakpoints/_base.scss */
 .footer .-ft-content form {
   border: 1px solid #979797;
   width: 300px;
@@ -5089,7 +5095,7 @@ FOOTER STYLES
   justify-content: space-between;
   position: relative;
 }
-/* line 3103, ../scss/breakpoints/_base.scss */
+/* line 3110, ../scss/breakpoints/_base.scss */
 .footer .-ft-content input {
   width: 220px;
   line-height: 13px;
@@ -5101,14 +5107,14 @@ FOOTER STYLES
   display: inline;
   color: #fff;
 }
-/* line 3114, ../scss/breakpoints/_base.scss */
+/* line 3121, ../scss/breakpoints/_base.scss */
 .footer .-ft-content .response {
   position: absolute;
   top: -2px;
   left: 310px;
   width: 500px;
 }
-/* line 3120, ../scss/breakpoints/_base.scss */
+/* line 3127, ../scss/breakpoints/_base.scss */
 .footer .-ft-content #mc-embedded-subscribe {
   border-radius: 0;
   display: inline;
@@ -5125,11 +5131,11 @@ FOOTER STYLES
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
-/* line 3135, ../scss/breakpoints/_base.scss */
+/* line 3142, ../scss/breakpoints/_base.scss */
 .footer .-ft-content #mc-embedded-subscribe:hover {
   background-color: #fff;
 }
-/* line 3142, ../scss/breakpoints/_base.scss */
+/* line 3149, ../scss/breakpoints/_base.scss */
 .footer .copyright .hr {
   box-shadow: 0px 1px rgba(250, 250, 250, 0.2);
   display: block;
@@ -5138,7 +5144,7 @@ FOOTER STYLES
   position: absolute;
   left: 0;
 }
-/* line 3151, ../scss/breakpoints/_base.scss */
+/* line 3158, ../scss/breakpoints/_base.scss */
 .footer .-ft-legal {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
@@ -5153,39 +5159,39 @@ FOOTER STYLES
   align-items: center;
   font-size: 13px;
 }
-/* line 3161, ../scss/breakpoints/_base.scss */
+/* line 3168, ../scss/breakpoints/_base.scss */
 .footer .-ft-legal a, .footer .-ft-legal span {
   color: #787878;
   text-decoration: none;
 }
-/* line 3165, ../scss/breakpoints/_base.scss */
+/* line 3172, ../scss/breakpoints/_base.scss */
 .footer .-ft-legal a:hover {
   color: #f8f8f8;
 }
 
-/* line 3171, ../scss/breakpoints/_base.scss */
+/* line 3178, ../scss/breakpoints/_base.scss */
 .footer.mobile {
   display: none;
 }
 
-/* line 3175, ../scss/breakpoints/_base.scss */
+/* line 3182, ../scss/breakpoints/_base.scss */
 #post-not-found,
 .no-results {
   background: transparent;
   border: none;
 }
-/* line 3179, ../scss/breakpoints/_base.scss */
+/* line 3186, ../scss/breakpoints/_base.scss */
 #post-not-found h1,
 .no-results h1 {
   color: #1477c9;
 }
-/* line 3182, ../scss/breakpoints/_base.scss */
+/* line 3189, ../scss/breakpoints/_base.scss */
 #post-not-found input,
 .no-results input {
   border-bottom: 1px solid #979797;
   display: inline;
 }
-/* line 3186, ../scss/breakpoints/_base.scss */
+/* line 3193, ../scss/breakpoints/_base.scss */
 #post-not-found .home-404,
 .no-results .home-404 {
   width: 170px;
@@ -5200,14 +5206,14 @@ FOOTER STYLES
   cursor: pointer;
   margin: 0 0 150px;
 }
-/* line 3200, ../scss/breakpoints/_base.scss */
+/* line 3207, ../scss/breakpoints/_base.scss */
 #post-not-found form #searchsubmit, #post-not-found form label,
 .no-results form #searchsubmit,
 .no-results form label {
   display: none;
 }
 
-/* line 3206, ../scss/breakpoints/_base.scss */
+/* line 3213, ../scss/breakpoints/_base.scss */
 #blue-bar-pick-pillar {
   height: 43px;
   border-left: 1px solid rgba(250, 250, 250, 0.2);
@@ -5224,7 +5230,7 @@ FOOTER STYLES
   top: 0px;
 }
 
-/* line 3219, ../scss/breakpoints/_base.scss */
+/* line 3226, ../scss/breakpoints/_base.scss */
 .blue-bar-top {
   background-color: #1477c9;
   box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.2);
@@ -5242,18 +5248,18 @@ FOOTER STYLES
   z-index: 2;
   font-family: "Bariol", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-/* line 3232, ../scss/breakpoints/_base.scss */
+/* line 3239, ../scss/breakpoints/_base.scss */
 .blue-bar-top.fixed {
   position: fixed;
   top: 0;
   width: 100%;
   opacity: 0.97;
 }
-/* line 3239, ../scss/breakpoints/_base.scss */
+/* line 3246, ../scss/breakpoints/_base.scss */
 .blue-bar-top.resources .wrapper span.current {
   padding: 5px 10px 0px 10px;
 }
-/* line 3243, ../scss/breakpoints/_base.scss */
+/* line 3250, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper {
   color: white;
   text-transform: uppercase;
@@ -5268,7 +5274,7 @@ FOOTER STYLES
   display: flex;
   justify-content: space-between;
 }
-/* line 3253, ../scss/breakpoints/_base.scss */
+/* line 3260, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper span {
   border-radius: 3px;
   padding: 3px 10px 3px 20px;
@@ -5277,16 +5283,16 @@ FOOTER STYLES
   transition: background-color 0.35s ease;
   height: 30px;
 }
-/* line 3260, ../scss/breakpoints/_base.scss */
+/* line 3267, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper span.current {
   background-color: white;
   color: #1477c9;
 }
-/* line 3263, ../scss/breakpoints/_base.scss */
+/* line 3270, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper span.current:hover {
   background-color: white;
 }
-/* line 3266, ../scss/breakpoints/_base.scss */
+/* line 3273, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper span.current i {
   background-color: #1477c9 !important;
   background: url("../images/filter-off.svg") no-repeat 50% 50% !important;
@@ -5299,16 +5305,16 @@ FOOTER STYLES
   left: -3px !important;
   transform: scale(0.9) !important;
 }
-/* line 3279, ../scss/breakpoints/_base.scss */
+/* line 3286, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper span:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
-/* line 3282, ../scss/breakpoints/_base.scss */
+/* line 3289, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper span a {
   text-decoration: none;
   color: currentColor;
 }
-/* line 3285, ../scss/breakpoints/_base.scss */
+/* line 3292, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper span a i {
   height: 17px;
   width: 19px;
@@ -5321,61 +5327,61 @@ FOOTER STYLES
   top: 3px;
   background-color: white;
 }
-/* line 3298, ../scss/breakpoints/_base.scss */
+/* line 3305, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper span a i.img-pile-1 {
   background: url("../images/white-pile-1.svg") no-repeat 50% 50%;
   -webkit-mask: url("../images/white-pile-1.svg");
   mask: url("../images/white-pile-1.svg");
 }
-/* line 3298, ../scss/breakpoints/_base.scss */
+/* line 3305, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper span a i.img-pile-2 {
   background: url("../images/white-pile-2.svg") no-repeat 50% 50%;
   -webkit-mask: url("../images/white-pile-2.svg");
   mask: url("../images/white-pile-2.svg");
 }
-/* line 3298, ../scss/breakpoints/_base.scss */
+/* line 3305, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper span a i.img-pile-3 {
   background: url("../images/white-pile-3.svg") no-repeat 50% 50%;
   -webkit-mask: url("../images/white-pile-3.svg");
   mask: url("../images/white-pile-3.svg");
 }
-/* line 3298, ../scss/breakpoints/_base.scss */
+/* line 3305, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper span a i.img-pile-4 {
   background: url("../images/white-pile-4.svg") no-repeat 50% 50%;
   -webkit-mask: url("../images/white-pile-4.svg");
   mask: url("../images/white-pile-4.svg");
 }
-/* line 3304, ../scss/breakpoints/_base.scss */
+/* line 3311, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper span a i.img-pile-1 {
   height: 15px;
   width: 13px;
   top: 2px;
 }
-/* line 3312, ../scss/breakpoints/_base.scss */
+/* line 3319, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper span.title.current, .blue-bar-top .wrapper span.title:hover {
   background-color: #1477c9;
   color: white;
 }
-/* line 3320, ../scss/breakpoints/_base.scss */
+/* line 3327, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper.filters span {
   position: relative;
   top: 6px;
   margin: 0 10px 0px 0px;
 }
-/* line 3324, ../scss/breakpoints/_base.scss */
+/* line 3331, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper.filters span:first-child {
   pointer-events: none;
   cursor: default;
   margin: 0;
 }
-/* line 3331, ../scss/breakpoints/_base.scss */
+/* line 3338, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper .region-filter {
   display: none;
   position: absolute;
   background-color: rgba(0, 92, 163, 0.9);
   top: 26px;
 }
-/* line 3336, ../scss/breakpoints/_base.scss */
+/* line 3343, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper .region-filter input {
   background-color: rgba(0, 0, 0, 0.1);
   margin: 0;
@@ -5385,48 +5391,48 @@ FOOTER STYLES
   font-weight: bold;
   padding: 0 20px;
 }
-/* line 3344, ../scss/breakpoints/_base.scss */
+/* line 3351, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper .region-filter input::-webkit-input-placeholder {
   color: white;
 }
-/* line 3347, ../scss/breakpoints/_base.scss */
+/* line 3354, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper .region-filter input:placeholder-shown {
   color: white;
 }
-/* line 3350, ../scss/breakpoints/_base.scss */
+/* line 3357, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper .region-filter input::-moz-placeholder {
   color: white;
 }
-/* line 3353, ../scss/breakpoints/_base.scss */
+/* line 3360, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper .region-filter input:-ms-input-placeholder {
   color: white;
 }
-/* line 3357, ../scss/breakpoints/_base.scss */
+/* line 3364, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper .region-filter li {
   max-width: 200px;
   padding: 8px 20px;
   cursor: pointer;
 }
-/* line 3361, ../scss/breakpoints/_base.scss */
+/* line 3368, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper .region-filter li.selected {
   background-color: rgba(255, 255, 255, 0.2);
 }
-/* line 3364, ../scss/breakpoints/_base.scss */
+/* line 3371, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper .region-filter li.grp {
   padding: 3px 20px 3px 30px;
   background-color: rgba(255, 255, 255, 0.03);
 }
-/* line 3368, ../scss/breakpoints/_base.scss */
+/* line 3375, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper .region-filter li a {
   text-decoration: none;
   width: 100%;
   display: block;
 }
-/* line 3373, ../scss/breakpoints/_base.scss */
+/* line 3380, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper .region-filter li:first-child {
   padding: 0;
 }
-/* line 3375, ../scss/breakpoints/_base.scss */
+/* line 3382, ../scss/breakpoints/_base.scss */
 .blue-bar-top .wrapper .region-filter li:first-child i {
   height: 30px;
   width: 30px;
@@ -5440,17 +5446,17 @@ FOOTER STYLES
   top: 5px;
   opacity: 0.7;
 }
-/* line 3393, ../scss/breakpoints/_base.scss */
+/* line 3400, ../scss/breakpoints/_base.scss */
 .blue-bar-top.about .current {
   padding: 3px 10px;
 }
-/* line 3396, ../scss/breakpoints/_base.scss */
+/* line 3403, ../scss/breakpoints/_base.scss */
 .blue-bar-top.about span a {
   position: relative;
   top: 2px;
 }
 
-/* line 3403, ../scss/breakpoints/_base.scss */
+/* line 3410, ../scss/breakpoints/_base.scss */
 .blue-bar-top-m {
   display: none;
   min-height: 43px;
@@ -5459,7 +5465,7 @@ FOOTER STYLES
   background-color: #1477c9;
   z-index: 1;
 }
-/* line 3410, ../scss/breakpoints/_base.scss */
+/* line 3417, ../scss/breakpoints/_base.scss */
 .blue-bar-top-m h2 {
   box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.2);
   width: 100%;
@@ -5473,7 +5479,7 @@ FOOTER STYLES
   cursor: pointer;
   margin: 0;
 }
-/* line 3422, ../scss/breakpoints/_base.scss */
+/* line 3429, ../scss/breakpoints/_base.scss */
 .blue-bar-top-m h2 span {
   width: 25px;
   height: 10px;
@@ -5483,16 +5489,16 @@ FOOTER STYLES
   display: inline-block;
   background-color: #fff;
 }
-/* line 3432, ../scss/breakpoints/_base.scss */
+/* line 3439, ../scss/breakpoints/_base.scss */
 .blue-bar-top-m ul,
 .blue-bar-top-m #blue-bar-pick-pillar {
   display: none;
 }
-/* line 3437, ../scss/breakpoints/_base.scss */
+/* line 3444, ../scss/breakpoints/_base.scss */
 .blue-bar-top-m.active h2 span {
   transform: scaleY(-1);
 }
-/* line 3440, ../scss/breakpoints/_base.scss */
+/* line 3447, ../scss/breakpoints/_base.scss */
 .blue-bar-top-m.active ul,
 .blue-bar-top-m.active #blue-bar-pick-pillar {
   display: block;
@@ -5502,7 +5508,7 @@ FOOTER STYLES
   position: relative;
   border: none;
 }
-/* line 3448, ../scss/breakpoints/_base.scss */
+/* line 3455, ../scss/breakpoints/_base.scss */
 .blue-bar-top-m.active ul li,
 .blue-bar-top-m.active #blue-bar-pick-pillar li {
   font-size: 15px;
@@ -5512,12 +5518,12 @@ FOOTER STYLES
   font-family: "Bariol", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #fff;
 }
-/* line 3455, ../scss/breakpoints/_base.scss */
+/* line 3462, ../scss/breakpoints/_base.scss */
 .blue-bar-top-m.active ul li a,
 .blue-bar-top-m.active #blue-bar-pick-pillar li a {
   text-decoration: none;
 }
-/* line 3458, ../scss/breakpoints/_base.scss */
+/* line 3465, ../scss/breakpoints/_base.scss */
 .blue-bar-top-m.active ul li.option-pillar i,
 .blue-bar-top-m.active #blue-bar-pick-pillar li.option-pillar i {
   height: 17px;
@@ -5531,42 +5537,42 @@ FOOTER STYLES
   top: 3px;
   background-color: white;
 }
-/* line 3471, ../scss/breakpoints/_base.scss */
+/* line 3478, ../scss/breakpoints/_base.scss */
 .blue-bar-top-m.active ul li.option-pillar i.img-pile-1,
 .blue-bar-top-m.active #blue-bar-pick-pillar li.option-pillar i.img-pile-1 {
   background: url("../images/white-pile-1.svg") no-repeat 50% 50%;
   -webkit-mask: url("../images/white-pile-1.svg");
   mask: url("../images/white-pile-1.svg");
 }
-/* line 3471, ../scss/breakpoints/_base.scss */
+/* line 3478, ../scss/breakpoints/_base.scss */
 .blue-bar-top-m.active ul li.option-pillar i.img-pile-2,
 .blue-bar-top-m.active #blue-bar-pick-pillar li.option-pillar i.img-pile-2 {
   background: url("../images/white-pile-2.svg") no-repeat 50% 50%;
   -webkit-mask: url("../images/white-pile-2.svg");
   mask: url("../images/white-pile-2.svg");
 }
-/* line 3471, ../scss/breakpoints/_base.scss */
+/* line 3478, ../scss/breakpoints/_base.scss */
 .blue-bar-top-m.active ul li.option-pillar i.img-pile-3,
 .blue-bar-top-m.active #blue-bar-pick-pillar li.option-pillar i.img-pile-3 {
   background: url("../images/white-pile-3.svg") no-repeat 50% 50%;
   -webkit-mask: url("../images/white-pile-3.svg");
   mask: url("../images/white-pile-3.svg");
 }
-/* line 3471, ../scss/breakpoints/_base.scss */
+/* line 3478, ../scss/breakpoints/_base.scss */
 .blue-bar-top-m.active ul li.option-pillar i.img-pile-4,
 .blue-bar-top-m.active #blue-bar-pick-pillar li.option-pillar i.img-pile-4 {
   background: url("../images/white-pile-4.svg") no-repeat 50% 50%;
   -webkit-mask: url("../images/white-pile-4.svg");
   mask: url("../images/white-pile-4.svg");
 }
-/* line 3477, ../scss/breakpoints/_base.scss */
+/* line 3484, ../scss/breakpoints/_base.scss */
 .blue-bar-top-m.active ul li.option-pillar i.img-pile-1,
 .blue-bar-top-m.active #blue-bar-pick-pillar li.option-pillar i.img-pile-1 {
   height: 15px;
   width: 13px;
   top: 2px;
 }
-/* line 3483, ../scss/breakpoints/_base.scss */
+/* line 3490, ../scss/breakpoints/_base.scss */
 .blue-bar-top-m.active ul li input,
 .blue-bar-top-m.active #blue-bar-pick-pillar li input {
   background-color: rgba(0, 0, 0, 0.15);
@@ -5578,12 +5584,12 @@ FOOTER STYLES
   font-weight: bold;
   padding: 0 20px;
 }
-/* line 3493, ../scss/breakpoints/_base.scss */
+/* line 3500, ../scss/breakpoints/_base.scss */
 .blue-bar-top-m.active ul li::last-child,
 .blue-bar-top-m.active #blue-bar-pick-pillar li::last-child {
   text-align: center;
 }
-/* line 3497, ../scss/breakpoints/_base.scss */
+/* line 3504, ../scss/breakpoints/_base.scss */
 .blue-bar-top-m.active ul.region-filter i,
 .blue-bar-top-m.active #blue-bar-pick-pillar.region-filter i {
   height: 30px;
@@ -5598,17 +5604,17 @@ FOOTER STYLES
   top: 5px;
   opacity: 0.7;
 }
-/* line 3511, ../scss/breakpoints/_base.scss */
+/* line 3518, ../scss/breakpoints/_base.scss */
 .blue-bar-top-m.active #blue-bar-pick-pillar {
   padding: 10px 0 0 22px;
 }
 
-/* line 3517, ../scss/breakpoints/_base.scss */
+/* line 3524, ../scss/breakpoints/_base.scss */
 .category .blue-bar-top .region-filter li:first-child {
   padding: 8px 20px;
 }
 
-/* line 3521, ../scss/breakpoints/_base.scss */
+/* line 3528, ../scss/breakpoints/_base.scss */
 .container-region-filter {
   position: relative;
   border-left: 1px solid rgba(250, 250, 250, 0.2);
@@ -5616,7 +5622,7 @@ FOOTER STYLES
   height: 43px;
 }
 
-/* line 3528, ../scss/breakpoints/_base.scss */
+/* line 3535, ../scss/breakpoints/_base.scss */
 #toggle-filter-region {
   display: block;
   width: 180px;
@@ -5634,7 +5640,7 @@ FOOTER STYLES
   left: 0px;
   cursor: pointer;
 }
-/* line 3544, ../scss/breakpoints/_base.scss */
+/* line 3551, ../scss/breakpoints/_base.scss */
 #toggle-filter-region:before {
   content: '';
   position: absolute;
@@ -5647,13 +5653,13 @@ FOOTER STYLES
   top: 10px;
   left: 0;
 }
-/* line 3556, ../scss/breakpoints/_base.scss */
+/* line 3563, ../scss/breakpoints/_base.scss */
 #toggle-filter-region.current {
   border-radius: 3px;
   background: #fff;
   color: #1477c9;
 }
-/* line 3561, ../scss/breakpoints/_base.scss */
+/* line 3568, ../scss/breakpoints/_base.scss */
 #toggle-filter-region.current:before {
   background: url(../images/dropdown-b.svg) no-repeat 50% 50%;
   -webkit-mask: url(../images/dropdown-b.svg) no-repeat 50% 50%;
@@ -5661,17 +5667,17 @@ FOOTER STYLES
   transform: scaleY(-1);
 }
 
-/* line 3569, ../scss/breakpoints/_base.scss */
+/* line 3576, ../scss/breakpoints/_base.scss */
 .leaflet-top .leaflet-control {
   margin-top: 60px !important;
 }
 
-/* line 3573, ../scss/breakpoints/_base.scss */
+/* line 3580, ../scss/breakpoints/_base.scss */
 .leaflet-bar {
   box-shadow: none !important;
 }
 
-/* line 3577, ../scss/breakpoints/_base.scss */
+/* line 3584, ../scss/breakpoints/_base.scss */
 .leaflet-bar a {
   border-radius: 0 !important;
   background-color: #048ef1 !important;
@@ -5682,25 +5688,25 @@ FOOTER STYLES
   box-shadow: none !important;
 }
 
-/* line 3587, ../scss/breakpoints/_base.scss */
+/* line 3594, ../scss/breakpoints/_base.scss */
 div.cartodb-popup.v2 {
   border-radius: 0 !important;
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* line 3592, ../scss/breakpoints/_base.scss */
+/* line 3599, ../scss/breakpoints/_base.scss */
 div.cartodb-popup {
   width: 315px !important;
   min-height: 100% !important;
   margin-left: calc(-315px / 2) !important;
 }
 
-/* line 3599, ../scss/breakpoints/_base.scss */
+/* line 3606, ../scss/breakpoints/_base.scss */
 div.cartodb-popup.v2 div.cartodb-popup-tip-container {
   left: 146px !important;
 }
 
-/* line 3603, ../scss/breakpoints/_base.scss */
+/* line 3610, ../scss/breakpoints/_base.scss */
 div.cartodb-popup.v2:before {
   border-left: 14px solid transparent !important;
   border-right: 14px solid transparent !important;
@@ -5708,7 +5714,7 @@ div.cartodb-popup.v2:before {
   left: 135px !important;
 }
 
-/* line 3610, ../scss/breakpoints/_base.scss */
+/* line 3617, ../scss/breakpoints/_base.scss */
 div.cartodb-popup h1 {
   font-size: 15px !important;
   text-transform: uppercase !important;
@@ -5721,16 +5727,16 @@ div.cartodb-popup h1 {
   display: block !important;
 }
 
-/* line 3622, ../scss/breakpoints/_base.scss */
+/* line 3629, ../scss/breakpoints/_base.scss */
 div.cartodb-popup.v2 div.cartodb-popup-content {
   height: 100% !important;
   max-height: 100% !important;
 }
-/* line 3625, ../scss/breakpoints/_base.scss */
+/* line 3632, ../scss/breakpoints/_base.scss */
 div.cartodb-popup.v2 div.cartodb-popup-content .jspContainer {
   height: 100%;
 }
-/* line 3628, ../scss/breakpoints/_base.scss */
+/* line 3635, ../scss/breakpoints/_base.scss */
 div.cartodb-popup.v2 div.cartodb-popup-content .jspPane {
   height: 100%;
   display: flex;
@@ -5738,7 +5744,7 @@ div.cartodb-popup.v2 div.cartodb-popup-content .jspPane {
   justify-content: space-between;
 }
 
-/* line 3636, ../scss/breakpoints/_base.scss */
+/* line 3643, ../scss/breakpoints/_base.scss */
 div.cartodb-popup .cartodb-popup-content p {
   font-size: 14px !important;
   line-height: 16px !important;
@@ -5746,19 +5752,19 @@ div.cartodb-popup .cartodb-popup-content p {
   max-width: 100% !important;
 }
 
-/* line 3643, ../scss/breakpoints/_base.scss */
+/* line 3650, ../scss/breakpoints/_base.scss */
 div.cartodb-popup .cartodb-popup-content p.meta {
   font-size: 11px !important;
   color: rgba(85, 85, 85, 0.5);
   text-transform: uppercase;
 }
 
-/* line 3649, ../scss/breakpoints/_base.scss */
+/* line 3656, ../scss/breakpoints/_base.scss */
 div.cartodb-popup .jspContainer:after {
   background: none !important;
 }
 
-/* line 3653, ../scss/breakpoints/_base.scss */
+/* line 3660, ../scss/breakpoints/_base.scss */
 div.cartodb-popup .cartodb-popup-close-button {
   box-shadow: none !important;
   top: 0px !important;
@@ -5767,12 +5773,12 @@ div.cartodb-popup .cartodb-popup-close-button {
   background-color: transparent !important;
 }
 
-/* line 3661, ../scss/breakpoints/_base.scss */
+/* line 3668, ../scss/breakpoints/_base.scss */
 .popup-link-project {
   background-color: #1477c9;
   display: block;
 }
-/* line 3664, ../scss/breakpoints/_base.scss */
+/* line 3671, ../scss/breakpoints/_base.scss */
 .popup-link-project a {
   color: white !important;
   text-decoration: none;
@@ -5785,7 +5791,7 @@ div.cartodb-popup .cartodb-popup-close-button {
   margin: 15px 0 0 0;
 }
 
-/* line 3677, ../scss/breakpoints/_base.scss */
+/* line 3684, ../scss/breakpoints/_base.scss */
 .amount-of-posts {
   font-weight: bold;
   color: #048EF1;
@@ -5794,7 +5800,7 @@ div.cartodb-popup .cartodb-popup-close-button {
   left: 2px !important;
 }
 
-/* line 3685, ../scss/breakpoints/_base.scss */
+/* line 3692, ../scss/breakpoints/_base.scss */
 .amount-of-posts-2 {
   font-weight: bold;
   color: #048EF1;
@@ -5803,136 +5809,136 @@ div.cartodb-popup .cartodb-popup-close-button {
   left: -2px !important;
 }
 
-/* line 3693, ../scss/breakpoints/_base.scss */
+/* line 3700, ../scss/breakpoints/_base.scss */
 .home .index-row article, .home .index-row .card-third {
   margin: 0 0 50px;
 }
 
-/* line 3697, ../scss/breakpoints/_base.scss */
+/* line 3704, ../scss/breakpoints/_base.scss */
 .home .index-row .row-container {
   justify-content: space-between;
 }
 
-/* line 3701, ../scss/breakpoints/_base.scss */
+/* line 3708, ../scss/breakpoints/_base.scss */
 .archive #contact .contact-form textarea, .page #contact .contact-form textarea {
   width: 50%;
 }
 
-/* line 3705, ../scss/breakpoints/_base.scss */
+/* line 3712, ../scss/breakpoints/_base.scss */
 .home .index-row .resource-list {
   max-height: 345px;
   min-height: 80%;
 }
 
-/* line 3710, ../scss/breakpoints/_base.scss */
+/* line 3717, ../scss/breakpoints/_base.scss */
 .page #principles, .page #contact, .page #more-content, .page #partners, .page #members, .page #newsletter {
   margin: 0;
   padding: 0px 0 0;
 }
 
-/* line 3715, ../scss/breakpoints/_base.scss */
+/* line 3722, ../scss/breakpoints/_base.scss */
 .page #partners p a {
   color: #0475cc;
 }
 
 @media (min-width: 1024px) {
-  /* line 3720, ../scss/breakpoints/_base.scss */
+  /* line 3727, ../scss/breakpoints/_base.scss */
   .home .index-row#news .row-container {
     padding-right: 45px;
   }
 
-  /* line 3723, ../scss/breakpoints/_base.scss */
+  /* line 3730, ../scss/breakpoints/_base.scss */
   .home .index-row .card-third .twitter {
     height: 100%;
   }
 
-  /* line 3726, ../scss/breakpoints/_base.scss */
+  /* line 3733, ../scss/breakpoints/_base.scss */
   .index-row .card-third.twitter-timeline-container {
     margin: 0px 0px 50px 0px !important;
   }
 }
 @media (max-width: 1024px) {
-  /* line 3732, ../scss/breakpoints/_base.scss */
+  /* line 3739, ../scss/breakpoints/_base.scss */
   .index-title h3 {
     font-size: 38px;
     margin: -70px auto 40px;
   }
 
-  /* line 3736, ../scss/breakpoints/_base.scss */
+  /* line 3743, ../scss/breakpoints/_base.scss */
   .home .index-title h3 {
     font-size: 38px;
     margin: 0px auto 40px;
   }
 
-  /* line 3740, ../scss/breakpoints/_base.scss */
+  /* line 3747, ../scss/breakpoints/_base.scss */
   .home .index-title:first-child {
     margin: 20px 0 -50px;
   }
 
-  /* line 3743, ../scss/breakpoints/_base.scss */
+  /* line 3750, ../scss/breakpoints/_base.scss */
   .home #resources .card-third:last-child a:last-child span {
     margin: 40px auto 0;
   }
 
-  /* line 3746, ../scss/breakpoints/_base.scss */
+  /* line 3753, ../scss/breakpoints/_base.scss */
   .home .index-row .card-third span:not(#current-total-post-count) {
     margin: 40px auto 0px;
   }
 
-  /* line 3749, ../scss/breakpoints/_base.scss */
+  /* line 3756, ../scss/breakpoints/_base.scss */
   .home .index-row.last-resources a {
     width: 100%;
     margin: 5px 0;
   }
 
-  /* line 3753, ../scss/breakpoints/_base.scss */
+  /* line 3760, ../scss/breakpoints/_base.scss */
   .index-separator {
     margin: 0;
   }
 
-  /* line 3756, ../scss/breakpoints/_base.scss */
+  /* line 3763, ../scss/breakpoints/_base.scss */
   .contact-form input[type=email], .contact-form input[type=text], .page #contact .contact-form textarea {
     width: 70% !important;
   }
 
-  /* line 3759, ../scss/breakpoints/_base.scss */
+  /* line 3766, ../scss/breakpoints/_base.scss */
   .archive #contact .contact-form .contact-submit .pushbutton-wide, .page #contact .contact-form .contact-submit .pushbutton-wide {
     right: 12px;
   }
 
-  /* line 3762, ../scss/breakpoints/_base.scss */
+  /* line 3769, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper span a i {
     display: none !important;
   }
 
-  /* line 3766, ../scss/breakpoints/_base.scss */
+  /* line 3773, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper span a {
     line-height: 25px !important;
     padding: 0 10px;
   }
 
-  /* line 3770, ../scss/breakpoints/_base.scss */
+  /* line 3777, ../scss/breakpoints/_base.scss */
   .no-home .header nav {
     width: 80%;
   }
 
-  /* line 3773, ../scss/breakpoints/_base.scss */
+  /* line 3780, ../scss/breakpoints/_base.scss */
   .archive #content .wrap {
     width: 96% !important;
   }
 
-  /* line 3776, ../scss/breakpoints/_base.scss */
+  /* line 3783, ../scss/breakpoints/_base.scss */
   .index-row article.project, .index-row .card-third.project {
     max-width: 100%;
     width: calc(50% - 20px);
   }
 
-  /* line 3780, ../scss/breakpoints/_base.scss */
+  /* line 3787, ../scss/breakpoints/_base.scss */
   .home .header nav {
     width: 100%;
   }
 
-  /* line 3783, ../scss/breakpoints/_base.scss */
+  /* line 3790, ../scss/breakpoints/_base.scss */
   .home .index-row {
     -webkit-flex-direction: column;
     flex-direction: column;
@@ -5941,7 +5947,7 @@ div.cartodb-popup .cartodb-popup-close-button {
     align-items: center;
   }
 
-  /* line 3790, ../scss/breakpoints/_base.scss */
+  /* line 3797, ../scss/breakpoints/_base.scss */
   .home .index-row#news .row-container {
     width: 50%;
     position: relative;
@@ -5951,117 +5957,117 @@ div.cartodb-popup .cartodb-popup-close-button {
     top: 0;
   }
 
-  /* line 3798, ../scss/breakpoints/_base.scss */
+  /* line 3805, ../scss/breakpoints/_base.scss */
   .home .index-row.last-resources {
     margin: -40px 0 20px;
     width: 100%;
   }
 
-  /* line 3802, ../scss/breakpoints/_base.scss */
+  /* line 3809, ../scss/breakpoints/_base.scss */
   .home #map-fake .what-list h2 {
     font-size: 29px;
   }
 
-  /* line 3805, ../scss/breakpoints/_base.scss */
+  /* line 3812, ../scss/breakpoints/_base.scss */
   .home #map-fake .what-list h3 {
     font-size: 18px;
   }
 
-  /* line 3808, ../scss/breakpoints/_base.scss */
+  /* line 3815, ../scss/breakpoints/_base.scss */
   .home #map-fake .what-list > nav span i {
     height: 80px;
     width: 80px;
   }
 
-  /* line 3812, ../scss/breakpoints/_base.scss */
+  /* line 3819, ../scss/breakpoints/_base.scss */
   .footer .-ft-legal {
     width: 100%;
   }
 
-  /* line 3815, ../scss/breakpoints/_base.scss */
+  /* line 3822, ../scss/breakpoints/_base.scss */
   .footer .-ft-content form {
     width: 210px;
   }
 
-  /* line 3818, ../scss/breakpoints/_base.scss */
+  /* line 3825, ../scss/breakpoints/_base.scss */
   .footer .-ft-content img {
     left: 0;
   }
 
-  /* line 3821, ../scss/breakpoints/_base.scss */
+  /* line 3828, ../scss/breakpoints/_base.scss */
   .footer .-ft-content .-ft-logo a {
     display: block;
   }
 
-  /* line 3824, ../scss/breakpoints/_base.scss */
+  /* line 3831, ../scss/breakpoints/_base.scss */
   .home .index-row article.resource-cont, .index-row .card-third.resource-cont {
     width: 100vh;
     margin: 30px 0;
   }
 
-  /* line 3828, ../scss/breakpoints/_base.scss */
+  /* line 3835, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper span {
     font-size: 14px;
     padding: 3px 1px;
   }
 
-  /* line 3832, ../scss/breakpoints/_base.scss */
+  /* line 3839, ../scss/breakpoints/_base.scss */
   .post-type-archive-resource #main .row-container article {
     margin: 10px auto;
   }
 
-  /* line 3835, ../scss/breakpoints/_base.scss */
+  /* line 3842, ../scss/breakpoints/_base.scss */
   .page .about-content .card-third ol {
     height: 100%;
   }
 
-  /* line 3838, ../scss/breakpoints/_base.scss */
+  /* line 3845, ../scss/breakpoints/_base.scss */
   .page .about-content .card-third ol li {
     width: 100%;
     padding: 0;
     height: auto;
   }
 
-  /* line 3843, ../scss/breakpoints/_base.scss */
+  /* line 3850, ../scss/breakpoints/_base.scss */
   .page .about-content .card-third p {
     -webkit-columns: 1;
     columns: 1;
     padding: 0 0 20px;
   }
 
-  /* line 3848, ../scss/breakpoints/_base.scss */
+  /* line 3855, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper.filters span.title {
     display: none;
   }
 
-  /* line 3851, ../scss/breakpoints/_base.scss */
+  /* line 3858, ../scss/breakpoints/_base.scss */
   div#principles.m-all.cf.index-row.about-content ol, div#principles.m-all.index-row.about-content.comment-respond ol {
     display: block;
   }
 
-  /* line 3854, ../scss/breakpoints/_base.scss */
+  /* line 3861, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper span.current {
     color: #1477c9;
   }
 
-  /* line 3857, ../scss/breakpoints/_base.scss */
+  /* line 3864, ../scss/breakpoints/_base.scss */
   .blue-bar-top.about .wrapper span.current:hover {
     background-color: #fff;
     color: #1477c9;
   }
 
-  /* line 3861, ../scss/breakpoints/_base.scss */
+  /* line 3868, ../scss/breakpoints/_base.scss */
   .entry-content img {
     display: block;
   }
 
-  /* line 3864, ../scss/breakpoints/_base.scss */
+  /* line 3871, ../scss/breakpoints/_base.scss */
   .hentry.-odri-post.has-sidebar {
     display: block;
     width: 100%;
   }
 
-  /* line 3868, ../scss/breakpoints/_base.scss */
+  /* line 3875, ../scss/breakpoints/_base.scss */
   .sidebar {
     width: 100%;
     display: block;
@@ -6069,29 +6075,29 @@ div.cartodb-popup .cartodb-popup-close-button {
     padding: 0;
   }
 
-  /* line 3874, ../scss/breakpoints/_base.scss */
+  /* line 3881, ../scss/breakpoints/_base.scss */
   .sidebar h4 {
     font-size: 17px;
   }
 
-  /* line 3877, ../scss/breakpoints/_base.scss */
+  /* line 3884, ../scss/breakpoints/_base.scss */
   .sidebar ul {
     width: 360px;
   }
 
-  /* line 3880, ../scss/breakpoints/_base.scss */
+  /* line 3887, ../scss/breakpoints/_base.scss */
   .sidebar p {
     display: block;
     height: 80px;
   }
 
-  /* line 3884, ../scss/breakpoints/_base.scss */
+  /* line 3891, ../scss/breakpoints/_base.scss */
   .sidebar li {
     width: 100%;
     display: inline-block;
   }
 
-  /* line 3888, ../scss/breakpoints/_base.scss */
+  /* line 3895, ../scss/breakpoints/_base.scss */
   .sidebar li span {
     margin-right: 5px;
     float: left;
@@ -6099,7 +6105,7 @@ div.cartodb-popup .cartodb-popup-close-button {
     top: -3px;
   }
 
-  /* line 3894, ../scss/breakpoints/_base.scss */
+  /* line 3901, ../scss/breakpoints/_base.scss */
   .sidebar li a {
     height: 80px;
     display: flex;
@@ -6109,85 +6115,85 @@ div.cartodb-popup .cartodb-popup-close-button {
     align-items: center;
   }
 
-  /* line 3902, ../scss/breakpoints/_base.scss */
+  /* line 3909, ../scss/breakpoints/_base.scss */
   .sidebar i {
     width: 210px;
     position: relative;
     top: -6px;
   }
 
-  /* line 3907, ../scss/breakpoints/_base.scss */
+  /* line 3914, ../scss/breakpoints/_base.scss */
   .category-open-data-platforms #main > h1, .category-open-data-platforms #main > p, .category-community-mapping #main > h1, .category-community-mapping #main > p, .category-africa #main > h1, .category-africa #main > p, .category-east-asia-pacific #main > h1, .category-east-asia-pacific #main > p, .category-europe-and-central-asia #main > h1, .category-europe-and-central-asia #main > p, .category-latin-america-and-caribbean #main > h1, .category-latin-america-and-caribbean #main > p, .category-middle-east-and-north-africa #main > h1, .category-middle-east-and-north-africa #main > p, .category-non-wb-countries #main > h1, .category-non-wb-countries #main > p, .category-south-asia #main > h1, .category-south-asia #main > p, .category-risk-visualization #main > h1, .category-risk-visualization #main > p, .category-news #main > h1, .category-news #main > p, .post-type-archive-resource #main > h1, .post-type-archive-resource #main > p {
     max-width: 100%;
   }
 
-  /* line 3910, ../scss/breakpoints/_base.scss */
+  /* line 3917, ../scss/breakpoints/_base.scss */
   .category-open-data-platforms #main .row-container article, .category-community-mapping #main .row-container article, .category-africa #main .row-container article, .category-east-asia-pacific #main .row-container article, .category-europe-and-central-asia #main .row-container article, .category-latin-america-and-caribbean #main .row-container article, .category-middle-east-and-north-africa #main .row-container article, .category-non-wb-countries #main .row-container article, .category-south-asia #main .row-container article, .category-risk-visualization #main .row-container article, .category-news #main .row-container article, .post-type-archive-resource #main .row-container article {
     max-width: calc(50% - 20px);
   }
 
-  /* line 3913, ../scss/breakpoints/_base.scss */
+  /* line 3920, ../scss/breakpoints/_base.scss */
   .home .index-row article, .home .index-row .card-third {
     width: 360px;
     max-width: calc(50% - 20px);
   }
 
-  /* line 3917, ../scss/breakpoints/_base.scss */
+  /* line 3924, ../scss/breakpoints/_base.scss */
   .search .index-row article, .search .index-row .card-third, .single .index-row.more-content .row-container article {
     max-width: calc(100% - 20px) !important;
     width: calc(50% - 20px) !important;
   }
 
-  /* line 3921, ../scss/breakpoints/_base.scss */
+  /* line 3928, ../scss/breakpoints/_base.scss */
   .home #news.index-row {
     flex-direction: row;
     width: 100%;
   }
 
-  /* line 3925, ../scss/breakpoints/_base.scss */
+  /* line 3932, ../scss/breakpoints/_base.scss */
   .home #news.index-row article, .home #news.index-row .card-third {
     max-width: calc(100% - 20px);
     margin: 0 0 50px !important;
   }
 
-  /* line 3929, ../scss/breakpoints/_base.scss */
+  /* line 3936, ../scss/breakpoints/_base.scss */
   .home #news.index-row article:last-child {
     position: absolute;
     top: 66.7%;
     right: -100%;
   }
 
-  /* line 3934, ../scss/breakpoints/_base.scss */
+  /* line 3941, ../scss/breakpoints/_base.scss */
   .index-row .card-third.twitter-timeline-container {
     position: relative;
     align-self: baseline;
     width: 360px;
   }
 
-  /* line 3939, ../scss/breakpoints/_base.scss */
+  /* line 3946, ../scss/breakpoints/_base.scss */
   .index-row .card-third .twitter {
     width: auto;
   }
 
-  /* line 3942, ../scss/breakpoints/_base.scss */
+  /* line 3949, ../scss/breakpoints/_base.scss */
   .home #resources.index-row {
     align-items: flex-start;
   }
 
-  /* line 3945, ../scss/breakpoints/_base.scss */
+  /* line 3952, ../scss/breakpoints/_base.scss */
   .home #resources.index-row .first-text {
     width: 100%;
     max-width: calc(100% - 20px);
     height: auto;
   }
 
-  /* line 3950, ../scss/breakpoints/_base.scss */
+  /* line 3957, ../scss/breakpoints/_base.scss */
   .home #resources.index-row > .row-container, .home #resources.index-row > .row-container > a {
     width: 100%;
     margin: 0 0 2.5px;
   }
 
-  /* line 3954, ../scss/breakpoints/_base.scss */
+  /* line 3961, ../scss/breakpoints/_base.scss */
   .home #resources.index-row article.resource-cont, .index-row .card-third.resource-cont {
     width: calc(100% - 20px);
     margin: 0;
@@ -6196,12 +6202,12 @@ div.cartodb-popup .cartodb-popup-close-button {
     display: inline-block;
   }
 
-  /* line 3961, ../scss/breakpoints/_base.scss */
+  /* line 3968, ../scss/breakpoints/_base.scss */
   .home #inner-content > .last-resources {
     margin: 0 0 50px !important;
   }
 
-  /* line 3964, ../scss/breakpoints/_base.scss */
+  /* line 3971, ../scss/breakpoints/_base.scss */
   .home #inner-content > .last-resources article {
     width: 100%;
     max-width: calc(100% - 20px);
@@ -6210,7 +6216,7 @@ div.cartodb-popup .cartodb-popup-close-button {
     height: auto;
   }
 
-  /* line 3971, ../scss/breakpoints/_base.scss */
+  /* line 3978, ../scss/breakpoints/_base.scss */
   .home .index-row .resource-list.home {
     max-width: calc(100% - 20px);
     width: 100%;
@@ -6220,118 +6226,118 @@ div.cartodb-popup .cartodb-popup-close-button {
     min-height: 40px;
   }
 
-  /* line 3979, ../scss/breakpoints/_base.scss */
+  /* line 3986, ../scss/breakpoints/_base.scss */
   .post-type-archive .index-row.last-resources {
     flex-direction: row;
   }
 
-  /* line 3982, ../scss/breakpoints/_base.scss */
+  /* line 3989, ../scss/breakpoints/_base.scss */
   .post-type-archive-resource #main .row-container article {
     margin: 0;
     width: 360px;
     max-width: 100%;
   }
 
-  /* line 3987, ../scss/breakpoints/_base.scss */
+  /* line 3994, ../scss/breakpoints/_base.scss */
   .category-open-data-platforms #main .row-container article, .category-community-mapping #main .row-container article, .category-africa #main .row-container article, .category-east-asia-pacific #main .row-container article, .category-europe-and-central-asia #main .row-container article, .category-latin-america-and-caribbean #main .row-container article, .category-middle-east-and-north-africa #main .row-container article, .category-non-wb-countries #main .row-container article, .category-south-asia #main .row-container article, .category-risk-visualization #main .row-container article, .category-news #main .row-container article, .post-type-archive-resource #main .row-container article {
     max-width: 100%;
     width: calc(50% - 20px);
   }
 
-  /* line 3991, ../scss/breakpoints/_base.scss */
+  /* line 3998, ../scss/breakpoints/_base.scss */
   .page #contact.index-row {
     flex-direction: column;
   }
 
-  /* line 3994, ../scss/breakpoints/_base.scss */
+  /* line 4001, ../scss/breakpoints/_base.scss */
   .archive #contact .index-row, .page #contact .index-row {
     width: 100%;
   }
 
-  /* line 3997, ../scss/breakpoints/_base.scss */
+  /* line 4004, ../scss/breakpoints/_base.scss */
   .archive #contact .-m-form, .page #contact .-m-form {
     margin: 40px 0 0;
     width: 100%;
   }
 
-  /* line 4001, ../scss/breakpoints/_base.scss */
+  /* line 4008, ../scss/breakpoints/_base.scss */
   .resources-page-list .resource-list-new {
     width: 100%;
   }
 
-  /* line 4004, ../scss/breakpoints/_base.scss */
+  /* line 4011, ../scss/breakpoints/_base.scss */
   .resources-page-list .index-row.last-resources {
     flex-direction: column;
   }
 
-  /* line 4007, ../scss/breakpoints/_base.scss */
+  /* line 4014, ../scss/breakpoints/_base.scss */
   .resources-page-list .index-row.last-resources .resource-cont {
     width: 100%;
     max-width: 100%;
     margin: 30px 0;
   }
 
-  /* line 4012, ../scss/breakpoints/_base.scss */
+  /* line 4019, ../scss/breakpoints/_base.scss */
   .home .what-explore {
     width: 230px;
   }
 
-  /* line 4015, ../scss/breakpoints/_base.scss */
+  /* line 4022, ../scss/breakpoints/_base.scss */
   .archive .pillars-list-about, .page .pillars-list-about {
     flex-direction: column;
   }
 
-  /* line 4018, ../scss/breakpoints/_base.scss */
+  /* line 4025, ../scss/breakpoints/_base.scss */
   .archive .pillars-list-about .p-info, .page .pillars-list-about .p-info {
     min-height: auto;
     margin: 0;
   }
 
-  /* line 4022, ../scss/breakpoints/_base.scss */
+  /* line 4029, ../scss/breakpoints/_base.scss */
   .archive .pillars-list-about .p-info .explore-projects, .page .pillars-list-about .p-info .explore-projects {
     position: relative;
   }
 
-  /* line 4025, ../scss/breakpoints/_base.scss */
+  /* line 4032, ../scss/breakpoints/_base.scss */
   .page .about-content .card-third > p.principles-column-title {
     display: none;
   }
 }
 @media (max-width: 768px) {
-  /* line 4031, ../scss/breakpoints/_base.scss */
+  /* line 4038, ../scss/breakpoints/_base.scss */
   .home #resources {
     margin: 0px 0px 0px;
   }
 
-  /* line 4034, ../scss/breakpoints/_base.scss */
+  /* line 4041, ../scss/breakpoints/_base.scss */
   .index-separator {
     margin: -70px 0px 0px;
   }
 
-  /* line 4037, ../scss/breakpoints/_base.scss */
+  /* line 4044, ../scss/breakpoints/_base.scss */
   .index-separator span {
     width: 23%;
     background: transparent;
   }
 
-  /* line 4041, ../scss/breakpoints/_base.scss */
+  /* line 4048, ../scss/breakpoints/_base.scss */
   .archive #about.index-row, .archive #principles.index-row, .archive #contact.index-row, .archive #more-content.index-row, .page #about.index-row, .page #principles.index-row, .page #contact.index-row, .page #more-content.index-row, .page #newsletter {
     margin: 0;
     padding: 0;
   }
 
-  /* line 4045, ../scss/breakpoints/_base.scss */
+  /* line 4052, ../scss/breakpoints/_base.scss */
   .page #contact .-m-form {
     width: 100%;
     display: table;
   }
 
-  /* line 4049, ../scss/breakpoints/_base.scss */
+  /* line 4056, ../scss/breakpoints/_base.scss */
   #logo img {
     display: none;
   }
 
-  /* line 4052, ../scss/breakpoints/_base.scss */
+  /* line 4059, ../scss/breakpoints/_base.scss */
   #logo a {
     content: '';
     background-image: url(/wp-content/themes/openDRI/logo-extended.svg);
@@ -6344,122 +6350,122 @@ div.cartodb-popup .cartodb-popup-close-button {
     top: -5px;
   }
 
-  /* line 4063, ../scss/breakpoints/_base.scss */
+  /* line 4070, ../scss/breakpoints/_base.scss */
   .no-home .header .hr {
     display: block;
   }
 
-  /* line 4066, ../scss/breakpoints/_base.scss */
+  /* line 4073, ../scss/breakpoints/_base.scss */
   .header nav img {
     top: -13px;
   }
 
-  /* line 4069, ../scss/breakpoints/_base.scss */
+  /* line 4076, ../scss/breakpoints/_base.scss */
   .no-home .header nav {
     top: 10px;
   }
 
-  /* line 4072, ../scss/breakpoints/_base.scss */
+  /* line 4079, ../scss/breakpoints/_base.scss */
   .header nav span {
     font-size: 11px;
     line-height: 20px;
     height: 20px;
   }
 
-  /* line 4077, ../scss/breakpoints/_base.scss */
+  /* line 4084, ../scss/breakpoints/_base.scss */
   .header nav span.current {
     padding-bottom: 0;
   }
 
-  /* line 4080, ../scss/breakpoints/_base.scss */
+  /* line 4087, ../scss/breakpoints/_base.scss */
   .header nav span.float-center {
     position: relative;
     top: -5px;
     width: 100%;
   }
 
-  /* line 4085, ../scss/breakpoints/_base.scss */
+  /* line 4092, ../scss/breakpoints/_base.scss */
   .header nav a:hover:before {
     content: none;
   }
 
-  /* line 4088, ../scss/breakpoints/_base.scss */
+  /* line 4095, ../scss/breakpoints/_base.scss */
   .home #map-fake .what-list {
     width: 100%;
     padding: 20px;
   }
 
-  /* line 4092, ../scss/breakpoints/_base.scss */
+  /* line 4099, ../scss/breakpoints/_base.scss */
   .home .what-explore {
     display: none;
   }
 
-  /* line 4095, ../scss/breakpoints/_base.scss */
+  /* line 4102, ../scss/breakpoints/_base.scss */
   .blue-bar-top.about {
     align-items: center;
     height: 180px;
     margin: 0 0 -20px;
   }
 
-  /* line 4100, ../scss/breakpoints/_base.scss */
+  /* line 4107, ../scss/breakpoints/_base.scss */
   .home .index-row article.resource-cont, .index-row .card-third.resource-cont {
     width: 50vh;
   }
 
-  /* line 4103, ../scss/breakpoints/_base.scss */
+  /* line 4110, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper .region-filter li:first-child i {
     display: none;
   }
 
-  /* line 4106, ../scss/breakpoints/_base.scss */
+  /* line 4113, ../scss/breakpoints/_base.scss */
   .archive .cdbmap, .page .cdbmap {
     height: 330px;
   }
 
-  /* line 4109, ../scss/breakpoints/_base.scss */
+  /* line 4116, ../scss/breakpoints/_base.scss */
   .no-home .header nav {
     width: 100%;
   }
 
-  /* line 4112, ../scss/breakpoints/_base.scss */
+  /* line 4119, ../scss/breakpoints/_base.scss */
   .no-home .header {
     height: 120px;
   }
 
-  /* line 4115, ../scss/breakpoints/_base.scss */
+  /* line 4122, ../scss/breakpoints/_base.scss */
   .header {
     padding: 0 2%;
   }
 
-  /* line 4118, ../scss/breakpoints/_base.scss */
+  /* line 4125, ../scss/breakpoints/_base.scss */
   .home .header {
     height: 127px;
   }
 
-  /* line 4121, ../scss/breakpoints/_base.scss */
+  /* line 4128, ../scss/breakpoints/_base.scss */
   .home .header nav {
     height: 40px;
   }
 
-  /* line 4124, ../scss/breakpoints/_base.scss */
+  /* line 4131, ../scss/breakpoints/_base.scss */
   #map-fake .what-list > nav span {
     font-size: 12px;
     letter-spacing: 0.4px;
   }
 
-  /* line 4128, ../scss/breakpoints/_base.scss */
+  /* line 4135, ../scss/breakpoints/_base.scss */
   .home #map-fake .what-list > nav span i {
     height: 70px;
     width: 70px;
     background-size: 35px;
   }
 
-  /* line 4133, ../scss/breakpoints/_base.scss */
+  /* line 4140, ../scss/breakpoints/_base.scss */
   .home #map-fake .what-list h2 {
     margin: 0;
   }
 
-  /* line 4136, ../scss/breakpoints/_base.scss */
+  /* line 4143, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper.filters span {
     top: 0;
     padding: 10px;
@@ -6467,7 +6473,7 @@ div.cartodb-popup .cartodb-popup-close-button {
     width: 65px;
   }
 
-  /* line 4142, ../scss/breakpoints/_base.scss */
+  /* line 4149, ../scss/breakpoints/_base.scss */
   #blue-bar-pick-pillar {
     height: 70px;
     border: none;
@@ -6476,7 +6482,7 @@ div.cartodb-popup .cartodb-popup-close-button {
     overflow: hidden;
   }
 
-  /* line 4149, ../scss/breakpoints/_base.scss */
+  /* line 4156, ../scss/breakpoints/_base.scss */
   .blue-bar-top {
     align-items: flex-start;
     height: 240px;
@@ -6484,59 +6490,59 @@ div.cartodb-popup .cartodb-popup-close-button {
     width: 100%;
   }
 
-  /* line 4155, ../scss/breakpoints/_base.scss */
+  /* line 4162, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper {
     -webkit-flex-direction: column;
     flex-direction: column;
   }
 
-  /* line 4159, ../scss/breakpoints/_base.scss */
+  /* line 4166, ../scss/breakpoints/_base.scss */
   .blue-bar-top.about .wrapper {
     height: 80%;
     width: 95%;
   }
 
-  /* line 4163, ../scss/breakpoints/_base.scss */
+  /* line 4170, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper .region-filter li {
     display: table;
     padding: 0 10px 0 0 !important;
   }
 
-  /* line 4167, ../scss/breakpoints/_base.scss */
+  /* line 4174, ../scss/breakpoints/_base.scss */
   .category .blue-bar-top .region-filter li:first-child {
     padding: inherit;
   }
 
-  /* line 4170, ../scss/breakpoints/_base.scss */
+  /* line 4177, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper .region-filter {
     position: relative;
     display: inline !important;
     background-color: transparent;
   }
 
-  /* line 4175, ../scss/breakpoints/_base.scss */
+  /* line 4182, ../scss/breakpoints/_base.scss */
   #toggle-filter-region {
     display: none;
     width: 100%;
   }
 
-  /* line 4179, ../scss/breakpoints/_base.scss */
+  /* line 4186, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper .region-filter li.clear-map {
     display: none;
   }
 
-  /* line 4182, ../scss/breakpoints/_base.scss */
+  /* line 4189, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper .region-filter li::first-child {
     padding: 0;
   }
 
-  /* line 4185, ../scss/breakpoints/_base.scss */
+  /* line 4192, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper .region-filter input {
     position: relative;
     top: -10px;
   }
 
-  /* line 4189, ../scss/breakpoints/_base.scss */
+  /* line 4196, ../scss/breakpoints/_base.scss */
   .blue-bar-top.fixed {
     position: inherit;
     top: inherit;
@@ -6544,7 +6550,7 @@ div.cartodb-popup .cartodb-popup-close-button {
     opacity: inherit;
   }
 
-  /* line 4195, ../scss/breakpoints/_base.scss */
+  /* line 4202, ../scss/breakpoints/_base.scss */
   .index-row .row-container, .page .index-row .row-container {
     -webkit-flex-direction: column;
     flex-direction: column;
@@ -6552,52 +6558,52 @@ div.cartodb-popup .cartodb-popup-close-button {
     width: 100%;
   }
 
-  /* line 4204, ../scss/breakpoints/_base.scss */
+  /* line 4211, ../scss/breakpoints/_base.scss */
   .archive .blue-bar-top {
     display: none;
   }
 
-  /* line 4207, ../scss/breakpoints/_base.scss */
+  /* line 4214, ../scss/breakpoints/_base.scss */
   .archive .blue-bar-top-m {
     display: block;
   }
 
-  /* line 4210, ../scss/breakpoints/_base.scss */
+  /* line 4217, ../scss/breakpoints/_base.scss */
   .page #partners .-m-partner {
     width: 100%;
   }
 
-  /* line 4213, ../scss/breakpoints/_base.scss */
+  /* line 4220, ../scss/breakpoints/_base.scss */
   .archive #contact, .page #contact {
     display: table;
   }
 
-  /* line 4216, ../scss/breakpoints/_base.scss */
+  /* line 4223, ../scss/breakpoints/_base.scss */
   .archive .corner-map, .page .corner-map {
     display: none;
   }
 
-  /* line 4219, ../scss/breakpoints/_base.scss */
+  /* line 4226, ../scss/breakpoints/_base.scss */
   .page #more-content > .card-third {
     width: 100%;
   }
 
-  /* line 4222, ../scss/breakpoints/_base.scss */
+  /* line 4229, ../scss/breakpoints/_base.scss */
   .page #members h3 {
     width: 100%;
   }
 
-  /* line 4225, ../scss/breakpoints/_base.scss */
+  /* line 4232, ../scss/breakpoints/_base.scss */
   .page #partners h3 {
     width: 100%;
   }
 
-  /* line 4228, ../scss/breakpoints/_base.scss */
+  /* line 4235, ../scss/breakpoints/_base.scss */
   .page #contact .index-row .card-third {
     padding: 0 0 10px;
   }
 
-  /* line 4231, ../scss/breakpoints/_base.scss */
+  /* line 4238, ../scss/breakpoints/_base.scss */
   .category-news .blue-bar-top,
   .category-community-mapping .blue-bar-top,
   .category-risk-visualization .blue-bar-top,
@@ -6612,12 +6618,12 @@ div.cartodb-popup .cartodb-popup-close-button {
     height: 160px;
   }
 
-  /* line 4244, ../scss/breakpoints/_base.scss */
+  /* line 4251, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper .region-filter li {
     display: inline;
   }
 
-  /* line 4247, ../scss/breakpoints/_base.scss */
+  /* line 4254, ../scss/breakpoints/_base.scss */
   .category-news #main > h3,
   .category-news #main > h1,
   .category-community-mapping #main > h3,
@@ -6646,7 +6652,7 @@ div.cartodb-popup .cartodb-popup-close-button {
     max-width: 100%;
   }
 
-  /* line 4274, ../scss/breakpoints/_base.scss */
+  /* line 4281, ../scss/breakpoints/_base.scss */
   .category-news #main .row-container article,
   .post-type-archive-resource #main .row-container article,
   .category-community-mapping #main .row-container article,
@@ -6664,17 +6670,17 @@ div.cartodb-popup .cartodb-popup-close-button {
     margin: 20px 0px;
   }
 
-  /* line 4290, ../scss/breakpoints/_base.scss */
+  /* line 4297, ../scss/breakpoints/_base.scss */
   .category-open-data-platforms #main .row-container article header, .category-community-mapping #main .row-container article header, .category-risk-visualization #main .row-container article header, .category-news #main .row-container article header, .post-type-archive-resource #main .row-container article header, .category-africa #main, .category-east-asia-pacific #main, .category-europe-and-central-asia #main, .category-latin-america-and-caribbean #main, .category-middle-east-and-north-africa #main, .category-non-wb-countries #main, .category-south-asia #main {
     bottom: 50%;
   }
 
-  /* line 4293, ../scss/breakpoints/_base.scss */
+  /* line 4300, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper .region-filter {
     top: 0;
   }
 
-  /* line 4296, ../scss/breakpoints/_base.scss */
+  /* line 4303, ../scss/breakpoints/_base.scss */
   .category-news #main,
   .category-community-mapping #main,
   .category-risk-visualization #main,
@@ -6682,88 +6688,88 @@ div.cartodb-popup .cartodb-popup-close-button {
     margin: 30px 0 0;
   }
 
-  /* line 4302, ../scss/breakpoints/_base.scss */
+  /* line 4309, ../scss/breakpoints/_base.scss */
   .hentry.-odri-post.category-news, .hentry.-odri-post.category-projects {
     width: 100%;
     padding: 1em;
   }
 
-  /* line 4306, ../scss/breakpoints/_base.scss */
+  /* line 4313, ../scss/breakpoints/_base.scss */
   div#principles.m-all.cf.index-row.about-content, div#principles.m-all.index-row.about-content.comment-respond {
     height: 100%;
     display: block;
   }
 
-  /* line 4310, ../scss/breakpoints/_base.scss */
+  /* line 4317, ../scss/breakpoints/_base.scss */
   .page .about-content:not(#more-content) .card-third .principles-columns {
     flex-direction: column;
   }
-  /* line 4312, ../scss/breakpoints/_base.scss */
+  /* line 4319, ../scss/breakpoints/_base.scss */
   .page .about-content:not(#more-content) .card-third .principles-columns .principles-column {
     width: 100%;
   }
 
-  /* line 4316, ../scss/breakpoints/_base.scss */
+  /* line 4323, ../scss/breakpoints/_base.scss */
   .page .p-info.double p {
     width: 100%;
   }
 
-  /* line 4319, ../scss/breakpoints/_base.scss */
+  /* line 4326, ../scss/breakpoints/_base.scss */
   .page #members .-m-team-member {
     display: block;
   }
 
-  /* line 4322, ../scss/breakpoints/_base.scss */
+  /* line 4329, ../scss/breakpoints/_base.scss */
   .page #partners .-m-partner .-m-info, .page #members .-m-team-member .-m-info {
     width: 100%;
     margin: 0;
   }
 
-  /* line 4326, ../scss/breakpoints/_base.scss */
+  /* line 4333, ../scss/breakpoints/_base.scss */
   .page #partners .-m-partner img {
     width: 100%;
   }
 
-  /* line 4329, ../scss/breakpoints/_base.scss */
+  /* line 4336, ../scss/breakpoints/_base.scss */
   .page #members .-m-team-member img {
     display: block;
     margin: 0 auto 30px;
   }
 
-  /* line 4333, ../scss/breakpoints/_base.scss */
+  /* line 4340, ../scss/breakpoints/_base.scss */
   .page #contact .contact-form textarea {
     width: 100%;
   }
 
-  /* line 4336, ../scss/breakpoints/_base.scss */
+  /* line 4343, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper span a i {
     transform: scale(2);
     visibility: visible;
     margin: 10px;
   }
 
-  /* line 4341, ../scss/breakpoints/_base.scss */
+  /* line 4348, ../scss/breakpoints/_base.scss */
   .resources-page-list .blue-bar-top {
     height: 170px;
   }
 
-  /* line 4344, ../scss/breakpoints/_base.scss */
+  /* line 4351, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper span a {
     visibility: hidden;
   }
 
-  /* line 4347, ../scss/breakpoints/_base.scss */
+  /* line 4354, ../scss/breakpoints/_base.scss */
   .resources-page-list .blue-bar-top .wrapper span a {
     visibility: visible;
   }
 
-  /* line 4350, ../scss/breakpoints/_base.scss */
+  /* line 4357, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper .region-filter li a {
     width: initial;
     display: inherit;
   }
 
-  /* line 4354, ../scss/breakpoints/_base.scss */
+  /* line 4361, ../scss/breakpoints/_base.scss */
   .header nav input.visible {
     top: -3px;
     width: 90%;
@@ -6772,45 +6778,45 @@ div.cartodb-popup .cartodb-popup-close-button {
     text-align: center;
   }
 
-  /* line 4361, ../scss/breakpoints/_base.scss */
+  /* line 4368, ../scss/breakpoints/_base.scss */
   .post-type-archive-project #main > h3,
   .post-type-archive-resource #main > h3 {
     width: 100%;
     max-width: 100%;
   }
 
-  /* line 4366, ../scss/breakpoints/_base.scss */
+  /* line 4373, ../scss/breakpoints/_base.scss */
   .post-type-archive-resource #main {
     margin: 30px 6px 0;
   }
 
-  /* line 4369, ../scss/breakpoints/_base.scss */
+  /* line 4376, ../scss/breakpoints/_base.scss */
   .blue-bar-top.about .wrapper span a {
     visibility: visible;
   }
 
-  /* line 4374, ../scss/breakpoints/_base.scss */
+  /* line 4381, ../scss/breakpoints/_base.scss */
   .index-row .resource-list li {
     display: block;
     width: 90%;
   }
 
-  /* line 4378, ../scss/breakpoints/_base.scss */
+  /* line 4385, ../scss/breakpoints/_base.scss */
   .leaflet-top .leaflet-control {
     margin-top: 10px !important;
   }
 
-  /* line 4381, ../scss/breakpoints/_base.scss */
+  /* line 4388, ../scss/breakpoints/_base.scss */
   #map-fake {
     height: 440px;
   }
 
-  /* line 4384, ../scss/breakpoints/_base.scss */
+  /* line 4391, ../scss/breakpoints/_base.scss */
   #map-fake:after {
     background: #0e5fa2;
   }
 
-  /* line 4387, ../scss/breakpoints/_base.scss */
+  /* line 4394, ../scss/breakpoints/_base.scss */
   .index-row .card-third.twitter-timeline-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -6821,113 +6827,113 @@ div.cartodb-popup .cartodb-popup-close-button {
     margin: 0 !important;
   }
 
-  /* line 4396, ../scss/breakpoints/_base.scss */
+  /* line 4403, ../scss/breakpoints/_base.scss */
   .index-row .card-third .twitter > span {
     left: 40px;
   }
 
-  /* line 4399, ../scss/breakpoints/_base.scss */
+  /* line 4406, ../scss/breakpoints/_base.scss */
   .index-row article, .index-row .card-third {
     margin: 0 15px 30px;
   }
 
-  /* line 4402, ../scss/breakpoints/_base.scss */
+  /* line 4409, ../scss/breakpoints/_base.scss */
   .index-row article, .index-row .card-third::last-child {
     margin: 0 15px 0px;
   }
 
-  /* line 4405, ../scss/breakpoints/_base.scss */
+  /* line 4412, ../scss/breakpoints/_base.scss */
   .hentry {
     border-radius: 0;
   }
 
-  /* line 4408, ../scss/breakpoints/_base.scss */
+  /* line 4415, ../scss/breakpoints/_base.scss */
   .page #inner-content {
     padding: 0 3%;
   }
 
-  /* line 4411, ../scss/breakpoints/_base.scss */
+  /* line 4418, ../scss/breakpoints/_base.scss */
   .page .about-content h3, .page .more-content h3, .page #contact h3, .page #more-content h3, .page #partners h3, .page #members h3 {
     margin: 60px 0 10px 0;
     font-size: 35px;
     padding: 0;
   }
 
-  /* line 4416, ../scss/breakpoints/_base.scss */
+  /* line 4423, ../scss/breakpoints/_base.scss */
   .blue-bar-top.about .wrapper span.current {
     color: #fff;
     background: transparent;
     padding: 0;
   }
 
-  /* line 4421, ../scss/breakpoints/_base.scss */
+  /* line 4428, ../scss/breakpoints/_base.scss */
   .footer {
     display: none;
   }
 
-  /* line 4424, ../scss/breakpoints/_base.scss */
+  /* line 4431, ../scss/breakpoints/_base.scss */
   .footer.mobile {
     display: block;
   }
 
-  /* line 4427, ../scss/breakpoints/_base.scss */
+  /* line 4434, ../scss/breakpoints/_base.scss */
   .footer.mobile .-ft-content {
     flex-direction: column;
     align-items: center;
     height: 190px;
   }
 
-  /* line 4432, ../scss/breakpoints/_base.scss */
+  /* line 4439, ../scss/breakpoints/_base.scss */
   .footer.mobile .-ft-content #mc-embedded-subscribe {
     width: 100px;
   }
 
-  /* line 4435, ../scss/breakpoints/_base.scss */
+  /* line 4442, ../scss/breakpoints/_base.scss */
   .footer.mobile .-ft-content .-ft-newsletter span {
     font-weight: bold;
     font-size: 15px;
   }
 
-  /* line 4439, ../scss/breakpoints/_base.scss */
+  /* line 4446, ../scss/breakpoints/_base.scss */
   .footer.mobile .-ft-content form {
     width: 310px;
   }
 
-  /* line 4442, ../scss/breakpoints/_base.scss */
+  /* line 4449, ../scss/breakpoints/_base.scss */
   .footer.mobile .-ft-content nav {
     flex-direction: row;
     justify-content: space-between;
     width: 310px;
   }
 
-  /* line 4447, ../scss/breakpoints/_base.scss */
+  /* line 4454, ../scss/breakpoints/_base.scss */
   .footer.mobile .-ft-content .-ft-logo a {
     display: inline;
     left: 3px;
   }
 
-  /* line 4451, ../scss/breakpoints/_base.scss */
+  /* line 4458, ../scss/breakpoints/_base.scss */
   #pic-banner {
     height: 135px;
     margin: 0 0 0px;
   }
 
-  /* line 4455, ../scss/breakpoints/_base.scss */
+  /* line 4462, ../scss/breakpoints/_base.scss */
   .about-content.index-row {
     margin: 60px -10px;
   }
 
-  /* line 4458, ../scss/breakpoints/_base.scss */
+  /* line 4465, ../scss/breakpoints/_base.scss */
   .page .p-info {
     justify-content: flex-start;
   }
 
-  /* line 4461, ../scss/breakpoints/_base.scss */
+  /* line 4468, ../scss/breakpoints/_base.scss */
   .single .wrap {
     width: 100%;
   }
 
-  /* line 4464, ../scss/breakpoints/_base.scss */
+  /* line 4471, ../scss/breakpoints/_base.scss */
   #explore-more section .what-explore {
     top: 270px;
     min-height: 50px;
@@ -6941,275 +6947,275 @@ div.cartodb-popup .cartodb-popup-close-button {
     font-size: 20px;
   }
 
-  /* line 4476, ../scss/breakpoints/_base.scss */
+  /* line 4483, ../scss/breakpoints/_base.scss */
   .index-row.more-content h3 {
     padding: 0 0 0 10px;
   }
 
-  /* line 4479, ../scss/breakpoints/_base.scss */
+  /* line 4486, ../scss/breakpoints/_base.scss */
   .archive #contact .index-row, .page #contact .index-row {
     width: 100%;
   }
 
-  /* line 4482, ../scss/breakpoints/_base.scss */
+  /* line 4489, ../scss/breakpoints/_base.scss */
   .hentry.-odri-post h1, .archive h1 {
     font-size: 30px;
     line-height: 30px;
   }
 
-  /* line 4486, ../scss/breakpoints/_base.scss */
+  /* line 4493, ../scss/breakpoints/_base.scss */
   .archive h1 {
     margin: 20px 0;
   }
 
-  /* line 4489, ../scss/breakpoints/_base.scss */
+  /* line 4496, ../scss/breakpoints/_base.scss */
   .sidebar {
     width: 100%;
   }
 
-  /* line 4492, ../scss/breakpoints/_base.scss */
+  /* line 4499, ../scss/breakpoints/_base.scss */
   .sidebar h4 {
     padding: 0 0 0 10px;
   }
 
-  /* line 4495, ../scss/breakpoints/_base.scss */
+  /* line 4502, ../scss/breakpoints/_base.scss */
   .sidebar ul {
     width: calc(100% - 20px);
     margin: 0 auto;
   }
 
-  /* line 4499, ../scss/breakpoints/_base.scss */
+  /* line 4506, ../scss/breakpoints/_base.scss */
   i {
     width: 70%;
   }
 
-  /* line 4502, ../scss/breakpoints/_base.scss */
+  /* line 4509, ../scss/breakpoints/_base.scss */
   .single .index-row.more-content .row-container article {
     max-width: 100% !important;
     width: calc(100% - 40px) !important;
   }
 
-  /* line 4506, ../scss/breakpoints/_base.scss */
+  /* line 4513, ../scss/breakpoints/_base.scss */
   .index-row .card-third.project, .index-row article.project {
     max-width: 100%;
     width: 100%;
   }
 
-  /* line 4510, ../scss/breakpoints/_base.scss */
+  /* line 4517, ../scss/breakpoints/_base.scss */
   #content {
     overflow-x: initial;
   }
 
-  /* line 4513, ../scss/breakpoints/_base.scss */
+  /* line 4520, ../scss/breakpoints/_base.scss */
   .home #news.index-row {
     -webkit-flex-direction: column;
     flex-direction: column;
   }
 
-  /* line 4517, ../scss/breakpoints/_base.scss */
+  /* line 4524, ../scss/breakpoints/_base.scss */
   .home .index-row#news .row-container {
     width: calc(100% - 20px);
   }
 
-  /* line 4520, ../scss/breakpoints/_base.scss */
+  /* line 4527, ../scss/breakpoints/_base.scss */
   .home #news.index-row article, .home #news.index-row .card-third {
     width: 100%;
     max-width: 100%;
   }
 
-  /* line 4524, ../scss/breakpoints/_base.scss */
+  /* line 4531, ../scss/breakpoints/_base.scss */
   .home .index-row .first-text {
     height: auto;
   }
 
-  /* line 4527, ../scss/breakpoints/_base.scss */
+  /* line 4534, ../scss/breakpoints/_base.scss */
   .index-row .card-third .twitter {
     width: calc(100% - 20px);
   }
 
-  /* line 4530, ../scss/breakpoints/_base.scss */
+  /* line 4537, ../scss/breakpoints/_base.scss */
   .home .index-row article, .home .index-row .card-third {
     width: 100%;
     max-width: calc(100% - 20px);
   }
 
-  /* line 4534, ../scss/breakpoints/_base.scss */
+  /* line 4541, ../scss/breakpoints/_base.scss */
   .home #news.index-row article:last-child {
     position: relative;
     top: 0;
     right: 0;
   }
 
-  /* line 4539, ../scss/breakpoints/_base.scss */
+  /* line 4546, ../scss/breakpoints/_base.scss */
   .post-type-archive-resource #main .index-row {
     margin: 20px 0 !important;
     flex-direction: column;
   }
 
-  /* line 4543, ../scss/breakpoints/_base.scss */
+  /* line 4550, ../scss/breakpoints/_base.scss */
   .post-type-archive-resource .index-row.last-resources a {
     width: 100%;
     max-width: 100%;
   }
 
-  /* line 4547, ../scss/breakpoints/_base.scss */
+  /* line 4554, ../scss/breakpoints/_base.scss */
   .post-type-archive-resource .index-row.last-resources a article {
     height: 100px;
   }
 
-  /* line 4550, ../scss/breakpoints/_base.scss */
+  /* line 4557, ../scss/breakpoints/_base.scss */
   .home #resources.index-row article.resource-cont, .home #inner-content > .last-resources article {
     width: 100%;
     max-width: 100%;
   }
 
-  /* line 4554, ../scss/breakpoints/_base.scss */
+  /* line 4561, ../scss/breakpoints/_base.scss */
   .home .index-row .resource-list.home {
     margin: 20px 0 0 0;
   }
 
-  /* line 4557, ../scss/breakpoints/_base.scss */
+  /* line 4564, ../scss/breakpoints/_base.scss */
   .home #inner-content > .last-resources {
     margin: 0px 0 50px !important;
   }
 
-  /* line 4560, ../scss/breakpoints/_base.scss */
+  /* line 4567, ../scss/breakpoints/_base.scss */
   .page #contact .contact-form input, .page #contact .contact-form textarea {
     border: 1px solid #eee;
     width: 100% !important;
   }
 
-  /* line 4564, ../scss/breakpoints/_base.scss */
+  /* line 4571, ../scss/breakpoints/_base.scss */
   .archive #contact .contact-form .contact-submit .pushbutton-wide, .page #contact .contact-form .contact-submit .pushbutton-wide {
     width: 71px !important;
     left: 0;
   }
 
-  /* line 4568, ../scss/breakpoints/_base.scss */
+  /* line 4575, ../scss/breakpoints/_base.scss */
   .index-row article.resource-cont section h3, .index-row .card-third.resource-cont section h3 {
     font-size: 17px;
   }
 
-  /* line 4571, ../scss/breakpoints/_base.scss */
+  /* line 4578, ../scss/breakpoints/_base.scss */
   .category-open-data-platforms #main > h1, .category-open-data-platforms #main > p, .category-community-mapping #main > h1, .category-community-mapping #main > p, .category-africa #main > h1, .category-africa #main > p, .category-east-asia-pacific #main > h1, .category-east-asia-pacific #main > p, .category-europe-and-central-asia #main > h1, .category-europe-and-central-asia #main > p, .category-latin-america-and-caribbean #main > h1, .category-latin-america-and-caribbean #main > p, .category-middle-east-and-north-africa #main > h1, .category-middle-east-and-north-africa #main > p, .category-non-wb-countries #main > h1, .category-non-wb-countries #main > p, .category-south-asia #main > h1, .category-south-asia #main > p, .category-risk-visualization #main > h1, .category-risk-visualization #main > p, .category-news #main > h1, .category-news #main > p, .post-type-archive-resource #main > h1, .post-type-archive-resource #main > p {
     margin: 0 0 10px;
   }
 
-  /* line 4574, ../scss/breakpoints/_base.scss */
+  /* line 4581, ../scss/breakpoints/_base.scss */
   .blue-bar-top-m.active #blue-bar-pick-pillar li input {
     width: 103.4% !important;
     max-width: 103.4% !important;
   }
 
-  /* line 4578, ../scss/breakpoints/_base.scss */
+  /* line 4585, ../scss/breakpoints/_base.scss */
   .search .index-row article, .search .index-row .card-third, .single .index-row.more-content .row-container article {
     width: calc(100% - 20px) !important;
   }
 
-  /* line 4581, ../scss/breakpoints/_base.scss */
+  /* line 4588, ../scss/breakpoints/_base.scss */
   #explore-more section {
     width: 90%;
     height: 70%;
   }
 
-  /* line 4585, ../scss/breakpoints/_base.scss */
+  /* line 4592, ../scss/breakpoints/_base.scss */
   #explore-more section h2 {
     font-size: 30px;
     line-height: 30px;
   }
 
-  /* line 4589, ../scss/breakpoints/_base.scss */
+  /* line 4596, ../scss/breakpoints/_base.scss */
   #explore-more section h3 {
     font-size: 22px;
     line-height: 22px;
   }
 
-  /* line 4593, ../scss/breakpoints/_base.scss */
+  /* line 4600, ../scss/breakpoints/_base.scss */
   .archive #contact .contact-form label, .page #contact .contact-form label {
     text-align: center;
     width: 100%;
     padding: 10px 0 5px;
   }
 
-  /* line 4598, ../scss/breakpoints/_base.scss */
+  /* line 4605, ../scss/breakpoints/_base.scss */
   #map-fake .what-list > nav a {
     line-height: 15px;
   }
 
-  /* line 4601, ../scss/breakpoints/_base.scss */
+  /* line 4608, ../scss/breakpoints/_base.scss */
   .category-open-data-platforms #main, .category-community-mapping #main, .category-africa #main, .category-east-asia-pacific #main, .category-europe-and-central-asia #main, .category-latin-america-and-caribbean #main, .category-middle-east-and-north-africa #main, .category-non-wb-countries #main, .category-south-asia #main, .category-risk-visualization #main, .category-news #main, .post-type-archive-resource #main, .search #main, .tag #main {
     margin: 50px 0 0 0;
   }
 
-  /* line 4604, ../scss/breakpoints/_base.scss */
+  /* line 4611, ../scss/breakpoints/_base.scss */
   .search #main > h1, .tag #main > h1 {
     margin: 0 0 20px;
   }
 
-  /* line 4607, ../scss/breakpoints/_base.scss */
+  /* line 4614, ../scss/breakpoints/_base.scss */
   .search #main > p, .tag #main > p {
     display: none;
   }
 
-  /* line 4610, ../scss/breakpoints/_base.scss */
+  /* line 4617, ../scss/breakpoints/_base.scss */
   .search #main .row-container article, .tag #main .row-container article {
     width: 100%;
   }
 
-  /* line 4613, ../scss/breakpoints/_base.scss */
+  /* line 4620, ../scss/breakpoints/_base.scss */
   .page .pillars-list-about h4, .page .pillars-list-about p {
     width: 100%;
   }
 
-  /* line 4616, ../scss/breakpoints/_base.scss */
+  /* line 4623, ../scss/breakpoints/_base.scss */
   .resources-page-list .index-row {
     margin: 0;
   }
 
-  /* line 4619, ../scss/breakpoints/_base.scss */
+  /* line 4626, ../scss/breakpoints/_base.scss */
   .resources-page-list .resource-list-new li {
     display: inline;
   }
 
-  /* line 4622, ../scss/breakpoints/_base.scss */
+  /* line 4629, ../scss/breakpoints/_base.scss */
   .resources-page-list .resource-list-new li div {
     width: auto;
   }
 
-  /* line 4625, ../scss/breakpoints/_base.scss */
+  /* line 4632, ../scss/breakpoints/_base.scss */
   .resources-page-list .index-row.last-resources {
     flex-direction: column;
   }
 
-  /* line 4628, ../scss/breakpoints/_base.scss */
+  /* line 4635, ../scss/breakpoints/_base.scss */
   .resources-page-list .index-row .resource-cont {
     width: 100%;
     height: auto;
   }
 
-  /* line 4632, ../scss/breakpoints/_base.scss */
+  /* line 4639, ../scss/breakpoints/_base.scss */
   .archive .newsletter .subscribe form input[type=email], .page .newsletter .subscribe form input[type=email] {
     width: 70%;
   }
 
-  /* line 4635, ../scss/breakpoints/_base.scss */
+  /* line 4642, ../scss/breakpoints/_base.scss */
   .archive .newsletter .subscribe h4, .page .newsletter .subscribe h4 {
     height: 45px;
     font-size: 30px;
   }
 
-  /* line 4639, ../scss/breakpoints/_base.scss */
+  /* line 4646, ../scss/breakpoints/_base.scss */
   .resource-list-title {
     font-size: 28px;
     margin: 35px 0 0;
   }
 
-  /* line 4643, ../scss/breakpoints/_base.scss */
+  /* line 4650, ../scss/breakpoints/_base.scss */
   .single #explore-more .what-explore a {
     line-height: 34px;
   }
 
-  /* line 4646, ../scss/breakpoints/_base.scss */
+  /* line 4653, ../scss/breakpoints/_base.scss */
   h5 {
     margin: -40px 0 10px !important;
     position: relative;
@@ -7222,7 +7228,7 @@ div.cartodb-popup .cartodb-popup-close-button {
   }
 }
 @media all and (-ms-high-contrast: none) {
-  /* line 4659, ../scss/breakpoints/_base.scss */
+  /* line 4666, ../scss/breakpoints/_base.scss */
   p.principles-column-title {
     width: 60% !important;
   }
