@@ -488,7 +488,8 @@ if ( $post_type === 'project' && is_post_type_archive() ) { ?>
                                     <p class="byline entry-meta vcard">
 												<span>
 													<?php
-													foreach ( get_the_category() as $category ) {
+                                                    $categories = get_the_category();
+													foreach ( $categories as $category ) {
 														if ( $category->cat_ID === 6 ||
 														     $category->cat_ID === 7 ||
 														     $category->cat_ID === 8
@@ -496,11 +497,21 @@ if ( $post_type === 'project' && is_post_type_archive() ) { ?>
 															echo '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . $category->cat_name . '</a> ';
 														}
 													}
+													$countries = get_post_meta($post->ID, 'countries', true);
+													foreach ( explode("\n", $countries) as $country ) {
+													    if (strlen($country) <= 1) {
+													        continue;
+													    }
+													    $tag = get_term_by('name', $country, 'post_tag') ? : get_term_by('slug', $country, 'post_tag');
+														if (!$tag) {
+															continue;
+														}
+                                                        echo '<a href="' . esc_url( get_tag_link( $tag ) ) . '">' . $country . '</a> ';
+													}
 													?>
 												</span>
 										<?php if ( $post_type !== 'project' ) { ?>
 											<?php printf( __( '', 'bonestheme' ) . ' %1$s',
-												/* the time the post was published */
 												'<time class="updated entry-time" datetime="' . get_the_time( 'Y-m-d' ) . '" itemprop="datePublished">' . get_the_time( 'd M' ) . '</time>'
 											); ?>
 										<?php } ?>
