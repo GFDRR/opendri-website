@@ -432,7 +432,7 @@ if ( $post_type === 'project' && is_post_type_archive() ) { ?>
 							?>
                         </ul>
                         <div class="additional-resources">
-                            <a href="https://opendri.org/tag/resource/">Explore additional resources featured in OpenDRI news</a>
+                            <a href="/tag/resource/">Explore additional resources featured in OpenDRI news</a>
                         </div>
 					<?php else: ?>
 					<?php if ( have_posts() ) :
