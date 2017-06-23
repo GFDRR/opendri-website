@@ -40,7 +40,14 @@ class Redirection_Admin {
 		add_action( 'wp_ajax_red_get_htaccess', array( &$this, 'ajax_get_htaccess' ) );
 		add_action( 'wp_ajax_red_get_nginx', array( &$this, 'ajax_get_nginx' ) );
 
+		add_action( 'wp_ajax_red_load_settings', array( &$this, 'ajax_load_settings' ) );
+		add_action( 'wp_ajax_red_save_settings', array( &$this, 'ajax_save_settings' ) );
+
+		add_action( 'redirection_save_options', array( &$this, 'flush_schedule' ) );
+
 		$this->monitor = new Red_Monitor( red_get_options() );
+
+		$this->export_rss();
 	}
 
 	public static function plugin_activated() {
@@ -61,6 +68,10 @@ class Redirection_Admin {
 		$db->remove( REDIRECTION_FILE );
 
 		delete_option( 'redirection_options' );
+	}
+
+	public function flush_schedule() {
+		Red_Flusher::schedule();
 	}
 
 	private function render( $template, $template_vars = array() ) {
@@ -107,6 +118,11 @@ class Redirection_Admin {
 			include_once dirname( REDIRECTION_FILE ).'/models/database.php';
 
 			$database = new RE_Database();
+
+			if ( $version === false ) {
+				$database->install();
+			}
+
 			return $database->upgrade( $version, REDIRECTION_VERSION );
 		}
 
@@ -147,19 +163,61 @@ class Redirection_Admin {
 
 		$this->inject();
 
-		if ( ! isset( $_GET['sub'] ) || ( isset( $_GET['sub'] ) && ( in_array( $_GET['sub'], array( 'log', '404s', 'groups' ) ) ) ) )
+		if ( ! isset( $_GET['sub'] ) || ( isset( $_GET['sub'] ) && ( in_array( $_GET['sub'], array( 'log', '404s', 'groups' ) ) ) ) ) {
 			add_screen_option( 'per_page', array( 'label' => __( 'Log entries', 'redirection' ), 'default' => 25, 'option' => 'redirection_log_per_page' ) );
+		}
 
 		wp_enqueue_script( 'redirection', plugin_dir_url( REDIRECTION_FILE ).'redirection.js', array( 'jquery-form', 'jquery-ui-sortable' ), $version );
+
+		if ( defined( 'REDIRECTION_DEV_MODE' ) && REDIRECTION_DEV_MODE ) {
+			wp_enqueue_script( 'redirection-ui', 'http://localhost:3312/redirection-ui.js', array( 'redirection' ), $version );
+		} else {
+			wp_enqueue_script( 'redirection-ui', plugin_dir_url( REDIRECTION_FILE ).'redirection-ui.js', array( 'redirection' ), $version );
+		}
+
 		wp_enqueue_style( 'redirection', plugin_dir_url( REDIRECTION_FILE ).'admin.css', $version );
 
 		wp_localize_script( 'redirection', 'Redirectioni10n', array(
 			'error_msg' => __( 'Sorry, unable to do that. Please try refreshing the page.' ),
+			'WP_API_root' => admin_url( 'admin-ajax.php' ),
+			'WP_API_nonce' => wp_create_nonce( 'wp_rest' ),
+			'pluginBaseUrl' => plugins_url( '', REDIRECTION_FILE ),
+			'locale' => $this->get_i18n_data(),
+			'localeSlug' => get_locale(),
 		) );
 	}
 
+	private function get_i18n_data() {
+		$i18n_json = REDIRECTION_FILE . 'locale/json/redirection-' . get_locale() . '.json';
+
+		if ( is_file( $i18n_json ) && is_readable( $i18n_json ) ) {
+			$locale_data = @file_get_contents( $i18n_json );
+
+			if ( $locale_data ) {
+				return $locale_data;
+			}
+		}
+
+		// Return empty if we have nothing to return so it doesn't fail when parsed in JS
+		return '{}';
+	}
+
 	function admin_menu() {
-		add_management_page( __( 'Redirection', 'redirection' ), __( 'Redirection', 'redirection' ), apply_filters( 'redirection_role', 'administrator' ), basename( REDIRECTION_FILE ), array( &$this, 'admin_screen' ) );
+		add_management_page( 'Redirection', 'Redirection', apply_filters( 'redirection_role', 'administrator' ), basename( REDIRECTION_FILE ), array( &$this, 'admin_screen' ) );
+	}
+
+	function export_rss() {
+		if ( isset( $_GET['token'] ) && isset( $_GET['page'] ) && isset( $_GET['sub'] ) && $_GET['page'] === 'redirection.php' && $_GET['sub'] === 'rss' ) {
+			$options = red_get_options();
+
+			if ( $_GET['token'] === $options['token'] && !empty( $options['token'] ) ) {
+				$items = Red_Item::get_all_for_module( intval( $_GET['module'] ) );
+
+				$exporter = Red_FileIO::create( 'rss' );
+				$exporter->export( $items );
+				die();
+			}
+		}
 	}
 
 	function admin_screen() {
@@ -194,57 +252,34 @@ class Redirection_Admin {
 	}
 
 	function inject() {
-		$options = red_get_options();
-
 		if ( isset( $_POST['id'] ) && ! isset( $_POST['action'] ) ) {
 			wp_safe_redirect( add_query_arg( 'id', intval( $_POST['id'] ), $_SERVER['REQUEST_URI'] ) );
 			die();
 		}
 
-		if ( isset( $_GET['token'] ) && isset( $_GET['page'] ) && isset( $_GET['sub'] ) && $_GET['token'] === $options['token'] && $_GET['page'] === 'redirection.php' ) {
-			$exporter = Red_FileIO::create( $_GET['sub'] );
-			if ( $exporter ) {
-				$items = Red_Item::get_all_for_module( intval( $_GET['module'] ) );
+		if ( isset( $_GET['page'] ) && isset( $_GET['sub'] ) && $_GET['page'] === 'redirection.php' ) {
+			if ( isset( $_POST['export-csv'] ) && check_admin_referer( 'redirection-log_management' ) ) {
+				if ( isset( $_GET['sub'] ) && $_GET['sub'] === 'log' )
+					RE_Log::export_to_csv();
+				else
+					RE_404::export_to_csv();
 
-				$exporter->export( $items );
 				die();
+			} else {
+				$exporter = Red_FileIO::create( $_GET['sub'] );
+
+				if ( $exporter ) {
+					$items = Red_Item::get_all_for_module( intval( $_GET['module'] ) );
+
+					$exporter->export( $items );
+					die();
+				}
 			}
-		}
-		elseif ( isset( $_POST['export-csv'] ) && check_admin_referer( 'redirection-log_management' ) ) {
-			if ( isset( $_GET['sub'] ) && $_GET['sub'] === 'log' )
-				RE_Log::export_to_csv();
-			else
-				RE_404::export_to_csv();
-			die();
 		}
 	}
 
 	function admin_screen_options() {
-		if ( isset( $_POST['regenerate'] ) && check_admin_referer( 'redirection-update_options' ) ) {
-			$options = red_get_options();
-			$options['token'] = md5( uniqid() );
-
-			update_option( 'redirection_options', $options );
-
-			$this->render_message( __( 'Your options were updated', 'redirection' ) );
-		}
-		elseif ( isset( $_POST['update'] ) && check_admin_referer( 'redirection-update_options' ) ) {
-			$options['monitor_post']    = stripslashes( $_POST['monitor_post'] );
-			$options['auto_target']     = stripslashes( $_POST['auto_target'] );
-			$options['support']         = isset( $_POST['support'] ) ? true : false;
-			$options['token']           = stripslashes( $_POST['token'] );
-			$options['expire_redirect'] = min( intval( $_POST['expire_redirect'] ), 60 );
-			$options['expire_404']      = min( intval( $_POST['expire_404'] ), 60 );
-
-			if ( trim( $options['token'] ) === '' )
-				$options['token'] = md5( uniqid() );
-
-			update_option( 'redirection_options', $options );
-
-			Red_Flusher::schedule();
-			$this->render_message( __( 'Your options were updated', 'redirection' ) );
-		}
-		elseif ( isset( $_POST['delete'] ) && check_admin_referer( 'redirection-delete_plugin' ) ) {
+		if ( isset( $_POST['delete'] ) && check_admin_referer( 'wp_rest' ) ) {
 			$this->plugin_uninstall();
 
 			$current = get_option( 'active_plugins' );
@@ -254,13 +289,14 @@ class Redirection_Admin {
 			$this->render_message( __( 'Redirection data has been deleted and the plugin disabled', 'redirection' ) );
 			return;
 		}
-		elseif ( isset( $_POST['import'] ) && check_admin_referer( 'redirection-import' ) ) {
+		elseif ( isset( $_POST['import'] ) && check_admin_referer( 'wp_rest' ) ) {
 			$count = Red_FileIO::import( $_POST['group'], $_FILES['upload'] );
 
-			if ( $count > 0 )
+			if ( $count > 0 ) {
 				$this->render_message( sprintf( _n( '%d redirection was successfully imported','%d redirections were successfully imported', $count, 'redirection' ), $count ) );
-			else
+			} else {
 				$this->render_message( __( 'No items were imported', 'redirection' ) );
+			}
 		}
 
 		$groups = Red_Group::get_for_select();
@@ -333,7 +369,7 @@ class Redirection_Admin {
 			$start = strpos( $readme, 'Redirection is available in' );
 			$end   = strpos( $readme, '==', $start );
 			if ( $start !== false && $end !== false ) {
-				if ( preg_match_all( '/^\* (.*?) by (.*?)/m', substr( $readme, $start, $end ), $matches ) > 0 ) {
+				if ( preg_match_all( '/^\* (.*? by .*)/m', substr( $readme, $start, $end ), $matches ) > 0 ) {
 					$locales = $matches[1];
 				}
 			}
@@ -355,8 +391,9 @@ class Redirection_Admin {
 	}
 
 	private function check_ajax_referer( $nonce ) {
-		if ( check_ajax_referer( $nonce, false, false ) === false )
-			$this->output_ajax_response( array( 'error' => __( 'Unable to perform action' ).' - bad nonce' ) );
+		if ( check_ajax_referer( $nonce, false, false ) === false ) {
+			return $this->output_ajax_response( array( 'error' => __( 'Unable to perform action' ).' - bad nonce' ) );
+		}
 	}
 
 	public function ajax_module_edit() {
@@ -370,7 +407,7 @@ class Redirection_Admin {
 		else
 			$json['error'] = __( 'Unable to perform action' ).' - could not find module';
 
-		$this->output_ajax_response( $json );
+		return $this->output_ajax_response( $json );
 	}
 
 	public function ajax_module_save() {
@@ -397,7 +434,7 @@ class Redirection_Admin {
 		else
 			$json['error'] = __( 'Unable to perform action' ).' - could not find module';
 
-		$this->output_ajax_response( $json );
+		return $this->output_ajax_response( $json );
 	}
 
 	public function ajax_group_edit() {
@@ -411,7 +448,7 @@ class Redirection_Admin {
 		else
 			$json['error'] = __( 'Unable to perform action' ).' - could not find group';
 
-		$this->output_ajax_response( $json );
+		return $this->output_ajax_response( $json );
 	}
 
 	public function ajax_group_save() {
@@ -433,7 +470,7 @@ class Redirection_Admin {
 		else
 			$json['error'] = __( 'Unable to perform action' ).' - could not find redirect';
 
-		$this->output_ajax_response( $json );
+		return $this->output_ajax_response( $json );
 	}
 
 	public function ajax_redirect_edit() {
@@ -445,7 +482,7 @@ class Redirection_Admin {
 		else
 			$json['error'] = __( 'Unable to perform action' ).' - could not find redirect';
 
-		$this->output_ajax_response( $json );
+		return $this->output_ajax_response( $json );
 	}
 
 	public function ajax_redirect_save() {
@@ -467,7 +504,7 @@ class Redirection_Admin {
 		else
 			$json['error'] = __( 'Unable to perform action' ).' - could not find redirect';
 
-		$this->output_ajax_response( $json );
+		return $this->output_ajax_response( $json );
 	}
 
 	public function ajax_redirect_add() {
@@ -487,7 +524,7 @@ class Redirection_Admin {
 		else
 			$json['error'] = __( 'Sorry, but your redirection was not created', 'redirection' );
 
-		$this->output_ajax_response( $json );
+		return $this->output_ajax_response( $json );
 	}
 
 	private function get_module_column( $module_id, $export_type ) {
@@ -511,7 +548,7 @@ class Redirection_Admin {
 			$json['html'] .= '<input class="button-secondary" type="submit" name="cancel" value="'.__( 'Cancel', 'redirection' ).'"/>';
 		}
 
-		$this->output_ajax_response( $json );
+		return $this->output_ajax_response( $json );
 	}
 
 	public function ajax_get_nginx() {
@@ -522,10 +559,82 @@ class Redirection_Admin {
 		$this->get_module_column( intval( $_POST['id'] ), 'apache' );
 	}
 
+	public function ajax_load_settings() {
+		$this->check_ajax_referer( 'wp_rest' );
+		return $this->output_ajax_response( array( 'settings' => red_get_options(), 'groups' => $this->groups_to_json( Red_Group::get_for_select() ) ) );
+	}
+
+	public function ajax_save_settings( $settings = array() ) {
+		$this->check_ajax_referer( 'wp_rest' );
+
+		if ( empty( $settings ) ) {
+			$settings = $_POST;
+		}
+
+		$options = red_get_options();
+
+		if ( isset( $settings['monitor_post'] ) ) {
+			$options['monitor_post'] = max( 0, intval( $settings['monitor_post'], 10 ) );
+		}
+
+		if ( isset( $settings['auto_target'] ) ) {
+			$options['auto_target'] = stripslashes( $settings['auto_target'] );
+		}
+
+		if ( isset( $settings['support'] ) ) {
+			$options['support'] = $settings['support'] === 'true' ? true : false;
+		}
+
+		if ( isset( $settings['token'] ) ) {
+			$options['token'] = stripslashes( $settings['token'] );
+
+			if ( trim( $options['token'] ) === '' ) {
+				$options['token'] = md5( uniqid() );
+			}
+		}
+
+		if ( isset( $settings['newsletter'] ) ) {
+			$options['newsletter'] = $settings['newsletter'] === 'true' ? true : false;
+		}
+
+		if ( isset( $settings['expire_redirect'] ) ) {
+			$options['expire_redirect'] = max( 0, min( intval( $settings['expire_redirect'], 10 ), 60 ) );
+		}
+
+		if ( isset( $settings['expire_404'] ) ) {
+			$options['expire_404'] = max( 0, min( intval( $settings['expire_404'], 10 ), 60 ) );
+		}
+
+		update_option( 'redirection_options', $options );
+		do_action( 'redirection_save_options', $options );
+
+		return $this->output_ajax_response( array( 'settings' => $options, 'groups' => $this->groups_to_json( Red_Group::get_for_select() ) ) );
+	}
+
+	private function groups_to_json( $groups, $depth = 0 ) {
+		$items = array();
+
+		foreach ( $groups as $text => $value ) {
+			if ( is_array( $value ) && $depth === 0 ) {
+				$items[] = (object)array( 'text' => $text, 'value' => $this->groups_to_json( $value, 1 ) );
+			} else {
+				$items[] = (object)array( 'text' => $value, 'value' => $text );
+			}
+		}
+
+		return $items;
+	}
+
 	private function output_ajax_response( array $data ) {
-		header( 'Content-Type: application/json' );
-		echo wp_json_encode( $data );
-		die();
+		$result = wp_json_encode( $data );
+
+		if ( defined( 'DOING_AJAX' ) ) {
+			header( 'Content-Type: application/json' );
+			echo $result;
+			die();
+		}
+
+		return $result;
 	}
 }
 
