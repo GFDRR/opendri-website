@@ -815,6 +815,11 @@ body#tinymce.wp-editor img {
   height: auto;
 }
 /* line 174, ../scss/editor-style.scss */
+body#tinymce.wp-editor ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+/* line 179, ../scss/editor-style.scss */
 body#tinymce.wp-editor .size-auto,
 body#tinymce.wp-editor .size-full,
 body#tinymce.wp-editor .size-large,
@@ -823,7 +828,7 @@ body#tinymce.wp-editor .size-thumbnail {
   max-width: 100%;
   height: auto;
 }
-/* line 183, ../scss/editor-style.scss */
+/* line 188, ../scss/editor-style.scss */
 body#tinymce.wp-editor pre {
   background: #1b1b1b;
   color: #f8f9fa;
@@ -837,19 +842,19 @@ body#tinymce.wp-editor pre {
   body#tinymce.wp-editor {
     /* at this larger size, we can start to align images */
   }
-  /* line 201, ../scss/editor-style.scss */
+  /* line 206, ../scss/editor-style.scss */
   body#tinymce.wp-editor .alignleft, body#tinymce.wp-editor img.alignleft {
     margin-right: 1.5em;
     display: inline;
     float: left;
   }
-  /* line 206, ../scss/editor-style.scss */
+  /* line 211, ../scss/editor-style.scss */
   body#tinymce.wp-editor .alignright, body#tinymce.wp-editor img.alignright {
     margin-left: 1.5em;
     display: inline;
     float: right;
   }
-  /* line 211, ../scss/editor-style.scss */
+  /* line 216, ../scss/editor-style.scss */
   body#tinymce.wp-editor .aligncenter, body#tinymce.wp-editor img.aligncenter {
     margin-right: auto;
     margin-left: auto;
