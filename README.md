@@ -30,3 +30,14 @@ If you would like to keep a separate set of configuration for local development,
 
 ![alt](http://i.imgur.com/fzIeQBP.png, '')
 
+# Project charts shortcodes
+
+Refer to <a href="https://github.com/Vizzuality/opendri-charts#charts-configuration">opendri-charts documentation</a> for a full list of parameters and their defaults.
+
+## Compare map
+
+```
+[opendri_charts_compare_map country="HTI" default_feature_type="highways" default_start_year="2015" default_end_year="now"]
+```
+
+The Worpress plugin adds an additional `country` parameter that then gets translated into a polyline.
