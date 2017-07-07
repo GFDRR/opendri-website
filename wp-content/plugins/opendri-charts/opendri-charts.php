@@ -58,8 +58,6 @@ function activity_chart( $atts ) {
       })
       .then(function(data) {
         ODRI.activity('#activity-chart', {
-          width: '100%',
-          height: '500px',
           data: data,
           range: [settings.date_from, settings.date_to]
         })
@@ -70,7 +68,7 @@ function activity_chart( $atts ) {
 }
 
 
-function contrbutor_chart( $atts ) {
+function contributor_chart( $atts ) {
   global $ODRI_API_SEVER;
   global $ODRI_MOCK_DATA;
   ob_start(); ?>
@@ -86,8 +84,6 @@ function contrbutor_chart( $atts ) {
       })
       .then(function(data) {
         ODRI.contributors('#contributor-chart', {
-          width: '100%',
-          height: '500px',
           data: data,
           range: [settings.date_from, settings.date_to]
         })
@@ -99,7 +95,7 @@ function contrbutor_chart( $atts ) {
 
 add_shortcode( 'opendri_charts_compare_map', 'compare_map' );
 add_shortcode( 'opendri_charts_activity', 'activity_chart' );
-add_shortcode( 'opendri_charts_contributors', 'contrbutor_chart' );
+add_shortcode( 'opendri_charts_contributors', 'contributor_chart' );
 
 function opendri_charts_script() {
    wp_register_script('opendri_charts_bundle', plugins_url('scripts/bundle.js', __FILE__) );
