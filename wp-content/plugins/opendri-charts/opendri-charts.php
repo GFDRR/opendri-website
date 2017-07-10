@@ -5,11 +5,11 @@
  * Author: Vizzuality
  * Author URI: http://vizzuality.com
  */
-$ODRI_API_SEVER = "http://54.224.10.82/api/v1";
+$ODRI_API_SERVER = "http://54.224.10.82/api/v1";
 $ODRI_MOCK_DATA = "http://localhost:8080/mocks/histogram-features-hti.json";
 
 function compare_map( $atts ) {
-  global $ODRI_API_SEVER;
+  global $ODRI_API_SERVER;
   global $ODRI_MOCK_DATA;
   ob_start(); ?>
   <div id="compare-map"></div>
@@ -26,7 +26,7 @@ function compare_map( $atts ) {
       settings.iframe_base_url = 'http://localhost:3000';
       if (settings.polygon === undefined) {
         var country = settings.country.toUpperCase() || 'HTI';
-        fetch('<?php echo $ODRI_API_SEVER; ?>/meta/country_polyline/' + country)
+        fetch('<?php echo $ODRI_API_SERVER; ?>/meta/country_polyline/' + country)
           .then(function(response) {
             return response.text();
           })
@@ -43,7 +43,7 @@ function compare_map( $atts ) {
 }
 
 function activity_chart( $atts ) {
-  global $ODRI_API_SEVER;
+  global $ODRI_API_SERVER;
   global $ODRI_MOCK_DATA;
   ob_start(); ?>
   <div id="activity-chart"></div>
@@ -51,7 +51,7 @@ function activity_chart( $atts ) {
   (function() {
     var settings = <?php echo json_encode($atts) ?>;
     var country = settings.country.toUpperCase() || 'HTI';
-    // fetch('<?php echo $ODRI_API_SEVER ?>/stats/all/country/' + country)
+    // fetch('<?php echo $ODRI_API_SERVER ?>/stats/all/country/' + country)
     fetch('<?php echo $ODRI_MOCK_DATA ?>')
       .then(function(response) {
         return response.json();
@@ -71,7 +71,7 @@ function activity_chart( $atts ) {
 
 
 function contributor_chart( $atts ) {
-  global $ODRI_API_SEVER;
+  global $ODRI_API_SERVER;
   global $ODRI_MOCK_DATA;
   ob_start(); ?>
   <div id="contributor-chart" style="width: 50%"></div>
@@ -79,7 +79,7 @@ function contributor_chart( $atts ) {
   (function() {
     var settings = <?php echo json_encode($atts) ?>;
     var country = settings.country.toUpperCase() || 'HTI';
-    // fetch('<?php echo $ODRI_API_SEVER ?>/stats/all/country/' + country)
+    // fetch('<?php echo $ODRI_API_SERVER ?>/stats/all/country/' + country)
     fetch('<?php echo $ODRI_MOCK_DATA ?>')
       .then(function(response) {
         return response.json();
