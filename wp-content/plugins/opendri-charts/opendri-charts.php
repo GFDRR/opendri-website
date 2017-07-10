@@ -59,7 +59,9 @@ function activity_chart( $atts ) {
       .then(function(data) {
         ODRI.activity('#activity-chart', {
           data: data,
-          range: [settings.date_from, settings.date_to]
+          granularity: settings.default_granularity,
+          facet: settings.default_facet,
+          range: [settings.start_date, settings.end_date]
         })
       });
   })()
@@ -85,7 +87,7 @@ function contributor_chart( $atts ) {
       .then(function(data) {
         ODRI.contributors('#contributor-chart', {
           data: data,
-          range: [settings.date_from, settings.date_to]
+          range: [settings.start_date, settings.end_date]
         })
       });
   })()
