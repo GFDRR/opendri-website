@@ -1,14 +1,16 @@
 <?php
 /**
- * Plugin Name: OpenDRI charts
- * Description: Allows adding charts to OpenDRI projects from the admin
+ * Plugin Name: OSMA charts
+ * Description: Allows adding charts to OSMA projects from the admin
  * Author: Vizzuality
  * Author URI: http://vizzuality.com
  */
-$ODRI_API_SERVER = "http://34.230.92.118/api/v1";
+
+require_once __DIR__ . '/osma-charts-settings.php';
+$OSMA_API_SERVER = get_option('osma_api_settings_endpoint' );
 
 function compare_map( $atts ) {
-  global $ODRI_API_SERVER;
+  global $OSMA_API_SERVER;
   ob_start(); ?>
   <div id="compare-map"></div>
   <script>
@@ -24,7 +26,7 @@ function compare_map( $atts ) {
       settings.iframe_base_url = 'http://localhost:3000';
       if (settings.polygon === undefined) {
         var country = settings.country.toUpperCase() || 'HTI';
-        fetch('<?php echo $ODRI_API_SERVER; ?>/meta/country_polyline/' + country)
+        fetch('<?php echo $OSMA_API_SERVER; ?>/meta/country_polyline/' + country)
           .then(function(response) {
             return response.text();
           })
@@ -41,14 +43,14 @@ function compare_map( $atts ) {
 }
 
 function activity_chart( $atts ) {
-  global $ODRI_API_SERVER;
+  global $OSMA_API_SERVER;
   ob_start(); ?>
   <div id="activity-chart"></div>
   <script>
   (function() {
     var settings = <?php echo json_encode($atts) ?>;
     var country = settings.country.toUpperCase() || 'HTI';
-    fetch('<?php echo $ODRI_API_SERVER ?>/stats/all/country/' + country)
+    fetch('<?php echo $OSMA_API_SERVER ?>/stats/all/country/' + country)
       .then(function(response) {
         return response.json();
       })
@@ -67,14 +69,14 @@ function activity_chart( $atts ) {
 
 
 function contributor_chart( $atts ) {
-  global $ODRI_API_SERVER;
+  global $OSMA_API_SERVER;
   ob_start(); ?>
   <div id="contributor-chart" style="width: 50%"></div>
   <script>
   (function() {
     var settings = <?php echo json_encode($atts) ?>;
     var country = settings.country.toUpperCase() || 'HTI';
-    fetch('<?php echo $ODRI_API_SERVER ?>/stats/all/country/' + country)
+    fetch('<?php echo $OSMA_API_SERVER ?>/stats/all/country/' + country)
       .then(function(response) {
         return response.json();
       })
@@ -89,15 +91,15 @@ function contributor_chart( $atts ) {
   <?php return ob_get_clean();
 }
 
-add_shortcode( 'opendri_charts_compare_map', 'compare_map' );
-add_shortcode( 'opendri_charts_activity', 'activity_chart' );
-add_shortcode( 'opendri_charts_contributors', 'contributor_chart' );
+add_shortcode( 'osma_charts_compare_map', 'compare_map' );
+add_shortcode( 'osma_charts_activity', 'activity_chart' );
+add_shortcode( 'osma_charts_contributors', 'contributor_chart' );
 
-function opendri_charts_script() {
-   wp_register_script('opendri_charts_bundle', plugins_url('scripts/bundle.js', __FILE__) );
-   wp_enqueue_script('opendri_charts_bundle');
-   wp_register_style('opendri_charts_styles', plugins_url('styles/styles.css', __FILE__) );
-   wp_enqueue_style('opendri_charts_styles');
+function osma_charts_script() {
+   wp_register_script('osma_charts_bundle', plugins_url('scripts/bundle.js', __FILE__) );
+   wp_enqueue_script('osma_charts_bundle');
+   wp_register_style('osma_charts_styles', plugins_url('styles/styles.css', __FILE__) );
+   wp_enqueue_style('osma_charts_styles');
 }
 
-add_action( 'wp_enqueue_scripts', 'opendri_charts_script' );
+add_action( 'wp_enqueue_scripts', 'osma_charts_script' );
