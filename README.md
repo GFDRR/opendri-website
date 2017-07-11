@@ -33,11 +33,21 @@ If you would like to keep a separate set of configuration for local development,
 # Project charts shortcodes
 
 Refer to <a href="https://github.com/Vizzuality/opendri-charts#charts-configuration">opendri-charts documentation</a> for a full list of parameters and their defaults.
+The Worpress plugin adds an additional `country` parameter to each chart that then gets translated into a polyline.
 
-## Compare map
+#### Compare map
 
 ```
-[opendri_charts_compare_map country="HTI" default_feature_type="highways" default_start_year="2015" default_end_year="now"]
+[osma_charts_compare_map country="HTI" default_feature_type="highways" default_start_year="2015" default_end_year="now"]
 ```
 
-The Worpress plugin adds an additional `country` parameter that then gets translated into a polyline.
+#### OSM activity
+
+```
+[osma_charts_activity country="HTI" start_date="2000/01/01" end_date="2017/02/01" default_granularity="monthly" default_facet="features"]
+```
+
+#### OSM top contributors
+```
+[osma_charts_contributors country="HTI" start_date="2000/01/01" end_date="2017/02/01"]
+```
