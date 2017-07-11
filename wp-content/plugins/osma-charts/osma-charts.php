@@ -14,6 +14,7 @@ function compare_map( $atts ) {
   ob_start(); ?>
   <div id="compare-map"></div>
   <script>
+    window.document.body.classList.add('-has-osm-attribution');
     (function() {
       function compareMap(settings) {
         ODRI.compareMap('#compare-map', {
@@ -48,6 +49,7 @@ function activity_chart( $atts ) {
   <div id="activity-chart"></div>
   <script>
   (function() {
+    window.document.body.classList.add('-has-osm-attribution');
     var settings = <?php echo json_encode($atts) ?>;
     var country = settings.country.toUpperCase() || 'HTI';
     fetch('<?php echo $OSMA_API_SERVER ?>/stats/all/country/' + country)
@@ -74,6 +76,7 @@ function contributor_chart( $atts ) {
   <div id="contributor-chart" style="width: 50%"></div>
   <script>
   (function() {
+    window.document.body.classList.add('-has-osm-attribution');
     var settings = <?php echo json_encode($atts) ?>;
     var country = settings.country.toUpperCase() || 'HTI';
     fetch('<?php echo $OSMA_API_SERVER ?>/stats/all/country/' + country)
