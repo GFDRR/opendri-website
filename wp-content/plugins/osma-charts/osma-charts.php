@@ -12,7 +12,7 @@ $OSMA_API_SERVER = get_option('osma_api_settings_endpoint' );
 function compare_map( $atts ) {
   global $OSMA_API_SERVER;
   ob_start(); ?>
-  <div id="compare-map"></div>
+  <div id="compare-map" class="compare-map"></div>
   <script>
     window.document.body.classList.add('-has-osm-attribution');
     (function() {
