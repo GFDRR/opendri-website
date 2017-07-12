@@ -28,11 +28,11 @@
 
                   <p class="byline entry-meta vcard">
 
-                    <?php 
+                    <?php
                       if (get_post_type() != 'project' && get_the_ID() != '481') {
                         printf( __( ' ', 'bonestheme' ).' %1$s',
                          /* the time the post was published */
-                         '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time('M d Y') . '</time>'); 
+                         '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time('M d Y') . '</time>');
                       }
                     ?>
 
@@ -70,11 +70,14 @@
 
                   <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
                   <div class="social-sharing">
-                    <?php 
+                    <?php
                         $share_title = get_the_title();
                         $share_url   = rawurlencode(get_the_permalink());
                     ?>
                     <p><span>share this on:</span> <a target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo $share_title ?>&url=<?php echo $share_url ?>">twitter</a><a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo $share_url ?>">facebook</a><a target="_blank" href="https://plus.google.com/share?url=<?php echo $share_url ?>">google+</a></p>
+                  </div>
+                  <div class="osm-attribution">
+                    © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>
                   </div>
                 </footer> <?php // end article footer ?>
 
