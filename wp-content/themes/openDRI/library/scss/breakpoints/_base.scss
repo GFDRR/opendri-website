@@ -1333,6 +1333,7 @@ POSTS & CONTENT STYLES
             background: lighten($text-bkg-blue, 10%);
         }
         a {
+            $line-height: 20px;
             font-size: 15px;
             text-transform: uppercase;
             text-align: center;
@@ -1341,8 +1342,8 @@ POSTS & CONTENT STYLES
             display: block;
             font-family: $bariol;
             font-weight: bold;
-            padding: 10px;
-            line-height: 20px;
+            padding: $line-height 10px;
+            line-height: $line-height;
             color: #fff;
         }
     }
