@@ -15,10 +15,7 @@ function compare_map( $atts ) {
   <div id="compare-map" class="compare-map"></div>
   <script>
     (function() {
-      var attribution = '-has-osm-attribution';
-      if (!window.document.body.classList.contains(attribution)) {
-        window.document.body.classList.add(attribution);
-      }
+      window.document.body.classList.add('-has-osm-attribution');
       function compareMap(settings) {
         ODRI.compareMap('#compare-map', {
           width: '100%',
@@ -52,10 +49,7 @@ function activity_chart( $atts ) {
   <div id="activity-chart"></div>
   <script>
   (function() {
-    var attribution = '-has-osm-attribution';
-    if (!window.document.body.classList.contains(attribution)) {
-      window.document.body.classList.add(attribution);
-    }
+    window.document.body.classList.add('-has-osm-attribution');
     var settings = <?php echo json_encode($atts) ?>;
     var country = settings.country.toUpperCase() || 'HTI';
     fetch('<?php echo $OSMA_API_SERVER ?>/stats/all/country/' + country)
@@ -82,10 +76,7 @@ function contributor_chart( $atts ) {
   <div id="contributor-chart" style="width: 50%"></div>
   <script>
   (function() {
-    var attribution = '-has-osm-attribution';
-    if (!window.document.body.classList.contains(attribution)) {
-      window.document.body.classList.add(attribution);
-    }
+    window.document.body.classList.add('-has-osm-attribution');
     var settings = <?php echo json_encode($atts) ?>;
     var country = settings.country.toUpperCase() || 'HTI';
     fetch('<?php echo $OSMA_API_SERVER ?>/stats/all/country/' + country)
