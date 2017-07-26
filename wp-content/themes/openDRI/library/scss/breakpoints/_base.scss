@@ -4673,3 +4673,14 @@ div.cartodb-popup .cartodb-popup-close-button {
         width: 60% !important;
     }
 }
+
+
+// OSMA credits
+.osm-attribution {
+  margin-top: 15px;
+  display: none;
+}
+
+body.-has-osm-attribution .osm-attribution {
+  display: block;
+}
