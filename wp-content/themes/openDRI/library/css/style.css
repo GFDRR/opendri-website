@@ -7237,6 +7237,17 @@ div.cartodb-popup .cartodb-popup-close-button {
     width: 60% !important;
   }
 }
+/* line 4678, ../scss/breakpoints/_base.scss */
+.osm-attribution {
+  margin-top: 15px;
+  display: none;
+}
+
+/* line 4683, ../scss/breakpoints/_base.scss */
+body.-has-osm-attribution .osm-attribution {
+  display: block;
+}
+
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's

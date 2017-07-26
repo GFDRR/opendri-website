@@ -14,8 +14,8 @@ function compare_map( $atts ) {
   ob_start(); ?>
   <div id="compare-map" class="compare-map"></div>
   <script>
-    window.document.body.classList.add('-has-osm-attribution');
     (function() {
+      window.document.body.classList.add('-has-osm-attribution');
       function compareMap(settings) {
         ODRI.compareMap('#compare-map', {
           width: '100%',
