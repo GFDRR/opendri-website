@@ -14,14 +14,15 @@ function compare_map( $atts ) {
   global $OSMA_API_ENDPOINT_ADDRESS;
   global $OSMA_SITE_ADDRESS;
   $atts_encode = json_encode($atts);
+  $chart_id = uniqid('compare-map-');
   
   return <<<EOD
-  <div id="compare-map" class="compare-map"></div>
+  <div id="{$chart_id}" class="compare-map"></div>
   <script>
     (function() {
       window.document.body.classList.add('-has-osm-attribution');
       function compareMap(settings) {
-        ODRI.compareMap('#compare-map', {
+        ODRI.compareMap('#{$chart_id}', {
           width: '100%',
           height: '500px',
           settings: settings
@@ -50,9 +51,10 @@ EOD;
 function activity_chart( $atts ) {
   global $OSMA_API_ENDPOINT_ADDRESS;
   $atts_encode = json_encode($atts);
+  $chart_id = uniqid('activity-chart-');
   
   return <<<EOD
-  <div id="activity-chart"></div>
+  <div id="{$chart_id}"></div>
   <script>
   (function() {
     window.document.body.classList.add('-has-osm-attribution');
@@ -63,7 +65,7 @@ function activity_chart( $atts ) {
         return response.json();
       })
       .then(function(data) {
-        ODRI.activity('#activity-chart', {
+        ODRI.activity('#{$chart_id}', {
           data: data,
           granularity: settings.default_granularity,
           facet: settings.default_facet,
@@ -79,8 +81,10 @@ EOD;
 function contributor_chart( $atts ) {
   global $OSMA_API_ENDPOINT_ADDRESS;
   $atts_encode = json_encode($atts);
+  $chart_id = uniqid('contributor-chart-');
+  
   return <<<EOD
-  <div id="contributor-chart" style="width: 50%"></div>
+  <div id="{$chart_id}" style="width: 50%"></div>
   <script>
   (function() {
     window.document.body.classList.add('-has-osm-attribution');
@@ -91,7 +95,7 @@ function contributor_chart( $atts ) {
         return response.json();
       })
       .then(function(data) {
-        ODRI.contributors('#contributor-chart', {
+        ODRI.contributors('#{$chart_id}', {
           data: data,
           range: [settings.start_date, settings.end_date]
         })
