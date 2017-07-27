@@ -1,5 +1,5 @@
 <?php
- 
+
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 class OsmaChartsSettingsPage
@@ -8,7 +8,7 @@ class OsmaChartsSettingsPage
    * Holds the values to be used in the fields callbacks
    */
   private $osma_api_settings_endpoint;
-  
+
   /**
    * Start up
    */
@@ -17,7 +17,7 @@ class OsmaChartsSettingsPage
 	add_action( 'admin_menu', array( $this, 'add_plugin_page' ) );
 	add_action( 'admin_init', array( $this, 'page_init' ) );
   }
-  
+
   /**
    * Add options page
    */
@@ -32,14 +32,14 @@ class OsmaChartsSettingsPage
 	  array( $this, 'create_admin_page' )
 	);
   }
-  
+
   /**
    * Options page callback
    */
   public function create_admin_page()
   {
 	// Set class property
-	$this->osma_api_settings_endpoint = get_option( 'osma_api_settings_endpoint', 'http://34.230.92.118/api/v1' );
+	$this->osma_api_settings_endpoint = get_option( 'osma_api_settings_endpoint', 'https://osm-analytics.vizzuality.com/api/v1' );
 	?>
 	<div class="wrap">
 	  <h1>OSMA Charts Settings</h1>
@@ -54,7 +54,7 @@ class OsmaChartsSettingsPage
 	</div>
 	<?php
   }
-  
+
   /**
    * Register and add settings
    */
@@ -72,7 +72,7 @@ class OsmaChartsSettingsPage
 	  null, // Callback
 	  'osma-charts-admin' // Page
 	);
-	
+
 	add_settings_field(
 	  'osma_api_settings_endpoint', // ID
 	  'Endpoint URL', // Title
@@ -81,7 +81,7 @@ class OsmaChartsSettingsPage
 	  'osma_api_endpoint' // Section
 	);
   }
-  
+
   /**
    * Sanitize each setting field as needed
    *
@@ -92,14 +92,14 @@ class OsmaChartsSettingsPage
   public function sanitize( $input )
   {
 	$new_input = array();
-	
+
 	if ( isset( $input ) ) {
 	  $new_input = sanitize_text_field( $input );
 	}
-	
+
 	return $new_input;
   }
-  
+
   /**
    * Get the settings option array and print one of its values
    */
@@ -110,7 +110,7 @@ class OsmaChartsSettingsPage
 	  isset( $this->osma_api_settings_endpoint ) ? esc_attr( $this->osma_api_settings_endpoint) : ''
 	);
   }
-  
+
 }
 
 if ( is_admin() ) {

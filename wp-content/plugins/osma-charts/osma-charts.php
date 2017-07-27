@@ -24,7 +24,7 @@ function compare_map( $atts ) {
         });
       }
       var settings = <?php echo json_encode($atts) ?>;
-      settings.iframe_base_url = 'http://localhost:3000';
+      settings.iframe_base_url = 'https://osm-analytics.vizzuality.com:442';
       if (settings.polygon === undefined) {
         var country = settings.country.toUpperCase() || 'HTI';
         fetch('<?php echo $OSMA_API_SERVER; ?>/meta/country_polyline/' + country)
