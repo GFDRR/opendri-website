@@ -5793,10 +5793,9 @@ div.cartodb-popup .cartodb-popup-close-button {
   text-align: center;
   font-weight: bold;
   font-size: 15px;
-  margin: 15px 0 0 0;
 }
 
-/* line 3690, ../scss/breakpoints/_base.scss */
+/* line 3689, ../scss/breakpoints/_base.scss */
 .amount-of-posts {
   font-weight: bold;
   color: #048EF1;
@@ -5805,7 +5804,7 @@ div.cartodb-popup .cartodb-popup-close-button {
   left: 2px !important;
 }
 
-/* line 3698, ../scss/breakpoints/_base.scss */
+/* line 3697, ../scss/breakpoints/_base.scss */
 .amount-of-posts-2 {
   font-weight: bold;
   color: #048EF1;
@@ -5814,136 +5813,136 @@ div.cartodb-popup .cartodb-popup-close-button {
   left: -2px !important;
 }
 
-/* line 3706, ../scss/breakpoints/_base.scss */
+/* line 3705, ../scss/breakpoints/_base.scss */
 .home .index-row article, .home .index-row .card-third {
   margin: 0 0 50px;
 }
 
-/* line 3710, ../scss/breakpoints/_base.scss */
+/* line 3709, ../scss/breakpoints/_base.scss */
 .home .index-row .row-container {
   justify-content: space-between;
 }
 
-/* line 3714, ../scss/breakpoints/_base.scss */
+/* line 3713, ../scss/breakpoints/_base.scss */
 .archive #contact .contact-form textarea, .page #contact .contact-form textarea {
   width: 50%;
 }
 
-/* line 3718, ../scss/breakpoints/_base.scss */
+/* line 3717, ../scss/breakpoints/_base.scss */
 .home .index-row .resource-list {
   max-height: 345px;
   min-height: 80%;
 }
 
-/* line 3723, ../scss/breakpoints/_base.scss */
+/* line 3722, ../scss/breakpoints/_base.scss */
 .page #principles, .page #contact, .page #more-content, .page #partners, .page #members, .page #newsletter {
   margin: 0;
   padding: 0px 0 0;
 }
 
-/* line 3728, ../scss/breakpoints/_base.scss */
+/* line 3727, ../scss/breakpoints/_base.scss */
 .page #partners p a {
   color: #0475cc;
 }
 
 @media (min-width: 1024px) {
-  /* line 3733, ../scss/breakpoints/_base.scss */
+  /* line 3732, ../scss/breakpoints/_base.scss */
   .home .index-row#news .row-container {
     padding-right: 45px;
   }
 
-  /* line 3736, ../scss/breakpoints/_base.scss */
+  /* line 3735, ../scss/breakpoints/_base.scss */
   .home .index-row .card-third .twitter {
     height: 100%;
   }
 
-  /* line 3739, ../scss/breakpoints/_base.scss */
+  /* line 3738, ../scss/breakpoints/_base.scss */
   .index-row .card-third.twitter-timeline-container {
     margin: 0px 0px 50px 0px !important;
   }
 }
 @media (max-width: 1024px) {
-  /* line 3745, ../scss/breakpoints/_base.scss */
+  /* line 3744, ../scss/breakpoints/_base.scss */
   .index-title h3 {
     font-size: 38px;
     margin: -70px auto 40px;
   }
 
-  /* line 3749, ../scss/breakpoints/_base.scss */
+  /* line 3748, ../scss/breakpoints/_base.scss */
   .home .index-title h3 {
     font-size: 38px;
     margin: 0px auto 40px;
   }
 
-  /* line 3753, ../scss/breakpoints/_base.scss */
+  /* line 3752, ../scss/breakpoints/_base.scss */
   .home .index-title:first-child {
     margin: 20px 0 -50px;
   }
 
-  /* line 3756, ../scss/breakpoints/_base.scss */
+  /* line 3755, ../scss/breakpoints/_base.scss */
   .home #resources .card-third:last-child a:last-child span {
     margin: 40px auto 0;
   }
 
-  /* line 3759, ../scss/breakpoints/_base.scss */
+  /* line 3758, ../scss/breakpoints/_base.scss */
   .home .index-row .card-third span:not(#current-total-post-count) {
     margin: 40px auto 0px;
   }
 
-  /* line 3762, ../scss/breakpoints/_base.scss */
+  /* line 3761, ../scss/breakpoints/_base.scss */
   .home .index-row.last-resources a {
     width: 100%;
     margin: 5px 0;
   }
 
-  /* line 3766, ../scss/breakpoints/_base.scss */
+  /* line 3765, ../scss/breakpoints/_base.scss */
   .index-separator {
     margin: 0;
   }
 
-  /* line 3769, ../scss/breakpoints/_base.scss */
+  /* line 3768, ../scss/breakpoints/_base.scss */
   .contact-form input[type=email], .contact-form input[type=text], .page #contact .contact-form textarea {
     width: 70% !important;
   }
 
-  /* line 3772, ../scss/breakpoints/_base.scss */
+  /* line 3771, ../scss/breakpoints/_base.scss */
   .archive #contact .contact-form .contact-submit .pushbutton-wide, .page #contact .contact-form .contact-submit .pushbutton-wide {
     right: 12px;
   }
 
-  /* line 3775, ../scss/breakpoints/_base.scss */
+  /* line 3774, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper span a i {
     display: none !important;
   }
 
-  /* line 3779, ../scss/breakpoints/_base.scss */
+  /* line 3778, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper span a {
     line-height: 25px !important;
     padding: 0 10px;
   }
 
-  /* line 3783, ../scss/breakpoints/_base.scss */
+  /* line 3782, ../scss/breakpoints/_base.scss */
   .no-home .header nav {
     width: 80%;
   }
 
-  /* line 3786, ../scss/breakpoints/_base.scss */
+  /* line 3785, ../scss/breakpoints/_base.scss */
   .archive #content .wrap {
     width: 96% !important;
   }
 
-  /* line 3789, ../scss/breakpoints/_base.scss */
+  /* line 3788, ../scss/breakpoints/_base.scss */
   .index-row article.project, .index-row .card-third.project {
     max-width: 100%;
     width: calc(50% - 20px);
   }
 
-  /* line 3793, ../scss/breakpoints/_base.scss */
+  /* line 3792, ../scss/breakpoints/_base.scss */
   .home .header nav {
     width: 100%;
   }
 
-  /* line 3796, ../scss/breakpoints/_base.scss */
+  /* line 3795, ../scss/breakpoints/_base.scss */
   .home .index-row {
     -webkit-flex-direction: column;
     flex-direction: column;
@@ -5952,7 +5951,7 @@ div.cartodb-popup .cartodb-popup-close-button {
     align-items: center;
   }
 
-  /* line 3803, ../scss/breakpoints/_base.scss */
+  /* line 3802, ../scss/breakpoints/_base.scss */
   .home .index-row#news .row-container {
     width: 50%;
     position: relative;
@@ -5962,117 +5961,117 @@ div.cartodb-popup .cartodb-popup-close-button {
     top: 0;
   }
 
-  /* line 3811, ../scss/breakpoints/_base.scss */
+  /* line 3810, ../scss/breakpoints/_base.scss */
   .home .index-row.last-resources {
     margin: -40px 0 20px;
     width: 100%;
   }
 
-  /* line 3815, ../scss/breakpoints/_base.scss */
+  /* line 3814, ../scss/breakpoints/_base.scss */
   .home #map-fake .what-list h2 {
     font-size: 29px;
   }
 
-  /* line 3818, ../scss/breakpoints/_base.scss */
+  /* line 3817, ../scss/breakpoints/_base.scss */
   .home #map-fake .what-list h3 {
     font-size: 18px;
   }
 
-  /* line 3821, ../scss/breakpoints/_base.scss */
+  /* line 3820, ../scss/breakpoints/_base.scss */
   .home #map-fake .what-list > nav span i {
     height: 80px;
     width: 80px;
   }
 
-  /* line 3825, ../scss/breakpoints/_base.scss */
+  /* line 3824, ../scss/breakpoints/_base.scss */
   .footer .-ft-legal {
     width: 100%;
   }
 
-  /* line 3828, ../scss/breakpoints/_base.scss */
+  /* line 3827, ../scss/breakpoints/_base.scss */
   .footer .-ft-content form {
     width: 210px;
   }
 
-  /* line 3831, ../scss/breakpoints/_base.scss */
+  /* line 3830, ../scss/breakpoints/_base.scss */
   .footer .-ft-content img {
     left: 0;
   }
 
-  /* line 3834, ../scss/breakpoints/_base.scss */
+  /* line 3833, ../scss/breakpoints/_base.scss */
   .footer .-ft-content .-ft-logo a {
     display: block;
   }
 
-  /* line 3837, ../scss/breakpoints/_base.scss */
+  /* line 3836, ../scss/breakpoints/_base.scss */
   .home .index-row article.resource-cont, .index-row .card-third.resource-cont {
     width: 100vh;
     margin: 30px 0;
   }
 
-  /* line 3841, ../scss/breakpoints/_base.scss */
+  /* line 3840, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper span {
     font-size: 14px;
     padding: 3px 1px;
   }
 
-  /* line 3845, ../scss/breakpoints/_base.scss */
+  /* line 3844, ../scss/breakpoints/_base.scss */
   .post-type-archive-resource #main .row-container article {
     margin: 10px auto;
   }
 
-  /* line 3848, ../scss/breakpoints/_base.scss */
+  /* line 3847, ../scss/breakpoints/_base.scss */
   .page .about-content .card-third ol {
     height: 100%;
   }
 
-  /* line 3851, ../scss/breakpoints/_base.scss */
+  /* line 3850, ../scss/breakpoints/_base.scss */
   .page .about-content .card-third ol li {
     width: 100%;
     padding: 0;
     height: auto;
   }
 
-  /* line 3856, ../scss/breakpoints/_base.scss */
+  /* line 3855, ../scss/breakpoints/_base.scss */
   .page .about-content .card-third p {
     -webkit-columns: 1;
     columns: 1;
     padding: 0 0 20px;
   }
 
-  /* line 3861, ../scss/breakpoints/_base.scss */
+  /* line 3860, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper.filters span.title {
     display: none;
   }
 
-  /* line 3864, ../scss/breakpoints/_base.scss */
+  /* line 3863, ../scss/breakpoints/_base.scss */
   div#principles.m-all.cf.index-row.about-content ol, div#principles.m-all.index-row.about-content.comment-respond ol {
     display: block;
   }
 
-  /* line 3867, ../scss/breakpoints/_base.scss */
+  /* line 3866, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper span.current {
     color: #1477c9;
   }
 
-  /* line 3870, ../scss/breakpoints/_base.scss */
+  /* line 3869, ../scss/breakpoints/_base.scss */
   .blue-bar-top.about .wrapper span.current:hover {
     background-color: #fff;
     color: #1477c9;
   }
 
-  /* line 3874, ../scss/breakpoints/_base.scss */
+  /* line 3873, ../scss/breakpoints/_base.scss */
   .entry-content img {
     display: block;
   }
 
-  /* line 3877, ../scss/breakpoints/_base.scss */
+  /* line 3876, ../scss/breakpoints/_base.scss */
   .hentry.-odri-post.has-sidebar {
     display: block;
     width: 100%;
   }
 
-  /* line 3881, ../scss/breakpoints/_base.scss */
+  /* line 3880, ../scss/breakpoints/_base.scss */
   .sidebar {
     width: 100%;
     display: block;
@@ -6080,29 +6079,29 @@ div.cartodb-popup .cartodb-popup-close-button {
     padding: 0;
   }
 
-  /* line 3887, ../scss/breakpoints/_base.scss */
+  /* line 3886, ../scss/breakpoints/_base.scss */
   .sidebar h4 {
     font-size: 17px;
   }
 
-  /* line 3890, ../scss/breakpoints/_base.scss */
+  /* line 3889, ../scss/breakpoints/_base.scss */
   .sidebar ul {
     width: 360px;
   }
 
-  /* line 3893, ../scss/breakpoints/_base.scss */
+  /* line 3892, ../scss/breakpoints/_base.scss */
   .sidebar p {
     display: block;
     height: 80px;
   }
 
-  /* line 3897, ../scss/breakpoints/_base.scss */
+  /* line 3896, ../scss/breakpoints/_base.scss */
   .sidebar li {
     width: 100%;
     display: inline-block;
   }
 
-  /* line 3901, ../scss/breakpoints/_base.scss */
+  /* line 3900, ../scss/breakpoints/_base.scss */
   .sidebar li span {
     margin-right: 5px;
     float: left;
@@ -6110,7 +6109,7 @@ div.cartodb-popup .cartodb-popup-close-button {
     top: -3px;
   }
 
-  /* line 3907, ../scss/breakpoints/_base.scss */
+  /* line 3906, ../scss/breakpoints/_base.scss */
   .sidebar li a {
     height: 80px;
     display: flex;
@@ -6120,85 +6119,85 @@ div.cartodb-popup .cartodb-popup-close-button {
     align-items: center;
   }
 
-  /* line 3915, ../scss/breakpoints/_base.scss */
+  /* line 3914, ../scss/breakpoints/_base.scss */
   .sidebar i {
     width: 210px;
     position: relative;
     top: -6px;
   }
 
-  /* line 3920, ../scss/breakpoints/_base.scss */
+  /* line 3919, ../scss/breakpoints/_base.scss */
   .category-open-data-platforms #main > h1, .category-open-data-platforms #main > p, .category-community-mapping #main > h1, .category-community-mapping #main > p, .category-africa #main > h1, .category-africa #main > p, .category-east-asia-pacific #main > h1, .category-east-asia-pacific #main > p, .category-europe-and-central-asia #main > h1, .category-europe-and-central-asia #main > p, .category-latin-america-and-caribbean #main > h1, .category-latin-america-and-caribbean #main > p, .category-middle-east-and-north-africa #main > h1, .category-middle-east-and-north-africa #main > p, .category-non-wb-countries #main > h1, .category-non-wb-countries #main > p, .category-south-asia #main > h1, .category-south-asia #main > p, .category-risk-visualization #main > h1, .category-risk-visualization #main > p, .category-news #main > h1, .category-news #main > p, .post-type-archive-resource #main > h1, .post-type-archive-resource #main > p {
     max-width: 100%;
   }
 
-  /* line 3923, ../scss/breakpoints/_base.scss */
+  /* line 3922, ../scss/breakpoints/_base.scss */
   .category-open-data-platforms #main .row-container article, .category-community-mapping #main .row-container article, .category-africa #main .row-container article, .category-east-asia-pacific #main .row-container article, .category-europe-and-central-asia #main .row-container article, .category-latin-america-and-caribbean #main .row-container article, .category-middle-east-and-north-africa #main .row-container article, .category-non-wb-countries #main .row-container article, .category-south-asia #main .row-container article, .category-risk-visualization #main .row-container article, .category-news #main .row-container article, .post-type-archive-resource #main .row-container article {
     max-width: calc(50% - 20px);
   }
 
-  /* line 3926, ../scss/breakpoints/_base.scss */
+  /* line 3925, ../scss/breakpoints/_base.scss */
   .home .index-row article, .home .index-row .card-third {
     width: 360px;
     max-width: calc(50% - 20px);
   }
 
-  /* line 3930, ../scss/breakpoints/_base.scss */
+  /* line 3929, ../scss/breakpoints/_base.scss */
   .search .index-row article, .search .index-row .card-third, .single .index-row.more-content .row-container article {
     max-width: calc(100% - 20px) !important;
     width: calc(50% - 20px) !important;
   }
 
-  /* line 3934, ../scss/breakpoints/_base.scss */
+  /* line 3933, ../scss/breakpoints/_base.scss */
   .home #news.index-row {
     flex-direction: row;
     width: 100%;
   }
 
-  /* line 3938, ../scss/breakpoints/_base.scss */
+  /* line 3937, ../scss/breakpoints/_base.scss */
   .home #news.index-row article, .home #news.index-row .card-third {
     max-width: calc(100% - 20px);
     margin: 0 0 50px !important;
   }
 
-  /* line 3942, ../scss/breakpoints/_base.scss */
+  /* line 3941, ../scss/breakpoints/_base.scss */
   .home #news.index-row article:last-child {
     position: absolute;
     top: 66.7%;
     right: -100%;
   }
 
-  /* line 3947, ../scss/breakpoints/_base.scss */
+  /* line 3946, ../scss/breakpoints/_base.scss */
   .index-row .card-third.twitter-timeline-container {
     position: relative;
     align-self: baseline;
     width: 360px;
   }
 
-  /* line 3952, ../scss/breakpoints/_base.scss */
+  /* line 3951, ../scss/breakpoints/_base.scss */
   .index-row .card-third .twitter {
     width: auto;
   }
 
-  /* line 3955, ../scss/breakpoints/_base.scss */
+  /* line 3954, ../scss/breakpoints/_base.scss */
   .home #resources.index-row {
     align-items: flex-start;
   }
 
-  /* line 3958, ../scss/breakpoints/_base.scss */
+  /* line 3957, ../scss/breakpoints/_base.scss */
   .home #resources.index-row .first-text {
     width: 100%;
     max-width: calc(100% - 20px);
     height: auto;
   }
 
-  /* line 3963, ../scss/breakpoints/_base.scss */
+  /* line 3962, ../scss/breakpoints/_base.scss */
   .home #resources.index-row > .row-container, .home #resources.index-row > .row-container > a {
     width: 100%;
     margin: 0 0 2.5px;
   }
 
-  /* line 3967, ../scss/breakpoints/_base.scss */
+  /* line 3966, ../scss/breakpoints/_base.scss */
   .home #resources.index-row article.resource-cont, .index-row .card-third.resource-cont {
     width: calc(100% - 20px);
     margin: 0;
@@ -6207,12 +6206,12 @@ div.cartodb-popup .cartodb-popup-close-button {
     display: inline-block;
   }
 
-  /* line 3974, ../scss/breakpoints/_base.scss */
+  /* line 3973, ../scss/breakpoints/_base.scss */
   .home #inner-content > .last-resources {
     margin: 0 0 50px !important;
   }
 
-  /* line 3977, ../scss/breakpoints/_base.scss */
+  /* line 3976, ../scss/breakpoints/_base.scss */
   .home #inner-content > .last-resources article {
     width: 100%;
     max-width: calc(100% - 20px);
@@ -6221,7 +6220,7 @@ div.cartodb-popup .cartodb-popup-close-button {
     height: auto;
   }
 
-  /* line 3984, ../scss/breakpoints/_base.scss */
+  /* line 3983, ../scss/breakpoints/_base.scss */
   .home .index-row .resource-list.home {
     max-width: calc(100% - 20px);
     width: 100%;
@@ -6231,118 +6230,118 @@ div.cartodb-popup .cartodb-popup-close-button {
     min-height: 40px;
   }
 
-  /* line 3992, ../scss/breakpoints/_base.scss */
+  /* line 3991, ../scss/breakpoints/_base.scss */
   .post-type-archive .index-row.last-resources {
     flex-direction: row;
   }
 
-  /* line 3995, ../scss/breakpoints/_base.scss */
+  /* line 3994, ../scss/breakpoints/_base.scss */
   .post-type-archive-resource #main .row-container article {
     margin: 0;
     width: 360px;
     max-width: 100%;
   }
 
-  /* line 4000, ../scss/breakpoints/_base.scss */
+  /* line 3999, ../scss/breakpoints/_base.scss */
   .category-open-data-platforms #main .row-container article, .category-community-mapping #main .row-container article, .category-africa #main .row-container article, .category-east-asia-pacific #main .row-container article, .category-europe-and-central-asia #main .row-container article, .category-latin-america-and-caribbean #main .row-container article, .category-middle-east-and-north-africa #main .row-container article, .category-non-wb-countries #main .row-container article, .category-south-asia #main .row-container article, .category-risk-visualization #main .row-container article, .category-news #main .row-container article, .post-type-archive-resource #main .row-container article {
     max-width: 100%;
     width: calc(50% - 20px);
   }
 
-  /* line 4004, ../scss/breakpoints/_base.scss */
+  /* line 4003, ../scss/breakpoints/_base.scss */
   .page #contact.index-row {
     flex-direction: column;
   }
 
-  /* line 4007, ../scss/breakpoints/_base.scss */
+  /* line 4006, ../scss/breakpoints/_base.scss */
   .archive #contact .index-row, .page #contact .index-row {
     width: 100%;
   }
 
-  /* line 4010, ../scss/breakpoints/_base.scss */
+  /* line 4009, ../scss/breakpoints/_base.scss */
   .archive #contact .-m-form, .page #contact .-m-form {
     margin: 40px 0 0;
     width: 100%;
   }
 
-  /* line 4014, ../scss/breakpoints/_base.scss */
+  /* line 4013, ../scss/breakpoints/_base.scss */
   .resources-page-list .resource-list-new {
     width: 100%;
   }
 
-  /* line 4017, ../scss/breakpoints/_base.scss */
+  /* line 4016, ../scss/breakpoints/_base.scss */
   .resources-page-list .index-row.last-resources {
     flex-direction: column;
   }
 
-  /* line 4020, ../scss/breakpoints/_base.scss */
+  /* line 4019, ../scss/breakpoints/_base.scss */
   .resources-page-list .index-row.last-resources .resource-cont {
     width: 100%;
     max-width: 100%;
     margin: 30px 0;
   }
 
-  /* line 4025, ../scss/breakpoints/_base.scss */
+  /* line 4024, ../scss/breakpoints/_base.scss */
   .home .what-explore {
     width: 230px;
   }
 
-  /* line 4028, ../scss/breakpoints/_base.scss */
+  /* line 4027, ../scss/breakpoints/_base.scss */
   .archive .pillars-list-about, .page .pillars-list-about {
     flex-direction: column;
   }
 
-  /* line 4031, ../scss/breakpoints/_base.scss */
+  /* line 4030, ../scss/breakpoints/_base.scss */
   .archive .pillars-list-about .p-info, .page .pillars-list-about .p-info {
     min-height: auto;
     margin: 0;
   }
 
-  /* line 4035, ../scss/breakpoints/_base.scss */
+  /* line 4034, ../scss/breakpoints/_base.scss */
   .archive .pillars-list-about .p-info .explore-projects, .page .pillars-list-about .p-info .explore-projects {
     position: relative;
   }
 
-  /* line 4038, ../scss/breakpoints/_base.scss */
+  /* line 4037, ../scss/breakpoints/_base.scss */
   .page .about-content .card-third > p.principles-column-title {
     display: none;
   }
 }
 @media (max-width: 768px) {
-  /* line 4044, ../scss/breakpoints/_base.scss */
+  /* line 4043, ../scss/breakpoints/_base.scss */
   .home #resources {
     margin: 0px 0px 0px;
   }
 
-  /* line 4047, ../scss/breakpoints/_base.scss */
+  /* line 4046, ../scss/breakpoints/_base.scss */
   .index-separator {
     margin: -70px 0px 0px;
   }
 
-  /* line 4050, ../scss/breakpoints/_base.scss */
+  /* line 4049, ../scss/breakpoints/_base.scss */
   .index-separator span {
     width: 23%;
     background: transparent;
   }
 
-  /* line 4054, ../scss/breakpoints/_base.scss */
+  /* line 4053, ../scss/breakpoints/_base.scss */
   .archive #about.index-row, .archive #principles.index-row, .archive #contact.index-row, .archive #more-content.index-row, .page #about.index-row, .page #principles.index-row, .page #contact.index-row, .page #more-content.index-row, .page #newsletter {
     margin: 0;
     padding: 0;
   }
 
-  /* line 4058, ../scss/breakpoints/_base.scss */
+  /* line 4057, ../scss/breakpoints/_base.scss */
   .page #contact .-m-form {
     width: 100%;
     display: table;
   }
 
-  /* line 4062, ../scss/breakpoints/_base.scss */
+  /* line 4061, ../scss/breakpoints/_base.scss */
   #logo img {
     display: none;
   }
 
-  /* line 4065, ../scss/breakpoints/_base.scss */
+  /* line 4064, ../scss/breakpoints/_base.scss */
   #logo a {
     content: '';
     background-image: url(/wp-content/themes/openDRI/logo-extended.svg);
@@ -6355,122 +6354,122 @@ div.cartodb-popup .cartodb-popup-close-button {
     top: -5px;
   }
 
-  /* line 4076, ../scss/breakpoints/_base.scss */
+  /* line 4075, ../scss/breakpoints/_base.scss */
   .no-home .header .hr {
     display: block;
   }
 
-  /* line 4079, ../scss/breakpoints/_base.scss */
+  /* line 4078, ../scss/breakpoints/_base.scss */
   .header nav img {
     top: -13px;
   }
 
-  /* line 4082, ../scss/breakpoints/_base.scss */
+  /* line 4081, ../scss/breakpoints/_base.scss */
   .no-home .header nav {
     top: 10px;
   }
 
-  /* line 4085, ../scss/breakpoints/_base.scss */
+  /* line 4084, ../scss/breakpoints/_base.scss */
   .header nav span {
     font-size: 11px;
     line-height: 20px;
     height: 20px;
   }
 
-  /* line 4090, ../scss/breakpoints/_base.scss */
+  /* line 4089, ../scss/breakpoints/_base.scss */
   .header nav span.current {
     padding-bottom: 0;
   }
 
-  /* line 4093, ../scss/breakpoints/_base.scss */
+  /* line 4092, ../scss/breakpoints/_base.scss */
   .header nav span.float-center {
     position: relative;
     top: -5px;
     width: 100%;
   }
 
-  /* line 4098, ../scss/breakpoints/_base.scss */
+  /* line 4097, ../scss/breakpoints/_base.scss */
   .header nav a:hover:before {
     content: none;
   }
 
-  /* line 4101, ../scss/breakpoints/_base.scss */
+  /* line 4100, ../scss/breakpoints/_base.scss */
   .home #map-fake .what-list {
     width: 100%;
     padding: 20px;
   }
 
-  /* line 4105, ../scss/breakpoints/_base.scss */
+  /* line 4104, ../scss/breakpoints/_base.scss */
   .home .what-explore {
     display: none;
   }
 
-  /* line 4108, ../scss/breakpoints/_base.scss */
+  /* line 4107, ../scss/breakpoints/_base.scss */
   .blue-bar-top.about {
     align-items: center;
     height: 180px;
     margin: 0 0 -20px;
   }
 
-  /* line 4113, ../scss/breakpoints/_base.scss */
+  /* line 4112, ../scss/breakpoints/_base.scss */
   .home .index-row article.resource-cont, .index-row .card-third.resource-cont {
     width: 50vh;
   }
 
-  /* line 4116, ../scss/breakpoints/_base.scss */
+  /* line 4115, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper .region-filter li:first-child i {
     display: none;
   }
 
-  /* line 4119, ../scss/breakpoints/_base.scss */
+  /* line 4118, ../scss/breakpoints/_base.scss */
   .archive .cdbmap, .page .cdbmap {
     height: 330px;
   }
 
-  /* line 4122, ../scss/breakpoints/_base.scss */
+  /* line 4121, ../scss/breakpoints/_base.scss */
   .no-home .header nav {
     width: 100%;
   }
 
-  /* line 4125, ../scss/breakpoints/_base.scss */
+  /* line 4124, ../scss/breakpoints/_base.scss */
   .no-home .header {
     height: 120px;
   }
 
-  /* line 4128, ../scss/breakpoints/_base.scss */
+  /* line 4127, ../scss/breakpoints/_base.scss */
   .header {
     padding: 0 2%;
   }
 
-  /* line 4131, ../scss/breakpoints/_base.scss */
+  /* line 4130, ../scss/breakpoints/_base.scss */
   .home .header {
     height: 127px;
   }
 
-  /* line 4134, ../scss/breakpoints/_base.scss */
+  /* line 4133, ../scss/breakpoints/_base.scss */
   .home .header nav {
     height: 40px;
   }
 
-  /* line 4137, ../scss/breakpoints/_base.scss */
+  /* line 4136, ../scss/breakpoints/_base.scss */
   #map-fake .what-list > nav span {
     font-size: 12px;
     letter-spacing: 0.4px;
   }
 
-  /* line 4141, ../scss/breakpoints/_base.scss */
+  /* line 4140, ../scss/breakpoints/_base.scss */
   .home #map-fake .what-list > nav span i {
     height: 70px;
     width: 70px;
     background-size: 35px;
   }
 
-  /* line 4146, ../scss/breakpoints/_base.scss */
+  /* line 4145, ../scss/breakpoints/_base.scss */
   .home #map-fake .what-list h2 {
     margin: 0;
   }
 
-  /* line 4149, ../scss/breakpoints/_base.scss */
+  /* line 4148, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper.filters span {
     top: 0;
     padding: 10px;
@@ -6478,7 +6477,7 @@ div.cartodb-popup .cartodb-popup-close-button {
     width: 65px;
   }
 
-  /* line 4155, ../scss/breakpoints/_base.scss */
+  /* line 4154, ../scss/breakpoints/_base.scss */
   #blue-bar-pick-pillar {
     height: 70px;
     border: none;
@@ -6487,7 +6486,7 @@ div.cartodb-popup .cartodb-popup-close-button {
     overflow: hidden;
   }
 
-  /* line 4162, ../scss/breakpoints/_base.scss */
+  /* line 4161, ../scss/breakpoints/_base.scss */
   .blue-bar-top {
     align-items: flex-start;
     height: 240px;
@@ -6495,59 +6494,59 @@ div.cartodb-popup .cartodb-popup-close-button {
     width: 100%;
   }
 
-  /* line 4168, ../scss/breakpoints/_base.scss */
+  /* line 4167, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper {
     -webkit-flex-direction: column;
     flex-direction: column;
   }
 
-  /* line 4172, ../scss/breakpoints/_base.scss */
+  /* line 4171, ../scss/breakpoints/_base.scss */
   .blue-bar-top.about .wrapper {
     height: 80%;
     width: 95%;
   }
 
-  /* line 4176, ../scss/breakpoints/_base.scss */
+  /* line 4175, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper .region-filter li {
     display: table;
     padding: 0 10px 0 0 !important;
   }
 
-  /* line 4180, ../scss/breakpoints/_base.scss */
+  /* line 4179, ../scss/breakpoints/_base.scss */
   .category .blue-bar-top .region-filter li:first-child {
     padding: inherit;
   }
 
-  /* line 4183, ../scss/breakpoints/_base.scss */
+  /* line 4182, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper .region-filter {
     position: relative;
     display: inline !important;
     background-color: transparent;
   }
 
-  /* line 4188, ../scss/breakpoints/_base.scss */
+  /* line 4187, ../scss/breakpoints/_base.scss */
   #toggle-filter-region {
     display: none;
     width: 100%;
   }
 
-  /* line 4192, ../scss/breakpoints/_base.scss */
+  /* line 4191, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper .region-filter li.clear-map {
     display: none;
   }
 
-  /* line 4195, ../scss/breakpoints/_base.scss */
+  /* line 4194, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper .region-filter li::first-child {
     padding: 0;
   }
 
-  /* line 4198, ../scss/breakpoints/_base.scss */
+  /* line 4197, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper .region-filter input {
     position: relative;
     top: -10px;
   }
 
-  /* line 4202, ../scss/breakpoints/_base.scss */
+  /* line 4201, ../scss/breakpoints/_base.scss */
   .blue-bar-top.fixed {
     position: inherit;
     top: inherit;
@@ -6555,7 +6554,7 @@ div.cartodb-popup .cartodb-popup-close-button {
     opacity: inherit;
   }
 
-  /* line 4208, ../scss/breakpoints/_base.scss */
+  /* line 4207, ../scss/breakpoints/_base.scss */
   .index-row .row-container, .page .index-row .row-container {
     -webkit-flex-direction: column;
     flex-direction: column;
@@ -6563,52 +6562,52 @@ div.cartodb-popup .cartodb-popup-close-button {
     width: 100%;
   }
 
-  /* line 4217, ../scss/breakpoints/_base.scss */
+  /* line 4216, ../scss/breakpoints/_base.scss */
   .archive .blue-bar-top {
     display: none;
   }
 
-  /* line 4220, ../scss/breakpoints/_base.scss */
+  /* line 4219, ../scss/breakpoints/_base.scss */
   .archive .blue-bar-top-m {
     display: block;
   }
 
-  /* line 4223, ../scss/breakpoints/_base.scss */
+  /* line 4222, ../scss/breakpoints/_base.scss */
   .page #partners .-m-partner {
     width: 100%;
   }
 
-  /* line 4226, ../scss/breakpoints/_base.scss */
+  /* line 4225, ../scss/breakpoints/_base.scss */
   .archive #contact, .page #contact {
     display: table;
   }
 
-  /* line 4229, ../scss/breakpoints/_base.scss */
+  /* line 4228, ../scss/breakpoints/_base.scss */
   .archive .corner-map, .page .corner-map {
     display: none;
   }
 
-  /* line 4232, ../scss/breakpoints/_base.scss */
+  /* line 4231, ../scss/breakpoints/_base.scss */
   .page #more-content > .card-third {
     width: 100%;
   }
 
-  /* line 4235, ../scss/breakpoints/_base.scss */
+  /* line 4234, ../scss/breakpoints/_base.scss */
   .page #members h3 {
     width: 100%;
   }
 
-  /* line 4238, ../scss/breakpoints/_base.scss */
+  /* line 4237, ../scss/breakpoints/_base.scss */
   .page #partners h3 {
     width: 100%;
   }
 
-  /* line 4241, ../scss/breakpoints/_base.scss */
+  /* line 4240, ../scss/breakpoints/_base.scss */
   .page #contact .index-row .card-third {
     padding: 0 0 10px;
   }
 
-  /* line 4244, ../scss/breakpoints/_base.scss */
+  /* line 4243, ../scss/breakpoints/_base.scss */
   .category-news .blue-bar-top,
   .category-community-mapping .blue-bar-top,
   .category-risk-visualization .blue-bar-top,
@@ -6623,12 +6622,12 @@ div.cartodb-popup .cartodb-popup-close-button {
     height: 160px;
   }
 
-  /* line 4257, ../scss/breakpoints/_base.scss */
+  /* line 4256, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper .region-filter li {
     display: inline;
   }
 
-  /* line 4260, ../scss/breakpoints/_base.scss */
+  /* line 4259, ../scss/breakpoints/_base.scss */
   .category-news #main > h3,
   .category-news #main > h1,
   .category-community-mapping #main > h3,
@@ -6657,7 +6656,7 @@ div.cartodb-popup .cartodb-popup-close-button {
     max-width: 100%;
   }
 
-  /* line 4287, ../scss/breakpoints/_base.scss */
+  /* line 4286, ../scss/breakpoints/_base.scss */
   .category-news #main .row-container article,
   .post-type-archive-resource #main .row-container article,
   .category-community-mapping #main .row-container article,
@@ -6675,17 +6674,17 @@ div.cartodb-popup .cartodb-popup-close-button {
     margin: 20px 0px;
   }
 
-  /* line 4303, ../scss/breakpoints/_base.scss */
+  /* line 4302, ../scss/breakpoints/_base.scss */
   .category-open-data-platforms #main .row-container article header, .category-community-mapping #main .row-container article header, .category-risk-visualization #main .row-container article header, .category-news #main .row-container article header, .post-type-archive-resource #main .row-container article header, .category-africa #main, .category-east-asia-pacific #main, .category-europe-and-central-asia #main, .category-latin-america-and-caribbean #main, .category-middle-east-and-north-africa #main, .category-non-wb-countries #main, .category-south-asia #main {
     bottom: 50%;
   }
 
-  /* line 4306, ../scss/breakpoints/_base.scss */
+  /* line 4305, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper .region-filter {
     top: 0;
   }
 
-  /* line 4309, ../scss/breakpoints/_base.scss */
+  /* line 4308, ../scss/breakpoints/_base.scss */
   .category-news #main,
   .category-community-mapping #main,
   .category-risk-visualization #main,
@@ -6693,88 +6692,88 @@ div.cartodb-popup .cartodb-popup-close-button {
     margin: 30px 0 0;
   }
 
-  /* line 4315, ../scss/breakpoints/_base.scss */
+  /* line 4314, ../scss/breakpoints/_base.scss */
   .hentry.-odri-post.category-news, .hentry.-odri-post.category-projects {
     width: 100%;
     padding: 1em;
   }
 
-  /* line 4319, ../scss/breakpoints/_base.scss */
+  /* line 4318, ../scss/breakpoints/_base.scss */
   div#principles.m-all.cf.index-row.about-content, div#principles.m-all.index-row.about-content.comment-respond {
     height: 100%;
     display: block;
   }
 
-  /* line 4323, ../scss/breakpoints/_base.scss */
+  /* line 4322, ../scss/breakpoints/_base.scss */
   .page .about-content:not(#more-content) .card-third .principles-columns {
     flex-direction: column;
   }
-  /* line 4325, ../scss/breakpoints/_base.scss */
+  /* line 4324, ../scss/breakpoints/_base.scss */
   .page .about-content:not(#more-content) .card-third .principles-columns .principles-column {
     width: 100%;
   }
 
-  /* line 4329, ../scss/breakpoints/_base.scss */
+  /* line 4328, ../scss/breakpoints/_base.scss */
   .page .p-info.double p {
     width: 100%;
   }
 
-  /* line 4332, ../scss/breakpoints/_base.scss */
+  /* line 4331, ../scss/breakpoints/_base.scss */
   .page #members .-m-team-member {
     display: block;
   }
 
-  /* line 4335, ../scss/breakpoints/_base.scss */
+  /* line 4334, ../scss/breakpoints/_base.scss */
   .page #partners .-m-partner .-m-info, .page #members .-m-team-member .-m-info {
     width: 100%;
     margin: 0;
   }
 
-  /* line 4339, ../scss/breakpoints/_base.scss */
+  /* line 4338, ../scss/breakpoints/_base.scss */
   .page #partners .-m-partner img {
     width: 100%;
   }
 
-  /* line 4342, ../scss/breakpoints/_base.scss */
+  /* line 4341, ../scss/breakpoints/_base.scss */
   .page #members .-m-team-member img {
     display: block;
     margin: 0 auto 30px;
   }
 
-  /* line 4346, ../scss/breakpoints/_base.scss */
+  /* line 4345, ../scss/breakpoints/_base.scss */
   .page #contact .contact-form textarea {
     width: 100%;
   }
 
-  /* line 4349, ../scss/breakpoints/_base.scss */
+  /* line 4348, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper span a i {
     transform: scale(2);
     visibility: visible;
     margin: 10px;
   }
 
-  /* line 4354, ../scss/breakpoints/_base.scss */
+  /* line 4353, ../scss/breakpoints/_base.scss */
   .resources-page-list .blue-bar-top {
     height: 170px;
   }
 
-  /* line 4357, ../scss/breakpoints/_base.scss */
+  /* line 4356, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper span a {
     visibility: hidden;
   }
 
-  /* line 4360, ../scss/breakpoints/_base.scss */
+  /* line 4359, ../scss/breakpoints/_base.scss */
   .resources-page-list .blue-bar-top .wrapper span a {
     visibility: visible;
   }
 
-  /* line 4363, ../scss/breakpoints/_base.scss */
+  /* line 4362, ../scss/breakpoints/_base.scss */
   .blue-bar-top .wrapper .region-filter li a {
     width: initial;
     display: inherit;
   }
 
-  /* line 4367, ../scss/breakpoints/_base.scss */
+  /* line 4366, ../scss/breakpoints/_base.scss */
   .header nav input.visible {
     top: -3px;
     width: 90%;
@@ -6783,45 +6782,45 @@ div.cartodb-popup .cartodb-popup-close-button {
     text-align: center;
   }
 
-  /* line 4374, ../scss/breakpoints/_base.scss */
+  /* line 4373, ../scss/breakpoints/_base.scss */
   .post-type-archive-project #main > h3,
   .post-type-archive-resource #main > h3 {
     width: 100%;
     max-width: 100%;
   }
 
-  /* line 4379, ../scss/breakpoints/_base.scss */
+  /* line 4378, ../scss/breakpoints/_base.scss */
   .post-type-archive-resource #main {
     margin: 30px 6px 0;
   }
 
-  /* line 4382, ../scss/breakpoints/_base.scss */
+  /* line 4381, ../scss/breakpoints/_base.scss */
   .blue-bar-top.about .wrapper span a {
     visibility: visible;
   }
 
-  /* line 4387, ../scss/breakpoints/_base.scss */
+  /* line 4386, ../scss/breakpoints/_base.scss */
   .index-row .resource-list li {
     display: block;
     width: 90%;
   }
 
-  /* line 4391, ../scss/breakpoints/_base.scss */
+  /* line 4390, ../scss/breakpoints/_base.scss */
   .leaflet-top .leaflet-control {
     margin-top: 10px !important;
   }
 
-  /* line 4394, ../scss/breakpoints/_base.scss */
+  /* line 4393, ../scss/breakpoints/_base.scss */
   #map-fake {
     height: 440px;
   }
 
-  /* line 4397, ../scss/breakpoints/_base.scss */
+  /* line 4396, ../scss/breakpoints/_base.scss */
   #map-fake:after {
     background: #0e5fa2;
   }
 
-  /* line 4400, ../scss/breakpoints/_base.scss */
+  /* line 4399, ../scss/breakpoints/_base.scss */
   .index-row .card-third.twitter-timeline-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -6832,113 +6831,113 @@ div.cartodb-popup .cartodb-popup-close-button {
     margin: 0 !important;
   }
 
-  /* line 4409, ../scss/breakpoints/_base.scss */
+  /* line 4408, ../scss/breakpoints/_base.scss */
   .index-row .card-third .twitter > span {
     left: 40px;
   }
 
-  /* line 4412, ../scss/breakpoints/_base.scss */
+  /* line 4411, ../scss/breakpoints/_base.scss */
   .index-row article, .index-row .card-third {
     margin: 0 15px 30px;
   }
 
-  /* line 4415, ../scss/breakpoints/_base.scss */
+  /* line 4414, ../scss/breakpoints/_base.scss */
   .index-row article, .index-row .card-third::last-child {
     margin: 0 15px 0px;
   }
 
-  /* line 4418, ../scss/breakpoints/_base.scss */
+  /* line 4417, ../scss/breakpoints/_base.scss */
   .hentry {
     border-radius: 0;
   }
 
-  /* line 4421, ../scss/breakpoints/_base.scss */
+  /* line 4420, ../scss/breakpoints/_base.scss */
   .page #inner-content {
     padding: 0 3%;
   }
 
-  /* line 4424, ../scss/breakpoints/_base.scss */
+  /* line 4423, ../scss/breakpoints/_base.scss */
   .page .about-content h3, .page .more-content h3, .page #contact h3, .page #more-content h3, .page #partners h3, .page #members h3 {
     margin: 60px 0 10px 0;
     font-size: 35px;
     padding: 0;
   }
 
-  /* line 4429, ../scss/breakpoints/_base.scss */
+  /* line 4428, ../scss/breakpoints/_base.scss */
   .blue-bar-top.about .wrapper span.current {
     color: #fff;
     background: transparent;
     padding: 0;
   }
 
-  /* line 4434, ../scss/breakpoints/_base.scss */
+  /* line 4433, ../scss/breakpoints/_base.scss */
   .footer {
     display: none;
   }
 
-  /* line 4437, ../scss/breakpoints/_base.scss */
+  /* line 4436, ../scss/breakpoints/_base.scss */
   .footer.mobile {
     display: block;
   }
 
-  /* line 4440, ../scss/breakpoints/_base.scss */
+  /* line 4439, ../scss/breakpoints/_base.scss */
   .footer.mobile .-ft-content {
     flex-direction: column;
     align-items: center;
     height: 190px;
   }
 
-  /* line 4445, ../scss/breakpoints/_base.scss */
+  /* line 4444, ../scss/breakpoints/_base.scss */
   .footer.mobile .-ft-content #mc-embedded-subscribe {
     width: 100px;
   }
 
-  /* line 4448, ../scss/breakpoints/_base.scss */
+  /* line 4447, ../scss/breakpoints/_base.scss */
   .footer.mobile .-ft-content .-ft-newsletter span {
     font-weight: bold;
     font-size: 15px;
   }
 
-  /* line 4452, ../scss/breakpoints/_base.scss */
+  /* line 4451, ../scss/breakpoints/_base.scss */
   .footer.mobile .-ft-content form {
     width: 310px;
   }
 
-  /* line 4455, ../scss/breakpoints/_base.scss */
+  /* line 4454, ../scss/breakpoints/_base.scss */
   .footer.mobile .-ft-content nav {
     flex-direction: row;
     justify-content: space-between;
     width: 310px;
   }
 
-  /* line 4460, ../scss/breakpoints/_base.scss */
+  /* line 4459, ../scss/breakpoints/_base.scss */
   .footer.mobile .-ft-content .-ft-logo a {
     display: inline;
     left: 3px;
   }
 
-  /* line 4464, ../scss/breakpoints/_base.scss */
+  /* line 4463, ../scss/breakpoints/_base.scss */
   #pic-banner {
     height: 135px;
     margin: 0 0 0px;
   }
 
-  /* line 4468, ../scss/breakpoints/_base.scss */
+  /* line 4467, ../scss/breakpoints/_base.scss */
   .about-content.index-row {
     margin: 60px -10px;
   }
 
-  /* line 4471, ../scss/breakpoints/_base.scss */
+  /* line 4470, ../scss/breakpoints/_base.scss */
   .page .p-info {
     justify-content: flex-start;
   }
 
-  /* line 4474, ../scss/breakpoints/_base.scss */
+  /* line 4473, ../scss/breakpoints/_base.scss */
   .single .wrap {
     width: 100%;
   }
 
-  /* line 4477, ../scss/breakpoints/_base.scss */
+  /* line 4476, ../scss/breakpoints/_base.scss */
   #explore-more section .what-explore {
     top: 270px;
     min-height: 50px;
@@ -6952,275 +6951,275 @@ div.cartodb-popup .cartodb-popup-close-button {
     font-size: 20px;
   }
 
-  /* line 4489, ../scss/breakpoints/_base.scss */
+  /* line 4488, ../scss/breakpoints/_base.scss */
   .index-row.more-content h3 {
     padding: 0 0 0 10px;
   }
 
-  /* line 4492, ../scss/breakpoints/_base.scss */
+  /* line 4491, ../scss/breakpoints/_base.scss */
   .archive #contact .index-row, .page #contact .index-row {
     width: 100%;
   }
 
-  /* line 4495, ../scss/breakpoints/_base.scss */
+  /* line 4494, ../scss/breakpoints/_base.scss */
   .hentry.-odri-post h1, .archive h1 {
     font-size: 30px;
     line-height: 30px;
   }
 
-  /* line 4499, ../scss/breakpoints/_base.scss */
+  /* line 4498, ../scss/breakpoints/_base.scss */
   .archive h1 {
     margin: 20px 0;
   }
 
-  /* line 4502, ../scss/breakpoints/_base.scss */
+  /* line 4501, ../scss/breakpoints/_base.scss */
   .sidebar {
     width: 100%;
   }
 
-  /* line 4505, ../scss/breakpoints/_base.scss */
+  /* line 4504, ../scss/breakpoints/_base.scss */
   .sidebar h4 {
     padding: 0 0 0 10px;
   }
 
-  /* line 4508, ../scss/breakpoints/_base.scss */
+  /* line 4507, ../scss/breakpoints/_base.scss */
   .sidebar ul {
     width: calc(100% - 20px);
     margin: 0 auto;
   }
 
-  /* line 4512, ../scss/breakpoints/_base.scss */
+  /* line 4511, ../scss/breakpoints/_base.scss */
   i {
     width: 70%;
   }
 
-  /* line 4515, ../scss/breakpoints/_base.scss */
+  /* line 4514, ../scss/breakpoints/_base.scss */
   .single .index-row.more-content .row-container article {
     max-width: 100% !important;
     width: calc(100% - 40px) !important;
   }
 
-  /* line 4519, ../scss/breakpoints/_base.scss */
+  /* line 4518, ../scss/breakpoints/_base.scss */
   .index-row .card-third.project, .index-row article.project {
     max-width: 100%;
     width: 100%;
   }
 
-  /* line 4523, ../scss/breakpoints/_base.scss */
+  /* line 4522, ../scss/breakpoints/_base.scss */
   #content {
     overflow-x: initial;
   }
 
-  /* line 4526, ../scss/breakpoints/_base.scss */
+  /* line 4525, ../scss/breakpoints/_base.scss */
   .home #news.index-row {
     -webkit-flex-direction: column;
     flex-direction: column;
   }
 
-  /* line 4530, ../scss/breakpoints/_base.scss */
+  /* line 4529, ../scss/breakpoints/_base.scss */
   .home .index-row#news .row-container {
     width: calc(100% - 20px);
   }
 
-  /* line 4533, ../scss/breakpoints/_base.scss */
+  /* line 4532, ../scss/breakpoints/_base.scss */
   .home #news.index-row article, .home #news.index-row .card-third {
     width: 100%;
     max-width: 100%;
   }
 
-  /* line 4537, ../scss/breakpoints/_base.scss */
+  /* line 4536, ../scss/breakpoints/_base.scss */
   .home .index-row .first-text {
     height: auto;
   }
 
-  /* line 4540, ../scss/breakpoints/_base.scss */
+  /* line 4539, ../scss/breakpoints/_base.scss */
   .index-row .card-third .twitter {
     width: calc(100% - 20px);
   }
 
-  /* line 4543, ../scss/breakpoints/_base.scss */
+  /* line 4542, ../scss/breakpoints/_base.scss */
   .home .index-row article, .home .index-row .card-third {
     width: 100%;
     max-width: calc(100% - 20px);
   }
 
-  /* line 4547, ../scss/breakpoints/_base.scss */
+  /* line 4546, ../scss/breakpoints/_base.scss */
   .home #news.index-row article:last-child {
     position: relative;
     top: 0;
     right: 0;
   }
 
-  /* line 4552, ../scss/breakpoints/_base.scss */
+  /* line 4551, ../scss/breakpoints/_base.scss */
   .post-type-archive-resource #main .index-row {
     margin: 20px 0 !important;
     flex-direction: column;
   }
 
-  /* line 4556, ../scss/breakpoints/_base.scss */
+  /* line 4555, ../scss/breakpoints/_base.scss */
   .post-type-archive-resource .index-row.last-resources a {
     width: 100%;
     max-width: 100%;
   }
 
-  /* line 4560, ../scss/breakpoints/_base.scss */
+  /* line 4559, ../scss/breakpoints/_base.scss */
   .post-type-archive-resource .index-row.last-resources a article {
     height: 100px;
   }
 
-  /* line 4563, ../scss/breakpoints/_base.scss */
+  /* line 4562, ../scss/breakpoints/_base.scss */
   .home #resources.index-row article.resource-cont, .home #inner-content > .last-resources article {
     width: 100%;
     max-width: 100%;
   }
 
-  /* line 4567, ../scss/breakpoints/_base.scss */
+  /* line 4566, ../scss/breakpoints/_base.scss */
   .home .index-row .resource-list.home {
     margin: 20px 0 0 0;
   }
 
-  /* line 4570, ../scss/breakpoints/_base.scss */
+  /* line 4569, ../scss/breakpoints/_base.scss */
   .home #inner-content > .last-resources {
     margin: 0px 0 50px !important;
   }
 
-  /* line 4573, ../scss/breakpoints/_base.scss */
+  /* line 4572, ../scss/breakpoints/_base.scss */
   .page #contact .contact-form input, .page #contact .contact-form textarea {
     border: 1px solid #eee;
     width: 100% !important;
   }
 
-  /* line 4577, ../scss/breakpoints/_base.scss */
+  /* line 4576, ../scss/breakpoints/_base.scss */
   .archive #contact .contact-form .contact-submit .pushbutton-wide, .page #contact .contact-form .contact-submit .pushbutton-wide {
     width: 71px !important;
     left: 0;
   }
 
-  /* line 4581, ../scss/breakpoints/_base.scss */
+  /* line 4580, ../scss/breakpoints/_base.scss */
   .index-row article.resource-cont section h3, .index-row .card-third.resource-cont section h3 {
     font-size: 17px;
   }
 
-  /* line 4584, ../scss/breakpoints/_base.scss */
+  /* line 4583, ../scss/breakpoints/_base.scss */
   .category-open-data-platforms #main > h1, .category-open-data-platforms #main > p, .category-community-mapping #main > h1, .category-community-mapping #main > p, .category-africa #main > h1, .category-africa #main > p, .category-east-asia-pacific #main > h1, .category-east-asia-pacific #main > p, .category-europe-and-central-asia #main > h1, .category-europe-and-central-asia #main > p, .category-latin-america-and-caribbean #main > h1, .category-latin-america-and-caribbean #main > p, .category-middle-east-and-north-africa #main > h1, .category-middle-east-and-north-africa #main > p, .category-non-wb-countries #main > h1, .category-non-wb-countries #main > p, .category-south-asia #main > h1, .category-south-asia #main > p, .category-risk-visualization #main > h1, .category-risk-visualization #main > p, .category-news #main > h1, .category-news #main > p, .post-type-archive-resource #main > h1, .post-type-archive-resource #main > p {
     margin: 0 0 10px;
   }
 
-  /* line 4587, ../scss/breakpoints/_base.scss */
+  /* line 4586, ../scss/breakpoints/_base.scss */
   .blue-bar-top-m.active #blue-bar-pick-pillar li input {
     width: 103.4% !important;
     max-width: 103.4% !important;
   }
 
-  /* line 4591, ../scss/breakpoints/_base.scss */
+  /* line 4590, ../scss/breakpoints/_base.scss */
   .search .index-row article, .search .index-row .card-third, .single .index-row.more-content .row-container article {
     width: calc(100% - 20px) !important;
   }
 
-  /* line 4594, ../scss/breakpoints/_base.scss */
+  /* line 4593, ../scss/breakpoints/_base.scss */
   #explore-more section {
     width: 90%;
     height: 70%;
   }
 
-  /* line 4598, ../scss/breakpoints/_base.scss */
+  /* line 4597, ../scss/breakpoints/_base.scss */
   #explore-more section h2 {
     font-size: 30px;
     line-height: 30px;
   }
 
-  /* line 4602, ../scss/breakpoints/_base.scss */
+  /* line 4601, ../scss/breakpoints/_base.scss */
   #explore-more section h3 {
     font-size: 22px;
     line-height: 22px;
   }
 
-  /* line 4606, ../scss/breakpoints/_base.scss */
+  /* line 4605, ../scss/breakpoints/_base.scss */
   .archive #contact .contact-form label, .page #contact .contact-form label {
     text-align: center;
     width: 100%;
     padding: 10px 0 5px;
   }
 
-  /* line 4611, ../scss/breakpoints/_base.scss */
+  /* line 4610, ../scss/breakpoints/_base.scss */
   #map-fake .what-list > nav a {
     line-height: 15px;
   }
 
-  /* line 4614, ../scss/breakpoints/_base.scss */
+  /* line 4613, ../scss/breakpoints/_base.scss */
   .category-open-data-platforms #main, .category-community-mapping #main, .category-africa #main, .category-east-asia-pacific #main, .category-europe-and-central-asia #main, .category-latin-america-and-caribbean #main, .category-middle-east-and-north-africa #main, .category-non-wb-countries #main, .category-south-asia #main, .category-risk-visualization #main, .category-news #main, .post-type-archive-resource #main, .search #main, .tag #main {
     margin: 50px 0 0 0;
   }
 
-  /* line 4617, ../scss/breakpoints/_base.scss */
+  /* line 4616, ../scss/breakpoints/_base.scss */
   .search #main > h1, .tag #main > h1 {
     margin: 0 0 20px;
   }
 
-  /* line 4620, ../scss/breakpoints/_base.scss */
+  /* line 4619, ../scss/breakpoints/_base.scss */
   .search #main > p, .tag #main > p {
     display: none;
   }
 
-  /* line 4623, ../scss/breakpoints/_base.scss */
+  /* line 4622, ../scss/breakpoints/_base.scss */
   .search #main .row-container article, .tag #main .row-container article {
     width: 100%;
   }
 
-  /* line 4626, ../scss/breakpoints/_base.scss */
+  /* line 4625, ../scss/breakpoints/_base.scss */
   .page .pillars-list-about h4, .page .pillars-list-about p {
     width: 100%;
   }
 
-  /* line 4629, ../scss/breakpoints/_base.scss */
+  /* line 4628, ../scss/breakpoints/_base.scss */
   .resources-page-list .index-row {
     margin: 0;
   }
 
-  /* line 4632, ../scss/breakpoints/_base.scss */
+  /* line 4631, ../scss/breakpoints/_base.scss */
   .resources-page-list .resource-list-new li {
     display: inline;
   }
 
-  /* line 4635, ../scss/breakpoints/_base.scss */
+  /* line 4634, ../scss/breakpoints/_base.scss */
   .resources-page-list .resource-list-new li div {
     width: auto;
   }
 
-  /* line 4638, ../scss/breakpoints/_base.scss */
+  /* line 4637, ../scss/breakpoints/_base.scss */
   .resources-page-list .index-row.last-resources {
     flex-direction: column;
   }
 
-  /* line 4641, ../scss/breakpoints/_base.scss */
+  /* line 4640, ../scss/breakpoints/_base.scss */
   .resources-page-list .index-row .resource-cont {
     width: 100%;
     height: auto;
   }
 
-  /* line 4645, ../scss/breakpoints/_base.scss */
+  /* line 4644, ../scss/breakpoints/_base.scss */
   .archive .newsletter .subscribe form input[type=email], .page .newsletter .subscribe form input[type=email] {
     width: 70%;
   }
 
-  /* line 4648, ../scss/breakpoints/_base.scss */
+  /* line 4647, ../scss/breakpoints/_base.scss */
   .archive .newsletter .subscribe h4, .page .newsletter .subscribe h4 {
     height: 45px;
     font-size: 30px;
   }
 
-  /* line 4652, ../scss/breakpoints/_base.scss */
+  /* line 4651, ../scss/breakpoints/_base.scss */
   .resource-list-title {
     font-size: 28px;
     margin: 35px 0 0;
   }
 
-  /* line 4656, ../scss/breakpoints/_base.scss */
+  /* line 4655, ../scss/breakpoints/_base.scss */
   .single #explore-more .what-explore a {
     line-height: 34px;
   }
 
-  /* line 4659, ../scss/breakpoints/_base.scss */
+  /* line 4658, ../scss/breakpoints/_base.scss */
   h5 {
     margin: -40px 0 10px !important;
     position: relative;
@@ -7233,18 +7232,18 @@ div.cartodb-popup .cartodb-popup-close-button {
   }
 }
 @media all and (-ms-high-contrast: none) {
-  /* line 4672, ../scss/breakpoints/_base.scss */
+  /* line 4671, ../scss/breakpoints/_base.scss */
   p.principles-column-title {
     width: 60% !important;
   }
 }
-/* line 4679, ../scss/breakpoints/_base.scss */
+/* line 4678, ../scss/breakpoints/_base.scss */
 .osm-attribution {
   margin-top: 15px;
   display: none;
 }
 
-/* line 4684, ../scss/breakpoints/_base.scss */
+/* line 4683, ../scss/breakpoints/_base.scss */
 body.-has-osm-attribution .osm-attribution {
   display: block;
 }
