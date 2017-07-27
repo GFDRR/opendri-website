@@ -74,14 +74,15 @@ function activity_chart( $atts ) {
 
 function contributor_chart( $atts ) {
   global $OSMA_API_ENDPOINT_ADDRESS;
-  ob_start(); ?>
+  $atts_encode = json_encode($atts);
+  return <<<EOD
   <div id="contributor-chart" style="width: 50%"></div>
   <script>
   (function() {
     window.document.body.classList.add('-has-osm-attribution');
-    var settings = <?php echo json_encode($atts) ?>;
+    var settings = {$atts_encode};
     var country = settings.country.toUpperCase() || 'HTI';
-    fetch('<?php echo $OSMA_API_ENDPOINT_ADDRESS ?>/stats/all/country/' + country)
+    fetch('{$OSMA_API_ENDPOINT_ADDRESS}/stats/all/country/' + country)
       .then(function(response) {
         return response.json();
       })
@@ -93,7 +94,7 @@ function contributor_chart( $atts ) {
       });
   })()
   </script>
-  <?php return ob_get_clean();
+EOD;
 }
 
 add_shortcode( 'osma_charts_compare_map', 'compare_map' );
@@ -102,7 +103,7 @@ add_shortcode( 'osma_charts_contributors', 'contributor_chart' );
 
 function send_no_xss_protection_header( $headers, $object ) {
 	if ($object->query_vars['post_type'] === 'project') {
-	  header("X-XSS-Protection: 0");
+	  $headers['X-XSS-Protection'] = 0;
 	}
   
   return $headers;
