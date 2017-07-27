@@ -13,7 +13,9 @@ $OSMA_SITE_ADDRESS = get_option('osma_site_address' );
 function compare_map( $atts ) {
   global $OSMA_API_ENDPOINT_ADDRESS;
   global $OSMA_SITE_ADDRESS;
-  ob_start(); ?>
+  $atts_encode = json_encode($atts);
+  
+  return <<<EOD
   <div id="compare-map" class="compare-map"></div>
   <script>
     (function() {
@@ -25,11 +27,11 @@ function compare_map( $atts ) {
           settings: settings
         });
       }
-      var settings = <?php echo json_encode($atts) ?>;
-      settings.iframe_base_url = '<?php echo $OSMA_SITE_ADDRESS ?>';
+      var settings = {$atts_encode};
+      settings.iframe_base_url = '{$OSMA_SITE_ADDRESS}';
       if (settings.polygon === undefined) {
         var country = settings.country.toUpperCase() || 'HTI';
-        fetch('<?php echo $OSMA_API_ENDPOINT_ADDRESS; ?>/meta/country_polyline/' + country)
+        fetch('{$OSMA_API_ENDPOINT_ADDRESS}/meta/country_polyline/' + country)
           .then(function(response) {
             return response.text();
           })
@@ -42,19 +44,21 @@ function compare_map( $atts ) {
       }
     })()
   </script>
-  <?php return ob_get_clean();
+EOD;
 }
 
 function activity_chart( $atts ) {
   global $OSMA_API_ENDPOINT_ADDRESS;
-  ob_start(); ?>
+  $atts_encode = json_encode($atts);
+  
+  return <<<EOD
   <div id="activity-chart"></div>
   <script>
   (function() {
     window.document.body.classList.add('-has-osm-attribution');
-    var settings = <?php echo json_encode($atts) ?>;
+    var settings = {$atts_encode};
     var country = settings.country.toUpperCase() || 'HTI';
-    fetch('<?php echo $OSMA_API_ENDPOINT_ADDRESS ?>/stats/all/country/' + country)
+    fetch('{$OSMA_API_ENDPOINT_ADDRESS}/stats/all/country/' + country)
       .then(function(response) {
         return response.json();
       })
@@ -68,7 +72,7 @@ function activity_chart( $atts ) {
       });
   })()
   </script>
-  <?php return ob_get_clean();
+EOD;
 }
 
 
