@@ -7,10 +7,12 @@
  */
 
 require_once __DIR__ . '/osma-charts-settings.php';
-$OSMA_API_SERVER = get_option('osma_api_settings_endpoint' );
+$OSMA_API_ENDPOINT_ADDRESS = get_option('osma_api_endpoint_address' );
+$OSMA_SITE_ADDRESS = get_option('osma_site_address' );
 
 function compare_map( $atts ) {
-  global $OSMA_API_SERVER;
+  global $OSMA_API_ENDPOINT_ADDRESS;
+  global $OSMA_SITE_ADDRESS;
   ob_start(); ?>
   <div id="compare-map" class="compare-map"></div>
   <script>
@@ -24,10 +26,10 @@ function compare_map( $atts ) {
         });
       }
       var settings = <?php echo json_encode($atts) ?>;
-      settings.iframe_base_url = 'http://localhost:3000';
+      settings.iframe_base_url = '<?php echo $OSMA_SITE_ADDRESS ?>';
       if (settings.polygon === undefined) {
         var country = settings.country.toUpperCase() || 'HTI';
-        fetch('<?php echo $OSMA_API_SERVER; ?>/meta/country_polyline/' + country)
+        fetch('<?php echo $OSMA_API_ENDPOINT_ADDRESS; ?>/meta/country_polyline/' + country)
           .then(function(response) {
             return response.text();
           })
@@ -44,7 +46,7 @@ function compare_map( $atts ) {
 }
 
 function activity_chart( $atts ) {
-  global $OSMA_API_SERVER;
+  global $OSMA_API_ENDPOINT_ADDRESS;
   ob_start(); ?>
   <div id="activity-chart"></div>
   <script>
@@ -52,7 +54,7 @@ function activity_chart( $atts ) {
     window.document.body.classList.add('-has-osm-attribution');
     var settings = <?php echo json_encode($atts) ?>;
     var country = settings.country.toUpperCase() || 'HTI';
-    fetch('<?php echo $OSMA_API_SERVER ?>/stats/all/country/' + country)
+    fetch('<?php echo $OSMA_API_ENDPOINT_ADDRESS ?>/stats/all/country/' + country)
       .then(function(response) {
         return response.json();
       })
@@ -71,7 +73,7 @@ function activity_chart( $atts ) {
 
 
 function contributor_chart( $atts ) {
-  global $OSMA_API_SERVER;
+  global $OSMA_API_ENDPOINT_ADDRESS;
   ob_start(); ?>
   <div id="contributor-chart" style="width: 50%"></div>
   <script>
@@ -79,7 +81,7 @@ function contributor_chart( $atts ) {
     window.document.body.classList.add('-has-osm-attribution');
     var settings = <?php echo json_encode($atts) ?>;
     var country = settings.country.toUpperCase() || 'HTI';
-    fetch('<?php echo $OSMA_API_SERVER ?>/stats/all/country/' + country)
+    fetch('<?php echo $OSMA_API_ENDPOINT_ADDRESS ?>/stats/all/country/' + country)
       .then(function(response) {
         return response.json();
       })
