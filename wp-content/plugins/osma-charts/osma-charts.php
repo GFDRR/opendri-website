@@ -105,15 +105,6 @@ add_shortcode( 'osma_charts_compare_map', 'compare_map' );
 add_shortcode( 'osma_charts_activity', 'activity_chart' );
 add_shortcode( 'osma_charts_contributors', 'contributor_chart' );
 
-function send_no_xss_protection_header( $headers, $object ) {
-	if ($object->query_vars['post_type'] === 'project') {
-	  $headers['X-XSS-Protection'] = 0;
-	}
-  
-  return $headers;
-}
-add_filter( 'wp_headers', 'send_no_xss_protection_header', 10, 2 );
-
 
 function osma_charts_script() {
    wp_register_script('osma_charts_bundle', plugins_url('scripts/bundle.js', __FILE__) );
