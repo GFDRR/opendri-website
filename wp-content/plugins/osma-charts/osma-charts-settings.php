@@ -1,5 +1,5 @@
 <?php
- 
+
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 class OsmaChartsSettingsPage
@@ -17,7 +17,7 @@ class OsmaChartsSettingsPage
 	add_action( 'admin_menu', array( $this, 'add_plugin_page' ) );
 	add_action( 'admin_init', array( $this, 'page_init' ) );
   }
-  
+
   /**
    * Add options page
    */
@@ -32,7 +32,7 @@ class OsmaChartsSettingsPage
 	  array( $this, 'create_admin_page' )
 	);
   }
-  
+
   /**
    * Options page callback
    */
@@ -55,7 +55,7 @@ class OsmaChartsSettingsPage
 	</div>
 	<?php
   }
-  
+
   /**
    * Register and add settings
    */
@@ -73,7 +73,7 @@ class OsmaChartsSettingsPage
 	  null, // Callback
 	  'osma-charts-admin' // Page
 	);
-	
+
 	add_settings_field(
 	  'osma_api_endpoint_address', // ID
 	  'API URL', // Title
@@ -104,7 +104,7 @@ class OsmaChartsSettingsPage
 	  'osma_site' // Section
 	);
   }
-  
+
   /**
    * Sanitize each setting field as needed
    *
@@ -115,14 +115,14 @@ class OsmaChartsSettingsPage
   public function sanitize( $input )
   {
 	$new_input = array();
-	
+
 	if ( isset( $input ) ) {
 	  $new_input = sanitize_text_field( $input );
 	}
-	
+
 	return $new_input;
   }
-  
+
   /**
    * Get the settings option array and print one of its values
    */
@@ -144,7 +144,7 @@ class OsmaChartsSettingsPage
 	  isset( $this->osma_site_address ) ? esc_attr( $this->osma_site_address) : ''
 	);
   }
-  
+
 }
 
 if ( is_admin() ) {
