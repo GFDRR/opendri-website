@@ -7248,6 +7248,12 @@ body.-has-osm-attribution .osm-attribution {
   display: block;
 }
 
+/* line 4688, ../scss/breakpoints/_base.scss */
+.entry-content ul {
+  margin-left: 50px;
+  margin-bottom: 4em;
+}
+
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
