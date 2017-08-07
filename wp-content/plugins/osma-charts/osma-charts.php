@@ -15,7 +15,7 @@ function compare_map( $atts ) {
   global $OSMA_SITE_ADDRESS;
   $atts_encode = json_encode($atts);
   $chart_id = uniqid('compare-map-');
-  
+
   return <<<EOD
   <div id="{$chart_id}" class="compare-map"></div>
   <script>
@@ -52,7 +52,7 @@ function activity_chart( $atts ) {
   global $OSMA_API_ENDPOINT_ADDRESS;
   $atts_encode = json_encode($atts);
   $chart_id = uniqid('activity-chart-');
-  
+
   return <<<EOD
   <div id="{$chart_id}"></div>
   <script>
@@ -60,7 +60,7 @@ function activity_chart( $atts ) {
     window.document.body.classList.add('-has-osm-attribution');
     var settings = {$atts_encode};
     var country = settings.country.toUpperCase() || 'HTI';
-    fetch('{$OSMA_API_ENDPOINT_ADDRESS}/stats/all/country/' + country)
+    fetch('{$OSMA_API_ENDPOINT_ADDRESS}/stats/all/country/' + country + '?period=' + settings.start_date + ',' + settings.end_date)
       .then(function(response) {
         return response.json();
       })
@@ -82,7 +82,7 @@ function contributor_chart( $atts ) {
   global $OSMA_API_ENDPOINT_ADDRESS;
   $atts_encode = json_encode($atts);
   $chart_id = uniqid('contributor-chart-');
-  
+
   return <<<EOD
   <div id="{$chart_id}" style="width: 50%"></div>
   <script>
@@ -90,7 +90,7 @@ function contributor_chart( $atts ) {
     window.document.body.classList.add('-has-osm-attribution');
     var settings = {$atts_encode};
     var country = settings.country.toUpperCase() || 'HTI';
-    fetch('{$OSMA_API_ENDPOINT_ADDRESS}/stats/all/country/' + country)
+    fetch('{$OSMA_API_ENDPOINT_ADDRESS}/stats/all/country/' + country + '?period=' + settings.start_date + ',' + settings.end_date)
       .then(function(response) {
         return response.json();
       })
