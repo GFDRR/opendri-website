@@ -14,6 +14,7 @@ License: BSD
 CHANGELOG:
 - Updated default width to '100%'
 - Updated default height to '400px'
+- Load tiles using same protocol as page load
 */
 
 add_shortcode( 'mapbox' , 'mapbox_shortcode_handler' );
@@ -44,7 +45,7 @@ function mapbox_shortcode_handler($atts) {
 	}
 	extract($atts);
 
-	$uri = "http://a.tiles.mapbox.com/v3/{$layers}/mm";
+	$uri = "//a.tiles.mapbox.com/v3/{$layers}/mm";
 
 	if ($options !== false) {
 		$uri .= "/{$options}";
