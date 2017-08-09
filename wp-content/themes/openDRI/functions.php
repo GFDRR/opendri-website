@@ -11,6 +11,9 @@ sidebars, comments, etc.
 // LOAD BONES CORE (if you remove this, the theme will break)
 require_once __DIR__ . '/library/bones.php';
 
+// Load MapBox shortcode
+require_once __DIR__ . '/mapbox_shortcode.php';
+
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 // require_once( 'library/admin.php' );
 
