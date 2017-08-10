@@ -7,27 +7,32 @@
  */
 
 require_once __DIR__ . '/osma-charts-settings.php';
-$OSMA_API_SERVER = get_option('osma_api_settings_endpoint' );
+$OSMA_API_ENDPOINT_ADDRESS = get_option('osma_api_endpoint_address' );
+$OSMA_SITE_ADDRESS = get_option('osma_site_address' );
 
 function compare_map( $atts ) {
-  global $OSMA_API_SERVER;
-  ob_start(); ?>
-  <div id="compare-map" class="compare-map"></div>
+  global $OSMA_API_ENDPOINT_ADDRESS;
+  global $OSMA_SITE_ADDRESS;
+  $atts_encode = json_encode($atts);
+  $chart_id = uniqid('compare-map-');
+
+  return <<<EOD
+  <div id="{$chart_id}" class="compare-map"></div>
   <script>
     (function() {
       window.document.body.classList.add('-has-osm-attribution');
       function compareMap(settings) {
-        ODRI.compareMap('#compare-map', {
+        ODRI.compareMap('#{$chart_id}', {
           width: '100%',
           height: '500px',
           settings: settings
         });
       }
-      var settings = <?php echo json_encode($atts) ?>;
-      settings.iframe_base_url = 'http://localhost:3000';
+      var settings = {$atts_encode};
+      settings.iframe_base_url = '{$OSMA_SITE_ADDRESS}';
       if (settings.polygon === undefined) {
         var country = settings.country.toUpperCase() || 'HTI';
-        fetch('<?php echo $OSMA_API_SERVER; ?>/meta/country_polyline/' + country)
+        fetch('{$OSMA_API_ENDPOINT_ADDRESS}/meta/country_polyline/' + country)
           .then(function(response) {
             return response.text();
           })
@@ -40,24 +45,27 @@ function compare_map( $atts ) {
       }
     })()
   </script>
-  <?php return ob_get_clean();
+EOD;
 }
 
 function activity_chart( $atts ) {
-  global $OSMA_API_SERVER;
-  ob_start(); ?>
-  <div id="activity-chart"></div>
+  global $OSMA_API_ENDPOINT_ADDRESS;
+  $atts_encode = json_encode($atts);
+  $chart_id = uniqid('activity-chart-');
+
+  return <<<EOD
+  <div id="{$chart_id}"></div>
   <script>
   (function() {
     window.document.body.classList.add('-has-osm-attribution');
-    var settings = <?php echo json_encode($atts) ?>;
+    var settings = {$atts_encode};
     var country = settings.country.toUpperCase() || 'HTI';
-    fetch('<?php echo $OSMA_API_SERVER ?>/stats/all/country/' + country)
+    fetch('{$OSMA_API_ENDPOINT_ADDRESS}/stats/all/country/' + country + '?period=' + settings.start_date + ',' + settings.end_date)
       .then(function(response) {
         return response.json();
       })
       .then(function(data) {
-        ODRI.activity('#activity-chart', {
+        ODRI.activity('#{$chart_id}', {
           data: data,
           granularity: settings.default_granularity,
           facet: settings.default_facet,
@@ -66,37 +74,41 @@ function activity_chart( $atts ) {
       });
   })()
   </script>
-  <?php return ob_get_clean();
+EOD;
 }
 
 
 function contributor_chart( $atts ) {
-  global $OSMA_API_SERVER;
-  ob_start(); ?>
-  <div id="contributor-chart" style="width: 50%"></div>
+  global $OSMA_API_ENDPOINT_ADDRESS;
+  $atts_encode = json_encode($atts);
+  $chart_id = uniqid('contributor-chart-');
+
+  return <<<EOD
+  <div id="{$chart_id}" style="width: 50%"></div>
   <script>
   (function() {
     window.document.body.classList.add('-has-osm-attribution');
-    var settings = <?php echo json_encode($atts) ?>;
+    var settings = {$atts_encode};
     var country = settings.country.toUpperCase() || 'HTI';
-    fetch('<?php echo $OSMA_API_SERVER ?>/stats/all/country/' + country)
+    fetch('{$OSMA_API_ENDPOINT_ADDRESS}/stats/all/country/' + country + '?period=' + settings.start_date + ',' + settings.end_date)
       .then(function(response) {
         return response.json();
       })
       .then(function(data) {
-        ODRI.contributors('#contributor-chart', {
+        ODRI.contributors('#{$chart_id}', {
           data: data,
           range: [settings.start_date, settings.end_date]
         })
       });
   })()
   </script>
-  <?php return ob_get_clean();
+EOD;
 }
 
 add_shortcode( 'osma_charts_compare_map', 'compare_map' );
 add_shortcode( 'osma_charts_activity', 'activity_chart' );
 add_shortcode( 'osma_charts_contributors', 'contributor_chart' );
+
 
 function osma_charts_script() {
    wp_register_script('osma_charts_bundle', plugins_url('scripts/bundle.js', __FILE__) );

@@ -1,22 +1,24 @@
 === Stop User Enumeration ===
 Contributors: fullworks
 Tags: User Enumeration, Security, WPSCAN, fail2ban
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4EMTVFMKXRRYY
 Requires at least: 3.4
-Tested up to: 4.7
-Stable tag: 1.3.8
+Tested up to: 4.8
+Stable tag: 1.3.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 User Enumeration is a method hackers and scanners use to get your username. This plugin stops it.
 == Description ==
-Even if you are careful and set your blogging nickname differently from your login id, if you are using permalinks it only takes a few seconds
-to discover your real user name.
 
-This plugin stops user enumeration dead (like in use by WPSCAN), and additionally it will log an event
-in your system log so you can use (optionally) fail2ban to block the probing IP directly at your firewall, a very powerful solution for VPS owners to stop brute force attacks as well as DDoS attacks.
+Stop User Enumeration is a plugin that helps you prevent your WordPress usernames from being enumerated.
 
-Since WordPress 4.5 user data can also be obtained by API calls without logging in, this is a WordPress feature, but if you don't need it, this
-plugin will restrict that too.
+User Enumeration is a type of attack where nefarious parties can probe your website to discover your login name. This is often a pre-cursor to brute-force password attacks. Stop User Enumeration helps block this attack and even allows you to log IPs launching these attacks to block further attacks in the future.
+
+As the attack IP is logged you can use (optionally) fail2ban to block the attack directly at your firewall, a very powerful solution for VPS owners to stop brute force attacks as well as DDoS attacks.
+
+Since WordPress 4.5 user data can also be obtained by API calls without logging in, this is a WordPress feature, but if you don't need it to get user data, this
+plugin will restrict and log that too.
 
 
 == Installation ==
@@ -51,8 +53,22 @@ findtime = 600
 bantime = 2500000`
 Adjusted to your own requirements.
 
+== Donate or go Pro ==
+
+Keeping your website safe against hackers takes constant innovation, this is an ongoing battle. If you want to keep a free version of this plugin up to up to up to date please donate a small amount now using [this link](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4EMTVFMKXRRYY) .
+
+Or go pro with Fullworks WP Security [register here](http://fullworks.net/wp-security/register)
+
 == Changelog ==
-=
+
+= 1.3.9 =
+
+Added language settings to allow translation.
+
+Sanitized text being written to syslog
+
+Closed potential REST API bypass
+
 = 1.3.8 =
 
 Security fix to stop XSS exploit

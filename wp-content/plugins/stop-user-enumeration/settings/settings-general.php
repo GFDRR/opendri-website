@@ -6,7 +6,13 @@ function sue_settings( $wpsf_settings ) {
     $wpsf_settings[] = array(
         'section_id' => 'general',
         'section_title' => '',
-        'section_description' => 'These settings let you control the functionality of the plugin. Keeping this plugin up to date takes time and effort,<br> if you appreciate this effort please consider a donation, <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4EMTVFMKXRRYY"><strong>by clicking here (even 50 cents is appreciated and can help keep this plugin current)</strong></a>',
+        'section_description' => '<p>This is the FREE version of Stop Enumeration, part of Fullworks WP Security.
+                          </p><p>
+                           If you would like to ensure the FREE version keeps up to date please consider supporting the effort
+                          with a donation <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4EMTVFMKXRRYY"><strong>DONATE NOW LINK</strong></a>
+                          </p><p>
+                          Would you like to go pro with Fullworks WP Security? Please <a target="_blank" href="http://fullworks.net/wp-security/register"><strong>FIND OUT MORE</strong></a>
+                          </p>',
         'section_order' => 5,
         'fields' => array(
 

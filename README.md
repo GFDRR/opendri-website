@@ -32,8 +32,13 @@ If you would like to keep a separate set of configuration for local development,
 
 # Project charts shortcodes
 
-Refer to <a href="https://github.com/Vizzuality/opendri-charts#charts-configuration">opendri-charts documentation</a> for a full list of parameters and their defaults.
-The Worpress plugin adds an additional `country` parameter to each chart that then gets translated into a polyline.
+
+#### Global parameters
+
+Set in Settings > OSMA charts:
+
+- __OSMA API -> API URL__ Endpoint used for all API calls
+- __OSMA Site -> Site URL__ URL of the iframe for the compare maps module
 
 #### Compare map
 
@@ -41,13 +46,28 @@ The Worpress plugin adds an additional `country` parameter to each chart that th
 [osma_charts_compare_map country="HTI" default_feature_type="highways" default_start_year="2015" default_end_year="now"]
 ```
 
+- __country__ or __polygon__ (mandatory) ISO3 country code or an encoded polyline of the area of interest related to the project (ie `ifv%7BDndwkBx%60%40aYwQev%40sHkPuf%40ss%40%7BfA_%40uq%40xdCn%7D%40%5E`))
+- __default_start_year__ (`2016`) represents the start year of an OpenDRI project
+- __default_end_year__ (`now`) represents the end year of an OpenDRI project. `now` can also be provided to compare with latest OSM data
+- __default_feature_type__ (`buildings`) compare `buildings` or `highways`
+
 #### OSM activity
 
 ```
-[osma_charts_activity country="HTI" start_date="2000/01/01" end_date="2017/02/01" default_granularity="monthly" default_facet="features"]
+[osma_charts_activity country="HTI" start_date="2000-01-01" end_date="2017-02-01" default_granularity="monthly" default_facet="features"]
 ```
+
+- __country__ or __polygon__ (mandatory) ISO3 country code or an encoded polyline of the area of interest related to the project (ie `ifv%7BDndwkBx%60%40aYwQev%40sHkPuf%40ss%40%7BfA_%40uq%40xdCn%7D%40%5E`))
+- __start_date__ (mandatory) (`2016-01-01`) represents the start date of an OpenDRI project
+- __end_date__ (mandatory) (`2017-01-01`) represents the end date of an OpenDRI project
+- __default_granularity__ (`daily`) show activity `daily|weekly|monthly` by default
+- __default_facet__ (`features`) show either `features` or `users` histogram by default
 
 #### OSM top contributors
 ```
-[osma_charts_contributors country="HTI" start_date="2000/01/01" end_date="2017/02/01"]
+[osma_charts_contributors country="HTI" start_date="2000-01-01" end_date="2017-02-01"]
 ```
+
+- __country__ or __polygon__ (mandatory) ISO3 country code or an encoded polyline of the area of interest related to the project (ie `ifv%7BDndwkBx%60%40aYwQev%40sHkPuf%40ss%40%7BfA_%40uq%40xdCn%7D%40%5E`))
+- __start_date__ (mandatory) (`2016-01-01`) represents the start date of an OpenDRI project
+- __end_date__ (mandatory) (`2017-01-01`) represents the end date of an OpenDRI project
