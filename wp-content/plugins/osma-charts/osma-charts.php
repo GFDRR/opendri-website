@@ -9,15 +9,39 @@
 require_once __DIR__ . '/osma-charts-settings.php';
 $OSMA_API_ENDPOINT_ADDRESS = get_option('osma_api_endpoint_address' );
 $OSMA_SITE_ADDRESS = get_option('osma_site_address' );
+$loader_bg = '#f0f0f0;';
+
+function getVal($params, $value, $default) {
+  return isset($params[$value]) ? $params[$value] : $default;
+}
+
+function loading($width, $height, $bg = '', $style = '') {
+  $img_url = plugins_url('img/loading_2x_360.gif', __FILE__);
+
+  $baseStyle =
+    "width: {$width};" .
+    "height: {$height};" .
+    "background-image: url({$img_url});" .
+    "background-repeat: no-repeat;" .
+    "background-position: center;" .
+    "background-size: 35px;" .
+    "background-color: {$bg};" . $style;
+
+  return "<div style=\"{$baseStyle}\"></div>";
+}
 
 function compare_map( $atts ) {
   global $OSMA_API_ENDPOINT_ADDRESS;
   global $OSMA_SITE_ADDRESS;
+  global $loader_bg;
   $atts_encode = json_encode($atts);
   $chart_id = uniqid('compare-map-');
+  $width = getVal($atts, 'width', '100%');
+  $height = getVal($atts, 'height', '100%');
+  $loader = loading($width, $height, $loader_bg);
 
   return <<<EOD
-  <div id="{$chart_id}" class="compare-map"></div>
+  <div id="{$chart_id}" class="compare-map">{$loader}</div>
   <script>
     (function() {
       window.document.body.classList.add('-has-osm-attribution');
@@ -50,11 +74,15 @@ EOD;
 
 function activity_chart( $atts ) {
   global $OSMA_API_ENDPOINT_ADDRESS;
+  global $loader_bg;
   $atts_encode = json_encode($atts);
   $chart_id = uniqid('activity-chart-');
+  $width = getVal($atts, 'width', '100%');
+  $height = getVal($atts, 'height', '320px');
+  $loader = loading($width, $height, $loader_bg, 'margin: 1rem 0;');
 
   return <<<EOD
-  <div id="{$chart_id}"></div>
+  <div id="{$chart_id}">{$loader}</div>
   <script>
   (function() {
     window.document.body.classList.add('-has-osm-attribution');
@@ -80,11 +108,15 @@ EOD;
 
 function contributor_chart( $atts ) {
   global $OSMA_API_ENDPOINT_ADDRESS;
+  global $loader_bg;
   $atts_encode = json_encode($atts);
   $chart_id = uniqid('contributor-chart-');
+  $width = getVal($atts, 'width', '100%');
+  $height = getVal($atts, 'height', '450px');
+  $loader = loading($width, $height, $loader_bg, 'margin-top: 1rem;margin-bottom: 1rem;');
 
   return <<<EOD
-  <div id="{$chart_id}" style="width: 50%"></div>
+  <div id="{$chart_id}" style="width: 50%">{$loader}</div>
   <script>
   (function() {
     window.document.body.classList.add('-has-osm-attribution');
