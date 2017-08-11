@@ -14,7 +14,10 @@ License: BSD
 CHANGELOG:
 - Updated default width to '100%'
 - Updated default height to '400px'
+<<<<<<< HEAD
 - Load tiles using same protocol as page load
+=======
+>>>>>>> e030c66e74097c5b930f11e60a95724e7d0c1203
 */
 
 add_shortcode( 'mapbox' , 'mapbox_shortcode_handler' );
