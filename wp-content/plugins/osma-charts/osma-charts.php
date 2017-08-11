@@ -112,8 +112,8 @@ function contributor_chart( $atts ) {
   $atts_encode = json_encode($atts);
   $chart_id = uniqid('contributor-chart-');
   $width = getVal($atts, 'width', '100%');
-  $height = getVal($atts, 'height', '100%');
-  $loader = loading($width, $height, $loader_bg, 'margin-bottom: 1rem;');
+  $height = getVal($atts, 'height', '450px');
+  $loader = loading($width, $height, $loader_bg, 'margin-top: 1rem;margin-bottom: 1rem;');
 
   return <<<EOD
   <div id="{$chart_id}" style="width: 50%">{$loader}</div>
