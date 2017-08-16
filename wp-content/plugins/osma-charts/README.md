@@ -18,7 +18,7 @@ The plugin supports 2 configuration values, both of which are required:
 The plugin currently provides 3 shortcodes, each rendering a different visualization:
 
 #### Compare map:
-![Compare map](https://github.com/GFDRR/opendri-website/tree/master/wp-content/plugins/osma-charts/samples/map.png "Compare map")
+![Compare map](https://github.com/GFDRR/opendri-website/blob/master/wp-content/plugins/osma-charts/samples/map.png?raw=true '')
 
 ###### Shortcode: 
 `osma_charts_compare_map`
@@ -30,7 +30,7 @@ The plugin currently provides 3 shortcodes, each rendering a different visualiza
 - country="SWE"
 
 #### Activity chart: 
-![Activity chart](https://github.com/GFDRR/opendri-website/tree/master/wp-content/plugins/osma-charts/samples/activity.png "Compare map")
+![Activity chart](https://github.com/GFDRR/opendri-website/blob/master/wp-content/plugins/osma-charts/samples/activity.png?raw=true "Compare map")
 
 ###### Shortcode: 
 `osma_charts_activity`
@@ -43,7 +43,7 @@ The plugin currently provides 3 shortcodes, each rendering a different visualiza
 - default_facet="features"
 
 #### Contributors chart:
-![Contributors chart](https://github.com/GFDRR/opendri-website/tree/master/wp-content/plugins/osma-charts/samples/contributors.png "Compare map")
+![Contributors chart](https://github.com/GFDRR/opendri-website/blob/master/wp-content/plugins/osma-charts/samples/contributors.png?raw=true "Compare map")
 
 ###### Shortcode: 
 `osma_charts_contributors`
