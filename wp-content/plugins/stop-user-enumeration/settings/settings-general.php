@@ -4,17 +4,13 @@ add_filter( 'wpsf_register_settings_sue_settings', 'sue_settings' );
 function sue_settings( $wpsf_settings ) {
     // General Settings section
     $wpsf_settings[] = array(
-        'section_id' => 'general',
-        'section_title' => '',
-        'section_description' => '<p>This is the FREE version of Stop Enumeration, part of Fullworks WP Security.
-                          </p><p>
-                           If you would like to ensure the FREE version keeps up to date please consider supporting the effort
-                          with a donation <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4EMTVFMKXRRYY"><strong>DONATE NOW LINK</strong></a>
-                          </p><p>
-                          Would you like to go pro with Fullworks WP Security? Please <a target="_blank" href="http://fullworks.net/wp-security/register"><strong>FIND OUT MORE</strong></a>
-                          </p>',
-        'section_order' => 5,
-        'fields' => array(
+	    'section_id'          => 'general',
+	    'section_title'       => '',
+	    'section_description' => '<p>Welcome to Stop Enumeration, part of Fullworks WP VPS Security.
+                          </p>Fullworks WP VPS Security is built to help protect WP installations on VPS and Dedicated Servers, although you may use it happily on your shared hosting plans
+                          too.</p>',
+	    'section_order'       => 5,
+	    'fields'              => array(
 
             array(
                 'id' => 'stop_rest_user',
