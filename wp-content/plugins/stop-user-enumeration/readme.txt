@@ -1,24 +1,28 @@
-=== Stop User Enumeration ===
+=== Fullworks WP VPS Security ===
 Contributors: fullworks
-Tags: User Enumeration, Security, WPSCAN, fail2ban
+Tags: User Enumeration, Security, WPSCAN, fail2ban,
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4EMTVFMKXRRYY
 Requires at least: 3.4
-Tested up to: 4.8
-Stable tag: 1.3.9
+Tested up to: 4.8.1
+Stable tag: 1.3.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-User Enumeration is a method hackers and scanners use to get your username. This plugin stops it.
+Secure your site against hacking attacks such as User Enumeration
 == Description ==
 
-Stop User Enumeration is a plugin that helps you prevent your WordPress usernames from being enumerated.
+Fullworks WP VPS Security is plugin built to help protect VPS and Dedicated Servver installations of WordPress, butr also can be used happily on Shared Hosting accounts.
+
+The primary feature is Stop User Enumeration, a feature that detects your WordPress usernames from being enumerated by hackers.
 
 User Enumeration is a type of attack where nefarious parties can probe your website to discover your login name. This is often a pre-cursor to brute-force password attacks. Stop User Enumeration helps block this attack and even allows you to log IPs launching these attacks to block further attacks in the future.
 
-As the attack IP is logged you can use (optionally) fail2ban to block the attack directly at your firewall, a very powerful solution for VPS owners to stop brute force attacks as well as DDoS attacks.
+As the attack IP is logged you can use (optional additional configuration) fail2ban to block the attack directly at your server's firewall, a very powerful solution for VPS owners to stop brute force attacks as well as DDoS attacks.
 
 Since WordPress 4.5 user data can also be obtained by API calls without logging in, this is a WordPress feature, but if you don't need it to get user data, this
 plugin will restrict and log that too.
+
+The plugin collects attack data for analysis.
 
 
 == Installation ==
@@ -29,6 +33,8 @@ plugin will restrict and log that too.
 
 == Frequently asked questions ==
 
+= It doesn't seem to work! ==
+Are you logged in?  This plugin won't do anything for logged in users, it only works when you are logged out. A common mistake is to install the plugin and test it, while still logged in as admin.
 = Are there any settings? =
 Yes, but the default ones are fine for most cases
 = Will it work on Multisite? =
@@ -53,13 +59,15 @@ findtime = 600
 bantime = 2500000`
 Adjusted to your own requirements.
 
-== Donate or go Pro ==
+== Pro ==
 
-Keeping your website safe against hackers takes constant innovation, this is an ongoing battle. If you want to keep a free version of this plugin up to up to up to date please donate a small amount now using [this link](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4EMTVFMKXRRYY) .
-
-Or go pro with Fullworks WP Security [register here](http://fullworks.net/wp-security/register)
+Pro features coming soon.
 
 == Changelog ==
+
+= 1.3.10 =
+
+Fixed unused javascript & css in settings page
 
 = 1.3.9 =
 
