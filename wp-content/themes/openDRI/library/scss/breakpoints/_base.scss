@@ -1953,7 +1953,7 @@ POSTS & CONTENT STYLES
     #more-content.index-row {
         margin: 40px 0;
     }
-    .about-content:not(#more-content) {
+    .about-content:not(#more-content):not(#partners) {
         .hentry header {
             bottom: auto;
             top: 17px;
@@ -2269,48 +2269,23 @@ POSTS & CONTENT STYLES
     #members,
     #partners {
         margin: 60px 0;
+        article {
+            height: auto;
+            min-height: 350px;
+        }
         .card-third {
             margin: 0;
         }
-        .-m-team-member,
-        .-m-partner {
-            display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
-            display: -ms-flexbox; /* TWEENER - IE 10 */
-            display: -webkit-flex; /* NEW - Chrome */
-            display: flex;
-            img {
-                height: 213px;
-                width: 180px;
-            }
-            .-m-info {
-                display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
-                display: -ms-flexbox; /* TWEENER - IE 10 */
-                display: -webkit-flex; /* NEW - Chrome */
-                display: flex;
-                flex-direction: column;
-                width: 70%;
-                margin: 0 0 0 40px;
-                .name {
-                    font-weight: 600;
-                    font-size: 20px;
-                    line-height: 28px;
-                }
-                .title {
-                    font-style: italic;
-                }
-            }
+        img {
+            float: none;
+            margin: 0;
         }
-        .-m-partner {
-            flex-direction: column;
-            width: 33%;
-            img {
-                height: 155px;
-                width: 315px;
-            }
-            .-m-info {
-                margin: 0;
-                width: 90%;
-            }
+        .hentry header {
+            position: static;
+        }
+        .image-section {
+            margin: 0px auto;
+            height: auto;
         }
     }
     #principles .card-third,
