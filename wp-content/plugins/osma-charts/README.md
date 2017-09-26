@@ -20,35 +20,72 @@ The plugin currently provides 3 shortcodes, each rendering a different visualiza
 #### Compare map:
 ![Compare map](https://github.com/GFDRR/opendri-website/blob/master/wp-content/plugins/osma-charts/samples/map.png?raw=true '')
 
-###### Shortcode: 
+###### Shortcode:
 `osma_charts_compare_map`
 
 ###### Options + example values:
-- default_feature_type="highways"
-- default_start_year="2012"
-- default_end_year="now"
-- country="SWE"
+- __country__ or __polygon__ (mandatory) ISO3 country code or an encoded polyline of the area of interest related to the project (ie `ifv%7BDndwkBx%60%40aYwQev%40sHkPuf%40ss%40%7BfA_%40uq%40xdCn%7D%40%5E`))
+- __default_start_year__ (`2016`) represents the start year of an OpenDRI project
+- __default_end_year__ (`now`) represents the end year of an OpenDRI project. `now` can also be provided to compare with latest OSM data
+- __default_feature_type__ (`buildings`) compare `buildings` or `highways`
 
-#### Activity chart: 
+###### Example:
+
+```
+[osma_charts_compare_map country="HTI" default_feature_type="highways" default_start_year="2015" default_end_year="now"]
+```
+
+#### Activity chart:
 ![Activity chart](https://github.com/GFDRR/opendri-website/blob/master/wp-content/plugins/osma-charts/samples/activity.png?raw=true "Compare map")
 
-###### Shortcode: 
+###### Shortcode:
 `osma_charts_activity`
 
 ###### Options + example values:
-- country="HTI"
-- start_date="2000/01/01"
-- end_date="2017/02/01"
-- default_granularity="monthly" 
-- default_facet="features"
+- __country__ or __polygon__ (mandatory) ISO3 country code or an encoded polyline of the area of interest related to the project (ie `ifv%7BDndwkBx%60%40aYwQev%40sHkPuf%40ss%40%7BfA_%40uq%40xdCn%7D%40%5E`))
+- __start_date__ (mandatory) (`2016-01-01`) represents the start date of an OpenDRI project
+- __end_date__ (mandatory) (`2017-01-01`) represents the end date of an OpenDRI project
+- __default_granularity__ (`daily`) show activity `daily|weekly|monthly` by default
+- __default_facet__ (`features`) show either `features` or `users` histogram by default
+
+###### Example:
+
+```
+[osma_charts_activity country="HTI" start_date="2000-01-01" end_date="2017-02-01" default_granularity="monthly" default_facet="features"]
+```
 
 #### Contributors chart:
 ![Contributors chart](https://github.com/GFDRR/opendri-website/blob/master/wp-content/plugins/osma-charts/samples/contributors.png?raw=true "Compare map")
 
-###### Shortcode: 
+###### Shortcode:
 `osma_charts_contributors`
 
 ###### Options + example values:
-- country="HTI"
-- start_date="2000/01/01"
-- end_date="2017/02/01"
+- __country__ or __polygon__ (mandatory) ISO3 country code or an encoded polyline of the area of interest related to the project (ie `ifv%7BDndwkBx%60%40aYwQev%40sHkPuf%40ss%40%7BfA_%40uq%40xdCn%7D%40%5E`))
+- __start_date__ (mandatory) (`2016-01-01`) represents the start date of an OpenDRI project
+- __end_date__ (mandatory) (`2017-01-01`) represents the end date of an OpenDRI project
+- __num_users__ (`10`) number of users to show on the chart.
+- __feature_type__ (`buildings`) buildings, highways or waterways
+ 
+###### Example:
+
+```
+[osma_charts_contributors country="HTI" start_date="2000-01-01" end_date="2017-02-01"]
+```
+
+
+## Development / build from source
+
+This plugin is a Wordpress wrapper for JavaScript/CSS found in [OSMA Charts](https://github.com/Vizzuality/osma-charts), and the content of `scripts` and `styles` are exports of that project.
+
+On the <a href="https://github.com/Vizzuality/wp-osma-charts">source repo</a>, build and push:
+```
+npm run build
+...
+git push origin master
+```
+
+On this repo, update and copy the dependencies:
+```
+npm update && npm run update-osma-charts
+```
