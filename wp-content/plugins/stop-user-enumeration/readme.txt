@@ -4,7 +4,7 @@ Tags: User Enumeration, Security, WPSCAN, fail2ban,
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4EMTVFMKXRRYY
 Requires at least: 3.4
 Tested up to: 4.8.1
-Stable tag: 1.3.10
+Stable tag: 1.3.12
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,8 +21,6 @@ As the attack IP is logged you can use (optional additional configuration) fail2
 
 Since WordPress 4.5 user data can also be obtained by API calls without logging in, this is a WordPress feature, but if you don't need it to get user data, this
 plugin will restrict and log that too.
-
-The plugin collects attack data for analysis.
 
 
 == Installation ==
@@ -65,6 +63,15 @@ Pro features coming soon.
 
 == Changelog ==
 
+= 1.3.12 =
+
+* Resolve some missing files
+
+= 1.3.11 =
+
+* Added language localisation for translations
+* Added Spanish translation
+
 = 1.3.10 =
 
 Fixed unused javascript & css in settings page
@@ -102,66 +109,5 @@ Fix PHP error
 * Added settings page to allow REST API calls or stop system logging as required
 * Added code to remove numbers from comment authors, and setting to turn that off
 
-= 1.3.4 =
-
-* Simplify code and deal with undefined request and other argument issues
-= 1.3.3 =
-
-* Correct issue of undefined index in certain conditions
-= 1.3.2 =
-
-* Added donate link to plugin listing
-= 1.3.1 =
-
-* code improvement  from Thomas van der Westen
-
-= 1.2.8 =
-
-* bug fix to allow comments to use author in url
-
-= 1.2.8 =
-
-* allow comments to use author in url
-
-= 1.2.7 =
-
-* bug fix to POST protection
-
-= 1.2.6 =
-
-* bug fix to POST protection
-
-= 1.2.5 =
-
-* Added protection against bypass using null bytes  (thanks to vunerbality identification and solution by cvcrcky )
-* Added protection angainst POST bypass (thanks to vunerbaility identification by urbanadventurer and solution ideas from Ov3rfly and Malivuk )
-
-
-= 1.2.4 =
-
-* Added code to check whether not admin (to stop admin features failing) and changed trailing slash code to trap situation where not posts are found and user is displayed in title
-
-
-= 1.2.3 =
-
-
-* Fixed bug that stopped export in admin
-
-= 1.2.2 =
-
-* Added code to stop bypassing the check when a trailing slash is added
-
-= 1.2.1 =
-* minor change to handle a specific php issue with a certain version
-
-
-
-= 1.1 =
-
-* added close log
-* corrected call to wp die
-
-= 1.0 =
-*  first release
 
 == Upgrade notice ==

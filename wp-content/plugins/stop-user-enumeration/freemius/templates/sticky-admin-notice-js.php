@@ -5,7 +5,7 @@
  *
  * @package     Freemius
  * @copyright   Copyright (c) 2015, Freemius, Inc.
- * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @license     https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License Version 3
  * @since       1.0.7
  */
 
@@ -19,12 +19,11 @@ if ( ! defined( 'ABSPATH' ) ) {
             var
                 notice = $(this).parents('.fs-notice'),
                 id = notice.attr('data-id'),
-                slug = notice.attr('data-slug');
+                ajaxActionSuffix = notice.attr('data-manager-id').replace(':', '-');
 
             notice.fadeOut('fast', function () {
                 var data = {
-                    action: 'fs_dismiss_notice_action_' + slug,
-                    slug: slug,
+                    action: 'fs_dismiss_notice_action_' + ajaxActionSuffix,
                     message_id: id
                 };
 

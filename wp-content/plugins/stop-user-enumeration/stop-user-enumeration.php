@@ -1,13 +1,13 @@
 <?php
 /*
 Plugin Name: Fullworks WP VPS Security ( Stop User Enumeration )
-Plugin URI: http://fullworks.net/wp-security/register/
+Plugin URI: https://fullworks.net/products/vps-security/
 Description: User enumeration is a technique used by hackers to get your login name if you are using permalinks. This plugin stops that.
-Version: 1.3.10
+Version: 1.3.12
 Author: Fullworks Digital Ltd
 Text Domain: stop-user-enumeration
-Domain Path: /lang
-Author URI: http://fullworks.net/wp-security/register/
+Domain Path: /languages
+Author URI: https://fullworks.net/
 License: GPLv2 or later.
 */
 
@@ -65,7 +65,6 @@ class Stop_User_Enumeration_Plugin {
 	private static $instance = null;
 	private $plugin_path;
 	private $plugin_url;
-	private $text_domain = 'stop-user-enumeration';
 	private $settings_link;
 
 	/**
@@ -74,23 +73,21 @@ class Stop_User_Enumeration_Plugin {
 	private function __construct() {
 		$this->plugin_path   = plugin_dir_path( __FILE__ );
 		$this->plugin_url    = plugin_dir_url( __FILE__ );
-		$this->settings_link = sprintf( '<a href="options-general.php?page=sue-settings-settings">%s</a>', __( "Settings" ) );
-
-		load_plugin_textdomain( $this->text_domain, false, $this->plugin_path . '/lang' );
+		$this->settings_link = sprintf( '<a href="options-general.php?page=sue-settings-settings">%s</a>', esc_html__( "Settings", 'stop-user-enumeration' ) );
 
 		// Include and create a new WordPressSettingsFramework
 		add_action( 'admin_menu', array( $this, 'init_settings' ), 99 );
-		require_once( $this->plugin_path . 'wp-settings-framework.php' );
-		$this->wpsf = new WordPressSettingsFramework( $this->plugin_path . 'settings/settings-general.php', 'sue_settings' );
-		// Add an optional settings validation filter (recommended)
-		add_filter( $this->wpsf->get_option_group() . '_settings_validate', array( &$this, 'validate_settings' ) );
+
+
 		// run plugin from init hook as needs a plugable function
 
-
+		add_action( 'plugins_loaded', array( $this, 'i18n' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'register_scripts' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'register_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_scripts' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_styles' ) );
+
+
 		add_action( 'plugin_row_meta', array( $this, 'sue_plugin_row_meta' ), 10, 2 );
 		add_filter( 'rest_authentication_errors', array( $this, 'only_allow_logged_in_rest_access_to_users' ) );
 		register_activation_hook( __FILE__, array( $this, 'activation' ) );
@@ -151,6 +148,12 @@ class Stop_User_Enumeration_Plugin {
 		return false;
 	}
 
+	public function i18n() {
+
+		load_plugin_textdomain( 'stop-user-enumeration', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+
+	}
+
 	/**
 	 * Enqueue and register CSS files here.
 	 */
@@ -161,10 +164,15 @@ class Stop_User_Enumeration_Plugin {
 	 * functionality here.
 	 */
 	public function run_plugin() {
+
+		require_once( $this->plugin_path . 'wp-settings-framework.php' );
+		$this->wpsf = new WordPressSettingsFramework( $this->plugin_path . 'settings/settings-general.php', 'sue_settings' );
+// Add an optional settings validation filter (recommended)
+		add_filter( $this->wpsf->get_option_group() . '_settings_validate', array( &$this, 'validate_settings' ) );
 		if ( ! is_user_logged_in() && isset( $_REQUEST['author'] ) ) {
 			if ( $this->ContainsNumbers( $_REQUEST['author'] ) ) {
 				$this->sue_log();
-				wp_die( __( 'forbidden - number in author name not allowed = ', 'stop-user-enumeration' ) . esc_html( $_REQUEST['author'] ) );
+				wp_die( esc_html__( 'forbidden - number in author name not allowed = ', 'stop-user-enumeration' ) . esc_html( $_REQUEST['author'] ) );
 			}
 		} elseif ( is_admin() ) {
 			$setting = wpsf_get_setting( 'sue_settings', 'general', 'stop_rest_user' );
@@ -194,7 +202,7 @@ class Stop_User_Enumeration_Plugin {
 				if ( ! is_user_logged_in() ) {
 					$this->sue_log();
 
-					return new WP_Error( 'rest_cannot_access', __( 'Only authenticated users can access the User endpoint REST API.', 'stop-user-enumeration' ), array( 'status' => rest_authorization_required_code() ) );
+					return new WP_Error( 'rest_cannot_access', esc_html__( 'Only authenticated users can access the User endpoint REST API.', 'stop-user-enumeration' ), array( 'status' => rest_authorization_required_code() ) );
 				}
 			}
 		}
@@ -215,7 +223,7 @@ class Stop_User_Enumeration_Plugin {
         <div class="notice notice-warning">
             <p>
 				<?php
-				printf( __( 'Plugin: Stop User Enumeration now has settings, go to the %1$s page and save the new settings', 'stop-user-enumeration' ), $this->settings_link );
+				printf( esc_html__( 'Plugin: Stop User Enumeration now has settings, go to the %1$s page and save the new settings', 'stop-user-enumeration' ), $this->settings_link );
 				?>
             </p>
         </div>
@@ -227,8 +235,8 @@ class Stop_User_Enumeration_Plugin {
 
 		$this->wpsf->add_settings_page( array(
 			'parent_slug' => 'options-general.php',
-			'page_title'  => __( 'Stop User Enumeration Settings' ),
-			'menu_title'  => __( 'Stop User Enumeration' )
+			'page_title'  => esc_html__( 'Stop User Enumeration Settings', 'stop-user-enumeration' ),
+			'menu_title'  => esc_html__( 'Stop User Enumeration', 'stop-user-enumeration' )
 		) );
 
 	}

@@ -2,7 +2,7 @@
 /**
  * @package     Freemius
  * @copyright   Copyright (c) 2015, Freemius, Inc.
- * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @license     https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License Version 3
  * @since       1.0.3
  */
 
@@ -12,11 +12,19 @@
  *  of the SDK is relevant both for plugins and themes, for obvious reasons,
  *  we only develop and maintain one code base.
  *
- *  This code (and page) will not run for wp.org themes (only plugins)
- *  since theme admin settings/options are now only allowed in the customizer.
+ *  This code (and page) will not run for wp.org themes (only plugins).
  *
  *  In addition, this page loads an i-frame. We intentionally named it 'frame'
  *  so it will pass the "Theme Check" that is looking for the string "i" . "frame".
+ *
+ * UPDATE:
+ *  After ongoing conversations with the WordPress.org TRT we received
+ *  an official approval for including i-frames in the theme's WP Admin setting's
+ *  page tab (the SDK will never add any i-frames on the sitefront). i-frames
+ *  were never against the guidelines, but we wanted to get the team's blessings
+ *  before we move forward. For the record, I got the final approval from
+ *  Ulrich Pogson (@grapplerulrich), a team lead at the TRT during WordCamp
+ *  Europe 2017 (June 16th, 2017).
  *
  * If you have any questions or need clarifications, please don't hesitate
  * pinging me on slack, my username is @svovaf.
@@ -34,21 +42,22 @@ wp_enqueue_script( 'json2' );
 fs_enqueue_local_script( 'postmessage', 'nojquery.ba-postmessage.min.js' );
 fs_enqueue_local_script( 'fs-postmessage', 'postmessage.js' );
 fs_enqueue_local_style( 'fs_common', '/admin/common.css' );
+
 fs_enqueue_local_style( 'fs_checkout', '/admin/checkout.css' );
 
 /**
  * @var array $VARS
  * @var Freemius $fs
  */
-$slug = $VARS['slug'];
-$fs   = freemius( $slug );
+$fs   = freemius( $VARS['id'] );
+$slug = $fs->get_slug();
 
 $timestamp = time();
 
 $context_params = array(
 	'plugin_id'      => $fs->get_id(),
-	'plugin_version' => $fs->get_plugin_version(),
 	'public_key'     => $fs->get_public_key(),
+	'plugin_version' => $fs->get_plugin_version(),
 	'mode'           => 'dashboard',
 	'trial'          => fs_request_get_bool( 'trial' ),
 );
@@ -153,9 +162,15 @@ $xdebug_session = fs_request_get( 'XDEBUG_SESSION' );
 if ( false !== $xdebug_session ) {
 	$query_params['XDEBUG_SESSION'] = $xdebug_session;
 }
+
+$view_params = array(
+	'id'   => $VARS['id'],
+	'page' => strtolower( $fs->get_text( 'checkout' ) ) . ' ' . $fs->get_text( 'pci-compliant' ),
+);
+fs_require_once_template( 'secure-https-header.php', $view_params );
 ?>
-<div id="fs_checkout" class="wrap fs-full-size-wrapper">
-    <div id="iframe"></div>
+<div id="fs_checkout" class="wrap fs-section fs-full-size-wrapper">
+    <div id="frame"></div>
     <script type="text/javascript">
         // http://stackoverflow.com/questions/4583703/jquery-post-request-not-ajax
         jQuery(function ($) {
@@ -207,24 +222,24 @@ if ( false !== $xdebug_session ) {
             $(function () {
 
                 var
-                    // Keep track of the iframe height.
-                    iframe_height = 800,
+                    // Keep track of the i-frame height.
+                    frame_height = 800,
                     base_url = '<?php echo FS_CHECKOUT__ADDRESS ?>',
-                    // Pass the parent page URL into the Iframe in a meaningful way (this URL could be
+                    // Pass the parent page URL into the i-frame in a meaningful way (this URL could be
                     // passed via query string or hard coded into the child page, it depends on your needs).
                     src = base_url + '/?<?php echo http_build_query( $query_params ) ?>#' + encodeURIComponent(document.location.href),
-                    // Append the Iframe into the DOM.
-                    iframe = $('<iframe " src="' + src + '" width="100%" height="' + iframe_height + 'px" scrolling="no" frameborder="0" style="background: transparent;"><\/iframe>')
-                        .appendTo('#iframe');
+                    // Append the i-frame into the DOM.
+                    frame = $('<i' + 'frame " src="' + src + '" width="100%" height="' + frame_height + 'px" scrolling="no" frameborder="0" style="background: transparent;"><\/i' + 'frame>')
+                        .appendTo('#frame');
 
-                FS.PostMessage.init(base_url, [iframe[0]]);
+                FS.PostMessage.init(base_url, [frame[0]]);
                 FS.PostMessage.receiveOnce('height', function (data) {
                     var h = data.height;
-                    if (!isNaN(h) && h > 0 && h != iframe_height) {
-                        iframe_height = h;
-                        iframe.height(iframe_height + 'px');
+                    if (!isNaN(h) && h > 0 && h != frame_height) {
+                        frame_height = h;
+                        frame.height(frame_height + 'px');
 
-                        FS.PostMessage.postScroll(iframe[0]);
+                        FS.PostMessage.postScroll(frame[0]);
                     }
                 });
 
@@ -243,9 +258,9 @@ if ( false !== $xdebug_session ) {
 
                     // Post data to activation URL.
                     $.form('<?php echo fs_nonce_url( $fs->_get_admin_page_url( 'account', array(
-						'fs_action' => $slug . '_activate_new',
+						'fs_action' => $fs->get_unique_affix() . '_activate_new',
 						'plugin_id' => $plugin_id
-					) ), $slug . '_activate_new' ) ?>', requestData).submit();
+					) ), $fs->get_unique_affix() . '_activate_new' ) ?>', requestData).submit();
                 });
 
                 FS.PostMessage.receiveOnce('pending_activation', function (data) {
@@ -257,10 +272,10 @@ if ( false !== $xdebug_session ) {
                         requestData.auto_install = true;
 
                     $.form('<?php echo fs_nonce_url( $fs->_get_admin_page_url( 'account', array(
-						'fs_action'          => $slug . '_activate_new',
+						'fs_action'          => $fs->get_unique_affix() . '_activate_new',
 						'plugin_id'          => $plugin_id,
 						'pending_activation' => true,
-					) ), $slug . '_activate_new' ) ?>', requestData).submit();
+					) ), $fs->get_unique_affix() . '_activate_new' ) ?>', requestData).submit();
                 });
 
                 FS.PostMessage.receiveOnce('get_context', function () {
@@ -275,13 +290,13 @@ if ( false !== $xdebug_session ) {
 					array(
 						'activation_url' => fs_nonce_url( $fs->_get_admin_page_url( '',
 							array(
-								'fs_action' => $slug . '_activate_new',
+								'fs_action' => $fs->get_unique_affix() . '_activate_new',
 								'plugin_id' => $plugin_id,
 
 							) ),
-							$slug . '_activate_new' )
+							$fs->get_unique_affix() . '_activate_new' )
 					) ) ?>
-                    FS.PostMessage.post('context', <?php echo json_encode( $install_data ) ?>, iframe[0]);
+                    FS.PostMessage.post('context', <?php echo json_encode( $install_data ) ?>, frame[0]);
                 });
 
                 FS.PostMessage.receiveOnce('get_dimensions', function (data) {
@@ -290,11 +305,11 @@ if ( false !== $xdebug_session ) {
                     FS.PostMessage.post('dimensions', {
                         height: $(document.body).height(),
                         scrollTop: $(document).scrollTop()
-                    }, iframe[0]);
+                    }, frame[0]);
                 });
 
                 var updateHeight = function () {
-                    iframe.css('min-height', $('#wpwrap').height() + 'px');
+                    frame.css('min-height', $(document.body).height() + 'px');
                 };
 
                 $(document).ready(updateHeight);

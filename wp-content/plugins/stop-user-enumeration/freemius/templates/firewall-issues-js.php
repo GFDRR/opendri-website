@@ -6,7 +6,7 @@
  *
  * @package     Freemius
  * @copyright   Copyright (c) 2015, Freemius, Inc.
- * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @license     https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License Version 3
  * @since       1.0.9
  */
 
@@ -20,11 +20,10 @@ if ( ! defined( 'ABSPATH' ) ) {
             var
                 error_type = $(this).attr('data-type'),
                 notice = $(this).parents('.fs-notice'),
-                slug = notice.attr('data-slug');
+                ajaxActionSuffix = notice.attr('data-manager-id').replace(':', '-');
 
             var data = {
-                action: 'fs_resolve_firewall_issues_' + slug,
-                slug: slug,
+                action: 'fs_resolve_firewall_issues_' + ajaxActionSuffix,
                 error_type: error_type
             };
 
@@ -40,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             }
 
             if ('retry_ping' === error_type) {
-                data.action = 'fs_retry_connectivity_test_' + slug;
+                data.action = 'fs_retry_connectivity_test_' + ajaxActionSuffix;
             }
 
             $(this).css({'cursor': 'wait'});
