@@ -8,30 +8,36 @@
 require_once __DIR__ . '/mapbox-simple-settings.php';
 $MAPBOX_SIMPLE_APIKEY = get_option('mapbox_simple_apikey' );
 
+function getMapboxSimpleVal($params, $value, $default) {
+  return isset($params[$value]) ? $params[$value] : $default;
+}
 
 function mapbox_map( $atts ) {
   global $MAPBOX_SIMPLE_APIKEY;
-  $atts_encode = json_encode($atts);
-  // $test_param = getVal($atts, '$test_param', 'thi is a test');
   $map_id = uniqid('mapbox-simple-');
+  $layers = getMapboxSimpleVal($atts, 'layers', 'mapbox.streets');
+  $latitude = getMapboxSimpleVal($atts, 'latitude', '40.4746');
+  $longitude = getMapboxSimpleVal($atts, 'longitude', '-3.7048');
+  $zoom = getMapboxSimpleVal($atts, 'zoom', '3');
+  $minZoom = getMapboxSimpleVal($atts, 'min_zoom', '0');
+  $maxZoom = getMapboxSimpleVal($atts, 'max_zoom', '22');
+  $scrollWheelZoom = getMapboxSimpleVal($atts, 'scroll_wheel_zoom', 'false');
   return <<<EOD
-  {$MAPBOX_SIMPLE_APIKEY}
   <div id='{$map_id}' style='width:100%; height: 400px'></div>
   <script>
-    console.log({$atts_encode})
     L.mapbox.accessToken = '{$MAPBOX_SIMPLE_APIKEY}';
 
-    try {
-      var map = L.mapbox.map('{$map_id}', 'gfdrr.map-wv1c9ry4,gfdrr.kathmandu-health')
-      .setView([27.6934,85.3380], 15);
-    } catch (e) {
-      console.log(e)
-    }
+    var map = L.mapbox.map('{$map_id}', '{$layers}', {
+        minZoom: {$minZoom},
+        maxZoom: {$maxZoom},
+        scrollWheelZoom: {$scrollWheelZoom}
+      })
+      .setView([{$latitude}, {$longitude}], {$zoom});
   </script>
 EOD;
 }
 
-// example: []
+// example: [mapbox_map layers="gfdrr.map-wv1c9ry4,gfdrr.kathmandu-health" latitude="27.6934" longitude="85.3380" zoom="14" max_zoom="20"]
 add_shortcode( 'mapbox_map', 'mapbox_map' );
 
 function mapbox_simple_scripts() {
