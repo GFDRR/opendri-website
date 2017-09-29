@@ -155,7 +155,7 @@ function contributor_chart( $atts ) {
   $polygon = getVal($atts, 'polygon', null);
   $loader = loading($width, $height, $loader_bg, 'margin-top: 1rem;margin-bottom: 1rem;');
   
-  if (($country === null && $polygon === null) || $featureType === null) {
+  if ($country === null && $polygon === null) {
     return <<<EOD
   <script>
   (function() {
