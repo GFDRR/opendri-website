@@ -18,7 +18,10 @@ The plugin supports 2 configuration values, both of which are required:
 The plugin currently provides 3 shortcodes, each rendering a different visualization:
 
 #### Compare map:
-![Compare map](https://github.com/GFDRR/opendri-website/blob/master/wp-content/plugins/osma-charts/samples/map.png?raw=true '')
+![Compare map](https://github.com/GFDRR/osm-analytics-wp-charts/blob/master/samples/map.png?raw=true 'Compare map')
+
+The compare map consists of a trimmed-down, embedded version of the OSM Analytics site. It uses a slider to show the status 
+of OSM contributions in two dates, allowing a seamless visual comparison between them.
 
 ###### Shortcode:
 `osma_charts_compare_map`
@@ -36,7 +39,10 @@ The plugin currently provides 3 shortcodes, each rendering a different visualiza
 ```
 
 #### Activity chart:
-![Activity chart](https://github.com/GFDRR/opendri-website/blob/master/wp-content/plugins/osma-charts/samples/activity.png?raw=true "Compare map")
+![Activity chart](https://github.com/GFDRR/osm-analytics-wp-charts/blob/master/samples/activity.png?raw=true "Activity chart")
+
+The activity charts illustrate a comparison between contributions done on multiple OSM features. As the features may not be directly aggregatable,
+a simplified [https://en.wikipedia.org/wiki/Mahalanobis_distance](Mahalanobis distance) calculation is used to aggregate contributions.  
 
 ###### Shortcode:
 `osma_charts_activity`
@@ -55,7 +61,9 @@ The plugin currently provides 3 shortcodes, each rendering a different visualiza
 ```
 
 #### Contributors chart:
-![Contributors chart](https://github.com/GFDRR/opendri-website/blob/master/wp-content/plugins/osma-charts/samples/contributors.png?raw=true "Compare map")
+![Contributors chart](https://github.com/GFDRR/osm-analytics-wp-charts/blob/master/samples/contributors.png?raw=true "Contributors chart")
+
+The contributors chart shows a list of the top users for the given filter options, and an aggregated value for the remaining contributions
 
 ###### Shortcode:
 `osma_charts_contributors`
@@ -70,7 +78,49 @@ The plugin currently provides 3 shortcodes, each rendering a different visualiza
 ###### Example:
 
 ```
-[osma_charts_contributors country="HTI" start_date="2000-01-01" end_date="2017-02-01"]
+[osma_charts_statistics_table country="UGA" start_date="2010/01/01" end_date="2017/02/01" statistics="buildings-users,buildings-activity,waterways-users,waterways-activity"]
+```
+
+#### Statistics table:
+![Statistics table](https://github.com/GFDRR/osm-analytics-wp-charts/blob/master/samples/statistics.png?raw=true "Statistics table")
+
+The statistics table shows a list of the most relevant statistics for a given geography and time range.
+
+###### Shortcode:
+`osma_charts_statistics_table`
+
+###### Options + example values:
+- __country__ or __polygon__ (mandatory) ISO3 country code or an encoded polyline of the area of interest related to the project (ie `ifv%7BDndwkBx%60%40aYwQev%40sHkPuf%40ss%40%7BfA_%40uq%40xdCn%7D%40%5E`))
+- __start_date__ (mandatory) (`2016-01-01`) represents the start date of an OpenDRI project
+- __end_date__ (mandatory) (`2017-01-01`) represents the end date of an OpenDRI project
+- __statistics__ (mandatory) (`buildings-users,...`) a comma separated list of feature/type pairs. Each feature/type pair must be separated by a dash. Features can be 
+  `buildings`, `waterways` or `waterways`, and type should be either `users` or `activity`
+ 
+###### Example:
+
+```
+[osma_charts_statistics_table country="UGA" start_date="2010/01/01" end_date="2017/02/01" statistics="buildings-users,buildings-activity,waterways-users,waterways-activity"]
+```
+
+
+#### Statistic value:
+
+Shows a single statistical value for a given geography and time range. Ideal for embedding inline with other text.
+
+###### Shortcode:
+`osma_charts_statistic_value`
+
+###### Options + example values:
+- __country__ or __polygon__ (mandatory) ISO3 country code or an encoded polyline of the area of interest related to the project (ie `ifv%7BDndwkBx%60%40aYwQev%40sHkPuf%40ss%40%7BfA_%40uq%40xdCn%7D%40%5E`))
+- __start_date__ (mandatory) (`2016-01-01`) represents the start date of an OpenDRI project
+- __end_date__ (mandatory) (`2017-01-01`) represents the end date of an OpenDRI project
+- __feature_type__ (mandatory) (`buildings`) `buildings`, `waterways` or `waterways`
+- __statistic__ (mandatory) (`users`) type should be either `users` or `activity`
+ 
+###### Example:
+
+```
+[osma_charts_statistic_value country="UGA" start_date="2010/01/01" end_date="2017/02/01" feature_type="buildings" statistic="activity"]
 ```
 
 
