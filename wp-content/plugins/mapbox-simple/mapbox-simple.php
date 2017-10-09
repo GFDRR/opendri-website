@@ -23,30 +23,49 @@ function mapbox_map( $atts ) {
   $maxZoom = getMapboxSimpleVal($atts, 'max_zoom', '22');
   $scrollWheelZoom = getMapboxSimpleVal($atts, 'scroll_wheel_zoom', 'false');
   return <<<EOD
-  <div id='{$map_id}' style='width:100%; height: 400px'></div>
+  <iframe id='{$map_id}' style='width:100%; height: 400px; border:0'></iframe>
   <script>
-    L.mapbox.accessToken = '{$MAPBOX_SIMPLE_APIKEY}';
+    var mbScriptContents = [
+      "L.mapbox.accessToken = '{$MAPBOX_SIMPLE_APIKEY}';",
+      "var map = L.mapbox.map('map', '{$layers}', {",
+        "  minZoom: {$minZoom},",
+        "  maxZoom: {$maxZoom},",
+        "  scrollWheelZoom: {$scrollWheelZoom}",
+        "})",
+        ".setView([{$latitude}, {$longitude}], {$zoom});"
+    ]
+    var iframe = document.getElementById('{$map_id}');
+    var html = document.createElement('html');
+    var head = document.createElement('head');
+    var mb = document.createElement('script');
+    mb.src = 'https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'
+    var script = document.createElement('script');
+    script.text = mbScriptContents.join('');
+    var css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css';
+    var body = document.createElement('body');
+    body.style = 'margin: 0';
+    var div = document.createElement('div');
+    div.style = 'width:100%; height: 400px';
+    div.id = 'map';
+    body.appendChild(div);
+    html.appendChild(body);
+    head.appendChild(mb);
+    head.appendChild(script);
+    head.appendChild(css);
+    html.appendChild(head);
 
-    var map = L.mapbox.map('{$map_id}', '{$layers}', {
-        minZoom: {$minZoom},
-        maxZoom: {$maxZoom},
-        scrollWheelZoom: {$scrollWheelZoom}
-      })
-      .setView([{$latitude}, {$longitude}], {$zoom});
+    iframe.contentWindow.document.open();
+    iframe.contentWindow.document.write(html.outerHTML);
+    iframe.contentWindow.document.close();
+
+
   </script>
 EOD;
 }
 
 // example: [mapbox_map layers="gfdrr.map-wv1c9ry4,gfdrr.kathmandu-health" latitude="27.6934" longitude="85.3380" zoom="14" max_zoom="20"]
 add_shortcode( 'mapbox_map', 'mapbox_map' );
-
-function mapbox_simple_scripts() {
-   wp_register_script('mapbox_simple_js', 'https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js' );
-   wp_enqueue_script('mapbox_simple_js');
-   wp_register_style('mapbox_simple_styles', 'https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' );
-   wp_enqueue_style('mapbox_simple_styles');
-}
-
-add_action( 'wp_enqueue_scripts', 'mapbox_simple_scripts' );
 
 ?>

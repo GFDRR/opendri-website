@@ -28,7 +28,7 @@ class MapboxSimpleSettingsPage
 	  'Settings Admin',
 	  'Mapbox Simple',
 	  'manage_options',
-	  'mabox-simple-admin',
+	  'mapbox-simple-admin',
 	  array( $this, 'create_admin_page' )
 	);
   }
