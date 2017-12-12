@@ -1,12 +1,17 @@
 (function($) {
     $(document).ready( function() {
-        $("#email_phpinfo").click( function() {
-            $("#bgpopup").css("display", "block");
-            $("#emailme").css("display", "block");
+        var copyPhpInfoBtn = $("#copy-php-info");
+        copyPhpInfoBtn.on('click', function(event) {
+            var copyTextarea =  $("#php-info-hidden");
+            copyTextarea.select();
+
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'unsuccessful';
+                console.log('Copying text command was ' + msg);
+            } catch (err) {
+                console.log('Oops, unable to copy');
+            }
         });
-        $("#closeemail").click( function() {
-            $("#bgpopup").css("display", "none");
-            $("#emailme").css("display", "none");
-        })
     });
 })(jQuery);

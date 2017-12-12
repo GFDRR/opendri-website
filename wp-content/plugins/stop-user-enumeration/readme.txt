@@ -1,23 +1,25 @@
-=== Fullworks WP VPS Security ===
+=== Stop User Enumeration ===
 Contributors: fullworks
 Tags: User Enumeration, Security, WPSCAN, fail2ban,
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4EMTVFMKXRRYY
 Requires at least: 3.4
-Tested up to: 4.8.1
-Stable tag: 1.3.12
+Requires PHP: 5.3
+Tested up to: 4.9
+Stable tag: 1.3.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Secure your site against hacking attacks such as User Enumeration
+Helps secure your site against hacking attacks through detecting  User Enumeration
+
 == Description ==
 
-Fullworks WP VPS Security is plugin built to help protect VPS and Dedicated Servver installations of WordPress, butr also can be used happily on Shared Hosting accounts.
-
-The primary feature is Stop User Enumeration, a feature that detects your WordPress usernames from being enumerated by hackers.
+Stop User Enumeration is a security plugin designed to detect and prevent hackers scanning your site for user names.
 
 User Enumeration is a type of attack where nefarious parties can probe your website to discover your login name. This is often a pre-cursor to brute-force password attacks. Stop User Enumeration helps block this attack and even allows you to log IPs launching these attacks to block further attacks in the future.
 
-As the attack IP is logged you can use (optional additional configuration) fail2ban to block the attack directly at your server's firewall, a very powerful solution for VPS owners to stop brute force attacks as well as DDoS attacks.
+If you are on a VPS or dedicated server, as the attack IP is logged, you can use (optional additional configuration) fail2ban to block the attack directly at your server's firewall, a very powerful solution for VPS owners to stop brute force attacks as well as DDoS attacks.
+
+If you don't have access to install fail2ban ( e.g. on a Shared Host ) you can still use this plugin. To make it more effective, you can also install [Fullworks Firewall](https://en-gb.wordpress.org/plugins/fullworks-firewall/), which will work in a similar way to fail2ban but on your WordPress site.
 
 Since WordPress 4.5 user data can also be obtained by API calls without logging in, this is a WordPress feature, but if you don't need it to get user data, this
 plugin will restrict and log that too.
@@ -32,36 +34,37 @@ plugin will restrict and log that too.
 == Frequently asked questions ==
 
 = It doesn't seem to work! ==
-Are you logged in?  This plugin won't do anything for logged in users, it only works when you are logged out. A common mistake is to install the plugin and test it, while still logged in as admin.
+Are you logged in?  This plugin won't do anything for logged in users, it only works when you are logged out. This is the way it is designed. A common mistake is to install the plugin and test it, while still logged in as admin.
 = Are there any settings? =
 Yes, but the default ones are fine for most cases
+= This doesn't work with PHP 5.2! =
+This plugin does not support PHP 5.2. PHP 5.2 is very old and you really need to sort out your hosting, running version of software way past its supported end of life
+is a security risk.
 = Will it work on Multisite? =
 Yes
 = Why don't I just block with .htaccess =
-A .htaccess solution may suffice, but most published do not cover POST blocking, REST API blocking and still allow admin users access.
+A .htaccess solution is insufficient for sevaral reasons, but most published posts on the subject do not cover POST blocking, REST API blocking and inadvertently block admin users access. And don't log the IP to a firewall, the major benefit!
 = Does it break anything? =
 If a comment is left by someone just giving a number that comment would be forbidden, as it is assume a hack attempt, but the plugin has a bit of code that strips out numbers from comment author names
 = Do I need fail2ban for this to work? =
-No, but fail2ban will allow you to block IP addresses at your VPS firewall that attempt user enumeration.
-= What do I do with the fail2ban file?=
-You only need this if you are using Fail2Ban.
-Place  the file wordpress-userenum.conf in your fail2ban installation's filter.d directory.
-edit your jail.local  to include lines like
-`[wordpress-userenum]
-enabled = true
-filter = wordpress-userenumaction   = iptables-allports[name=WORDPRESS-USERENUM]
-           sendmail-whois-lines[name=WORDPRESS-USERENUM, dest=youremail@yourdomain, logpath=/var/log/messages]
-logpath = /var/log/messages
-maxretry = 1
-findtime = 600
-bantime = 2500000`
-Adjusted to your own requirements.
+No, but fail2ban will allow you to block IP addresses at your VPS / Dedicated server firewall that attempt user enumeration.
+If you don't have root access ( e.g. on shared hosting ) so can't install fail2ban you can install and use [Fullworks Firewall](https://wordpress.org/plugins/fullworks-firewall/)
+Stop User Enumeration will automatically detect this and will report malicious IPs.
+= What is the fail2ban config?=
+An fail2ban config file, wordpress-userenum.conf is found in the plugin directory stop-user-enumeration/fail2ban/filter.d
+= What needs to go in the fail2ban jail.local?=
+An example jail.local is found in plugin directory stop-user-enumeration/fail2ban
+= If I have Fullworks Firewall installed, is there anything I need to do? =
+No, the plugin automatically detects [Fullworks Firewall](https://wordpress.org/plugins/fullworks-firewall/) the plugin and sends the suspect IPs directly
 
-== Pro ==
-
-Pro features coming soon.
 
 == Changelog ==
+
+= 1.3.14 =
+* fix double plugin header
+
+= 1.3.13 =
+* ability to link to shared host firewall ( fullworks-firewall )
 
 = 1.3.12 =
 
@@ -110,4 +113,3 @@ Fix PHP error
 * Added code to remove numbers from comment authors, and setting to turn that off
 
 
-== Upgrade notice ==

@@ -1,10 +1,10 @@
 === WordPress phpinfo() ===
 Contributors: MrFlannagan
 Plugin URI: https://whoischris.com/
-Tags: simple, php, admin, phpinfo, debugging, configuration, server, support, troubleshooting, email, version
-Requires at least: 3.2.0
-Tested up to: 4.8
-Stable tag: 16.2
+Tags: simple, php, admin, phpinfo, debugging, configuration, server, support, troubleshooting, email, version, copy
+Requires at least: 4.0.0
+Tested up to: 4.9.1
+Stable tag: 16.3
 
 It's important for a non technical administrator to be able to diagnose server related problems in WordPress and email the information through this plugin.
 
@@ -21,6 +21,8 @@ This plugin is maintained by [Chris Flannagan](https://whoischris.com) or you ca
 
 
 == Updates ==
+
+16.3 You can now click a button to copy a plain text version of the phpinfo to your clipboard.  Then you can paste in an email or anywhere you like.
 
 Updates to the plugin will be posted here by the author [Chris Flannagan](https://whoischris.com)
 
@@ -44,10 +46,13 @@ To call the function from a theme include the code wordpressphpinfo(); in your t
 
 == Donations ==
 
-I have no donations form setup, feel free to hit me up on Twitter if you want to though :) @ChrisFlanny
+[Donate Here! :D](https://whoischris.com/donate)
 
 
 == Change Log ==
+
+16.3
+* Copy phpinfo in plain text with button click
 
 16.1
 * Changed the method of pulling tables out of the html document created by phpinfo().  Works better, cleaner.

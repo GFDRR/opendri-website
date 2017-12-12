@@ -43,7 +43,7 @@ function phpinfo_content( $option = 11 ) {
 	$tables = $html->getElementsByTagName( 'table' );
 
 	foreach ( $tables as $table ) {
-	    $table->setAttribute( 'class', 'wp-list-table widefat fixed striped' );
+	    $table->setAttribute( 'class', 'wp-list-table widefat fixed striped php-info-table' );
     }
 
 	foreach ( $body as $info ) :

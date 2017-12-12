@@ -11,7 +11,8 @@
 ?>
 <div class="wrap">
     <h1>
-        <?php _e( 'PHP Info', PHPINFO_TD ); ?> by <a href="https://whoischris.com" target="_blank">Chris Flannagan</a>
+        <?php _e( 'PHP Info', PHPINFO_TD ); ?> by <a href="https://whoischris.com" target="_blank">Chris Flannagan</a> -
+        <a href="https://whoischris.com/donate" target="_blank">Donations Appreciated :)</a>
     </h1>
 
     <?php if ( isset( $_GET['phpinfo'] ) && $_GET['phpinfo'] == 'emailsent' ) : ?>
@@ -47,12 +48,18 @@
             <input placeholder="Email Address(es) - Separate with commas"
                    type="text" name="emails" class="large-text" />
             <input type="submit" value="Email This Information" class="button action" />
-            <!--
-            <input type="button" value="Copy This Information" class="button action right" />
-            //-->
+            <input type="button" value="Copy This Information" id="copy-php-info" class="button action right" />
         </form>
     </div>
 
     <?php phpinfo_content(); ?>
 
 </div>
+<textarea style="height: 1px; width: 1px;" id="php-info-hidden"><?php
+
+    $info = get_phpinfo_content();
+    $info = str_replace( '</tr>', "\n", $info );
+    $info = str_replace( '</td>', ' - ', $info );
+    echo strip_tags( $info );
+
+    ?></textarea>

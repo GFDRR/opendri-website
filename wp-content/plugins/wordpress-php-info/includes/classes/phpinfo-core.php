@@ -26,5 +26,10 @@ class PHPInfo_Core {
 		 * Email out phpinfo after form submission on settings page
 		 */
 		add_action( 'admin_post_' . PHPINFO_PREFIX . '_submit_phpinfo_form_action', 'email_phpinfo_form_handler' );
+		add_action( 'admin_enqueue_scripts', array( 'PHPInfo_Core', 'admin_scripts' ) );
+	}
+
+	public static function admin_scripts() {
+		wp_enqueue_script( 'phpinfoscripts', PHPINFO_URL . '/js/phpinfo-js.js' );
 	}
 }

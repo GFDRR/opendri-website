@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name: WordPress phpinfo()
- * Plugin URI: http://whoischris/wordpress-phpinfo.zip
+ * Plugin URI: http://whoischris.com
  * Description:  This simple plugin adds an option to an administrator's Tools menu which displays standard phpinfo() feedback details to the user and allows to send in email.
  * Author: Chris Flannagan
- * Version: 16.2
+ * Version: 16.3
  * Author URI: https://whoischris.com/
  *
  * WordPress phpinfo() core file
