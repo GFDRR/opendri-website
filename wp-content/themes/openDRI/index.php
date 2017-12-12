@@ -75,7 +75,7 @@ resilience to natural hazards and the impacts of climate change across the globe
 			        <div class="twitter mod-tweets">
 			          <span><i class="twt-img"></i></span>
 			          <h3>Latest tweets</h3>
-			          <a class="twitter-timeline" href="https://twitter.com/search?q=from%3Agfdrr%20OR%20from%3Aunderstandrisk%20%20OR%20%23opendri" data-widget-id="691548436664025089">Tweets sobre from:gfdrr OR from:understandrisk OR #opendri</a>
+                      <a class="twitter-timeline"  href="https://twitter.com/search?q=from%3Agfdrr%20OR%20from%3Aunderstandrisk%20OR%20%23opendri%20-RT" data-widget-id="936284078080487425">Tweets about from:gfdrr OR from:understandrisk OR #opendri -RT</a>
 			        </div>
 				</div>
 			</div>
