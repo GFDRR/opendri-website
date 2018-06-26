@@ -47,7 +47,7 @@ if( defined('PP_ACTIVE') ) {
 	<div id="icon-capsman-admin" class="icon32"></div>
 	<?php endif; ?>
 	
-	<h2 <?php echo $style;?>><?php _e('Roles and Capabilities', 'capsman-enhanced') ?></h2>
+	<h1 <?php echo $style;?>><?php _e('Roles and Capabilities', 'capsman-enhanced') ?></h1>
 	
 	<form method="post" action="admin.php?page=<?php echo $this->ID ?>">
 	<?php wp_nonce_field('capsman-general-manager'); ?>
@@ -165,16 +165,14 @@ if( defined('PP_ACTIVE') ) {
 				
 				if ( MULTISITE ) {
 					global $wp_roles;
-					if ( method_exists( $wp_roles, 'reinit' ) ) {
-						global $wpdb;
+					global $wpdb;
 						
-						if ( ! empty($_REQUEST['cme_net_sync_role'] ) ) {
-							switch_to_blog(1);
-							wp_cache_delete( $wpdb->prefix . 'user_roles', 'options' );
-						}
-						
-						$wp_roles->reinit();
+					if ( ! empty($_REQUEST['cme_net_sync_role'] ) ) {
+						switch_to_blog(1);
+						wp_cache_delete( $wpdb->prefix . 'user_roles', 'options' );
 					}
+						
+					( method_exists( $wp_roles, 'for_site' ) ) ? $wp_roles->for_site() : $wp_roles->reinit();
 				}
 				
 				global $capsman;
@@ -713,7 +711,7 @@ function cme_network_role_ui( $default ) {
 		return false;
 	?>
 
-	<div style="float:right;margin:left:10px;margin-right:10px">
+	<div style="float:right;margin-left:10px;margin-right:10px">
 		<?php
 		if ( ! $autocreate_roles = get_site_option( 'cme_autocreate_roles' ) )
 			$autocreate_roles = array();

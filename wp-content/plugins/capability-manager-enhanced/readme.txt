@@ -3,8 +3,8 @@ Contributors: txanny, kevinB
 Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=JWZVFUDLLYQBA
 Tags: roles, capabilities, manager, editor, rights, role, capability, types, taxonomies, network, multisite, default
 Requires at least: 3.1
-Tested up to: 4.6
-Stable tag: 1.5.7
+Tested up to: 4.9.5
+Stable tag: 1.5.8
 
 A simple way to manage WordPress roles and capabilities.
 
@@ -99,7 +99,7 @@ Keep in mind that this plugin's purpose is to conveniently view and modify the c
 == License ==
 
 Copyright 2009, 2010 Jordi Canals
-Copyright 2013-2015, Kevin Behrens
+Copyright 2013-2018, Kevin Behrens
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 as published by the Free Software Foundation.
 
@@ -109,6 +109,10 @@ You should have received a copy of the GNU General Public License along with thi
 
 == Changelog ==
 
+= 1.5.8 =
+  * Fixed : PHP warning for deprecated function WP_Roles::reinit
+  * Change : Don't allow non-Administrator to edit Administrators, even if Administrator role level is set to 0
+  
 = 1.5.7 =
   * Change : Revert menu captions to previous behavior ("Permissions > Role Capabilities" if Press Permit Core is active, otherwise "Users > Capabilities")
 

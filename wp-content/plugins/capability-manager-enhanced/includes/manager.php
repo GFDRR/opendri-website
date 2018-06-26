@@ -260,6 +260,9 @@ class CapabilityManager extends akPluginAbstract
 				$r = get_role( $role );
     			$level = ak_caps2level($r->capabilities);
 				
+				if ( ( ! $level ) && ( 'administrator' == $role ) )
+					$level = 10;
+				
 	    		if ( $level > $this->max_level ) {
 		    		$caps = array('do_not_allow');
 					break;

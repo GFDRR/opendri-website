@@ -4,8 +4,8 @@ Tags: User Enumeration, Security, WPSCAN, fail2ban,
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4EMTVFMKXRRYY
 Requires at least: 3.4
 Requires PHP: 5.3
-Tested up to: 4.9
-Stable tag: 1.3.14
+Tested up to: 4.8.3
+Stable tag: 1.3.15
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,8 +38,7 @@ Are you logged in?  This plugin won't do anything for logged in users, it only w
 = Are there any settings? =
 Yes, but the default ones are fine for most cases
 = This doesn't work with PHP 5.2! =
-This plugin does not support PHP 5.2. PHP 5.2 is very old and you really need to sort out your hosting, running version of software way past its supported end of life
-is a security risk.
+This plugin does not support PHP 5.2. PHP 5.2 is very old and you really need to sort out your hosting, running version of software way past its supported end of life is a security risk.
 = Will it work on Multisite? =
 Yes
 = Why don't I just block with .htaccess =
@@ -59,6 +58,8 @@ No, the plugin automatically detects [Fullworks Firewall](https://wordpress.org/
 
 
 == Changelog ==
+= 1.3.15 =
+* fix to ensure scripts not enqueued unless required
 
 = 1.3.14 =
 * fix double plugin header
