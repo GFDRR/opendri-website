@@ -43,8 +43,9 @@ resilience to natural hazards and the impacts of climate change across the globe
 					<article id="post-<?php echo $recent["ID"]; ?>" <?php post_class( 'cf' ); ?> role="article">
 						<?php
 							$image = get_post_meta($recent["ID"], 'thumbnailPic', true);
-							$fallbackimg = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ));
-							
+							//$fallbackimg = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ));
+							$fallbackimg = wp_get_attachment_image_src( get_post_thumbnail_id( $recent["ID"] ));
+
 							$image = ($image[0]) ? $image : $fallbackimg[0];
 							$image = ($image[0]) ? $image : get_template_directory_uri().'/library/images/red-cross.jpg';
 						?>
@@ -54,7 +55,7 @@ resilience to natural hazards and the impacts of climate change across the globe
 							<h1 class="h2 entry-title"><a href="<?php echo get_permalink($recent["ID"]); ?>" rel="bookmark" title="<?php echo $recent["post_title"]; ?>"><?php echo $recent["post_title"]; ?></a></h1>
 						</header>
 						<section class="entry-content cf related">
-								<?php 
+								<?php
 									$content = apply_filters( 'the_content', $recent["post_content"] );
 								    $content = str_replace( ']]>', ']]&gt;', $content );
 								    echo wp_strip_all_tags($content);
@@ -107,7 +108,7 @@ resilience to natural hazards and the impacts of climate change across the globe
 							<h1 class="h2 entry-title"><a href="<?php echo get_permalink($recent["ID"]); ?>" rel="bookmark" title="<?php echo $recent["post_title"]; ?>"><?php echo $recent["post_title"]; ?></a></h1>
 						</header>
 						<section class="entry-content cf related">
-								<?php 
+								<?php
 									$content = apply_filters( 'the_content', $recent["post_content"] );
 								    $content = str_replace( ']]>', ']]&gt;', $content );
 								    echo wp_strip_all_tags($content);
@@ -117,17 +118,17 @@ resilience to natural hazards and the impacts of climate change across the globe
 							<p class="byline entry-meta vcard">
 								<span>
 								<?php
-								foreach(wp_get_post_categories($recent["ID"]) as $category) { 
+								foreach(wp_get_post_categories($recent["ID"]) as $category) {
 									$category = get_category( $category );
-								    if ($category->cat_ID == 6 || 
+								    if ($category->cat_ID == 6 ||
 										$category->cat_ID == 7 ||
 										$category->cat_ID == 8) {
-								    	echo '<a href="'.esc_url( get_category_link( $category->term_id ) ).'">'.$category->cat_name . '</a> '; 
+								    	echo '<a href="'.esc_url( get_category_link( $category->term_id ) ).'">'.$category->cat_name . '</a> ';
 									}
-								} 
+								}
 								?>
 								</span>
-	                            
+
 							</p>
 						</footer>
 					</article>
