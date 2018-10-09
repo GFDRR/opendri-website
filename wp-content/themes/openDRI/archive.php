@@ -43,7 +43,7 @@ if ( $post_type === 'project' && is_post_type_archive() ) { ?>
 	$postsInGrp3       = $postsInGrp3->count;
 	$postsInGrp4       = get_term_by( 'slug', 'grp4', 'category' );
 	$postsInGrp4       = $postsInGrp4->count;
-	
+
 	$postsInTotal = array(
 		'africa'     => $postsInAfrica,
 		'eastasia'   => $postsInEastAsia,
@@ -57,9 +57,9 @@ if ( $post_type === 'project' && is_post_type_archive() ) { ?>
 		'grp3'       => $postsInGrp3,
 		'grp4'       => $postsInGrp4
 	);
-	
+
 	echo '<script>var jsonValues = \'' . json_encode( $postsInTotal ) . '\'</script>';
-	
+
 	echo '	<div class="blue-bar-top" id="blue-bar">
 				<div class="wrap wrapper filters">
 						<div id="blue-bar-pick-pillar">
@@ -121,7 +121,7 @@ if ( $post_type === 'project' && is_post_type_archive() ) { ?>
 ) {
 	$display_navi = true;
 	$description  = '';
-	
+
 	echo '	<div class="blue-bar-top" id="blue-bar">
 				<div class="wrap wrapper filters">
 						<div id="blue-bar-pick-pillar">
@@ -160,7 +160,7 @@ if ( $post_type === 'project' && is_post_type_archive() ) { ?>
 					<li class="pickable" data-option="southasia"><a href="' . home_url() . '/category/regions/south-asia/">south asia</a></li>
 				</ul>
 			  </div>';
-	
+
 	$hasCornerMap = true;
 } elseif ( $post_type === 'resource' && is_post_type_archive() ) {
 	$title        = 'Resources';
@@ -169,8 +169,8 @@ if ( $post_type === 'project' && is_post_type_archive() ) { ?>
 	echo '<div class="blue-bar-top resources" id="blue-bar">
 					<div class="wrap wrapper">
 						<span><a href="#publications">guides</a></span>
-						<span><a href="#notes">short notes</a></span>
 						<span><a href="#tools">tools and training materials</a></span>
+						<span><a href="#notes">short notes</a></span>
 						<span><a href="#other">other resources</a></span>
 					</div>
 				</div>';
@@ -211,7 +211,7 @@ if ( $post_type === 'project' && is_post_type_archive() ) { ?>
 								'posts_per_page' => '1000',
 								'post_status'    => 'publish'
 							) );
-							
+
 							$countPosts = count( $posts_array );
 							for ( $i = 0; $i < $countPosts; $i += 2 ) {
 								?>
@@ -519,7 +519,7 @@ if ( $post_type === 'project' && is_post_type_archive() ) { ?>
 								<?php } //end if tag?>
                             </footer>
                         </article>
-					
+
 					<?php endwhile; ?>
 					<?php if ( $post_type === 'resource' && is_post_type_archive() ) : ?>
                         <div class="m-all index-row last-resources">
@@ -559,7 +559,7 @@ if ( $post_type === 'project' && is_post_type_archive() ) { ?>
 		<?php if ( (bool) $display_navi ) {
 			bones_page_navi();
 		} ?>
-		
+
 		<?php else : ?>
 
             <div id="content">
@@ -583,7 +583,7 @@ if ( $post_type === 'project' && is_post_type_archive() ) { ?>
                 </div>
 
             </div>
-			
+
 			<?php endif; ?>
 			<?php endif; ?>
 
