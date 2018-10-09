@@ -4,8 +4,8 @@ Tags: User Enumeration, Security, WPSCAN, fail2ban,
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4EMTVFMKXRRYY
 Requires at least: 3.4
 Requires PHP: 5.3
-Tested up to: 4.8.3
-Stable tag: 1.3.15
+Tested up to: 4.9.8
+Stable tag: 1.3.16
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,8 @@ If you don't have access to install fail2ban ( e.g. on a Shared Host ) you can s
 
 Since WordPress 4.5 user data can also be obtained by API calls without logging in, this is a WordPress feature, but if you don't need it to get user data, this
 plugin will restrict and log that too.
+
+
 
 
 == Installation ==
@@ -58,6 +60,12 @@ No, the plugin automatically detects [Fullworks Firewall](https://wordpress.org/
 
 
 == Changelog ==
+= 1.3.17 =
+* changed settings page to stop random metaboxes
+
+= 1.3.16 =
+* Reworked settings page
+
 = 1.3.15 =
 * fix to ensure scripts not enqueued unless required
 
@@ -112,5 +120,7 @@ Fix PHP error
 * Added detection and suppression of REST API calls to user data
 * Added settings page to allow REST API calls or stop system logging as required
 * Added code to remove numbers from comment authors, and setting to turn that off
+
+[](http://coderisk.com/wp/plugin/stop-user-enumeration/RIPS-1o0cni0Kbq)
 
 

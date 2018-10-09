@@ -14,11 +14,9 @@
 
 namespace Stop_User_Enumeration\Includes;
 
-use Stop_User_Enumeration\Admin\Admin;
-use Stop_User_Enumeration\Admin\Settings;
+use Stop_User_Enumeration\Admin\Admin_Settings;
 use Stop_User_Enumeration\FrontEnd\FrontEnd;
-use Stop_User_Enumeration\Includes\Loader;
-use Stop_User_Enumeration\Includes\i18n;
+
 
 
 class Core {
@@ -71,7 +69,6 @@ class Core {
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->settings_pages();
-		$this->define_admin_hooks();
 		$this->define_public_hooks();
 
 
@@ -134,9 +131,8 @@ class Core {
 	 */
 
 	private function settings_pages() {
-		$settings = new Settings( $this->get_plugin_name(), $this->get_version(), $this->freemius );
-
-		$this->loader->add_action( 'cmb2_admin_init', $settings, 'register_settings' );
+		$settings = new Admin_Settings( $this->get_plugin_name(), $this->get_version(), $this->freemius );
+		$this->loader->add_action( 'admin_menu', $settings, 'settings_setup' );
 	}
 
 	/**
@@ -184,25 +180,9 @@ class Core {
 
 	}
 
-	private function define_admin_hooks() {
-
-		/**
-		 * The class responsible for defining all actions that occur in the admin area.
-		 */
-
-		$plugin_admin = new Admin( $this->get_plugin_name(), $this->get_version() );
-
-		$this->freemius->add_filter( 'connect_message_on_update', array( $plugin_admin, 'connect_message' ), 10, 6 );
-		$this->freemius->add_filter( 'connect_message', array( $plugin_admin, 'connect_message' ), 10, 6 );
-
-	}
 
 	public static function sue_get_option( $key = '', $default = false ) {
-		if ( function_exists( 'cmb2_get_option' ) ) {
-			// Use cmb2_get_option as it passes through some key filters.
-			return cmb2_get_option( 'stop-user-enumeration', $key, $default );
-		}
-		// Fallback to get_site_option if CMB2 is not loaded yet.
+
 		$opts = get_option( 'stop-user-enumeration', $default );
 		$val  = $default;
 		if ( 'all' == $key ) {
