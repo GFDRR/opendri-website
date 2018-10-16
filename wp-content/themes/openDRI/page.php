@@ -7,9 +7,9 @@ if ( is_page( 'resources' ) ) {
 				<div class="blue-bar-top resources" id="blue-bar">
 					<div class="wrap wrapper">
 						<span><a href="#publications">guides</a></span>
+						<span><a href="#tools">tools and training materials</a></span>
 						<span><a href="#notes">short notes</a></span>
 						<span><a href="#newsletters">newsletters</a></span>
-						<span><a href="#tools">tools and training materials</a></span>
 						<span><a href="#other">other resources</a></span>
 						&nbsp;
 					</div>
@@ -50,7 +50,7 @@ elseif ( is_page( 'about' ) ) {
 									endwhile; endif; ?></div>
 
 			</div>
-<?php } // end about 
+<?php } // end about
 	// default
 	else {
 		?>

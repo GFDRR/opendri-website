@@ -39,8 +39,7 @@ class CapsmanHandler
 		} elseif ( ! empty($post['SaveRole']) ) {
 			if ( MULTISITE ) {
 				global $wp_roles;
-				if ( method_exists( $wp_roles, 'reinit' ) )
-					$wp_roles->reinit();
+				( method_exists( $wp_roles, 'for_site' ) ) ? $wp_roles->for_site() : $wp_roles->reinit();
 			}
 			
 			$this->saveRoleCapabilities($post['current'], $post['caps'], $post['level']);
@@ -62,8 +61,7 @@ class CapsmanHandler
 		} elseif ( ! empty($post['AddCap']) ) {
 			if ( MULTISITE ) {
 				global $wp_roles;
-				if ( method_exists( $wp_roles, 'reinit' ) )
-					$wp_roles->reinit();
+				( method_exists( $wp_roles, 'for_site' ) ) ? $wp_roles->for_site() : $wp_roles->reinit();
 			}
 			
 			$role = get_role($post['current']);
@@ -258,7 +256,7 @@ class CapsmanHandler
 						continue;
 					
 					switch_to_blog( $id );
-					$wp_roles->reinit();
+					( method_exists( $wp_roles, 'for_site' ) ) ? $wp_roles->for_site() : $wp_roles->reinit();
 					
 					if ( $blog_role = $wp_roles->get_role( $role_name ) ) {
 						$stored_role_caps = ( ! empty($blog_role->capabilities) && is_array($blog_role->capabilities) ) ? array_intersect( $blog_role->capabilities, array(true, 1) ) : array();
@@ -286,7 +284,7 @@ class CapsmanHandler
 					restore_current_blog();
 				}
 				
-				$wp_roles->reinit();
+				( method_exists( $wp_roles, 'for_site' ) ) ? $wp_roles->for_site() : $wp_roles->reinit();
 			}
 		} // endif multisite installation with super admin editing a main site role
 	}
@@ -314,9 +312,11 @@ class CapsmanHandler
 			return;
 		}
 
-		$query = "SELECT ID FROM {$wpdb->usermeta} INNER JOIN {$wpdb->users} "
+		$like = $wpdb->esc_like( $this->cm->current );
+
+		$query = $wpdb->prepare( "SELECT ID FROM {$wpdb->usermeta} INNER JOIN {$wpdb->users} "
 			. "ON {$wpdb->usermeta}.user_id = {$wpdb->users}.ID "
-			. "WHERE meta_key='{$wpdb->prefix}capabilities' AND meta_value LIKE '%{$this->cm->current}%';";
+			. "WHERE meta_key='{$wpdb->prefix}capabilities' AND meta_value LIKE %s", $like );
 
 		$users = $wpdb->get_results($query);
 
