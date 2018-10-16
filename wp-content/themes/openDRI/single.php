@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-	<?php 
+	<?php
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 		$fallbackimg = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ));
 		$image = ($image[0]) ? $image : $fallbackimg[0];
@@ -72,14 +72,14 @@
 
 						<?php endif; ?>
 
-						
+
 						<?php
-							
+
 								if (get_the_ID() == '481') return;
 								$isresource = false;
 								if (get_post_type( get_the_ID() ) == 'resource') {
 									$isresource = true;
-								} 
+								}
 						?>
 						<div id="more-content" class="index-row wrap more-content">
 							<!-- <h3><?php echo ($isresource) ? 'Recent resources' : 'Recent news'; ?></h3>
@@ -105,7 +105,7 @@
 												<h1 class="h2 entry-title"><a href="<?php echo $recent["guid"]; ?>" rel="bookmark" title="<?php echo $recent["post_title"]; ?>"><?php echo $recent["post_title"]; ?></a></h1>
 											</header>
 											<section class="entry-content cf related">
-													<?php 
+													<?php
 														$content = apply_filters( 'the_content', $recent["post_content"] );
 													    $content = str_replace( ']]>', ']]&gt;', $content );
 													    echo wp_strip_all_tags($content);
@@ -128,7 +128,7 @@
 						</div>
 					</main>
 
-					
+
 
 				</div>
 
@@ -138,13 +138,13 @@
 				<article>
 				<?php if (get_post_type( get_the_ID() ) == 'project') { ?>
 					<h2>ALL PROJECTS</h2>
-					<h3>Discover more projects as this one</h3>
+					<h3>Discover more projects like this</h3>
 				<?php } elseif (get_post_type( get_the_ID() ) == 'resource'){ ?>
 					<h2>ALL RESOURCES</h2>
-					<h3>Discover more resources as this one</h3>
+					<h3>Discover more resources like this</h3>
 				<?php } else { ?>
 					<h2>ALL NEWS</h2>
-					<h3>Discover more news as this one</h3>
+					<h3>Discover more news like this</h3>
 				<?php } // end else ?>
 				</article>
 				<div class="what-explore bigger">
@@ -170,6 +170,6 @@
 					document.getElementById('map').style.display 		= 'none';
 					document.getElementById('pic-banner').style.display = 'block';
 				<?php } ?>
-			}	
+			}
 		</script>
 <?php get_footer(); ?>

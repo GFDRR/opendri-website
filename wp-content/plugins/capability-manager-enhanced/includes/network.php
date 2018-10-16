@@ -7,7 +7,7 @@ function _cme_new_blog( $new_blog_id ) {
 		$restore_blog_id = $blog_id;
 		
 		switch_to_blog( 1 );
-		$wp_roles->reinit();
+		( method_exists( $wp_roles, 'for_site' ) ) ? $wp_roles->for_site() : $wp_roles->reinit();
 		
 		$main_site_caps = array();
 		$role_captions = array();
@@ -27,7 +27,7 @@ function _cme_new_blog( $new_blog_id ) {
 		}
 		
 		switch_to_blog($new_blog_id);
-		$wp_roles->reinit();
+		( method_exists( $wp_roles, 'for_site' ) ) ? $wp_roles->for_site() : $wp_roles->reinit();
 		
 		if ( defined('PP_ACTIVE') ) {
 			pp_refresh_options();
@@ -66,7 +66,7 @@ function _cme_new_blog( $new_blog_id ) {
 			pp_update_option( 'supplemental_role_defs', $blog_pp_only );
 		
 		switch_to_blog($restore_blog_id);
-		$wp_roles->reinit();
+		( method_exists( $wp_roles, 'for_site' ) ) ? $wp_roles->for_site() : $wp_roles->reinit();
 		
 		if ( defined('PP_ACTIVE') )
 			pp_refresh_options();
