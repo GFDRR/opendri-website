@@ -74,11 +74,12 @@ resilience to natural hazards and the impacts of climate change across the globe
 					<?php } ?>
 				</div>
 				<div class="card-third twitter-timeline-container">
-			        <div class="twitter mod-tweets">
-			          <span><i class="twt-img"></i></span>
-			          <h3>Latest tweets</h3>
-                      <a class="twitter-timeline"  href="https://twitter.com/search?q=from%3Agfdrr%20OR%20from%3Aunderstandrisk%20OR%20%23opendri%20-RT" data-widget-id="936284078080487425">Tweets about from:gfdrr OR from:understandrisk OR #opendri -RT</a>
-			        </div>
+	        <div class="twitter mod-tweets">
+	          <span><i class="twt-img"></i></span>
+	          <h3>Latest tweets</h3>
+            <a class="twitter-timeline" href="https://twitter.com/GFDRR/lists/disaster-risk-management" data-widget-id="936284078080487425">A Twitter List by GFDRR</a>
+						<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+					</div>
 				</div>
 			</div>
 			<div class="index-separator">
